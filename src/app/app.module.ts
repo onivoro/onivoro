@@ -11,6 +11,9 @@ const imports = [
   BrowserModule
 ];
 @NgModule({
+  declarations: [
+    AppComponent
+  ],
   imports,
   providers: [FirestoreService],
   bootstrap: [AppComponent]
