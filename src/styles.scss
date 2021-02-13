@@ -1,9 +1,5 @@
-@import 'brand';
 @import 'flex';
 
-$blue: #2C588A; // 2C588A
-$yellow: #EAE04E; // EAE04E
-$red: #D44836; //D44836
 // Custom Theming for Angular Material
 // For more information: https://material.angular.io/guide/theming
 @import '~@angular/material/theming';
@@ -13,7 +9,7 @@ $custom-typography: mat-typography-config(
 
 @include mat-core($custom-typography);
 
-$pgh-accent: (
+$oni-accent: (
   50: #EAE04E,
   100: #EAE04E,
   200: #EAE04E,
@@ -38,17 +34,17 @@ $pgh-accent: (
   )
 );
 
-$pgh-primary: (
-  50: #2C588A,
-  100: #2C588A,
-  200: #2C588A,
-  300: #2C588A,
-  400: #2C588A,
-  500: #2C588A,
-  600: #2C588A,
-  700: #2C588A,
-  800: #2C588A,
-  900: #2C588A,
+$oni-primary: (
+  50: #4B1964,
+  100: #4B1964,
+  200: #4B1964,
+  300: #4B1964,
+  400: #4B1964,
+  500: #4B1964,
+  600: #4B1964,
+  700: #4B1964,
+  800: #4B1964,
+  900: #4B1964,
   contrast: (
     50: $light-primary-text,
     100: $light-primary-text,
@@ -64,17 +60,17 @@ $pgh-primary: (
 );
 
 
-$pgh-warn: (
-  50: $red,
-  100: $red,
-  200: $red,
-  300: $red,
-  400: $red,
-  500: $red,
-  600: $red,
-  700: $red,
-  800: $red,
-  900: $red,
+$oni-warn: (
+  50: #ED7a15,
+  100: #ED7a15,
+  200: #ED7a15,
+  300: #ED7a15,
+  400: #ED7a15,
+  500: #ED7a15,
+  600: #ED7a15,
+  700: #ED7a15,
+  800: #ED7a15,
+  900: #ED7a15,
   contrast: (
     50: $light-primary-text,
     100: $light-primary-text,
@@ -89,26 +85,26 @@ $pgh-warn: (
   )
 );
 
-$pghcontractor-browser-primary: mat-palette($pgh-primary);
-$pghcontractor-browser-accent: mat-palette($pgh-accent);
-$pghcontractor-browser-warn: mat-palette($pgh-warn);
+$onicontractor-browser-primary: mat-palette($oni-primary);
+$onicontractor-browser-accent: mat-palette($oni-accent);
+$onicontractor-browser-warn: mat-palette($oni-warn);
 
-$pghcontractor-browser-theme: mat-light-theme((
+$onicontractor-browser-theme: mat-light-theme((
   color: (
-    primary: $pghcontractor-browser-primary,
-    accent: $pghcontractor-browser-accent,
-    warn: $pghcontractor-browser-warn,
+    primary: $onicontractor-browser-primary,
+    accent: $onicontractor-browser-accent,
+    warn: $onicontractor-browser-warn,
   )
 ));
 
-@include angular-material-theme($pghcontractor-browser-theme);
+@include angular-material-theme($onicontractor-browser-theme);
 
 body {
     padding: 0;
     margin: 0;
     box-sizing: border-box;
 }
-html, body { height: 100%; background-color: $red; }
+html, body { height: 100%; background-color: rgb(56, 55, 55); }
 body { margin: 0; font-family: 'Montserrat', sans-serif; }
 
 $header-height: 56px;
