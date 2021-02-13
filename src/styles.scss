@@ -3,6 +3,7 @@
 // Custom Theming for Angular Material
 // For more information: https://material.angular.io/guide/theming
 @import '~@angular/material/theming';
+
 $custom-typography: mat-typography-config(
   $font-family: 'Montserrat, sans-serif'
 );
@@ -104,7 +105,7 @@ body {
     margin: 0;
     box-sizing: border-box;
 }
-html, body { height: 100%; background-color: rgb(56, 55, 55); }
-body { margin: 0; font-family: 'Montserrat', sans-serif; }
+html, body { height: 100%; background-color: rgb(56, 55, 55); color: white; }
+body { margin: 0; font-family: 'Montserrat', sans-serif;  color: white; }
 
 $header-height: 56px;

@@ -2,8 +2,8 @@ import { Component } from '@angular/core';
 import { Router } from '@angular/router'
 import { Observable } from 'rxjs';
 import { INavigable } from 'src/app/type/navigable.interface';
-import { links } from '../constant/links';
-import { ViewportService } from '../service/viewport.service';
+import { links } from '../../constant/links';
+import { ViewportService } from '../../service/viewport.service';
 @Component({
   selector: 'oni-root',
   templateUrl: './app.component.html'
