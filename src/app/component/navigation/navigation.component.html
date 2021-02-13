@@ -1,0 +1,30 @@
+<mat-sidenav-container class="sidenav-container">
+  <mat-sidenav #drawer class="sidenav" fixedInViewport
+      [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
+      [mode]="(isHandset$ | async) ? 'over' : 'side'"
+      [opened]="(isHandset$ | async) === false">
+    <mat-toolbar></mat-toolbar>
+    <mat-nav-list>
+      <a *ngFor="let link of links$ | async; trackBy: byIndex" mat-list-item [routerLink]="link.slug">
+        <mat-icon class="blue">{{link.icon}}</mat-icon>&nbsp;
+        {{link.label}}
+      </a>
+    </mat-nav-list>
+  </mat-sidenav>
+  <mat-sidenav-content class="grad">
+    <mat-toolbar class="row">
+      <button
+        type="button"
+        aria-label="Toggle sidenav"
+        mat-icon-button
+        (click)="drawer.toggle()"
+        *ngIf="isHandset$ | async">
+        <oni-logo></oni-logo>
+      </button>
+      <h1>ONIVORO</h1>
+    </mat-toolbar>
+    <main>
+      <router-outlet></router-outlet>
+    </main>
+  </mat-sidenav-content>
+</mat-sidenav-container>
