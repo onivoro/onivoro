@@ -12,19 +12,15 @@ export class Package {
     ) {}
 
     get repoUrl () {
-        return `${githubUrlPrefix}${this.repoName || this.packageName}`;
+        return `${githubUrlPrefix}${this.repoName || this.packageName}.git`;
     }
 
     get packageUrl () {
         return `${npmUrlPrefix}${this.packageName}`;
     }
 
-    get lee () {
-        return `${localRoot}${npmOrgName.replace('@', '')}/`;
-    }
-
     get localPath () {
-        return `${localRoot}${this.repoUrl.replace('https://', '')}`;
+        return `${localRoot}${this.repoUrl.replace('https://', '').replace('.git', '')}`;
     }
 
     get mkdirCmd () {
@@ -37,5 +33,31 @@ export class Package {
 
     get npmInitCmd () {
         return `cd ${this.localPath} && npm init -y`;
+    }
+
+    get json () {
+        return `
+        {
+            "name": "@onivoro/${this.packageName}",
+            "version": "0.0.1",
+            "repository": {
+              "url": "${this.repoUrl}"
+            },
+            "scripts": {
+              "test": "jest",
+              "build": "tsc -p tsconfig.json",
+              "release": "rm -rf dist && npm run build && npm version minor && cp package.json dist && cd dist && npm publish --scope public"
+            },
+            "devDependencies": {
+              "@types/jest": "^26.0.14",
+              "@types/node": "^14.11.2",
+              "jest": "^26.4.2",
+              "ts-jest": "^26.4.1",
+              "typescript": "^4.0.3"
+            },
+            "dependencies": {
+              "rxjs": "^6.6.3"
+            }
+          }`;
     }
 }

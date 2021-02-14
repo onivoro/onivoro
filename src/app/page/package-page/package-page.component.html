@@ -1,5 +1,6 @@
 <mat-accordion>
     <mat-expansion-panel hideToggle *ngFor="let element of packages">
+
         <mat-expansion-panel-header>
             <mat-panel-title>
                 <h2>{{element.packageName}}</h2>
@@ -7,17 +8,24 @@
             <mat-panel-description>
                 <h3>{{element.status}}</h3>
             </mat-panel-description>
-            <mat-list-item><a mat-raised-button color="primary" [href]="element.repoUrl" target="_blank">GITHUB</a>
+            <mat-list-item>
+                <a mat-raised-button color="primary" [href]="element.repoUrl" target="_blank">GITHUB</a>
             </mat-list-item>
-            <mat-list-item><a mat-raised-button color="primary" [href]="element.packageUrl" target="_blank">NPM</a>
+            <mat-list-item>
+                <a mat-raised-button color="primary" [href]="element.packageUrl" target="_blank">NPM</a>
             </mat-list-item>
         </mat-expansion-panel-header>
-        <h4>Setup Scripts</h4>
-        <mat-list>
-            <mat-list-item><code>{{element.mkdirCmd}}</code></mat-list-item>
-            <mat-list-item><code>{{element.cloneCmd}}</code></mat-list-item>
-            <mat-list-item><code>{{element.npmInitCmd}}</code></mat-list-item>
-        </mat-list>
-        <mat-divider></mat-divider>
+
+        <mat-tab-group>
+            <mat-tab label="Setup Scripts">
+                <mat-list>
+                    <mat-list-item><code>{{element.mkdirCmd}}</code></mat-list-item>
+                    <mat-list-item><code>{{element.cloneCmd}}</code></mat-list-item>
+                    <mat-list-item><code>{{element.npmInitCmd}}</code></mat-list-item>
+                </mat-list>
+            </mat-tab>
+            <mat-tab label="Package JSON"><code><pre>{{element.json}}</pre></code></mat-tab>
+        </mat-tab-group>
+
     </mat-expansion-panel>
 </mat-accordion>
