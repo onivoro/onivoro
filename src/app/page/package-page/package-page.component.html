@@ -1,5 +1,6 @@
+<input matInput [(ngModel)]="token" />
 <mat-accordion>
-    <mat-expansion-panel hideToggle *ngFor="let element of packages">
+    <mat-expansion-panel hideToggle *ngFor="let element of packages$ | async">
 
         <mat-expansion-panel-header>
             <mat-panel-title>
@@ -22,6 +23,7 @@
                     <mat-list-item><code>{{element.mkdirCmd}}</code></mat-list-item>
                     <mat-list-item><code>{{element.cloneCmd}}</code></mat-list-item>
                     <mat-list-item><code>{{element.npmInitCmd}}</code></mat-list-item>
+                    <mat-list-item><code>{{element.getCreateRepoCmd(token)}}</code></mat-list-item>
                 </mat-list>
             </mat-tab>
             <mat-tab label="Package JSON"><code><pre>{{element.json}}</pre></code></mat-tab>
