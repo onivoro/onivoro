@@ -10,20 +10,23 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { MatDialogModule } from '@angular/material/dialog';
-import { MatTableModule } from '@angular/material/table';
+import { MatExpansionModule } from '@angular/material/expansion';
+import { MatDividerModule } from '@angular/material/divider';
+
 const imports = [
+  MatButtonModule,
   MatCardModule,
   MatDatepickerModule,
+  MatDialogModule,
+  MatDividerModule,
+  MatExpansionModule,
   MatIconModule,
   MatInputModule,
   MatListModule,
   MatSelectModule,
   MatSidenavModule,
-  MatToolbarModule,
-  MatButtonModule,
   MatSnackBarModule,
-  MatDialogModule,
-  MatTableModule
+  MatToolbarModule
 ];
 
 @NgModule({

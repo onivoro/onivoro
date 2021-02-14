@@ -19,6 +19,7 @@ export class PackageService {
     new Package('server-app-vscx', 'prerelease'),
     new Package('server-elastic-search', 'prerelease'),
     new Package('nodejs-cli-sdk', 'deprecated'),
+    new Package('isomorphic-onivoro')
   ];
   getPackages = () => of(this.packages);
 }
