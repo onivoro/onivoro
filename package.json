@@ -31,7 +31,7 @@
     "@nguniversal/express-engine": "^11.1.0",
     "@onivoro/angular-serializable-forms": "^0.1.0",
     "@onivoro/browser-layout": "^0.4.0",
-    "@onivoro/isomorphic-onivoro": "^0.6.0",
+    "@onivoro/isomorphic-onivoro": "^0.12.0",
     "express": "^4.15.2",
     "firebase": "^8.2.6",
     "rxjs": "~6.6.3",

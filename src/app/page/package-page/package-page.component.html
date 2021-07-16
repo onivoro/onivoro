@@ -7,14 +7,8 @@
                 <h2>{{element.packageName}}</h2>
             </mat-panel-title>
             <mat-panel-description>
-                <h3>{{element.status}}</h3>
+                <h3>{{element.type}}</h3>
             </mat-panel-description>
-            <mat-list-item>
-                <a mat-raised-button color="primary" [href]="element.repoUrl" target="_blank">GITHUB</a>
-            </mat-list-item>
-            <mat-list-item>
-                <a mat-raised-button color="primary" [href]="element.packageUrl" target="_blank">NPM</a>
-            </mat-list-item>
         </mat-expansion-panel-header>
 
         <mat-tab-group>
@@ -26,7 +20,18 @@
                     <mat-list-item><code>{{element.getCreateRepoCmd(token)}}</code></mat-list-item>
                 </mat-list>
             </mat-tab>
-            <mat-tab label="Package JSON"><code><pre>{{element.json}}</pre></code></mat-tab>
+            <mat-tab label="Package JSON"><pre>{{element.json | json}}</pre></mat-tab>
+            <mat-tab label="Actions">
+                <mat-list-item>
+                    <a mat-raised-button color="primary" [href]="element.repoUrl" target="_blank">GITHUB</a>
+                </mat-list-item>
+                <mat-list-item>
+                    <a mat-raised-button color="primary" [href]="element.packageUrl" target="_blank">NPM</a>
+                </mat-list-item>
+                <mat-list-item>
+                    <button mat-raised-button color="primary" (click)="create(element)" target="_blank">Create</button>
+                </mat-list-item>
+            </mat-tab>
         </mat-tab-group>
 
     </mat-expansion-panel>

@@ -1,3 +1,4 @@
+import { HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
@@ -7,6 +8,7 @@ import { LogoComponent } from '../component/logo/logo.component';
 import { NavigationComponent } from '../component/navigation/navigation.component';
 import { HomePageComponent } from '../page/home-page/home-page.component';
 import { PackagePageComponent } from '../page/package-page/package-page.component';
+import { HttpProjectService } from '../service-http/http-project.service';
 import { ViewportService } from '../service/viewport.service';
 import { AppRoutingModule } from './app-routing.module';
 import { MaterialModule } from './material.module';
@@ -29,9 +31,10 @@ const pages = [
     MaterialModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    FormsModule
+    FormsModule,
+    HttpClientModule
   ],
-  providers: [ViewportService],
+  providers: [ViewportService, HttpProjectService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
