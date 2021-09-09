@@ -30,6 +30,7 @@
     "@angular/service-worker": "~11.1.0",
     "@nguniversal/express-engine": "^11.1.0",
     "@onivoro/angular-serializable-forms": "^0.1.0",
+    "@onivoro/browser-layout": "^0.24.0",
     "express": "^4.15.2",
     "firebase": "^8.2.6",
     "rxjs": "~6.6.3",
