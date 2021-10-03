@@ -23,3 +23,24 @@ export const get: RequestHandler<any> = async (_request) => {
         new Package('server-vscode', ProjectType.SERVER_LIB),
     ], null, 2)});
 };
+
+// "@onivoro/nodejs-cli-sdk",
+// "@onivoro/server-process",
+// "@onivoro/browser-layout",
+// "@onivoro/isomorphic-seo",
+// "@onivoro/angular-diagrams",
+// "@onivoro/isomorphic-onivoro",
+// "@onivoro/isomorphic-crud-provider",
+// "@onivoro/server-build",
+// "@onivoro/angular-track-by",
+// "@onivoro/server-parameterization",
+// "@onivoro/server-browser",
+// "@onivoro/angular-serializable-forms",
+// "@onivoro/server-disk",
+// "@onivoro/server-app-vscx",
+// "@onivoro/isomorphic-try-json",
+// "@onivoro/angular-material-styles",
+// "@onivoro/server-vscode",
+// "@onivoro/server-elastic-search",
+// "@onivoro/server-kafka",
+// "@onivoro/server-database"
