@@ -103,7 +103,7 @@ $onivoro-secondary-palette: mat.define-palette($onivoro-secondary);
 $onivoro-red-palette: mat.define-palette($onivoro-red);
 
 $onivoro-typography: mat.define-typography-config(
-  $font-family: 'Inter, sans-serif',
+  $font-family: 'Roboto, sans-serif',
 );
 
 $primary-light-theme: (
@@ -134,7 +134,7 @@ $primary-light-theme: (
       background: $white-color,
       hover: $primary-color,
       card: $black-color,
-      dialog: darkgray,
+      dialog: rgba(220,220,220),
       disabled-button: $disabled-text-color,
       raised-button: $primary-color,
       focused-button: $primary-color,
