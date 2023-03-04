@@ -1,8 +1,8 @@
 import { applyDecorators } from "@nestjs/common";
 import { Entity } from "typeorm";
-import snake from 'lodash.snakecase';
+import { snakeCase } from '@onivoro/isomorphic-common';
 
 export const Table = (EntityClass: { name: string }) => {
-    const tableName = snake(EntityClass.name);
+    const tableName = snakeCase(EntityClass.name);
     return applyDecorators(Entity(tableName));
 };
