@@ -1,0 +1,32 @@
+{
+  "compileOnSave": false,
+  "compilerOptions": {
+    "rootDir": ".",
+    "sourceMap": true,
+    "declaration": false,
+    "moduleResolution": "node",
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "importHelpers": true,
+    "target": "es2015",
+    "module": "esnext",
+    "lib": ["es2017", "dom"],
+    "skipLibCheck": true,
+    "skipDefaultLibCheck": true,
+    "baseUrl": ".",
+    "paths": {
+      "@onivoro/server-build": ["libs/server-build/src/index.ts"],
+      "@onivoro/server-common": ["libs/server-common/src/index.ts"],
+      "@onivoro/server-disk": ["libs/server-disk/src/index.ts"],
+      "@onivoro/server-ffmpeg": ["libs/server-ffmpeg/src/index.ts"],
+      "@onivoro/server-parameterization": [
+        "libs/server-parameterization/src/index.ts"
+      ],
+      "@onivoro/server-process": ["libs/server-process/src/index.ts"],
+      "@onivoro/server-typeorm-postgres": [
+        "libs/server-typeorm-postgres/src/index.ts"
+      ]
+    }
+  },
+  "exclude": ["node_modules", "tmp"]
+}

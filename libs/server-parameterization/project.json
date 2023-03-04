@@ -1,0 +1,41 @@
+{
+  "name": "server-parameterization",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "libs/server-parameterization/src",
+  "projectType": "library",
+  "targets": {
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["libs/server-parameterization/**/*.ts"]
+      }
+    },
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["{workspaceRoot}/coverage/{projectRoot}"],
+      "options": {
+        "jestConfig": "libs/server-parameterization/jest.config.ts",
+        "passWithNoTests": true
+      },
+      "configurations": {
+        "ci": {
+          "ci": true,
+          "codeCoverage": true
+        }
+      }
+    },
+    "build": {
+      "executor": "@nrwl/js:tsc",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "outputPath": "dist/libs/server-parameterization",
+        "tsConfig": "libs/server-parameterization/tsconfig.lib.json",
+        "packageJson": "libs/server-parameterization/package.json",
+        "main": "libs/server-parameterization/src/index.ts",
+        "assets": ["libs/server-parameterization/*.md"]
+      }
+    }
+  },
+  "tags": []
+}
