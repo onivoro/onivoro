@@ -1,5 +1,6 @@
 export * from './lib/classes/column-migration-base.class';
 export * from './lib/classes/columns-migration-base.class';
+export * from './lib/classes/index-migration-base.class';
 export * from './lib/classes/sql-writer.class';
 export * from './lib/classes/type-orm-repository.class';
 

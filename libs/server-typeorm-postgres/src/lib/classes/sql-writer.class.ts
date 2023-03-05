@@ -24,12 +24,17 @@ export class SqlWriter {
         return `DROP INDEX IF EXISTS ${index}`;
     }
 
-    public static createIndex(table: string, column: string, index: string, unique: boolean): string {
+    public static createIndex(table: string, column: string, unique: boolean): string {
+        const index = SqlWriter.getIndexName(table, column);
         return `CREATE ${unique ? 'UNIQUE' : ''} INDEX IF NOT EXISTS ${index} ON "${table}"(${column})`;
     }
 
-    public static createUniqueIndex(table: string, column: string, index: string): string {
-        return SqlWriter.createIndex(table, column, index, true);
+    public static getIndexName(table: string, column: string): string {
+        return `${table}_${column}`;
+    }
+
+    public static createUniqueIndex(table: string, column: string): string {
+        return SqlWriter.createIndex(table, column, true);
     }
 
     public static getDefaultValueExpression(option: TableColumnOptions) {
