@@ -37,14 +37,4 @@ export class DeployImage extends AbstractAwsEcsCommand<IAwsEcsParams> {
     stopAllTasks(app, target);
     logElapsedTime(executionStart, DeployImage.name);
   }
-
-  @Option({
-    flags: '-b, --branch [branch]',
-    description:
-      'git branch name',
-    required: true
-  })
-  parseBranch(val?: string) {
-    return val;
-  }
 }

@@ -14,6 +14,7 @@ export * from './lib/functions/copy-package-json-version.function';
 export * from './lib/functions/deploy-lambda.function';
 export * from './lib/functions/gen-metadata.function';
 export * from './lib/functions/get-apps.function';
+export * from './lib/functions/get-lambda-name-by-branch.function';
 export * from './lib/functions/get-projects.function';
 export * from './lib/functions/log-elapsed-time.function';
 export * from './lib/functions/login-to-ecr-by-profile.function';

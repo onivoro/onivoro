@@ -31,4 +31,14 @@ export abstract class AbstractAwsAppCommand<TParams extends IAwsAppParams> exten
   parseRegion(val?: string) {
     return val;
   }
+
+  @Option({
+    flags: '-b, --branch [branch]',
+    description:
+      'git branch name (will determine if target is staging or prod based on either "main" or "develop"',
+    required: true
+  })
+  parseBranch(val?: string) {
+    return val;
+  }
 }

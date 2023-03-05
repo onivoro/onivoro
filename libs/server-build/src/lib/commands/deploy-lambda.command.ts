@@ -17,7 +17,7 @@ export class DeployLambda extends AbstractAwsLambdaCommand<IAwsLambdaParams> {
     buildApp(params.app, 'production');
     deployLambda(
       params,
-      false,
+      false
     );
   }
 }

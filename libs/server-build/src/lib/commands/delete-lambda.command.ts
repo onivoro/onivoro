@@ -2,6 +2,7 @@ import { Command } from 'nest-commander';
 import { IAwsAppParams } from '../types/aws-app-params.interface';
 import { shell } from '../functions/shell.function';
 import { AbstractAwsAppCommand } from './abstract-aws-app.command';
+import { getLambdaNameByBranch } from '../functions/get-lambda-name-by-branch.function';
 
 @Command({ name: DeleteLambda.name })
 export class DeleteLambda extends AbstractAwsAppCommand<IAwsAppParams> {
@@ -18,10 +19,10 @@ export class DeleteLambda extends AbstractAwsAppCommand<IAwsAppParams> {
 
   async main(
     _args: string[],
-    { app, region, profile }: IAwsAppParams
+    { app, region, profile, branch }: IAwsAppParams
   ): Promise<void> {
     shell(
-      `aws lambda delete-function --function-name "${app}" --region ${region} --profile ${profile}`
+      `aws lambda delete-function --function-name "${getLambdaNameByBranch(app, branch)}" --region ${region} --profile ${profile}`
     );
   }
 }
