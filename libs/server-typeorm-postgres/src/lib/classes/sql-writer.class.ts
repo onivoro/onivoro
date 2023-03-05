@@ -12,12 +12,24 @@ export class SqlWriter {
         return options.map(option => SqlWriter.addColumn(table, option)).join('; \n');
     }
 
-    public static dropColumn(table, option: TableColumnOptions) {
+    public static dropColumn(table: string, option: TableColumnOptions) {
         return `ALTER TABLE "${table}" DROP COLUMN ${option.name}`;
     }
 
-    public static dropColumns(table, options: TableColumnOptions[]) {
+    public static dropColumns(table: string, options: TableColumnOptions[]) {
         return options.map(option => SqlWriter.dropColumn(table, option)).join('; \n');
+    }
+
+    public static dropIndex(index: string): string {
+        return `DROP INDEX IF EXISTS ${index}`;
+    }
+
+    public static createIndex(table: string, column: string, index: string, unique: boolean): string {
+        return `CREATE ${unique ? 'UNIQUE' : ''} INDEX IF NOT EXISTS ${index} ON "${table}"(${column})`;
+    }
+
+    public static createUniqueIndex(table: string, column: string, index: string): string {
+        return SqlWriter.createIndex(table, column, index, true);
     }
 
     public static getDefaultValueExpression(option: TableColumnOptions) {
