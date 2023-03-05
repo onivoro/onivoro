@@ -14,7 +14,7 @@ export abstract class AbstractAwsLambdaCommand<TParams extends IAwsAppParams> ex
   }
 
   @Option({
-    flags: '-b, --bucket [bucket]',
+    flags: '-u, --bucket [bucket]',
     description: 'S3 bucket for lambda deployment',
     required: true
   })
