@@ -19,7 +19,7 @@ export class OpenapiGen extends AbstractAppCommand<IAppParams> {
       [
         `rm -rf ${dir}`,
         `mkdir -p ${dir}`,
-        `docker run --rm -v ${resolve(process.cwd())}:/local openapitools/openapi-generator-cli generate -i local/api-dox/${app}.json -g typescript-axios -o local/${dir}`,
+        `docker run --rm -v ${resolve(process.cwd())}:/local openapitools/openapi-generator-cli:v6.3.0 generate -i local/api-dox/${app}.json -g typescript-axios -o local/${dir}`,
       ].join(' && ')
     );
 
