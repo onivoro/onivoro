@@ -1,0 +1,200 @@
+// @use '@angular/material' as mat;
+// @import 'material/configs/colors';
+// @import 'material/index';
+@import 'colors';
+@import 'common/border';
+@import 'common/flex';
+@import 'common/form';
+@import 'common/gap';
+@import 'common/height';
+@import 'common/margin';
+@import 'common/padding';
+@import 'common/tailwind-border-style';
+@import 'common/tailwind-border-width';
+@import 'common/tailwind-flex';
+@import 'common/tailwind-max-width';
+@import 'common/width';
+
+$unit: 16px;
+
+html,
+body {
+  height: 100%;
+  background: radial-gradient(circle at 50% 25%, lighten($gray, 28%) 0%, $gray 100%) !important;
+}
+
+body {
+  margin: 0;
+  font-family: Roboto, 'Helvetica Neue', sans-serif;
+}
+$color-primary: hotpink; // mat.get-contrast-color-from-palette($evo-primary-palette, 500);
+
+$color-accent:  lime; // mat.get-contrast-color-from-palette($evo-accent-palette, 500);
+
+$color-warn: red; // mat.get-contrast-color-from-palette($evo-warn-palette, 500);
+
+$background-color-primary: white;// mat.get-color-from-palette($evo-primary-palette);
+$background-color-accent: black;// mat.get-color-from-palette($evo-accent-palette);
+$background-color-warn: yellow;// mat.get-color-from-palette($evo-warn-palette);
+
+.dark {
+  background: $black !important;
+  color: #fff !important;
+
+  .shadow-1 {
+    filter: drop-shadow(1px 1px 1px rgba(255, 255, 255, 0.1));
+  }
+
+  .shadow-3 {
+    filter: drop-shadow(3px 3px 3px rgba(255, 255, 255, 0.1));
+  }
+
+  .shadow-8 {
+    filter: drop-shadow(8px 8px 8px rgba(255, 255, 255, 0.1));
+  }
+
+  .mat-h1, h1 {
+    border-bottom: solid 4px $background-color-warn;
+  }
+}
+
+.gray {
+  background: radial-gradient(circle at 50% 33%, lighten($gray, 14%) 0%, $gray 100%) !important;
+  color: #fff !important;
+
+  .mat-h1, h1 {
+    border-bottom: solid 4px $background-color-warn;
+  }
+}
+
+.lite {
+  background-color: #fff !important;
+  color: $dark-primary-text;
+}
+
+.primary {
+  background: $background-color-primary !important;
+  color: $color-primary !important;
+}
+
+.accent {
+  background: $background-color-accent !important;
+  color: $color-accent !important;
+}
+
+.warn {
+  background: $background-color-warn !important;
+  color: $color-warn !important;
+}
+
+.error,
+.warn-text {
+  color: $background-color-warn !important;
+}
+
+.action-needed {
+  color: $action !important
+}
+
+.mat-h1, .mat-h2, .mat-h3, .mat-h4, h1, h2, h3, h4 {
+  & > .mat-icon {
+    position: relative;
+    top: 3px;
+  }
+}
+
+
+.DOC,
+.COV {
+  background: linear-gradient(155deg, lighten($black, 12%) 0%, $black 100%);
+  color: #fff;
+
+  // background: linear-gradient(155deg, lighten($background-color-primary, 12%) 0%, $background-color-primary 100%);
+  // color: #fff;
+}
+
+.COM {
+  background: linear-gradient(155deg, lighten(#de2b42, 12%) 0%, #de2b42 100%);
+  color: #fff;
+}
+
+.ADM,
+.ADMFED,
+.ADMMIC {
+  background: linear-gradient(155deg, lighten(#5856d7, 12%) 0%, #5856d7 100%);
+  color: #fff;
+}
+
+.bold {
+  font-weight: 700;
+}
+
+.button-group {
+  display: inline-flex;
+  flex: auto;
+  gap: 6px;
+}
+
+.shadow-1 {
+  filter: drop-shadow(1px 1px 1px rgba(0, 0, 0, 0.2));
+}
+
+.shadow-3 {
+  filter: drop-shadow(3px 3px 3px rgba(0, 0, 0, 0.2));
+}
+
+.shadow-8 {
+  filter: drop-shadow(8px 8px 8px rgba(0, 0, 0, 0.2));
+}
+
+.page {
+  box-sizing: border-box;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.text-right {
+  text-align: right;
+}
+
+.mat-h1, h1 {
+  border-bottom: solid 4px $background-color-primary;
+}
+
+.mat-h2, h2 {
+  border-bottom: solid 2px $gray;
+}
+
+.mat-h3, h3 {
+  border-bottom: solid 1px $red-color;
+}
+
+.box-border	{ box-sizing: border-box; }
+.box-content	{ box-sizing: content-box; }
+
+.border-bottom {
+  border-bottom: solid 1px $gray;
+}
+
+a {
+  color: $background-color-warn;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  .mat-form-field, .mat-form-field-infix, .mat-form-field-wrapper {
+     font-size: 14px !important;
+  }
+}
+
+.float-left {
+  float: left;
+}
+
+.float-right {
+  float: right;
+}
