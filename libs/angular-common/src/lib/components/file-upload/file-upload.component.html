@@ -8,14 +8,14 @@
         <div class="my-2">
             <div *ngIf="!filenames?.length" class="mat-body-2">No files added.</div>
             <div *ngFor="let f of filenames">
-                <button mat-raised-button class="mr-1" (click)="onFileRemoved(f)"><mat-icon>cancel</mat-icon></button> {{f}}
+                <button mat-raised-button class="mx-1 warn text-center" (click)="onFileRemoved(f)"><mat-icon>cancel</mat-icon></button> {{f}}
             </div>
         </div>
     </div>
 
     <div class="mat-caption">Supported file extensions: {{extensions}}</div>
     <div class="flex flex-row justify-between mt-2">
-        <button mat-raised-button color="primary" (click)="fileUpload.click()" [disabled]="limit && filenames && filenames.length && (filenames.length >= limit)">
+        <button mat-raised-button class="accent" (click)="fileUpload.click()" [disabled]="limit && filenames && filenames.length && (filenames.length >= limit)">
             <mat-icon>{{icon}}</mat-icon> {{label}}
         </button>
 

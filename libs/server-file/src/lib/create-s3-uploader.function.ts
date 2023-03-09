@@ -1,11 +1,10 @@
 import { S3Client } from '@aws-sdk/client-s3';
-import { UnsupportedMediaTypeException } from '@nestjs/common';
 import { MulterModuleOptions } from '@nestjs/platform-express';
 import { MulterOptions } from '@nestjs/platform-express/multer/interfaces/multer-options.interface';
-import multerS3 = require('multer-s3');
 import { join } from 'path';
 import { mimeTypeValidator } from './mime-type-validator.function';
 import { IMulterOptions as IOptions } from './multer-options.interface';
+import multerS3 from 'multer-s3-v3';
 
 export interface ICreateUploaderOptions extends MulterOptions {
   s3MulterOptions: Partial<IOptions>;
@@ -47,30 +46,14 @@ export const createS3Uploader = (options: ICreateUploaderOptions): MulterModuleO
         serverSideEncryption: options.ServerSideEncryption,
         // key: options.s3MulterOptions.key,
         // contentType: options.s3MulterOptions.contentType,
-        contentType: (req: Express.Request, file: Express.MulterS3.File, cb) => {
-          multerS3.AUTO_CONTENT_TYPE(req, file, (err, contentType, replacementStream) => {
-            console.log({contentType, file});
-            console.log('contentType', new Date().toISOString())
-            if (err) {
-              return cb(err);
-            }
-
-            if(mimeTypeValidator(contentType, file.mimetype, file.originalname)) {
-              cb(err, contentType, replacementStream);
-            } else {
-              cb(err, contentType, null);
-              // cb((`somebody fin 2 hack cuz ${contentType} aint never been no ${file.mimetype}`), contentType, replacementStream);
-            }
-          })
-        },
         key: (req, file, cb) => {
           cb(null, Date.now().toString() + '-' + file.originalname)
-        }
+        },
         // key: createKey(options.getKeySegments),
         // contentType: AUTO_CONTENT_TYPE,
-        // throwMimeTypeConflictErrorIf: (contentType: string, mimeType: string, file: { originalname: string }) =>
-        //   !mimeTypeValidator(contentType, mimeType, file.originalname, options.supportedFileExtensions),
-      }
+        throwMimeTypeConflictErrorIf: (contentType: string, mimeType: string, file: { originalname: string }) =>
+          !mimeTypeValidator(contentType, mimeType, file.originalname, options.supportedFileExtensions),
+      } as any
     ),
     fileFilter: (req, file, cb) => {
       console.log('fileFilter', new Date().toISOString(), file, req.files[0])

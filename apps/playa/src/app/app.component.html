@@ -1,9 +1,6 @@
-<onivoro-file-upload
-    (upload)="upload($event)"
-    (attach)="attach($event)"
->
-<button *ngIf="uploadData"  mat-raised-button class="primary" (click)="post()"><mat-icon>upload</mat-icon> Upload</button>
-</onivoro-file-upload>
-
-<pre>{{attachData | json}}</pre>
-<pre>{{uploadData | json}}</pre>
+<div class="mw-440 mt-4 p-4 lite">
+    <onivoro-file-upload (upload)="upload($event)" (attach)="attach($event)">
+        <button *ngIf="uploadData" mat-raised-button class="primary" (click)="post()"><mat-icon>upload</mat-icon>
+            Upload</button>
+    </onivoro-file-upload>
+</div>

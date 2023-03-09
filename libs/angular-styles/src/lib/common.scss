@@ -27,15 +27,15 @@ body {
   margin: 0;
   font-family: Roboto, 'Helvetica Neue', sans-serif;
 }
-$color-primary: hotpink; // mat.get-contrast-color-from-palette($evo-primary-palette, 500);
+$color-primary: indigo; // mat.get-contrast-color-from-palette($evo-primary-palette, 500);
 
 $color-accent:  lime; // mat.get-contrast-color-from-palette($evo-accent-palette, 500);
 
-$color-warn: red; // mat.get-contrast-color-from-palette($evo-warn-palette, 500);
+$color-warn: orangered; // mat.get-contrast-color-from-palette($evo-warn-palette, 500);
 
-$background-color-primary: white;// mat.get-color-from-palette($evo-primary-palette);
-$background-color-accent: black;// mat.get-color-from-palette($evo-accent-palette);
-$background-color-warn: yellow;// mat.get-color-from-palette($evo-warn-palette);
+$background-color-primary: lime;// mat.get-color-from-palette($evo-primary-palette);
+$background-color-accent: indigo;// mat.get-color-from-palette($evo-accent-palette);
+$background-color-warn: white;// mat.get-color-from-palette($evo-warn-palette);
 
 .dark {
   background: $black !important;
@@ -73,18 +73,18 @@ $background-color-warn: yellow;// mat.get-color-from-palette($evo-warn-palette);
 }
 
 .primary {
-  background: $background-color-primary !important;
-  color: $color-primary !important;
+  background: $color-primary !important;
+  color: $background-color-primary !important;
 }
 
 .accent {
-  background: $background-color-accent !important;
-  color: $color-accent !important;
+  background: $color-accent !important;
+  color: $background-color-accent !important;
 }
 
 .warn {
-  background: $background-color-warn !important;
-  color: $color-warn !important;
+  background: $color-warn !important;
+  color: $background-color-warn !important;
 }
 
 .error,
