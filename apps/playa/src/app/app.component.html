@@ -1,3 +1,9 @@
-<button class="primary" mat-raised-button>clicky</button>
+<onivoro-file-upload
+    (upload)="upload($event)"
+    (attach)="attach($event)"
+>
+<button *ngIf="uploadData"  mat-raised-button class="primary" (click)="post()"><mat-icon>upload</mat-icon> Upload</button>
+</onivoro-file-upload>
 
-<onivoro-file-upload></onivoro-file-upload>
+<pre>{{attachData | json}}</pre>
+<pre>{{uploadData | json}}</pre>

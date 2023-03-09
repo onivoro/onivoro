@@ -22,6 +22,7 @@
       "@onivoro/server-common": ["libs/server-common/src/index.ts"],
       "@onivoro/server-disk": ["libs/server-disk/src/index.ts"],
       "@onivoro/server-ffmpeg": ["libs/server-ffmpeg/src/index.ts"],
+      "@onivoro/server-file": ["libs/server-file/src/index.ts"],
       "@onivoro/server-parameterization": [
         "libs/server-parameterization/src/index.ts"
       ],
