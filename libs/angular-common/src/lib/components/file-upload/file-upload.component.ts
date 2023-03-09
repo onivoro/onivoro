@@ -9,7 +9,7 @@ import { Component, EventEmitter, Input, Output } from "@angular/core";
 })
 export class FileUploadComponent {
 
-    @Input() extensions = '.jpg,.jpeg,.doc,.docx,.odt,.txt,.pdf';
+    @Input() extensions = '.jpg,.jpeg,.doc,.docx,.odt,.txt,.pdf,.png,.pdf,.rtf,.webp,.csv';
     @Input() label = 'Add Files';
     @Input() icon = 'attach_file';
     @Output() upload = new EventEmitter<FormData | null>();

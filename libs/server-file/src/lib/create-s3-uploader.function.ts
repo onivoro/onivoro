@@ -1,14 +1,17 @@
 import { S3Client } from '@aws-sdk/client-s3';
+import { UnsupportedMediaTypeException } from '@nestjs/common';
 import { MulterModuleOptions } from '@nestjs/platform-express';
+import { MulterOptions } from '@nestjs/platform-express/multer/interfaces/multer-options.interface';
 import multerS3 = require('multer-s3');
 import { join } from 'path';
+import { mimeTypeValidator } from './mime-type-validator.function';
 import { IMulterOptions as IOptions } from './multer-options.interface';
 
-export interface ICreateUploaderOptions {
+export interface ICreateUploaderOptions extends MulterOptions {
   s3MulterOptions: Partial<IOptions>;
   getKeySegments: (req: Express.Request) => string[];
   mimeTypes?: string[] | undefined;
-  supportedFileExtensions: string[];
+  supportedFileExtensions?: string[];
   s3: S3Client;
   ServerSideEncryption?: string;
   fileSizeLimit?: number;
@@ -35,18 +38,54 @@ export const createKey = (getKeySegments: ICreateUploaderOptions['getKeySegments
 
 export const createS3Uploader = (options: ICreateUploaderOptions): MulterModuleOptions => {
   return {
+
     storage: multerS3(
       {
+        // ...options.s3MulterOptions,
         bucket: options.s3MulterOptions.bucket,
         s3: options.s3,
         serverSideEncryption: options.ServerSideEncryption,
-        key: createKey(options.getKeySegments),
+        // key: options.s3MulterOptions.key,
+        // contentType: options.s3MulterOptions.contentType,
+        contentType: (req: Express.Request, file: Express.MulterS3.File, cb) => {
+          multerS3.AUTO_CONTENT_TYPE(req, file, (err, contentType, replacementStream) => {
+            console.log({contentType, file});
+            if (err) {
+              return cb(err);
+            }
+
+            // if(mimeTypeValidator(contentType, file.mimetype, file.originalname)) {
+              cb(err, contentType, replacementStream);
+            // } else {
+              // cb(new UnsupportedMediaTypeException(`somebody fin 2 hack cuz ${contentType} aint never been no ${file.mimetype}`));
+            // }
+          })
+        },
+        key: (req, file, cb) => {
+          cb(null, Date.now().toString() + '-' + file.originalname)
+        }
+        // key: createKey(options.getKeySegments),
         // contentType: AUTO_CONTENT_TYPE,
         // throwMimeTypeConflictErrorIf: (contentType: string, mimeType: string, file: { originalname: string }) =>
         //   !mimeTypeValidator(contentType, mimeType, file.originalname, options.supportedFileExtensions),
       }
     ),
-    fileFilter: createFileFilter(options.mimeTypes),
+    // fileFilter: createFileFilter(options.mimeTypes),
+    // fileFilter(req, file, cb) {
+    //   console.log({file})
+    //   multerS3.AUTO_CONTENT_TYPE(req, file as any, (err, contentType, replacementStream) => {
+    //     console.log({contentType, file});
+    //     if (err) {
+    //       return cb(err, false);
+    //     }
+
+    //     if(mimeTypeValidator(contentType, file.mimetype, file.originalname)) {
+    //       cb(null, true);
+    //     } else {
+    //       cb(new UnsupportedMediaTypeException(`somebody fin 2 hack cuz ${contentType} aint never been no ${file.mimetype}`), false);
+    //     }
+    //   })
+    // },
     limits: {
       fileSize: options.fileSizeLimit,
     },
