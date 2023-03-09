@@ -50,15 +50,17 @@ export const createS3Uploader = (options: ICreateUploaderOptions): MulterModuleO
         contentType: (req: Express.Request, file: Express.MulterS3.File, cb) => {
           multerS3.AUTO_CONTENT_TYPE(req, file, (err, contentType, replacementStream) => {
             console.log({contentType, file});
+            console.log('contentType', new Date().toISOString())
             if (err) {
               return cb(err);
             }
 
-            // if(mimeTypeValidator(contentType, file.mimetype, file.originalname)) {
+            if(mimeTypeValidator(contentType, file.mimetype, file.originalname)) {
               cb(err, contentType, replacementStream);
-            // } else {
-              // cb(new UnsupportedMediaTypeException(`somebody fin 2 hack cuz ${contentType} aint never been no ${file.mimetype}`));
-            // }
+            } else {
+              cb(err, contentType, null);
+              // cb((`somebody fin 2 hack cuz ${contentType} aint never been no ${file.mimetype}`), contentType, replacementStream);
+            }
           })
         },
         key: (req, file, cb) => {
@@ -70,6 +72,10 @@ export const createS3Uploader = (options: ICreateUploaderOptions): MulterModuleO
         //   !mimeTypeValidator(contentType, mimeType, file.originalname, options.supportedFileExtensions),
       }
     ),
+    fileFilter: (req, file, cb) => {
+      console.log('fileFilter', new Date().toISOString(), file, req.files[0])
+      cb(null, true);
+    },
     // fileFilter: createFileFilter(options.mimeTypes),
     // fileFilter(req, file, cb) {
     //   console.log({file})
