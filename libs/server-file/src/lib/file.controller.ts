@@ -4,9 +4,10 @@ import { FilesInterceptor } from '@nestjs/platform-express';
 import { createS3Uploader } from './create-s3-uploader.function';
 import { createS3Client } from './create-s3-client.function';
 import multerS3 = require('multer-s3');
+import multer = require('multer');
 import { mimeTypeValidator } from './mime-type-validator.function';
 import { Readable } from 'stream';
-
+const storage = multer.memoryStorage();
 @Controller('file')
 export class FileController {
   constructor(private readonly fileService: FileService) { }
@@ -31,7 +32,7 @@ export class FileController {
   }
 
 
-  @Post(':id')
+  @Post()
   @UseInterceptors(FilesInterceptor('files[]', 10, {
     fileFilter: (req, file, cb) => {
       console.log('fileFilter', new Date().toISOString(), file, req)
@@ -53,6 +54,33 @@ export class FileController {
     },
   }))
   postWorxOk(@Param('id') id: string, @Body() body: any, @UploadedFiles() files: Express.MulterS3.File, @Req() req: Express.Request) {
+    // console.log(req)
+  }
+
+
+  @Post(':id')
+  @UseInterceptors(FilesInterceptor('files[]', 10, {
+    storage,
+    fileFilter: (req, file, cb) => {
+      console.log('fileFilter', new Date().toISOString(), file, req)
+
+
+      multerS3.AUTO_CONTENT_TYPE(req, {...file, stream: Readable.from(file.buffer)}, (err, contentType, replacementStream) => {
+
+        if (err) {
+          return cb(err, false);
+        }
+
+        if(mimeTypeValidator(contentType, file.mimetype, file.originalname)) {
+          cb(err, true);
+        } else {
+          // cb(err, false);
+          cb(new UnsupportedMediaTypeException(`somebody fin 2 hack cuz ${contentType} aint never been no ${file.mimetype}`), false);
+        }
+      })
+    },
+  }))
+  memoryStorage(@Param('id') id: string, @Body() body: any, @UploadedFiles() files: Express.MulterS3.File, @Req() req: Express.Request) {
     // console.log(req)
   }
 
