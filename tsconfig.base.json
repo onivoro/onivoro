@@ -16,6 +16,9 @@
     "baseUrl": ".",
     "paths": {
       "@onivoro/angular-common": ["libs/angular-common/src/index.ts"],
+      "@onivoro/angular-serializable-forms": [
+        "libs/angular-serializable-forms/src/index.ts"
+      ],
       "@onivoro/angular-styles": ["libs/angular-styles/src/index.ts"],
       "@onivoro/isomorphic-common": ["libs/isomorphic-common/src/index.ts"],
       "@onivoro/server-build": ["libs/server-build/src/index.ts"],

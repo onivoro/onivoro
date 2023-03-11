@@ -1,0 +1,23 @@
+.row {
+  padding: 0.5rem;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 6px;
+  box-sizing: border-box;
+
+  &:last-child {
+    padding-bottom: 0;
+  }
+
+  .field {
+    width: 100%;
+    box-sizing: border-box;
+    flex: 1 1 0%;
+
+    .mat-form-field, .mat-input-element {
+      box-sizing: border-box;
+      width: 100% !important;
+    }
+  }
+}

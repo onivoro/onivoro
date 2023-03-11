@@ -2,10 +2,10 @@ import { HttpClient } from '@angular/common/http';
 import { Component } from '@angular/core';
 
 @Component({
-  selector: 'onivoro-root',
-  templateUrl: './app.component.html',
+  selector: 'onivoro-upload',
+  templateUrl: './upload.component.html',
 })
-export class AppComponent {
+export class UploadComponent {
   uploadData: any;
   attachData: any;
 

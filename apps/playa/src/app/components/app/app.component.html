@@ -1,0 +1,7 @@
+<div class="mw-880 p-2">
+    <a mat-raised-button *ngFor="let route of routes" class="primary" routerLinkActive="accent"
+        [routerLink]="route.path">{{route.path}}</a>
+</div>
+<div class="mw-880 p-2">
+    <router-outlet></router-outlet>
+</div>
