@@ -1,5 +1,5 @@
 <div class="mw-440 mt-4 p-4 lite">
-    <asf-form [data]="data$ | async" [uiOptions]="options$ | async"
+    <asf-form [data]="data$ | async" [uiOptions]="options$ | async" *ngIf="data$ | async"
         (statusChange)="onStatusChange($event)"
         (valueChange)="onValueChange($event)"
     ></asf-form>

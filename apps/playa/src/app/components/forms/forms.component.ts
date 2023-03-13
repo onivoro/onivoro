@@ -1,9 +1,12 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, EventEmitter, OnInit } from '@angular/core';
-import { IFormConfig, IDynaFormRx, IFieldConfig } from '@onivoro/angular-serializable-forms';
+import { IDynaFormRx, IFieldConfig } from '@onivoro/angular-serializable-forms';
 import { BehaviorSubject, filter, Observable, tap } from 'rxjs';
 
-type IData = any;
+type IData = {
+  title: string;
+  body: string;
+};
 
 const defaultConfig: IFieldConfig = {
   fieldOptions: {
@@ -22,15 +25,21 @@ const defaultConfig: IFieldConfig = {
 })
 export class FormsComponent implements OnInit, IDynaFormRx<IData> {
   options$$: BehaviorSubject<IFieldConfig> = new BehaviorSubject(defaultConfig);
-  options$: Observable<IFieldConfig> = this.options$$.asObservable().pipe(filter(c => c !== null));
+  options$: Observable<IFieldConfig> = this.options$$.asObservable();
   data$$: BehaviorSubject<IData> = new BehaviorSubject<IData>(null as any);
-  data$: Observable<IData> = this.data$$.asObservable();
+  data$: Observable<IData> = this.data$$.asObservable().pipe(
+    tap(data => {
+      if(data?.body?.startsWith('Other')) {
+        this.options$$.next({fieldOptions: {...defaultConfig.fieldOptions, other: {type: 'text', label: 'Other'}}, fieldLayout: [...defaultConfig.fieldLayout, ['other']]})
+      }
+    })
+  );
   statusChange: EventEmitter<boolean> = new EventEmitter();
   valueChange: EventEmitter<any> = new EventEmitter();
 
   constructor(private http: HttpClient) { }
   async ngOnInit() {
-    this.http.get('https://jsonplaceholder.typicode.com/posts/1')
+    this.http.get<IData>('https://jsonplaceholder.typicode.com/posts/1')
       .pipe(tap(posts => this.data$$.next(posts)))
       .subscribe();
   }
@@ -38,13 +47,13 @@ export class FormsComponent implements OnInit, IDynaFormRx<IData> {
   valid = false;
   dirty = false;
 
-  onStatusChange(valid: boolean) {
-    this.valid = valid;
+  onStatusChange(valid: boolean | null) {
+    this.valid = !!valid;
     console.warn({ valid });
-    this.statusChange.emit(valid);
+    this.statusChange.emit(valid as any);
   }
-  onValueChange(data: IData) {
-    this.data$$.next(data);
+  onValueChange(data: IData | null) {
+    this.data$$.next(data as any);
     this.dirty = true;
     console.warn({ data });
     this.valueChange.emit(data);
