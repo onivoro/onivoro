@@ -1,4 +1,4 @@
-import { MigrationInterface, QueryRunner, TableColumn, TableColumnOptions } from "typeorm";
+import { MigrationInterface, QueryRunner, TableColumnOptions } from "typeorm";
 import { SqlWriter } from "./sql-writer.class";
 
 export class ColumnsMigrationBase implements MigrationInterface {
