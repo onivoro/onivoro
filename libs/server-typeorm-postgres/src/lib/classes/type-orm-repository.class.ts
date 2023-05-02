@@ -21,6 +21,10 @@ export class TypeOrmRepository<TEntity> implements IEntityProvider<
     return await (this.repo.find as any)(options);
   }
 
+  async getManyAndCount(options: FindManyOptions<TEntity>): Promise<TEntity[]> {
+    return await (this.repo.findAndCount as any)(options);
+  }
+
   async getOne(options: FindOneOptions<TEntity>): Promise<TEntity> {
     const results = await this.getMany(options);
 
