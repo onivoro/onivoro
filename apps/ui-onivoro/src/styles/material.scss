@@ -1,6 +1,15 @@
 @use '@angular/material' as mat;
 @import 'variables';
-@include mat.core();
+// TODO(v15): As of v15 mat.legacy-core no longer includes default typography styles.
+//  The following line adds:
+//    1. Default typography styles for all components
+//    2. Styles for typography hierarchy classes (e.g. .mat-headline-1)
+//  If you specify typography styles for the components you use elsewhere, you should delete this line.
+//  If you don't need the default component typographies but still want the hierarchy styles,
+//  you can delete this line and instead use:
+//    `@include mat.legacy-typography-hierarchy(mat.define-legacy-typography-config());`
+@include mat.all-legacy-component-typographies();
+@include mat.legacy-core();
 
 $poker-primary: (
   50: $primary-color,
@@ -102,7 +111,7 @@ $poker-primary-palette: mat.define-palette($poker-primary);
 $poker-secondary-palette: mat.define-palette($poker-secondary);
 $poker-red-palette: mat.define-palette($poker-red);
 
-$poker-typography: mat.define-typography-config(
+$poker-typography: mat.define-legacy-typography-config(
   $font-family: 'Roboto, sans-serif',
 );
 
@@ -153,7 +162,7 @@ $primary-light-theme: (
   ),
 );
 
-@include mat.all-component-themes($primary-light-theme);
-@include mat.all-component-typographies($poker-typography);
+@include mat.all-legacy-component-themes($primary-light-theme);
+@include mat.all-legacy-component-typographies($poker-typography);
 
 
