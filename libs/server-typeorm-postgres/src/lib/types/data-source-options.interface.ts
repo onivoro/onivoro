@@ -4,5 +4,6 @@ export interface IDataSourceOptions {
     port: string,
     username: string,
     password: string,
-    synchronize?: boolean
+    synchronize?: boolean,
+    logging?: boolean,
 }

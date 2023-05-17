@@ -9,7 +9,7 @@ export function dataSourceConfigFactory(
 ): PostgresConnectionOptions {
 
   const {
-    database, host, password, port, username, synchronize=false
+    database, host, password, port, username, synchronize=false, logging=false
   } = options;
 
   const config: PostgresConnectionOptions = {
@@ -22,7 +22,7 @@ export function dataSourceConfigFactory(
     password,
     database,
     synchronize,
-    logging: synchronize,
+    logging,
     entities,
     subscribers: [],
     migrations: [],
