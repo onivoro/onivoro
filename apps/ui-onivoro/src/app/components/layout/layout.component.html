@@ -1,0 +1,25 @@
+<header class="mat-elevation-z6">
+    <div class="content row">
+        <div class="row flex-start">
+            <div class="bear icon"></div>
+            <h1>ONIVORO.COM</h1>
+        </div>
+    </div>
+</header>
+<main class="bear col">
+    <ng-container *ngIf="id$ | async">
+
+        <div style="color: white">{{email$|async|json}}</div>
+        <div style="color: white">{{id$|async|json}}</div>
+        <!-- <div style="color: white">{{authState$|async|json}}</div>
+            <div style="color: white">{{idToken$|async|json}}</div> -->
+        </ng-container>
+        <button (click)="login()"*ngIf="unauthenticated$ |async" mat-raised-button>login</button>
+        <button (click)="logout()"*ngIf="id$ |async" mat-raised-button>logout</button>
+    <router-outlet></router-outlet>
+</main>
+<footer>
+    <div class="content row">
+        <div class="mat-caption">ONIVORO.COM, LLC 2022</div>
+    </div>
+</footer>

@@ -1,0 +1,52 @@
+@import 'styles/variables';
+@import 'styles/material';
+
+html, body { height: 100%; }
+body {
+  margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif;
+  background-image: linear-gradient(#333, black);
+
+}
+
+.content, .mat-card {
+  max-width: 1200px;
+  margin: auto;
+  padding: 1rem;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.row {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+.col {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  width: 100%;
+}
+
+.bear {
+  background-image: url(/assets/bear.svg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+.mat-card {
+  width: calc(100% - 2rem);
+  box-sizing: border-box;
+  margin: 1rem;
+  padding: 2rem !important;
+  border: dashed 1px $primary-color;
+}
+
+.flex-start {
+  justify-content: flex-start;
+}

@@ -1,0 +1,9 @@
+<mat-card>
+    <mat-card-title>Players</mat-card-title>
+    <mat-list>
+        <mat-list-item *ngFor="let player of players$ | async">{{player.name}} {{player.vote}}</mat-list-item>
+    </mat-list>
+</mat-card>
+<div class="grid">
+    <button *ngFor="let card of cards$ | async" mat-fab (click)="vote(card)">{{card}}</button>
+</div>

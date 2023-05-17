@@ -1,0 +1,26 @@
+@import '../../../styles/variables';
+
+:host {
+    header  {
+        background-color: $accent-color;
+    }
+
+    main {
+        height: calc(100vh - 170px);
+        overflow-y: scroll;
+    }
+
+    footer  {
+        background-color: black;
+        color: $accent-color;
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+    }
+
+    .bear.icon {
+        width: 36px;
+        height: 36px;
+        margin: 0 1rem 0 0;
+    }
+}
