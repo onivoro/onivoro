@@ -1,11 +1,11 @@
 import { Component, AfterViewInit, OnDestroy } from '@angular/core';
-import { MatDialog } from '@angular/material/dialog';
+import { MatLegacyDialog as MatDialog } from '@angular/material/legacy-dialog';
 import { ActivatedRoute, Router } from '@angular/router';
 import { concatMap, filter, of, Subscription, take, tap } from 'rxjs';
+import { RouteParams } from '../../enums/route-params.enum';
 import { PlayerRepository } from '../../repositories/player-repository';
 import { IPlayer } from '../../types/player.interface';
 import { PlayerFormComponent } from '../player-form/player-form.component';
-import { RouteParams } from '../../enums/route-params.enum';
 
 @Component({
   selector: 'app-room',
