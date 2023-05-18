@@ -1,0 +1,20 @@
+{
+  "$schema": "./node_modules/nx/schemas/workspace-schema.json",
+  "version": 2,
+  "projects": {
+    "angular-common": "libs/angular-common",
+    "angular-serializable-forms": "libs/angular-serializable-forms",
+    "angular-styles": "libs/angular-styles",
+    "isomorphic-common": "libs/isomorphic-common",
+    "server-build": "libs/server-build",
+    "server-common": "libs/server-common",
+    "server-disk": "libs/server-disk",
+    "server-ffmpeg": "libs/server-ffmpeg",
+    "server-file": "libs/server-file",
+    "server-multer-s3": "libs/server-multer-s3",
+    "server-parameterization": "libs/server-parameterization",
+    "server-process": "libs/server-process",
+    "server-typeorm-postgres": "libs/server-typeorm-postgres",
+    "ui-onivoro": "apps/ui-onivoro"
+  }
+}
