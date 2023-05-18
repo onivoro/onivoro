@@ -3,6 +3,8 @@
   "version": "0.0.3",
   "license": "MIT",
   "scripts": {
+    "ui-onivoro": "nx serve ui-onivoro --port 4000",
+    "ui-playa": "nx serve playa --port 4001",
     "gen:app:api": "nx g @nrwl/nest:application --directory api",
     "gen:app:cli": "nx g @nrwl/nest:application --directory cli",
     "gen:app:lambda": "nx g @nrwl/nest:application --directory lambda",

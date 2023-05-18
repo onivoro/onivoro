@@ -10,6 +10,7 @@ import { AppComponent } from '../components/app/app.component';
 import { UploadComponent } from '../components/upload/upload.component';
 import { AngularSerializableFormsModule } from 'libs/angular-serializable-forms/src/lib/angular-serializable-forms.module';
 import { FormsComponent } from '../components/forms/forms.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [AppComponent, UploadComponent, FormsComponent],
@@ -20,6 +21,7 @@ import { FormsComponent } from '../components/forms/forms.component';
     MatModule,
     AngularCommonModule,
     AngularSerializableFormsModule,
+    BrowserAnimationsModule,
 
   ],
   providers: [],
