@@ -17,11 +17,8 @@ export class AuthService implements OnModuleInit {
     ClientId: string;
     region: string;
   };
-  // private poolData: ICognitoUserPoolData;
-  // private userPool: CognitoUserPool;
+
   private keys: IMapOfKidToPublicKey;
-  mfasToValidate$$: any;
-  validatedMfaUsernames$: any;
 
   constructor(private config: AuthConfig) {
 
@@ -114,7 +111,7 @@ export class AuthService implements OnModuleInit {
 
   async validateToken({ token }) {
     const { AWS_COGNITO_USER_POOL_ID, AWS_REGION, AWS_COGNITO_CLIENT_ID } =
-      configureEnv();
+      this.config;
 
     return AWS_COGNITO_CLIENT_ID
       ? await validateToken(

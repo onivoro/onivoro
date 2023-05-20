@@ -1,6 +1,6 @@
-import { accessTokenKey } from '@evo/iso/common';
 import { Injectable, CanActivate, ExecutionContext } from '@nestjs/common';
 import { Observable } from 'rxjs';
+import { accessTokenKey } from '../constants/access-token-key.constant';
 
 @Injectable()
 export class AuthGuard implements CanActivate {

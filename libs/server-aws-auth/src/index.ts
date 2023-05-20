@@ -22,6 +22,10 @@ export * from './lib/dtos/phone.dto';
 ;
 export * from './lib/guards/auth.guard';
 
+export * from './lib/interfaces/access-token.interface';
+export * from './lib/interfaces/auth.interface';
+export * from './lib/interfaces/identity-token.interface';
+
 export * from './lib/middleware/auth.middleware';
 
 export * from './lib/services/auth.service';

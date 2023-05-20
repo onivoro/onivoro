@@ -1,0 +1,34 @@
+{
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "libs/server-aws-auth/src",
+  "projectType": "library",
+  "targets": {
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["libs/server-aws-auth/**/*.ts"]
+      }
+    },
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/libs/server-aws-auth"],
+      "options": {
+        "jestConfig": "libs/server-aws-auth/jest.config.ts",
+        "passWithNoTests": true
+      }
+    },
+    "build": {
+      "executor": "@nrwl/js:tsc",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "outputPath": "dist/libs/server-aws-auth",
+        "tsConfig": "libs/server-aws-auth/tsconfig.lib.json",
+        "packageJson": "libs/server-aws-auth/package.json",
+        "main": "libs/server-aws-auth/src/index.ts",
+        "assets": ["libs/server-aws-auth/*.md"]
+      }
+    }
+  },
+  "tags": []
+}

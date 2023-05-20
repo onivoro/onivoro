@@ -5,7 +5,6 @@ import {
   IMapOfKidToPublicKey,
   ITokenHeader,
 } from '../interfaces/auth.interface';
-import { IAccessToken } from '@evo/iso/common';
 
 const verifyPromised = promisify(jsonwebtoken.verify.bind(jsonwebtoken));
 
@@ -14,10 +13,10 @@ export const validateToken = async (
   cognitoPoolId: string,
   region: string,
   publicKeys: IMapOfKidToPublicKey
-): Promise<IAccessToken> => {
+): Promise<any> => {
   const cognitoIssuer = `https://cognito-idp.${region}.amazonaws.com/${cognitoPoolId}`;
 
-  let result: IAccessToken;
+  let result: any;
   try {
     const token = request.token;
     const tokenSections = (token || '').split('.');

@@ -1,6 +1,6 @@
-import { IAccessToken } from '@evo/iso/common';
-import { accessTokenKey } from '@evo/iso/common';
 import { createParamDecorator, ExecutionContext } from '@nestjs/common';
+import { accessTokenKey } from '../constants/access-token-key.constant';
+import { IAccessToken } from '../interfaces/access-token.interface';
 
 export const UserId = createParamDecorator(function (
   _data: any,

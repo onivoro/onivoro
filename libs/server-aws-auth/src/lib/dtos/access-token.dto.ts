@@ -1,5 +1,6 @@
-import { IAccessToken } from '@evo/iso/common';
+
 import { ApiProperty } from '@nestjs/swagger';
+import { IAccessToken } from '../interfaces/access-token.interface';
 
 export class AccessTokenDto implements IAccessToken {
   @ApiProperty({ type: 'string', name: 'sub' }) sub: string;
