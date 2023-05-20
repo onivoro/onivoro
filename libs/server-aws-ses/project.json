@@ -1,0 +1,34 @@
+{
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "libs/server-aws-ses/src",
+  "projectType": "library",
+  "targets": {
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["libs/server-aws-ses/**/*.ts"]
+      }
+    },
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/libs/server-aws-ses"],
+      "options": {
+        "jestConfig": "libs/server-aws-ses/jest.config.ts",
+        "passWithNoTests": true
+      }
+    },
+    "build": {
+      "executor": "@nrwl/js:tsc",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "outputPath": "dist/libs/server-aws-ses",
+        "tsConfig": "libs/server-aws-ses/tsconfig.lib.json",
+        "packageJson": "libs/server-aws-ses/package.json",
+        "main": "libs/server-aws-ses/src/index.ts",
+        "assets": ["libs/server-aws-ses/*.md"]
+      }
+    }
+  },
+  "tags": []
+}

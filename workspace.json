@@ -8,6 +8,7 @@
     "isomorphic-common": "libs/isomorphic-common",
     "server-aws-auth": "libs/server-aws-auth",
     "server-aws-s3": "libs/server-aws-s3",
+    "server-aws-ses": "libs/server-aws-ses",
     "server-build": "libs/server-build",
     "server-common": "libs/server-common",
     "server-disk": "libs/server-disk",
