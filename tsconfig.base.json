@@ -25,6 +25,7 @@
       "@onivoro/angular-styles": ["libs/angular-styles/src/index.ts"],
       "@onivoro/isomorphic-common": ["libs/isomorphic-common/src/index.ts"],
       "@onivoro/server-aws-auth": ["libs/server-aws-auth/src/index.ts"],
+      "@onivoro/server-aws-s3": ["libs/server-aws-s3/src/index.ts"],
       "@onivoro/server-build": ["libs/server-build/src/index.ts"],
       "@onivoro/server-common": ["libs/server-common/src/index.ts"],
       "@onivoro/server-disk": ["libs/server-disk/src/index.ts"],
@@ -38,9 +39,7 @@
       "@onivoro/server-typeorm-postgres": [
         "libs/server-typeorm-postgres/src/index.ts"
       ],
-      "@onivoro/server-yt-dl": [
-        "libs/server-yt-dl/src/index.ts"
-      ]
+      "@onivoro/server-yt-dl": ["libs/server-yt-dl/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]
