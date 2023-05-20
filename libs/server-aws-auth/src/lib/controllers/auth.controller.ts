@@ -11,6 +11,26 @@ export class AuthController {
   mfaMap = new Map();
   constructor(private readonly authService: AuthService) {}
 
+  @Post('login')
+  @ApiBody({type: AuthCredentialsDto})
+  @ApiResponse({ type: AuthTokensDto })
+  async login(@Body() authenticateRequest: AuthCredentialsDto) {
+    try {
+      const {result}: any = await this.authService.authenticateUser(
+        authenticateRequest
+      );
+
+      const response: AuthTokensDto = {
+        token: result?.accessToken?.jwtToken,
+        idToken: result?.idToken?.jwtToken
+      };
+
+      return response;
+    } catch (e) {
+      throw new BadRequestException(e.message);
+    }
+  }
+
   @Post('authenticate')
   @ApiBody({ type: AuthCredentialsDto })
   async authenticate(@Body() authenticateRequest: AuthCredentialsDto) {

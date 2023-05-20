@@ -1,4 +1,4 @@
-import { Injectable, OnModuleInit } from '@nestjs/common';
+import { Injectable, InternalServerErrorException, OnModuleInit } from '@nestjs/common';
 import {
   AuthenticationDetails,
   CognitoUser,
@@ -52,7 +52,10 @@ export class AuthService implements OnModuleInit {
 
   async authenticateUser(
     user: IAuthCredentialsDto,
-    validateMfa
+    validateMfa?: (userData: {
+      Username: string,
+      Pool: CognitoUserPool
+    }, newUser: CognitoUser) => void
   ): Promise<{ username: string }> {
     const { name, password } = user;
     const authenticationDetails = new AuthenticationDetails({
@@ -68,14 +71,12 @@ export class AuthService implements OnModuleInit {
       let result: any;
       return newUser.authenticateUser(authenticationDetails, {
         onSuccess: (r) => {
-          console.log('onSuccess', r)
           result = r;
           if(!this.config.mfaEnabled) {
             resolve({ username: userData.Username, result } as any);
           }
         },
         onFailure: (error) => {
-          console.log('onFailure', error)
           console.error({
             msg: `failed to authenticate user ${name}`,
             error
@@ -83,8 +84,13 @@ export class AuthService implements OnModuleInit {
           reject(error);
         },
         mfaRequired: (d) => {
-          console.log('mfaRequired', d)
-          validateMfa(userData, newUser);
+          if(this.config.mfaEnabled) {
+            if (!validateMfa) {
+              throw new InternalServerErrorException(`${AuthService.name}.${AuthService.prototype.authenticateUser.name} missing mfa callback. If this was intentional, disable mfa via ${AuthConfig.name}.`);
+            } else {
+              validateMfa(userData, newUser);
+            }
+          }
           resolve({ username: userData.Username });
         },
       });
