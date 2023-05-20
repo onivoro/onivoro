@@ -1,4 +1,4 @@
-export * from './lib/api-common.module';
+export * from './lib/server-common.module';
 
 export * from './lib/constants/version-provider-token.constant';
 

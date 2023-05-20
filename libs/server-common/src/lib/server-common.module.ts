@@ -22,4 +22,4 @@ import { moduleFactory } from './functions/module-factory.function';
     ],
   })
 )
-export class ApiCommonModule {}
+export class ServerCommonModule {}
