@@ -16,6 +16,7 @@
     "server-parameterization": "libs/server-parameterization",
     "server-process": "libs/server-process",
     "server-typeorm-postgres": "libs/server-typeorm-postgres",
+    "server-yt-dl": "libs/server-yt-dl",
     "ui-onivoro": "apps/ui-onivoro"
   }
 }

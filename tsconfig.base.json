@@ -37,6 +37,9 @@
       "@onivoro/server-process": ["libs/server-process/src/index.ts"],
       "@onivoro/server-typeorm-postgres": [
         "libs/server-typeorm-postgres/src/index.ts"
+      ],
+      "@onivoro/server-yt-dl": [
+        "libs/server-yt-dl/src/index.ts"
       ]
     }
   },

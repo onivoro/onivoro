@@ -16,12 +16,12 @@
   },
   "private": true,
   "dependencies": {
-    "@angular/fire": "^7.4.0",
     "@angular/animations": "~14.2.0",
     "@angular/cdk": "~14.2.2",
     "@angular/common": "~14.2.0",
     "@angular/compiler": "~14.2.0",
     "@angular/core": "~14.2.0",
+    "@angular/fire": "^7.4.0",
     "@angular/forms": "~14.2.0",
     "@angular/material": "~14.2.4",
     "@angular/platform-browser": "~14.2.0",
@@ -79,6 +79,7 @@
     "typeorm-naming-strategies": "~4.1.0",
     "uuid": "~8.3.2",
     "yesql": "~5.0.0",
+    "ytdl-core": "^4.11.4",
     "zone.js": "~0.11.4"
   },
   "devDependencies": {
