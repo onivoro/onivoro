@@ -1,6 +1,6 @@
 import * as Axios from 'axios';
 
-import * as jwkToPem from 'jwk-to-pem';
+import jwkToPem from 'jwk-to-pem';
 import { IMapOfKidToPublicKey, PublicKeys } from '../interfaces/auth.interface';
 
 export const getPublicKeys = async (
