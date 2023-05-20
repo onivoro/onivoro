@@ -1,0 +1,34 @@
+{
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "libs/server-aws-dynamo/src",
+  "projectType": "library",
+  "targets": {
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["libs/server-aws-dynamo/**/*.ts"]
+      }
+    },
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/libs/server-aws-dynamo"],
+      "options": {
+        "jestConfig": "libs/server-aws-dynamo/jest.config.ts",
+        "passWithNoTests": true
+      }
+    },
+    "build": {
+      "executor": "@nrwl/js:tsc",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "outputPath": "dist/libs/server-aws-dynamo",
+        "tsConfig": "libs/server-aws-dynamo/tsconfig.lib.json",
+        "packageJson": "libs/server-aws-dynamo/package.json",
+        "main": "libs/server-aws-dynamo/src/index.ts",
+        "assets": ["libs/server-aws-dynamo/*.md"]
+      }
+    }
+  },
+  "tags": []
+}
