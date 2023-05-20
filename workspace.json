@@ -6,6 +6,7 @@
     "angular-serializable-forms": "libs/angular-serializable-forms",
     "angular-styles": "libs/angular-styles",
     "isomorphic-common": "libs/isomorphic-common",
+    "server-auth": "libs/server-auth",
     "server-build": "libs/server-build",
     "server-common": "libs/server-common",
     "server-disk": "libs/server-disk",

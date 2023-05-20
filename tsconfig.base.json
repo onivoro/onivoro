@@ -21,6 +21,7 @@
       ],
       "@onivoro/angular-styles": ["libs/angular-styles/src/index.ts"],
       "@onivoro/isomorphic-common": ["libs/isomorphic-common/src/index.ts"],
+      "@onivoro/server-auth": ["libs/server-auth/src/index.ts"],
       "@onivoro/server-build": ["libs/server-build/src/index.ts"],
       "@onivoro/server-common": ["libs/server-common/src/index.ts"],
       "@onivoro/server-disk": ["libs/server-disk/src/index.ts"],
