@@ -1,5 +1,3 @@
-export * from './lib/auth.module';
-
 export * from './lib/classes/auth-config.class';
 
 export * from './lib/constants/access-token-key.constant';
@@ -28,4 +26,8 @@ export * from './lib/interfaces/identity-token.interface';
 
 export * from './lib/middleware/auth.middleware';
 
+export * from './lib/services/admin-cognito.service';
 export * from './lib/services/auth.service';
+
+export * from './lib/auth.module';
+export * from './lib/server-aws-cognito.module';
