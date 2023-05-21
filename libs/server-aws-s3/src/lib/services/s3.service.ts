@@ -13,7 +13,7 @@ export type TS3Params = {
 export class S3Service {
   constructor(private config: ServerAwsS3Config, private s3: S3) { }
 
-  async upload(params: TS3Params & { Body: PassThrough }): Promise<IS3UploadResponse> {
+  async upload(params: TS3Params & { Body: S3.PutObjectRequest['Body'] }): Promise<IS3UploadResponse> {
     // todo: sanitize filename here before uploading
     return await this.s3.upload(this.addDefaultBucket(params)).promise();
   }
@@ -27,7 +27,9 @@ export class S3Service {
       throw new BadRequestException(`${S3Service.name}.${S3Service.prototype.getFile.name} requires a valid S3 key`)
     }
 
-    return await this.s3.getObject(this.addDefaultBucket(params)).promise();
+    const response = await this.s3.getObject(this.addDefaultBucket(params)).promise();
+
+    return response;
   }
 
   async getDownloadUrl(params: TS3Params & {fileName?: string | null | undefined}) {
