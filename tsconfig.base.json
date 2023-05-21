@@ -35,6 +35,7 @@
       "@onivoro/server-ffmpeg": ["libs/server-ffmpeg/src/index.ts"],
       "@onivoro/server-file": ["libs/server-file/src/index.ts"],
       "@onivoro/server-multer-s3": ["libs/server-multer-s3/src/index.ts"],
+      "@onivoro/server-open-ai": ["libs/server-open-ai/src/index.ts"],
       "@onivoro/server-parameterization": [
         "libs/server-parameterization/src/index.ts"
       ],

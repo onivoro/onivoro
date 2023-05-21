@@ -18,6 +18,7 @@
     "server-ffmpeg": "libs/server-ffmpeg",
     "server-file": "libs/server-file",
     "server-multer-s3": "libs/server-multer-s3",
+    "server-open-ai": "libs/server-open-ai",
     "server-parameterization": "libs/server-parameterization",
     "server-process": "libs/server-process",
     "server-stripe": "libs/server-stripe",
