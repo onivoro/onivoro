@@ -27,9 +27,7 @@ export class S3Service {
       throw new BadRequestException(`${S3Service.name}.${S3Service.prototype.getFile.name} requires a valid S3 key`)
     }
 
-    const response = await this.s3.getObject(this.addDefaultBucket(params)).promise();
-
-    return response.Body;
+    return await this.s3.getObject(this.addDefaultBucket(params)).promise();
   }
 
   async getDownloadUrl(params: TS3Params & {fileName?: string | null | undefined}) {
