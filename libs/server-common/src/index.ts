@@ -5,6 +5,7 @@ export * from './lib/constants/version-provider-token.constant';
 export * from './lib/dtos/body.dto';
 export * from './lib/dtos/health.dto';
 export * from './lib/dtos/success.dto';
+export * from './lib/dtos/string-array.dto';
 export * from './lib/dtos/url.dto';
 export * from './lib/dtos/user-id.dto';
 export * from './lib/dtos/value.dto';
