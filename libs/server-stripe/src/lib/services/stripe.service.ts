@@ -24,6 +24,10 @@ export class StripeService {
     return await this.stripe.checkout.sessions.create(params);
   }
 
+  async listCheckoutSessions (sessionId: string) {
+    return await this.stripe.checkout.sessions.retrieve(sessionId);
+  }
+
   constructor(
     public stripe: Stripe,
   ) {}
