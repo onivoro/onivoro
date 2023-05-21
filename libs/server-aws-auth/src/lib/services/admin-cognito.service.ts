@@ -3,6 +3,7 @@ import { CognitoIdentityServiceProvider } from 'aws-sdk';
 
 import { UsersListType } from 'aws-sdk/clients/cognitoidentityserviceprovider';
 import { AuthConfig } from '../classes/auth-config.class';
+import { convertObjectToAttributeList } from '../functions/convert-object-to-attribute-list.function';
 
 @Injectable()
 export class AdminCognitoService {
@@ -52,59 +53,15 @@ export class AdminCognitoService {
     } catch (e) {}
   }
 
-  async createAdminUserFromInvitation({
-    email,
-    phone,
-    password,
-  }: {
-    email: string;
-    phone: string;
-    password: string;
-  }) {
-    return await this.adminCreateUser(email, phone, password);
-  }
+  async adminCreateUser(usernameOverride: string, password: string, attributes: Record<string, string | number | null | undefined>) {
 
-  async adminCreateUser(email: string, phone: string, password: string) {
-    const plusOne = '+1';
     const {AWS_COGNITO_USER_POOL_ID: UserPoolId} = this.config;
-    const mobile = `${plusOne}${phone.replace(/-/g, '')}`.replace(
-      `${plusOne}${plusOne}`,
-      plusOne
-    );
+
     const params: CognitoIdentityServiceProvider.AdminCreateUserRequest = {
       ForceAliasCreation: false,
       MessageAction: 'SUPPRESS',
-      UserAttributes: [
-        {
-          Name: 'email',
-          Value: email,
-        },
-        {
-          Name: 'email_verified',
-          Value: 'true',
-        },
-        {
-          Name: 'phone_number',
-          Value: mobile,
-        },
-        {
-          Name: 'phone_number_verified',
-          Value: 'true',
-        },
-        {
-          Name: 'given_name',
-          Value: '',
-        },
-        {
-          Name: 'family_name',
-          Value: '',
-        },
-        {
-          Name: 'address',
-          Value: '',
-        },
-      ],
-      Username: email,
+      UserAttributes: convertObjectToAttributeList(attributes),
+      Username: usernameOverride,
       UserPoolId,
     };
 

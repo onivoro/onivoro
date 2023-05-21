@@ -17,7 +17,10 @@ export * from './lib/dtos/email.dto';
 export * from './lib/dtos/password.dto';
 export * from './lib/dtos/phone-valid.dto';
 export * from './lib/dtos/phone.dto';
-;
+
+export * from './lib/functions/convert-object-to-attribute-list.function';
+export * from './lib/functions/convert-phone-to-plus-one.function';
+
 export * from './lib/guards/auth.guard';
 
 export * from './lib/interfaces/access-token.interface';
