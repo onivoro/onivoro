@@ -8,6 +8,7 @@ export * from './lib/dtos/success.dto';
 export * from './lib/dtos/url.dto';
 export * from './lib/dtos/user-id.dto';
 export * from './lib/dtos/value.dto';
+export * from './lib/dtos/values.dto';
 
 export * from './lib/functions/create-api-app.function';
 export * from './lib/functions/decode.function';
