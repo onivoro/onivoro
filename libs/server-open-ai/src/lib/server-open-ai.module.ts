@@ -9,14 +9,14 @@ import { OpenAiDataRepository } from "./classes/open-ai-data.repository";
 
 @Module({})
 export class ServerOpenAiModule {
-  static configure(config: ServerOpenAiConfig, providers: any[]) {
+  static configure(config: ServerOpenAiConfig) {
     const {apiKey} = config;
     return moduleFactory({
       module: ServerOpenAiModule,
       providers: [
         // OpenAiAnswerRepository,
         // OpenAiDataRepository,
-        ...providers,
+        // ...providers,
         OpenAiService,
         {
           provide: ServerOpenAiConfig,

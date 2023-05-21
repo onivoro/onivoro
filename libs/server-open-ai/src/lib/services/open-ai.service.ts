@@ -1,4 +1,4 @@
-import { Injectable } from '@nestjs/common';
+import { Inject, Injectable } from '@nestjs/common';
 import 'multer';
 import { v4 } from 'uuid';
 import { extractText } from '../functions/extract-text.function';
@@ -18,8 +18,8 @@ import { ServerOpenAiConfig } from '../classes/server-open-ai-config.class';
 @Injectable()
 export class OpenAiService {
   constructor(
-    public openAiDataRepo: OpenAiDataRepository,
-    public openAiAnswerRepo: OpenAiAnswerRepository,
+    @Inject(OpenAiDataRepository.name) public openAiDataRepo: OpenAiDataRepository,
+    @Inject(OpenAiAnswerRepository.name) public openAiAnswerRepo: OpenAiAnswerRepository,
     public config: ServerOpenAiConfig,
     public openai: OpenAIApi
   ) {
