@@ -5,6 +5,7 @@
     "angular-common": "libs/angular-common",
     "angular-serializable-forms": "libs/angular-serializable-forms",
     "angular-styles": "libs/angular-styles",
+    "api-onivoro": "apps/api-onivoro",
     "isomorphic-common": "libs/isomorphic-common",
     "server-aws-auth": "libs/server-aws-auth",
     "server-aws-dynamo": "libs/server-aws-dynamo",
