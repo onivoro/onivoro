@@ -4,11 +4,7 @@ import { TwilioService } from './services/twilio.service';
 import { ServerTwilioConfig } from './classes/server-twilio-config.class';
 import { Twilio } from 'twilio';
 
-@Module(
-  moduleFactory({
-    providers: [TwilioService],
-  })
-)
+@Module({})
 export class ServerTwilioModule {
   static configure(config: ServerTwilioConfig) {
     return moduleFactory({
