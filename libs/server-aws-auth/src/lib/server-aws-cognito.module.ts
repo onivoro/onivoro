@@ -10,7 +10,7 @@ export class ServerAwsCognitoModule {
     return moduleFactory({
       providers: [
         {
-          provide: AdminCognitoService, useFactory: new AdminCognitoService(
+          provide: AdminCognitoService, useFactory: () => new AdminCognitoService(
             config,
             new CognitoIdentityServiceProvider({
               apiVersion: apiVersion || '2016-04-18',

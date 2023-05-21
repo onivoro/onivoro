@@ -6,8 +6,7 @@ import { AuthConfig } from './classes/auth-config.class';
 import { AuthGuard } from './guards/auth.guard';
 import { AuthController } from './controllers/auth.controller';
 import { moduleFactory } from '@onivoro/server-common';
-import { AdminCognitoService } from './services/admin-cognito.service';
-import { CognitoIdentityServiceProvider } from 'aws-sdk';
+import { ServerAwsCognitoModule } from './server-aws-cognito.module';
 
 const providers = [AuthService, AuthMiddleware, AuthGuard];
 
@@ -20,19 +19,10 @@ export class AuthModule {
         ...providers,
         {
           provide: AuthConfig, useValue: config
-        },
-        {
-          provide: AdminCognitoService, useFactory: new AdminCognitoService(
-            config,
-            new CognitoIdentityServiceProvider({
-              apiVersion: apiVersion || '2016-04-18',
-              region: config.AWS_REGION,
-            })
-          )
         }
       ],
       controllers: [AuthController],
-      // imports: [ServerAwsCognitoModule.configure(config, apiVersion)]
+      imports: [ServerAwsCognitoModule.configure(config, apiVersion)]
     });
   }
 }
