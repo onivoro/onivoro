@@ -9,6 +9,7 @@
     "isomorphic-common": "libs/isomorphic-common",
     "server-aws-auth": "libs/server-aws-auth",
     "server-aws-dynamo": "libs/server-aws-dynamo",
+    "server-aws-lambda": "libs/server-aws-lambda",
     "server-aws-s3": "libs/server-aws-s3",
     "server-aws-ses": "libs/server-aws-ses",
     "server-build": "libs/server-build",
