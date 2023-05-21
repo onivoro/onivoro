@@ -6,13 +6,15 @@ import { AuthConfig } from './classes/auth-config.class';
 import { AuthGuard } from './guards/auth.guard';
 import { AuthController } from './controllers/auth.controller';
 import { moduleFactory } from '@onivoro/server-common';
+import { ServerAwsCognitoModule } from './server-aws-cognito.module';
 
 const providers = [AuthService, AuthMiddleware, AuthGuard];
 
 @Module({})
 export class AuthModule {
-  static configure(config: AuthConfig): DynamicModule {
+  static configure(config: AuthConfig, apiVersion?: string): DynamicModule {
     return moduleFactory({
+      module: AuthModule,
       providers: [
         ...providers,
         {
@@ -20,7 +22,7 @@ export class AuthModule {
         }
       ],
       controllers: [AuthController],
-      module: AuthModule,
+      imports: [ServerAwsCognitoModule.configure(config, apiVersion)]
     });
   }
 }
