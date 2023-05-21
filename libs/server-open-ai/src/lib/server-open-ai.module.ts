@@ -4,8 +4,6 @@ import { moduleFactory } from "@onivoro/server-common";
 import { Configuration, OpenAIApi } from "openai";
 import { ServerOpenAiConfig } from "./classes/server-open-ai-config.class";
 import { OpenAiService } from "./services/open-ai.service";
-import { OpenAiAnswerRepository } from "./classes/open-ai-answer.repository";
-import { OpenAiDataRepository } from "./classes/open-ai-data.repository";
 
 @Module({})
 export class ServerOpenAiModule {
@@ -14,9 +12,6 @@ export class ServerOpenAiModule {
     return moduleFactory({
       module: ServerOpenAiModule,
       providers: [
-        // OpenAiAnswerRepository,
-        // OpenAiDataRepository,
-        // ...providers,
         OpenAiService,
         {
           provide: ServerOpenAiConfig,
@@ -26,10 +21,6 @@ export class ServerOpenAiModule {
           provide: OpenAIApi,
           useFactory: () => new OpenAIApi(new Configuration({apiKey})),
         },
-        // {
-        //   provide: OpenAiService,
-        //   useFactory: () => new OpenAiService(new OpenAIApi(new Configuration({apiKey})), )
-        // }
       ],
       imports: [],
     });

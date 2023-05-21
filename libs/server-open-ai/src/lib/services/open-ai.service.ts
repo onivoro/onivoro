@@ -17,9 +17,10 @@ import { ServerOpenAiConfig } from '../classes/server-open-ai-config.class';
 
 @Injectable()
 export class OpenAiService {
+  openAiDataRepo: OpenAiDataRepository;
+  openAiAnswerRepo: OpenAiAnswerRepository;
+
   constructor(
-    @Inject(OpenAiDataRepository.name.toUpperCase()) public openAiDataRepo: OpenAiDataRepository,
-    @Inject(OpenAiAnswerRepository.name.toUpperCase()) public openAiAnswerRepo: OpenAiAnswerRepository,
     public config: ServerOpenAiConfig,
     public openai: OpenAIApi
   ) {
