@@ -1,15 +1,12 @@
-import { Inject, Injectable } from '@nestjs/common';
+import { Injectable } from '@nestjs/common';
 import 'multer';
 import { v4 } from 'uuid';
 import { extractText } from '../functions/extract-text.function';
 import { CreateChatCompletionResponse, OpenAIApi } from 'openai';
 import { encoding_for_model, TiktokenModel } from '@dqbd/tiktoken';
-import { ValueDto } from '@onivoro/server-common';
 import { createWriteStream } from 'node:fs';
 const similarity = require('compute-cosine-similarity');
 import { execPromise } from '@onivoro/server-process';
-import { OpenAiDataRepository } from '../classes/open-ai-data.repository';
-import { OpenAiAnswerRepository } from '../classes/open-ai-answer.repository';
 import { OpenAiAnswer } from '../classes/open-ai-answer.class';
 import { OpenAiData } from '../classes/open-ai-data.class';
 import { AxiosResponse } from 'axios';
@@ -17,29 +14,10 @@ import { ServerOpenAiConfig } from '../classes/server-open-ai-config.class';
 
 @Injectable()
 export class OpenAiService {
-  openAiDataRepo: OpenAiDataRepository;
-  openAiAnswerRepo: OpenAiAnswerRepository;
-
   constructor(
     public config: ServerOpenAiConfig,
     public openai: OpenAIApi
   ) {
-  }
-
-  async delete(id: string) {
-    return await this.openAiDataRepo.delete({ id });
-  }
-
-  async index() {
-    return await this.openAiDataRepo.getMany({
-      order: { text: 'ASC' },
-    });
-  }
-
-  async get(id: string) {
-    return await this.openAiDataRepo.getOne({
-      where: { id },
-    });
   }
 
   async post(file: Express.Multer.File) {
@@ -47,8 +25,7 @@ export class OpenAiService {
     try {
       await this.writeBufferToDisk(file.originalname, file);
       const data: string[] = await this.processFile(file.originalname);
-      const dbData = await this.genEmbeddings(data);
-      records = await this.openAiDataRepo.postMany(dbData);
+      records = await this.genEmbeddings(data);
       await this.deleteFile(file.originalname);
     } catch (error: any) {
       console.error(error);
@@ -56,10 +33,9 @@ export class OpenAiService {
     return records;
   }
 
-  async ask(question: ValueDto): Promise<OpenAiAnswer[]> {
+  async ask(question: string, records: OpenAiData[]): Promise<OpenAiAnswer[]> {
     const introduction = this.config.introduction;
-    const records = await this.openAiDataRepo.getMany({});
-    const questionEmbeddingData = await this.genEmbeddings([question.value]);
+    const questionEmbeddingData = await this.genEmbeddings([question]);
     const questionEmbedding = questionEmbeddingData[0]['embedding'];
     const recordEmbeddings = [];
     records.forEach((rec) => {
@@ -73,7 +49,7 @@ export class OpenAiService {
     for (let x = 0; x < 4; x++) {
       message += recordEmbeddings[x].text + '\n';
     }
-    message += question.value;
+    message += question;
     const messages = [
       {
         role: 'system' as any,
@@ -98,15 +74,15 @@ export class OpenAiService {
         console.log(error.message);
       }
     }
-    const resp: OpenAiAnswer[] = [
+    const answers: OpenAiAnswer[] = [
       {
         id: v4(),
-        question: question.value,
+        question: question,
         answer: response['data']['choices'][0]['message']['content'],
       },
     ];
 
-    return await this.openAiAnswerRepo.postMany(resp);
+    return answers;
   }
 
   private async genEmbeddings(fileData: string[]): Promise<OpenAiData[]> {

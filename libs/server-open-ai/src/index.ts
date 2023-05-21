@@ -1,7 +1,5 @@
 export * from './lib/classes/open-ai-answer.class';
-export * from './lib/classes/open-ai-answer.repository';
 export * from './lib/classes/open-ai-data.class';
-export * from './lib/classes/open-ai-data.repository';
 export * from './lib/classes/server-open-ai-config.class';
 
 export * from './lib/functions/extract-text.function';
