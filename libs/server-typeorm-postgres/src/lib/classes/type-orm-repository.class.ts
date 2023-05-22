@@ -48,7 +48,9 @@ export class TypeOrmRepository<TEntity> implements IEntityProvider<
   }
 
   async put(options: FindOptionsWhere<TEntity>, body: QueryDeepPartialEntity<TEntity>) {
-    await this.repo.save(options, body);
+    // await this.repo.save(options, body); <= this doesn't do what i expected,
+    // so just call patch instead
+    await this.patch(options, body);
   }
 
   async patch(options: FindOptionsWhere<TEntity>, body: QueryDeepPartialEntity<TEntity>) {
