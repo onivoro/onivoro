@@ -13,6 +13,9 @@ export * from './lib/decorators/table.decorator';
 export * from './lib/functions/data-source-config-factory.function';
 export * from './lib/functions/data-source-factory.function';
 export * from './lib/functions/get-api-type-from-column.function';
+export * from './lib/functions/get-paging-key.function';
+export * from './lib/functions/get-skip.function';
+export * from './lib/functions/remove-falsey-keys.function';
 
 export * from './lib/types/data-source-options.interface';
 export * from './lib/types/entity-provider.interface';
