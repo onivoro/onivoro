@@ -3,7 +3,9 @@
   "compilerOptions": {
     "outDir": "../../dist/out-tsc",
     "module": "commonjs",
-    "types": ["jest", "node"]
+    "types": ["jest", "node"],
+    "target": "ES2021",
+    "lib": ["ES2021"]
   },
   "include": [
     "jest.config.ts",

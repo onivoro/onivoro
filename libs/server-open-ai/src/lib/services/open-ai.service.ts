@@ -11,6 +11,7 @@ import { OpenAiAnswer } from '../classes/open-ai-answer.class';
 import { OpenAiData } from '../classes/open-ai-data.class';
 import { AxiosResponse } from 'axios';
 import { ServerOpenAiConfig } from '../classes/server-open-ai-config.class';
+import { tokenizeText } from '../functions/tokenize-text.function';
 
 @Injectable()
 export class OpenAiService {
@@ -22,9 +23,14 @@ export class OpenAiService {
 
   async post(file: Express.Multer.File) {
     let records: OpenAiData[] = [];
+    // sanitize file name here first (or let S3 service do it)
     try {
       await this.writeBufferToDisk(file.originalname, file);
-      const data: string[] = await this.processFile(file.originalname);
+      const contents = await extractText(file.originalname);
+      const data: string[] = tokenizeText(contents, this.config.GPT_MODEL);
+      if(!data?.length) {
+        return [];
+      }
       records = await this.genEmbeddings(data);
       await this.deleteFile(file.originalname);
     } catch (error: any) {
@@ -99,59 +105,6 @@ export class OpenAiService {
       };
     }
     return records;
-  }
-
-  private async processFile(originalname: string): Promise<string[]> {
-    const max_tokens = 1000;
-    const contents = await extractText(originalname);
-    const extractDataRegEx = /{{([\s\S]*?)}}/;
-    const dataArray = contents
-      .split(extractDataRegEx)
-      .map((i) => {
-        return i.replaceAll(/^\s+|\s+$/g, '');
-      })
-      .filter(Boolean)
-      .map((i) => {
-        return i.replaceAll(/(\r\n|\n|\r)/gm, '');
-      });
-    const titles = dataArray
-      .filter((el, ind) => ind % 2 === 0)
-      .map((i) => {
-        return i.replaceAll(/(\r\n|\n|\r)/gm, '');
-      });
-    const filteredDataArray = dataArray.filter((el, ind) => ind % 2 !== 0);
-    const enc = encoding_for_model(this.config.GPT_MODEL as TiktokenModel);
-    let arrayOfSingleSentences = [];
-    titles.forEach((text, i) => {
-      const mainText = filteredDataArray[i];
-      const tempArray = mainText.split(/(?!. )/g);
-      let placeholder = '';
-      tempArray.forEach((txt, i) => {
-        if (placeholder) {
-          placeholder += `${txt}`;
-        } else {
-          placeholder = `${text}: ${txt}`;
-        }
-        const tokenCount = enc.encode(placeholder);
-        if (
-          tokenCount.length > max_tokens * 0.75 ||
-          tempArray.length === i + 1
-        ) {
-          arrayOfSingleSentences.push(placeholder);
-          placeholder = '';
-        }
-      });
-    });
-    enc.free();
-
-    arrayOfSingleSentences = arrayOfSingleSentences.map((text) => {
-      return text?.replaceAll('\u0000', '');
-    });
-    console.log(arrayOfSingleSentences);
-    return arrayOfSingleSentences
-      .map((_) => _.trim())
-      .filter(Boolean)
-      .filter((sent) => sent.length > 16);
   }
 
   private async deleteFile(path: string) {
