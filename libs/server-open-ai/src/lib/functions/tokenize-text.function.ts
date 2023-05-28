@@ -22,12 +22,13 @@ export function tokenizeText(contents: string, GPT_MODEL: string): string[] {
         .map((i) => {
             return i.replaceAll(/(\r\n|\n|\r)/gm, '');
         });
-    const filteredDataArray = dataArray.filter((el, ind) => ind % 2 !== 0);
+    const filteredDataArray = dataArray; //.filter((el, ind) => ind % 2 !== 0);
+    // const filteredDataArray = dataArray.filter((el, ind) => ind % 2 !== 0);
     const enc = encoding_for_model(GPT_MODEL as TiktokenModel);
     let arrayOfSingleSentences = [];
     titles.forEach((text, i) => {
         const mainText = filteredDataArray[i];
-        const tempArray = mainText.split(/(?!. )/g);
+        const tempArray = mainText.split(/\s/g);
         let placeholder = '';
         tempArray.forEach((txt, i) => {
             if (placeholder) {
