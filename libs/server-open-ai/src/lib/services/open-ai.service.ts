@@ -39,6 +39,69 @@ export class OpenAiService {
     return records;
   }
 
+  async postV2(file: Express.Multer.File, persister: (data: OpenAiData[]) => Promise<void>) {
+    try {
+      await this.writeBufferToDisk(file.originalname, file);
+
+      const contents = await extractText(file.originalname);
+
+      await this.tokenizeTextAndPersistAsEmbedding(contents, persister);
+
+      await this.deleteFile(file.originalname);
+    } catch (error: any) {
+      console.error(error);
+    }
+  }
+
+  async tokenizeTextAndPersistAsEmbedding(rawContents: string, persister: (data: OpenAiData[]) => Promise<void>): Promise<string[]> {
+    if (!rawContents) {
+        return [];
+    }
+
+    const sentences = rawContents
+      .replaceAll(/^\s+|\s+$/g, '')
+      .replaceAll('\u0000', '')
+      .replaceAll(/(\r\n|\n|\r)/gm, '')
+      .split(this.config.sentenceDeliminator);
+
+    const lengthNormalizedSentences = this.normalizeLength(sentences);
+
+    for await (const sentence of lengthNormalizedSentences) {
+      const records = await this.genEmbeddings([sentence]);
+      await persister(records);
+    }
+  }
+
+  normalizeLength(sentences: string[]) {
+
+    const enc = encoding_for_model(this.config.GPT_MODEL as TiktokenModel);
+
+    let i = 0;
+    let placeholder = '';
+    const normalizedLengthGroups = [];
+
+    while (i < sentences.length) {
+      const sentence = sentences[i];
+      const newPlaceholder = placeholder ? `${placeholder}. ${sentence}` : sentence;
+      const tokenCount = enc.encode(newPlaceholder);
+
+      if (
+          tokenCount.length > this.config.max_tokens * 0.75
+      ) {
+          normalizedLengthGroups.push(placeholder);
+          placeholder = '';
+      } else {
+        placeholder = newPlaceholder;
+      }
+
+      i++;
+    }
+
+    enc.free();
+
+    return normalizedLengthGroups;
+  }
+
   async ask(question: string, records: OpenAiData[]): Promise<OpenAiAnswer[]> {
     const introduction = this.config.introduction;
     const questionEmbeddingData = await this.genEmbeddings([question]);
@@ -91,20 +154,20 @@ export class OpenAiService {
     return answers;
   }
 
-  private async genEmbeddings(fileData: string[]): Promise<OpenAiData[]> {
+  private async genEmbeddings(input: string[]): Promise<OpenAiData[]> {
     const response = await this.openai.createEmbedding({
       model: this.config.EMBEDDING_MODEL,
-      input: fileData,
+      input,
     });
-    const records: OpenAiData[] = [];
-    for (let i = 0; i < fileData.length; i++) {
-      records[i] = {
-        id: v4(),
-        text: fileData[i],
-        embedding: response?.data?.data[i]?.embedding || [1, 1, 1],
-      };
-    }
-    return records;
+
+    return (response?.data?.data || [])
+      .map(
+        ({ embedding, index }) => ({
+          id: v4(),
+          text: input[index],
+          embedding,
+        })
+      );
   }
 
   private async deleteFile(path: string) {
