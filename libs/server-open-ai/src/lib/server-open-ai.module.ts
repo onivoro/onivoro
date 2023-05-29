@@ -1,5 +1,4 @@
 import { Module } from "@nestjs/common";
-// import { ServerAwsS3Module } from "@onivoro/server-aws-s3";
 import { moduleFactory } from "@onivoro/server-common";
 import { Configuration, OpenAIApi } from "openai";
 import { ServerOpenAiConfig } from "./classes/server-open-ai-config.class";

@@ -2,7 +2,7 @@ import { Injectable } from '@nestjs/common';
 import 'multer';
 import { v4 } from 'uuid';
 import { extractText } from '../functions/extract-text.function';
-import { CreateChatCompletionResponse, OpenAIApi } from 'openai';
+import { CreateChatCompletionResponse, CreateEmbeddingResponseDataInner, OpenAIApi } from 'openai';
 import { encoding_for_model, TiktokenModel } from '@dqbd/tiktoken';
 import { createWriteStream } from 'node:fs';
 const similarity = require('compute-cosine-similarity');
@@ -11,7 +11,6 @@ import { OpenAiAnswer } from '../classes/open-ai-answer.class';
 import { OpenAiData } from '../classes/open-ai-data.class';
 import { AxiosResponse } from 'axios';
 import { ServerOpenAiConfig } from '../classes/server-open-ai-config.class';
-import { tokenizeText } from '../functions/tokenize-text.function';
 
 @Injectable()
 export class OpenAiService {
@@ -21,25 +20,7 @@ export class OpenAiService {
   ) {
   }
 
-  async post(file: Express.Multer.File) {
-    let records: OpenAiData[] = [];
-    // sanitize file name here first (or let S3 service do it)
-    try {
-      await this.writeBufferToDisk(file.originalname, file);
-      const contents = await extractText(file.originalname);
-      const data: string[] = tokenizeText(contents, this.config.GPT_MODEL);
-      if(!data?.length) {
-        return [];
-      }
-      records = await this.genEmbeddings(data);
-      await this.deleteFile(file.originalname);
-    } catch (error: any) {
-      console.error(error);
-    }
-    return records;
-  }
-
-  async postV2(file: Express.Multer.File, persister: (data: OpenAiData[]) => Promise<void>) {
+  async post(file: Express.Multer.File, persister: (data: OpenAiData[]) => Promise<void>) {
     try {
       await this.writeBufferToDisk(file.originalname, file);
 
@@ -55,7 +36,7 @@ export class OpenAiService {
 
   async tokenizeTextAndPersistAsEmbedding(rawContents: string, persister: (data: OpenAiData[]) => Promise<void>): Promise<string[]> {
     if (!rawContents) {
-        return [];
+      return [];
     }
 
     const sentences = rawContents
@@ -63,43 +44,27 @@ export class OpenAiService {
       .replaceAll('\u0000', '')
       .replaceAll(/(\r\n|\n|\r)/gm, '')
       .split(this.config.sentenceDeliminator);
+    // todo: add configurable hook here to sanitize contents
 
     const lengthNormalizedSentences = this.normalizeLength(sentences);
 
     for await (const sentence of lengthNormalizedSentences) {
-      const records = await this.genEmbeddings([sentence]);
-      await persister(records);
-    }
-  }
+      let errorEncountered = false;
+      let records: OpenAiData[];
 
-  normalizeLength(sentences: string[]) {
-
-    const enc = encoding_for_model(this.config.GPT_MODEL as TiktokenModel);
-
-    let i = 0;
-    let placeholder = '';
-    const normalizedLengthGroups = [];
-
-    while (i < sentences.length) {
-      const sentence = sentences[i];
-      const newPlaceholder = placeholder ? `${placeholder}. ${sentence}` : sentence;
-      const tokenCount = enc.encode(newPlaceholder);
-
-      if (
-          tokenCount.length > this.config.max_tokens * 0.75
-      ) {
-          normalizedLengthGroups.push(placeholder);
-          placeholder = '';
-      } else {
-        placeholder = newPlaceholder;
+      // todo: make this code more concise and readable
+      try {
+        records = errorEncountered
+          ? [this.embeddingToDataModel(sentence)]
+          : await this.genEmbeddings([sentence]);
+      } catch (error) {
+        errorEncountered = true;
+        console.error(error);
+        records = [this.embeddingToDataModel(sentence)];
       }
 
-      i++;
+      await persister(records);
     }
-
-    enc.free();
-
-    return normalizedLengthGroups;
   }
 
   async ask(question: string, records: OpenAiData[]): Promise<OpenAiAnswer[]> {
@@ -154,23 +119,63 @@ export class OpenAiService {
     return answers;
   }
 
-  private async genEmbeddings(input: string[]): Promise<OpenAiData[]> {
+  async genEmbeddings(input: string[]): Promise<OpenAiData[]> {
     const response = await this.openai.createEmbedding({
       model: this.config.EMBEDDING_MODEL,
       input,
     });
 
     return (response?.data?.data || [])
-      .map(
-        ({ embedding, index }) => ({
-          id: v4(),
-          text: input[index],
-          embedding,
-        })
-      );
+      .map((embedding, index) => this.embeddingToDataModel(input[index], embedding));
+  }
+
+  private normalizeLength(sentences: string[]) {
+
+    const enc = encoding_for_model(this.config.GPT_MODEL as TiktokenModel);
+    const normalizedLengthGroups = [];
+
+    let i = 0;
+    let aggregatedText = '';
+    let tokenTotal = 0;
+
+    while (i < sentences.length) {
+      const sentence = sentences[i];
+      const newAggregatedText = aggregatedText ? `${aggregatedText}. ${sentence}` : sentence;
+      const tokenCount = enc.encode(newAggregatedText);
+
+      if (
+        tokenCount.length > this.config.maxTokensPerTextChunk * this.config.tokenRatio
+      ) {
+        tokenTotal += enc.encode(aggregatedText).length;
+        normalizedLengthGroups.push(aggregatedText);
+        aggregatedText = '';
+      } else {
+        aggregatedText = newAggregatedText;
+      }
+
+      i++;
+    }
+
+    enc.free();
+
+    // todo: add the aggregated token count to the individual records instead of logging it out here
+    console.log(normalizedLengthGroups.length, tokenTotal);
+
+    return normalizedLengthGroups;
+  }
+
+  private embeddingToDataModel(text: string, embeddingResponse?: CreateEmbeddingResponseDataInner) {
+    const { embedding } = embeddingResponse || { embedding: [] };
+
+    return {
+      id: v4(),
+      text,
+      embedding,
+    };
   }
 
   private async deleteFile(path: string) {
+    // todo: use node:fs instead of shell
     await execPromise(`rm -rf "${path}"`);
   }
 

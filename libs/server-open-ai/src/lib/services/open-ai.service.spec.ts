@@ -7,10 +7,7 @@ import { OpenAiService } from './open-ai.service';
 import { extractText } from '../functions/extract-text.function';
 
 describe(OpenAiService.name, () => {
-  const setup = (
-    // configOverride?: Partial<ServerOpenAiConfig>,
-    // openaiOverride?: Partial<OpenAIApi>
-  ) => {
+  const setup = () => {
 
     const apiKey = process.env['OPENAPI_KEY'];
     const config = new ServerOpenAiConfig(apiKey);
@@ -21,25 +18,16 @@ describe(OpenAiService.name, () => {
     return { config, openai, subject }
   };
 
-  describe(OpenAiService.prototype.postV2.name, () => {
-    it('worx', async () => {
+  describe(OpenAiService.prototype.post.name, () => {
+    it('tokenizes text and calls OpenAi to generate embeddings before passing the embedding and text to the persister', async () => {
       const { subject } = setup();
-      const contents = await extractText(join(process.cwd(), 'libs/server-open-ai/src/lib/functions/lee_has_superhuman_will_power.pdf'));
-      const writeStream = createWriteStream('libs/server-open-ai/src/lib/functions/lee_has_superhuman_will_power.json');
-      writeStream.write(`[\n`);
+      const contents = await extractText(join(process.cwd(), 'libs/server-open-ai/src/lib/assets/instant-pot-manual.pdf'));
 
-      const persister = jest.fn().mockImplementation(input => new Promise(res => {
-        writeStream.write(`${JSON.stringify(input[0])},`);
-        setTimeout(() => res, 1000);
-        })
-      );
+      const persister = jest.fn().mockResolvedValue('jest requires an argument here :(');
 
       await subject.tokenizeTextAndPersistAsEmbedding(contents, persister);
 
-      writeStream.write(`\n]`);
-      writeStream.close();
-
-      expect(persister.mock.calls.length).toMatchSnapshot();
-    }, 600_000);
+      expect(persister.mock.calls).toMatchSnapshot();
+    }, 60_000);
   });
 });

@@ -5,11 +5,8 @@ export class ServerOpenAiConfig {
         public EMBEDDING_MODEL = 'text-embedding-ada-002',
         public GPT_MODEL = 'gpt-3.5-turbo',
         public introduction = 'Use the information available to answer the subsequent question. If the answer cannot be found in the articles, write "I could not find an answer."',
-        public max_tokens = 1000,
-        public sentenceDeliminator = '. '
+        public maxTokensPerTextChunk = 1000,
+        public sentenceDeliminator = '. ',
+        public tokenRatio = 0.75,
     ) {}
-
-    static fromApiKey(apiKey: string): ServerOpenAiConfig {
-        return new ServerOpenAiConfig(apiKey);
-    }
 }
