@@ -26,8 +26,6 @@ export class OpenAiService {
 
       const contents = await extractText(file.originalname);
 
-      console.log({contents});
-
       await this.tokenizeTextAndPersistAsEmbedding(contents, persister);
 
       await this.deleteFile(file.originalname);
@@ -100,14 +98,12 @@ export class OpenAiService {
         messages,
         temperature: 0,
       });
-      console.log(response);
-      console.log(response['data']['choices']);
     } catch (error) {
       if (error.response) {
-        console.log(error.response.status);
-        console.log(error.response.data);
+        console.error(error.response.status);
+        console.error(error.response.data);
       } else {
-        console.log(error.message);
+        console.error(error.message);
       }
     }
     const answers: OpenAiAnswer[] = [
@@ -139,14 +135,16 @@ export class OpenAiService {
     let i = 0;
     let aggregatedText = '';
     let tokenTotal = 0;
+    const sentenceCount = sentences.length;
 
-    while (i < sentences.length) {
+    while (i < sentenceCount) {
       const sentence = sentences[i];
       const newAggregatedText = aggregatedText ? `${aggregatedText}. ${sentence}` : sentence;
       const tokenCount = enc.encode(newAggregatedText);
-
+      const isOverLimit = tokenCount.length > this.config.maxTokensPerTextChunk * this.config.tokenRatio;
+      const isLast = i === (sentenceCount - 1);
       if (
-        tokenCount.length > this.config.maxTokensPerTextChunk * this.config.tokenRatio
+        isOverLimit || isLast
       ) {
         tokenTotal += enc.encode(aggregatedText).length;
         normalizedLengthGroups.push(aggregatedText);
