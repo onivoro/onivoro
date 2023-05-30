@@ -26,6 +26,8 @@ export class OpenAiService {
 
       const contents = await extractText(file.originalname);
 
+      console.log({contents});
+
       await this.tokenizeTextAndPersistAsEmbedding(contents, persister);
 
       await this.deleteFile(file.originalname);
@@ -40,7 +42,7 @@ export class OpenAiService {
     }
 
     const sentences = rawContents
-      .replaceAll(/^\s+|\s+$/g, '')
+      .replaceAll(/\s{2,}/g, '')
       .replaceAll('\u0000', '')
       .replaceAll(/(\r\n|\n|\r)/gm, '')
       .split(this.config.sentenceDeliminator);
