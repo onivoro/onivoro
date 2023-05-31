@@ -67,21 +67,23 @@ export class OpenAiService {
     }
   }
 
-  async ask(question: string, records: OpenAiData[]): Promise<OpenAiAnswer[]> {
+  async ask(question: string, records: OpenAiData[]): Promise<OpenAiAnswer> {
     const introduction = this.config.introduction;
     const questionEmbeddingData = await this.genEmbeddings([question]);
     const questionEmbedding = questionEmbeddingData[0]['embedding'];
-    const recordEmbeddings = [];
-    records.forEach((rec) => {
-      recordEmbeddings.push({
-        similarity: similarity(rec.embedding, questionEmbedding),
-        text: rec.text,
-      });
-    });
+    const recordEmbeddings = records.map((input) => ({
+      similarity: similarity(input.embedding, questionEmbedding),
+      text: input.text,
+      input
+    }));
     recordEmbeddings.sort((a, b) => b.similarity - a.similarity);
     let message = introduction;
-    for (let x = 0; x < 4; x++) {
-      message += recordEmbeddings[x].text + '\n';
+    const iterations = Math.min(this.config.maxQuestionInput, recordEmbeddings.length);
+    const relevantInput = [];
+    for (let x = 1; x <= iterations; x++) {
+      const recordEmbedding = recordEmbeddings[x - 1];
+      message += recordEmbedding.text + '\n';
+      relevantInput.push(recordEmbedding.input);
     }
     message += question;
     const messages = [
@@ -96,7 +98,7 @@ export class OpenAiService {
       response = await this.openai.createChatCompletion({
         model: this.config.GPT_MODEL,
         messages,
-        temperature: 0,
+        temperature: this.config.temperature,
       });
     } catch (error) {
       if (error.response) {
@@ -106,15 +108,14 @@ export class OpenAiService {
         console.error(error.message);
       }
     }
-    const answers: OpenAiAnswer[] = [
-      {
+    const answer: OpenAiAnswer = {
         id: v4(),
         question: question,
         answer: response['data']['choices'][0]['message']['content'],
-      },
-    ];
+        relevantInput
+      };
 
-    return answers;
+    return answer;
   }
 
   async genEmbeddings(input: string[]): Promise<OpenAiData[]> {
