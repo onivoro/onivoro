@@ -7,7 +7,7 @@ import { OpenAiService } from "./services/open-ai.service";
 @Module({})
 export class ServerOpenAiModule {
   static configure(config: ServerOpenAiConfig) {
-    const {apiKey} = config;
+    const {apiKey, organization} = config;
     return moduleFactory({
       module: ServerOpenAiModule,
       providers: [
@@ -18,7 +18,7 @@ export class ServerOpenAiModule {
         },
         {
           provide: OpenAIApi,
-          useFactory: () => new OpenAIApi(new Configuration({apiKey})),
+          useFactory: () => new OpenAIApi(new Configuration({apiKey, organization})),
         },
       ],
       imports: [],

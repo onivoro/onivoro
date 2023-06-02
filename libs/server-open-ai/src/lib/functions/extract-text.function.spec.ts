@@ -11,8 +11,11 @@ describe('extractText', () => {
   });
 
   describe('parsing non-pdf files', () => {
-    it('extracts the text (duh)', async () => {
-      const contents = await extractText(join(process.cwd(), 'libs/server-open-ai/src/lib/assets/instant-pot-manual.pdf'));
+    it.each([
+      // 'instant-pot-manual.pdf',
+      'swan-shower-base-install-guide.pdf',
+    ])('extracts the text (duh)', async (assetPath: string) => {
+      const contents = await extractText(join(process.cwd(), `libs/server-open-ai/src/lib/assets/${assetPath}`));
 
       expect(contents).toMatchSnapshot();
     });

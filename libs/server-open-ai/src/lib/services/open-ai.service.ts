@@ -40,9 +40,9 @@ export class OpenAiService {
     }
 
     const sentences = rawContents
-      .replaceAll(/\s{2,}/g, '')
-      .replaceAll('\u0000', '')
-      .replaceAll(/(\r\n|\n|\r)/gm, '')
+      .replaceAll(/\s{2,}/g, ' ')
+      .replaceAll('\u0000', ' ')
+      .replaceAll(/(\r\n|\n|\r)/gm, ' ')
       .split(this.config.sentenceDeliminator);
     // todo: add configurable hook here to sanitize contents
 
