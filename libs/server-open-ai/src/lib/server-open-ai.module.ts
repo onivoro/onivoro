@@ -18,7 +18,7 @@ export class ServerOpenAiModule {
         },
         {
           provide: OpenAIApi,
-          useFactory: () => new OpenAIApi(new Configuration({apiKey, organization})),
+          useFactory: () => new OpenAIApi(new Configuration(organization ? {apiKey, organization} : {apiKey})),
         },
       ],
       imports: [],
