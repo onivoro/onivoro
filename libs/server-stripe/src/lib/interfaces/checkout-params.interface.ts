@@ -5,5 +5,6 @@ export type ICheckoutParams = Pick<Stripe.Checkout.SessionCreateParams,
     'cancel_url' |
     'customer_email' |
     'client_reference_id' |
-    'line_items'
+    'line_items' |
+    'mode'
 >;
