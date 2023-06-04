@@ -12,7 +12,8 @@
     "gen:lib:api": "nx g @nrwl/nest:library --directory api",
     "gen:lib:generated": "nx g @nrwl/angular:library --directory generated",
     "gen:lib:iso": "nx g @nrwl/node:library --directory iso",
-    "gen:lib:ui": "nx g @nrwl/angular:library --directory ui"
+    "gen:lib:ui": "nx g @nrwl/angular:library --directory ui",
+    "postinstall": "ngcc --properties es2020 browser module main"
   },
   "private": true,
   "dependencies": {
