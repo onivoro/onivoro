@@ -5,6 +5,7 @@
     "angular-common": "libs/angular-common",
     "angular-serializable-forms": "libs/angular-serializable-forms",
     "angular-styles": "libs/angular-styles",
+    "angular-tailwind-components": "libs/angular-tailwind-components",
     "api-onivoro": "apps/api-onivoro",
     "isomorphic-common": "libs/isomorphic-common",
     "server-aws-auth": "libs/server-aws-auth",
@@ -25,6 +26,7 @@
     "server-twilio": "libs/server-twilio",
     "server-typeorm-postgres": "libs/server-typeorm-postgres",
     "server-yt-dl": "libs/server-yt-dl",
+    "ui-crypto": "apps/ui-crypto",
     "ui-onivoro": "apps/ui-onivoro"
   }
 }

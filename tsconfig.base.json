@@ -23,6 +23,9 @@
         "libs/angular-serializable-forms/src/index.ts"
       ],
       "@onivoro/angular-styles": ["libs/angular-styles/src/index.ts"],
+      "@onivoro/angular-tailwind-components": [
+        "libs/angular-tailwind-components/src/index.ts"
+      ],
       "@onivoro/isomorphic-common": ["libs/isomorphic-common/src/index.ts"],
       "@onivoro/server-aws-auth": ["libs/server-aws-auth/src/index.ts"],
       "@onivoro/server-aws-dynamo": ["libs/server-aws-dynamo/src/index.ts"],

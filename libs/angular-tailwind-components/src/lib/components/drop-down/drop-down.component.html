@@ -1,0 +1,12 @@
+<div class="relative">
+    <button (click)="open = !open" class="inline-flex items-center">
+    <span class="mr-1">
+        <ng-content select="[onivoroDropDownTrigger]"></ng-content><ng-content></ng-content>
+        <ng-container *ngIf="!open"><ng-content select="[onivoroDropDownTriggerClosed]"></ng-content></ng-container>
+        <ng-container *ngIf="open"><ng-content select="[onivoroDropDownTriggerOpen]"></ng-content></ng-container>
+    </span>
+    </button>
+    <div class="dropdown-menu absolute z-10 drop-shadow-2xl whitespace-nowrap " [ngClass]="open ? 'block' : 'hidden'">
+        <ng-content select="[onivoroDropDownContent]"></ng-content>
+    </div>
+</div>
