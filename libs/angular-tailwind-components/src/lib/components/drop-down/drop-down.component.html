@@ -6,7 +6,9 @@
         <ng-container *ngIf="open"><ng-content select="[onivoroDropDownTriggerOpen]"></ng-content></ng-container>
     </span>
     </button>
-    <div class="dropdown-menu absolute z-10 drop-shadow-2xl whitespace-nowrap " [ngClass]="open ? 'block' : 'hidden'">
+    <div class="dropdown-menu absolute z-10 drop-shadow-2xl whitespace-nowrap" [ngClass]="{ block: open, hidden: !open }" [ngStyle]="{
+        left: left, right: right
+    }">
         <ng-content select="[onivoroDropDownContent]"></ng-content>
     </div>
 </div>
