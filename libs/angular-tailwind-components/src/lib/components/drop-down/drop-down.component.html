@@ -7,7 +7,7 @@
     </span>
     </button>
     <div class="absolute z-10" [ngClass]="{ block: open, hidden: !open }">
-        <div class="relative whitespace-nowrap" [ngStyle]="{
+        <div class="relative whitespace-nowrap" style="position: relative" [ngStyle]="{
             left: left, right: right
         }">
             <ng-content select="[onivoroDropDownContent]"></ng-content>
