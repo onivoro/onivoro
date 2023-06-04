@@ -1,6 +1,6 @@
 {
   "$schema": "./node_modules/nx/schemas/nx-schema.json",
-  "npmScope": "evo",
+  "npmScope": "onivoro",
   "affected": {
     "defaultBase": "main"
   },
