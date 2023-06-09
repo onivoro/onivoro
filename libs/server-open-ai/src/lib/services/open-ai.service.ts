@@ -112,7 +112,7 @@ export class OpenAiService {
     }
     const answer: OpenAiAnswer = {
         id: v4(),
-        question,
+        question: rawQuestion,
         answer: response['data']['choices'][0]['message']['content'],
         relevantInput
       };
