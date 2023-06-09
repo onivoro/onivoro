@@ -44,6 +44,7 @@ export class OpenAiService {
       .replaceAll('\u0000', ' ')
       .replaceAll(/(\r\n|\n|\r)/gm, ' ')
       .split(this.config.sentenceDeliminator);
+    // todo: change to use .match(/[^.!?]+[.!?]+/g)
     // todo: add configurable hook here to sanitize contents
 
     const lengthNormalizedSentences = this.normalizeLength(sentences);
@@ -67,7 +68,8 @@ export class OpenAiService {
     }
   }
 
-  async ask(question: string, records: OpenAiData[]): Promise<OpenAiAnswer> {
+  async ask(rawQuestion: string, records: OpenAiData[]): Promise<OpenAiAnswer> {
+    const question = ` \n\n Question: ${rawQuestion}`;
     const introduction = this.config.introduction;
     const questionEmbeddingData = await this.genEmbeddings([question]);
     const questionEmbedding = questionEmbeddingData[0]['embedding'];
@@ -110,7 +112,7 @@ export class OpenAiService {
     }
     const answer: OpenAiAnswer = {
         id: v4(),
-        question: question,
+        question,
         answer: response['data']['choices'][0]['message']['content'],
         relevantInput
       };
