@@ -1,0 +1,61 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`tags renders and HTML string 1`] = `"<p class=\\"css-class-goes-here\\">content goes here</p>"`;
+
+exports[`tags renders and HTML string 2`] = `"<p >content goes here</p>"`;
+
+exports[`tags renders and HTML string 3`] = `"<td class=\\"css-class-goes-here\\">content goes here</td>"`;
+
+exports[`tags renders and HTML string 4`] = `"<td >content goes here</td>"`;
+
+exports[`tags renders and HTML string 5`] = `"<h1 class=\\"css-class-goes-here\\">content goes here</h1>"`;
+
+exports[`tags renders and HTML string 6`] = `"<h1 >content goes here</h1>"`;
+
+exports[`tags renders and HTML string 7`] = `"<h2 class=\\"css-class-goes-here\\">content goes here</h2>"`;
+
+exports[`tags renders and HTML string 8`] = `"<h2 >content goes here</h2>"`;
+
+exports[`tags renders and HTML string 9`] = `"<h3 class=\\"css-class-goes-here\\">content goes here</h3>"`;
+
+exports[`tags renders and HTML string 10`] = `"<h3 >content goes here</h3>"`;
+
+exports[`tags renders and HTML string 11`] = `"<tr class=\\"css-class-goes-here\\">content goes here</tr>"`;
+
+exports[`tags renders and HTML string 12`] = `"<tr >content goes here</tr>"`;
+
+exports[`tags renders and HTML string 13`] = `"<th class=\\"css-class-goes-here\\">content goes here</th>"`;
+
+exports[`tags renders and HTML string 14`] = `"<th >content goes here</th>"`;
+
+exports[`tags renders and HTML string 15`] = `"<thead class=\\"css-class-goes-here\\">content goes here</thead>"`;
+
+exports[`tags renders and HTML string 16`] = `"<thead >content goes here</thead>"`;
+
+exports[`tags renders and HTML string 17`] = `"<tbody class=\\"css-class-goes-here\\">content goes here</tbody>"`;
+
+exports[`tags renders and HTML string 18`] = `"<tbody >content goes here</tbody>"`;
+
+exports[`tags renders and HTML string 19`] = `"<table class=\\"css-class-goes-here\\">content goes here</table>"`;
+
+exports[`tags renders and HTML string 20`] = `"<table >content goes here</table>"`;
+
+exports[`tags renders and HTML string 21`] = `"<html class=\\"css-class-goes-here\\">content goes here</html>"`;
+
+exports[`tags renders and HTML string 22`] = `"<html >content goes here</html>"`;
+
+exports[`tags renders and HTML string 23`] = `"<head class=\\"css-class-goes-here\\">content goes here</head>"`;
+
+exports[`tags renders and HTML string 24`] = `"<head >content goes here</head>"`;
+
+exports[`tags renders and HTML string 25`] = `"<header class=\\"css-class-goes-here\\">content goes here</header>"`;
+
+exports[`tags renders and HTML string 26`] = `"<header >content goes here</header>"`;
+
+exports[`tags renders and HTML string 27`] = `"<main class=\\"css-class-goes-here\\">content goes here</main>"`;
+
+exports[`tags renders and HTML string 28`] = `"<main >content goes here</main>"`;
+
+exports[`tags renders and HTML string 29`] = `"<body class=\\"css-class-goes-here\\">content goes here</body>"`;
+
+exports[`tags renders and HTML string 30`] = `"<body >content goes here</body>"`;
