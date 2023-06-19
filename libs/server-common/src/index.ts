@@ -14,6 +14,7 @@ export * from './lib/dtos/values.dto';
 export * from './lib/functions/create-api-app.function';
 export * from './lib/functions/decode.function';
 export * from './lib/functions/generate-app-metadata.function';
+export * from './lib/functions/get-random-string.function';
 export * from './lib/functions/init-openapi.function';
 export * from './lib/functions/module-factory.function';
 export * from './lib/functions/parse-body.function';
