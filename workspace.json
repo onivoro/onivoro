@@ -24,6 +24,7 @@
     "server-open-ai": "libs/server-open-ai",
     "server-parameterization": "libs/server-parameterization",
     "server-process": "libs/server-process",
+    "server-puppeteer": "libs/server-puppeteer",
     "server-stripe": "libs/server-stripe",
     "server-twilio": "libs/server-twilio",
     "server-typeorm-postgres": "libs/server-typeorm-postgres",
