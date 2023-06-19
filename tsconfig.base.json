@@ -23,9 +23,6 @@
       "@onivoro/angular-material-forms": [
         "libs/angular-material-forms/src/index.ts"
       ],
-      "@onivoro/angular-serializable-forms": [
-        "libs/angular-serializable-forms/src/index.ts"
-      ],
       "@onivoro/angular-styles": ["libs/angular-styles/src/index.ts"],
       "@onivoro/angular-tailwind-components": [
         "libs/angular-tailwind-components/src/index.ts"

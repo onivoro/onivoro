@@ -5,7 +5,6 @@
     "angular-common": "libs/angular-common",
     "angular-forms": "libs/angular-forms",
     "angular-material-forms": "libs/angular-material-forms",
-    "angular-serializable-forms": "libs/angular-serializable-forms",
     "angular-styles": "libs/angular-styles",
     "angular-tailwind-components": "libs/angular-tailwind-components",
     "api-onivoro": "apps/api-onivoro",
