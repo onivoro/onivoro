@@ -34,18 +34,54 @@ export class OpenAiService {
     }
   }
 
-  async tokenizeTextAndPersistAsEmbedding(rawContents: string, persister: (data: OpenAiData[]) => Promise<void>): Promise<string[]> {
+  async destructureFileAndPersistSegments(file: Express.Multer.File, persister: (data: OpenAiData[]) => Promise<void>) {
+    try {
+      await this.writeBufferToDisk(file.originalname, file);
+
+      const contents = await extractText(file.originalname);
+
+      await this.tokenizeTextAndPersistAsEmbedding(contents, persister);
+
+      await this.deleteFile(file.originalname);
+    } catch (error: any) {
+      console.error(error);
+    }
+  }
+
+  async tokenizeTextAndPersistWithoutEmbedding(rawContents: string, persister: (data: OpenAiData[]) => Promise<void>): Promise<string[]> {
     if (!rawContents) {
       return [];
     }
 
-    const sentences = rawContents
+    const sentences = this.sanitizeContentAndSplitIntoSentences(rawContents);
+
+    const lengthNormalizedSentences = this.normalizeLength(sentences);
+
+    for await (const sentence of lengthNormalizedSentences) {
+      let records: OpenAiData[];
+
+      records = [this.embeddingToDataModel(sentence)];
+
+      await persister(records);
+    }
+  }
+
+  sanitizeContentAndSplitIntoSentences(rawContents: string) {
+    return rawContents
       .replaceAll(/\s{2,}/g, ' ')
       .replaceAll('\u0000', ' ')
       .replaceAll(/(\r\n|\n|\r)/gm, ' ')
       .split(this.config.sentenceDeliminator);
     // todo: change to use .match(/[^.!?]+[.!?]+/g)
     // todo: add configurable hook here to sanitize contents
+  }
+
+  async tokenizeTextAndPersistAsEmbedding(rawContents: string, persister: (data: OpenAiData[]) => Promise<void>): Promise<string[]> {
+    if (!rawContents) {
+      return [];
+    }
+
+    const sentences = this.sanitizeContentAndSplitIntoSentences(rawContents);
 
     const lengthNormalizedSentences = this.normalizeLength(sentences);
 
