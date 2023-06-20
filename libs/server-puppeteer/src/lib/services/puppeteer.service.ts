@@ -10,8 +10,8 @@ export class PuppeteerService {
         if (url) {
             await page.goto(url);
         }
-        const result = fn(page);
+        const result = await fn(page);
         await page.close();
-        return await result;
+        return result;
     }
 }
