@@ -40,7 +40,7 @@ export class OpenAiService {
 
       const contents = await extractText(file.originalname);
 
-      await this.tokenizeTextAndPersistAsEmbedding(contents, persister);
+      await this.tokenizeTextAndPersistWithoutEmbedding(contents, persister);
 
       await this.deleteFile(file.originalname);
     } catch (error: any) {
