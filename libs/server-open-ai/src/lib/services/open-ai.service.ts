@@ -166,6 +166,16 @@ export class OpenAiService {
       .map((embedding, index) => this.embeddingToDataModel(input[index], embedding));
   }
 
+  async regenEmbedding(aiData: OpenAiData): Promise<OpenAiData[]> {
+    const response = await this.openai.createEmbedding({
+      model: this.config.EMBEDDING_MODEL,
+      input: [aiData.text],
+    });
+
+    return (response?.data?.data || [])
+      .map(({embedding}) => ({...aiData, embedding}))
+  }
+
   private normalizeLength(sentences: string[]) {
 
     const enc = encoding_for_model(this.config.GPT_MODEL as TiktokenModel);
