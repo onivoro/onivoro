@@ -25,7 +25,7 @@ export async function deployLambda(
   const zip = `${zipFolderPath}${app}.zip`;
 
   buildApp(app, 'production');
-  spawnSync('npm', [`i`], { ...opts, cwd: dist });
+  spawnSync('npm', [`i`, '--force'], { ...opts, cwd: dist });
   shell(`mkdir -p ${zipFolderPath}`);
 
   await zipDirectory(dist, zip);
