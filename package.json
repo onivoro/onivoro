@@ -2,7 +2,12 @@
   "name": "@onivoro/onivoro",
   "version": "0.0.3",
   "license": "MIT",
+  "bin": {
+    "onx": "dist/apps/cli-onx/main.js"
+  },
   "scripts": {
+    "build": "npm run rm:nxcache && nx build cli-onx && echo '#! /usr/bin/env node' >> dist/temp && cat dist/apps/cli-onx/main.js >> dist/temp && mv dist/temp dist/apps/cli-onx/main.js && chmod +x dist/apps/cli-onx/main.js && npm link",
+    "rm:nxcache": "rm -rf ./node_modules/.cache/nx",
     "ui-crypto": "nx serve ui-crypto --port 4222",
     "ui-onivoro": "nx serve ui-onivoro --port 4000",
     "ui-playa": "nx serve playa --port 4001",
