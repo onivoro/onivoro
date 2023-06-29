@@ -16,7 +16,11 @@ export class ServerAwsSesModule {
             config,
             new SES({
               apiVersion: apiVersion || '2010-12-01',
-              region: config.AWS_REGION
+              region: config.AWS_REGION,
+              credentials: {
+                accessKeyId: config.AWS_ACCESS_KEY_ID,
+                secretAccessKey: config.AWS_SECRET_ACCESS_KEY,
+              }
             })
           )
         }
