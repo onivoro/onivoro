@@ -13,9 +13,14 @@ export type TS3Params = {
 export class S3Service {
   constructor(private config: ServerAwsS3Config, private s3: S3) { }
 
-  async upload(params: TS3Params & { Body: S3.PutObjectRequest['Body'] }): Promise<IS3UploadResponse> {
+  async upload(params: TS3Params & { Body: S3.PutObjectRequest['Body'], ACL?: S3.PutObjectRequest['ACL'] }): Promise<IS3UploadResponse> {
     // todo: sanitize filename here before uploading
     return await this.s3.upload(this.addDefaultBucket(params)).promise();
+  }
+
+  async uploadPublic(params: TS3Params & { Body: S3.PutObjectRequest['Body'] }): Promise<IS3UploadResponse> {
+    // todo: sanitize filename here before uploading
+    return await this.s3.upload({...this.addDefaultBucket(params), ACL: 'public-read'}).promise();
   }
 
   async getPresignedUrl(params: TS3Params & { Expires: number, ResponseContentDisposition: string }) {
