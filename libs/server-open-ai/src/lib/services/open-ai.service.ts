@@ -71,7 +71,9 @@ export class OpenAiService {
       .replaceAll(/\s{2,}/g, ' ')
       .replaceAll('\u0000', ' ')
       .replaceAll(/(\r\n|\n|\r)/gm, ' ')
-      .split(this.config.sentenceDeliminator);
+      .split(this.config.sentenceDeliminator)
+      .map(_ => _.trim())
+      .filter(_ => !!_);
     // todo: change to use .match(/[^.!?]+[.!?]+/g)
     // todo: add configurable hook here to sanitize contents
   }
