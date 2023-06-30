@@ -1,5 +1,5 @@
 import { Injectable } from "@nestjs/common";
-import { Browser, Page } from 'puppeteer-core';
+import { Browser, Page } from 'puppeteer';
 
 @Injectable()
 export class PuppeteerService {

@@ -1,6 +1,6 @@
 import { Module } from '@nestjs/common';
 import { moduleFactory } from '@onivoro/server-common';
-import puppeteer, { Browser } from 'puppeteer-core';
+import puppeteer, { Browser } from 'puppeteer';
 import { ServerPuppeteerConfig } from './classes/server-puppeteer-config.class';
 import { PuppeteerService } from './services/puppeteer.service';
 

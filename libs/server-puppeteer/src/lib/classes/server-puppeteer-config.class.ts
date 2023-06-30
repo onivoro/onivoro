@@ -1,4 +1,4 @@
-import { PuppeteerLaunchOptions } from "puppeteer-core";
+import { PuppeteerLaunchOptions } from "puppeteer";
 
 export class ServerPuppeteerConfig {
     executablePath: PuppeteerLaunchOptions['executablePath'];
