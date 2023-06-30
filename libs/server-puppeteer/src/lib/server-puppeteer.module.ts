@@ -1,6 +1,8 @@
 import { Module } from '@nestjs/common';
 import { moduleFactory } from '@onivoro/server-common';
-import puppeteer, { Browser } from 'puppeteer';
+import { Browser } from 'puppeteer';
+import puppeteer from 'puppeteer-extra';
+import StealthPlugin from 'puppeteer-extra-plugin-stealth';
 import { ServerPuppeteerConfig } from './classes/server-puppeteer-config.class';
 import { PuppeteerService } from './services/puppeteer.service';
 
@@ -18,7 +20,14 @@ export class ServerPuppeteerModule {
         },
         {
           provide: Browser,
-          useFactory: async (options: ServerPuppeteerConfig) => browser || (browser = await puppeteer.launch(options)),
+          useFactory: async (options: ServerPuppeteerConfig) => {
+            if (!browser) {
+              puppeteer.use(StealthPlugin())
+              browser = await puppeteer.launch(options);
+            }
+
+            return browser;
+          },
           inject: [ServerPuppeteerConfig]
         },
         PuppeteerService
