@@ -13,13 +13,14 @@ export class OpenapiGen extends AbstractAppCommand<IAppParams> {
 
   async main(_args: string[], { app }: IAppParams): Promise<void> {
     const appRootName = app.replace('api-', '');
-
+    const generator = 'typescript-axios';
+    const folder = 'api-dox';
     const dir = `libs/generated/${appRootName}/src/lib`;
     shell(
       [
         `rm -rf ${dir}`,
         `mkdir -p ${dir}`,
-        `docker run --rm -v ${resolve(process.cwd())}:/local openapitools/openapi-generator-cli:v6.3.0 generate -i local/api-dox/${app}.json -g typescript-axios -o local/${dir}`,
+        `docker run --rm -v ${resolve(process.cwd())}:/local openapitools/openapi-generator-cli:v6.3.0 generate -i local/${folder}/${app}.json -g ${generator} -o local/${dir}`,
       ].join(' && ')
     );
 
