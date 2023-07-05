@@ -149,33 +149,38 @@ export class OpenAiService {
       }
     }
     const answer: OpenAiAnswer = {
-        id: v4(),
-        question: rawQuestion,
-        answer: response['data']['choices'][0]['message']['content'],
-        relevantInput
-      };
+      id: v4(),
+      question: rawQuestion,
+      answer: response['data']['choices'][0]['message']['content'],
+      relevantInput
+    };
 
     return answer;
   }
 
   async genEmbeddings(input: string[]): Promise<OpenAiData[]> {
-    const response = await this.openai.createEmbedding({
-      model: this.config.EMBEDDING_MODEL,
-      input,
-    });
+    let embeddings: CreateEmbeddingResponseDataInner[];
+    let error: any;
+    try {
+      const response = await this.openai.createEmbedding({
+        model: this.config.EMBEDDING_MODEL,
+        input,
+      });
 
-    return (response?.data?.data || [])
-      .map((embedding, index) => this.embeddingToDataModel(input[index], embedding));
+      embeddings = response.data?.data;
+    } catch (e: any) {
+      embeddings = [];
+      error = e;
+    }
+
+    return embeddings
+      .map((embedding, index) => this.embeddingToDataModel(input[index], embedding, error));
   }
 
   async regenEmbedding(aiData: OpenAiData): Promise<OpenAiData[]> {
-    const response = await this.openai.createEmbedding({
-      model: this.config.EMBEDDING_MODEL,
-      input: [aiData.text],
-    });
+    const {embedding, error} = (await this.genEmbeddings([aiData.text]))[0];
 
-    return (response?.data?.data || [])
-      .map(({embedding}) => ({...aiData, embedding}))
+    return [{...aiData, embedding, error}];
   }
 
   private normalizeLength(sentences: string[]) {
@@ -215,13 +220,14 @@ export class OpenAiService {
     return normalizedLengthGroups;
   }
 
-  private embeddingToDataModel(text: string, embeddingResponse?: CreateEmbeddingResponseDataInner) {
+  private embeddingToDataModel(text: string, embeddingResponse?: CreateEmbeddingResponseDataInner, error?: any) {
     const { embedding } = embeddingResponse || { embedding: [] };
 
     return {
       id: v4(),
       text,
       embedding,
+      error,
     };
   }
 
