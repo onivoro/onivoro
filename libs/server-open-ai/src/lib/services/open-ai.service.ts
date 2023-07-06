@@ -58,11 +58,11 @@ export class OpenAiService {
     const lengthNormalizedSentences = this.normalizeLength(sentences);
 
     for await (const sentence of lengthNormalizedSentences) {
-      let records: OpenAiData[];
+      if (sentence?.trim()) {
+        const records: OpenAiData[] = [this.embeddingToDataModel(sentence)];
 
-      records = [this.embeddingToDataModel(sentence)];
-
-      await persister(records);
+        await persister(records);
+      }
     }
   }
 
@@ -181,6 +181,17 @@ export class OpenAiService {
     const {embedding, error} = (await this.genEmbeddings([aiData.text]))[0];
 
     return [{...aiData, embedding, error}];
+  }
+
+
+  synthesizeFileObject(
+    originalname: string,
+    buffer: any
+  ): Express.Multer.File {
+    return {
+      originalname,
+      buffer,
+    } as Express.Multer.File;
   }
 
   private normalizeLength(sentences: string[]) {
