@@ -10,6 +10,7 @@
     "api-onivoro": "apps/api-onivoro",
     "cli-onx": "apps/cli-onx",
     "isomorphic-common": "libs/isomorphic-common",
+    "server-auth": "libs/server-auth",
     "server-aws-auth": "libs/server-aws-auth",
     "server-aws-dynamo": "libs/server-aws-dynamo",
     "server-aws-lambda": "libs/server-aws-lambda",
