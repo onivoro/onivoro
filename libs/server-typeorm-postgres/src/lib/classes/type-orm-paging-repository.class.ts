@@ -7,6 +7,7 @@ import { IPagedData } from '../types/paged-data.interface';
 import { getSkip } from '../functions/get-skip.function';
 import { removeFalseyKeys } from '../functions/remove-falsey-keys.function';
 import { getPagingKey } from '../functions/get-paging-key.function';
+import { IPageParams } from '../types/page-params.interface';
 
 export abstract class TypeOrmPagingRepository<TEntity> extends TypeOrmRepository<TEntity> {
   protected getPagingKey = getPagingKey;
@@ -17,5 +18,5 @@ export abstract class TypeOrmPagingRepository<TEntity> extends TypeOrmRepository
     super(entityType, entityManager);
   }
 
-  abstract getPage(): Promise<IPagedData<TEntity>>;
+  abstract getPage<TParams extends IPageParams>(params: TParams): Promise<IPagedData<TEntity>>;
 }

@@ -21,6 +21,7 @@ export * from './lib/functions/remove-falsey-keys.function';
 
 export * from './lib/types/data-source-options.interface';
 export * from './lib/types/entity-provider.interface';
+export * from './lib/types/page-params.interface';
 export * from './lib/types/paged-data.interface';
 
 export * from './lib/server-typeorm-postgres.module';
