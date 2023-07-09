@@ -2,7 +2,9 @@ export * from './lib/server-common.module';
 
 export * from './lib/constants/version-provider-token.constant';
 
-export * from './lib/decorators/api-paged-response.decorator';
+export * from './lib/decorators/api-query-paged-params.decorator';
+export * from './lib/decorators/api-response-paged.decorator';
+export * from './lib/decorators/query-paged-params.decorator';
 
 export * from './lib/dtos/body.dto';
 export * from './lib/dtos/health.dto';
