@@ -1,15 +1,10 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { FileUploadComponent } from './components/file-upload/file-upload.component';
-import { MatButtonModule } from '@angular/material/button';
-import { MatIconModule } from '@angular/material/icon';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-const components = [
-  FileUploadComponent
-];
+
+const components: any[] = [];
 
 @NgModule({
-  imports: [CommonModule, MatButtonModule, MatIconModule, FormsModule, ReactiveFormsModule],
+  imports: [CommonModule],
   declarations: components,
   exports: components
 })
