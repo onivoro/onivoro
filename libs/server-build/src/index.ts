@@ -12,6 +12,7 @@ export * from './lib/functions/build-app.function';
 export * from './lib/functions/build-image.function';
 export * from './lib/functions/copy-package-json-version.function';
 export * from './lib/functions/deploy-lambda.function';
+export * from './lib/functions/extract-asset-list.function';
 export * from './lib/functions/gen-metadata.function';
 export * from './lib/functions/get-apps.function';
 export * from './lib/functions/get-lambda-name-by-branch.function';
