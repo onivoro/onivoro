@@ -25,7 +25,11 @@ export class DeployImage extends AbstractAwsEcsCommand<IAwsEcsParams> {
     const executionStart = new Date();
     const isProduction = branch === 'main';
     const target = isProduction ? 'production' : 'staging';
-    await copyPackageJsonVersion(app);
+    try {
+      await copyPackageJsonVersion(app);
+    } catch (error) {
+      console.log('failed to upload package.json version', error);
+    }
     buildApp(app, 'production');
     if (app.includes('api-')) {
       buildApp(app.replace('api-', 'ui-'), target);
