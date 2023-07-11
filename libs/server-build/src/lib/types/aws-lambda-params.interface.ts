@@ -4,4 +4,5 @@ export interface IAwsLambdaParams extends IAwsAppParams {
     bucket: string;
     prefix?: string;
     role: string;
+    source?: string;
 };

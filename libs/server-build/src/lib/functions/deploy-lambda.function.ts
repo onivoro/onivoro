@@ -17,9 +17,10 @@ export async function deployLambda(
     profile,
     role: lambdaRole,
     bucket,
+    source,
     branch,
     prefix } = params;
-  const srcFolderPath = 'apps/lambda/' + app.replace('lambda-', '');
+  const srcFolderPath = source || ('apps/lambda/' + app.replace('lambda-', ''));
   const dist = `dist/${srcFolderPath}`;
   const zipFolderPath = 'zips/';
   const zip = `${zipFolderPath}${app}.zip`;

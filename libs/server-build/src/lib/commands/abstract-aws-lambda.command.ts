@@ -39,4 +39,13 @@ export abstract class AbstractAwsLambdaCommand<TParams extends IAwsAppParams> ex
   parseRole(val?: string) {
     return val;
   }
+
+  @Option({
+    flags: '-s, --source [source]',
+    description: 'source directory, ex: "apps/lambda-blah"',
+    required: false
+  })
+  parseSource(val?: string) {
+    return val;
+  }
 }
