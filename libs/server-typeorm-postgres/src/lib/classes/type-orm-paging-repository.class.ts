@@ -18,5 +18,5 @@ export abstract class TypeOrmPagingRepository<TEntity> extends TypeOrmRepository
     super(entityType, entityManager);
   }
 
-  abstract getPage<TParams extends IPageParams>(params: TParams): Promise<IPagedData<TEntity>>;
+  abstract getPage<TParams>(pageParams: IPageParams, params: TParams): Promise<IPagedData<TEntity>>;
 }
