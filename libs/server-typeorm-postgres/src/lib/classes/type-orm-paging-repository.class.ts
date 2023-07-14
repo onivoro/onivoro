@@ -9,7 +9,7 @@ import { removeFalseyKeys } from '../functions/remove-falsey-keys.function';
 import { getPagingKey } from '../functions/get-paging-key.function';
 import { IPageParams } from '../types/page-params.interface';
 
-export abstract class TypeOrmPagingRepository<TEntity> extends TypeOrmRepository<TEntity> {
+export abstract class TypeOrmPagingRepository<TEntity, TEntityParams> extends TypeOrmRepository<TEntity> {
   protected getPagingKey = getPagingKey;
   protected getSkip = getSkip;
   protected removeFalseyKeys = removeFalseyKeys;
@@ -18,5 +18,5 @@ export abstract class TypeOrmPagingRepository<TEntity> extends TypeOrmRepository
     super(entityType, entityManager);
   }
 
-  abstract getPage<TParams>(pageParams: IPageParams, params: TParams): Promise<IPagedData<TEntity>>;
+  abstract getPage(pageParams: IPageParams, params: TEntityParams): Promise<IPagedData<TEntity>>;
 }

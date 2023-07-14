@@ -2,7 +2,15 @@ import { BehaviorSubject, Observable, map, shareReplay } from 'rxjs';
 
 const negate = (_: any) => !_;
 
+export interface IPagedData<TEntity> {
+  data: TEntity[];
+  total: number;
+  pageSize: number;
+}
+
 export abstract class AbstractPagedEntityService<TEntity> {
+  all$$ = new BehaviorSubject<TEntity[]>([]);
+  all$ = this.all$$.asObservable().pipe(shareReplay());
   data$$ = new BehaviorSubject<TEntity[]>([]);
   data$ = this.data$$.asObservable().pipe(shareReplay());
   page$$ = new BehaviorSubject<number>(0);
@@ -21,18 +29,30 @@ export abstract class AbstractPagedEntityService<TEntity> {
   maxDate$$ = new BehaviorSubject<Date | undefined>(undefined);
   maxDate$ = this.maxDate$$.asObservable().pipe(shareReplay());
 
-  protected abstract loadPageData(): Promise<any>;
+  protected abstract loadPageData(): Promise<IPagedData<TEntity>>;
+  protected abstract loadAllData(): Promise<TEntity[]>;
 
   async loadPage(page: number) {
     if (!this.data$$.value?.length) {
       this.loading$$.next(true);
     }
 
-    const { data, total, pagingKey } = await this.loadPageData();
+    const { data, total } = await this.loadPageData();
 
     this.page$$.next(page);
     this.data$$.next(data);
     this.total$$.next(total);
+    this.loading$$.next(false);
+  }
+
+  async loadAll() {
+    if (!this.all$$.value?.length) {
+      this.loading$$.next(true);
+    }
+
+    const all = await this.loadAllData();
+
+    this.all$$.next(all);
     this.loading$$.next(false);
   }
 
