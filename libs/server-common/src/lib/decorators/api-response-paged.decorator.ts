@@ -13,7 +13,8 @@ export const ApiResponsePaged = <TEntity extends Type<unknown>>(entityDto: TEnti
                         properties: {
                             data: {
                                 type: 'array',
-                                items: { $ref: getSchemaPath(entityDto), nullable: false },
+                                items: { $ref: getSchemaPath(entityDto) },
+                                nullable: false,
                             },
                         },
                     },
