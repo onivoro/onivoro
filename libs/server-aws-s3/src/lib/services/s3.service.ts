@@ -1,6 +1,5 @@
 import { BadRequestException, Injectable } from '@nestjs/common';
 import { S3 } from 'aws-sdk';
-import { PassThrough } from 'stream';
 import { ServerAwsS3Config } from '../classes/server-aws-s3-config.class';
 import { IS3UploadResponse } from '../interfaces/s3-upload-response.interface';
 
