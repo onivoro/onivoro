@@ -1,0 +1,42 @@
+{
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "projectType": "library",
+  "sourceRoot": "libs/angular-file-upload/src",
+  "prefix": "onivoro",
+  "targets": {
+    "build": {
+      "executor": "@nrwl/angular:package",
+      "outputs": ["dist/libs/angular-file-upload"],
+      "options": {
+        "project": "libs/angular-file-upload/ng-package.json"
+      },
+      "configurations": {
+        "production": {
+          "tsConfig": "libs/angular-file-upload/tsconfig.lib.prod.json"
+        },
+        "development": {
+          "tsConfig": "libs/angular-file-upload/tsconfig.lib.json"
+        }
+      },
+      "defaultConfiguration": "production"
+    },
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/libs/angular-file-upload"],
+      "options": {
+        "jestConfig": "libs/angular-file-upload/jest.config.ts",
+        "passWithNoTests": true
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "options": {
+        "lintFilePatterns": [
+          "libs/angular-file-upload/**/*.ts",
+          "libs/angular-file-upload/**/*.html"
+        ]
+      }
+    }
+  },
+  "tags": []
+}

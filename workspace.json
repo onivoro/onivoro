@@ -3,6 +3,7 @@
   "version": 2,
   "projects": {
     "angular-common": "libs/angular-common",
+    "angular-file-upload": "libs/angular-file-upload",
     "angular-forms": "libs/angular-forms",
     "angular-material-forms": "libs/angular-material-forms",
     "angular-styles": "libs/angular-styles",

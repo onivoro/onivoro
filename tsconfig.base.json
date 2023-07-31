@@ -19,6 +19,7 @@
     "baseUrl": ".",
     "paths": {
       "@onivoro/angular-common": ["libs/angular-common/src/index.ts"],
+      "@onivoro/angular-file-upload": ["libs/angular-file-upload/src/index.ts"],
       "@onivoro/angular-forms": ["libs/angular-forms/src/index.ts"],
       "@onivoro/angular-material-forms": [
         "libs/angular-material-forms/src/index.ts"
