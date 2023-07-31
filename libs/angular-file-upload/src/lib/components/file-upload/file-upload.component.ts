@@ -4,7 +4,7 @@ import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 // const spaces = /[^-_\w\d]/g;
 
 @Component({
-  selector: 'evo-file-upload',
+  selector: 'onivoro-file-upload',
   templateUrl: 'file-upload.component.html',
   styles: [
     `
