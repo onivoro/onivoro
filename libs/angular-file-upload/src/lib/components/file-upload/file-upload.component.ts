@@ -5,7 +5,7 @@ import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 
 @Component({
   selector: 'onivoro-file-upload',
-  templateUrl: 'file-upload.component.html',
+  templateUrl: './file-upload.component.html',
   styles: [
     `
       .file-input {
