@@ -9,7 +9,7 @@ export class ServerOpenAiConfig {
         public maxTokensPerTextChunk = 1000,
         public sentenceDeliminator = '. ',
         public tokenRatio = 0.75,
-        public maxQuestionInput = 3,
+        public maxQuestionInput = 6,
         public temperature = 0,
     ) {}
 }
