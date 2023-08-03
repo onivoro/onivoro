@@ -107,9 +107,9 @@ export class OpenAiService {
   }
 
   async ask(rawQuestion: string, records: OpenAiData[]): Promise<OpenAiAnswer> {
-    const question = ` \n\n Question: ${rawQuestion}`;
+    const question = ` \n\n Question: ${rawQuestion} \n\n`;
     const introduction = this.config.introduction;
-    const questionEmbeddingData = await this.genEmbeddings([question]);
+    const questionEmbeddingData = await this.genEmbeddings([rawQuestion]);
     const questionEmbedding = questionEmbeddingData[0]['embedding'];
     const recordEmbeddings = records.map((input) => ({
       similarity: similarity(input.embedding, questionEmbedding),
