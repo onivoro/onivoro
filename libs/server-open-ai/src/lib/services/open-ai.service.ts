@@ -106,7 +106,33 @@ export class OpenAiService {
     }
   }
 
-  async ask(rawQuestion: string, records: OpenAiData[]): Promise<OpenAiAnswer> {
+  async summarize(systemData: string, textToSummarize: string, model?: string): Promise<any> {
+    let response: AxiosResponse<CreateChatCompletionResponse, any>;
+    const messages = [
+      {
+        role: 'system' as any,
+        content: systemData,
+      },
+      { role: 'user', content: textToSummarize },
+    ];
+    try {
+      response = await this.openai.createChatCompletion({
+        model: model || this.config.GPT_MODEL,
+        messages,
+        temperature: this.config.temperature,
+      });
+    } catch (error) {
+      if (error.response) {
+        console.error(error.response.status);
+        console.error(error.response.data);
+      } else {
+        console.error(error.message);
+      }
+    }
+  }
+
+  async ask(rawQuestion: string, records: OpenAiData[], model?: string, numQuestionInput?: number): Promise<OpenAiAnswer> {
+    const modelToUse = model || this.config.GPT_MODEL;
     const question = ` \n\n Question: ${rawQuestion} \n\n`;
     const introduction = this.config.introduction;
     const questionEmbeddingData = await this.genEmbeddings([rawQuestion]);
@@ -118,7 +144,7 @@ export class OpenAiService {
     }));
     recordEmbeddings.sort((a, b) => b.similarity - a.similarity);
     let message = introduction;
-    const iterations = Math.min(this.config.maxQuestionInput, recordEmbeddings.length);
+    const iterations = Math.min(numQuestionInput || this.config.maxQuestionInput, recordEmbeddings.length);
     const relevantInput = [];
     for (let x = 1; x <= iterations; x++) {
       const recordEmbedding = recordEmbeddings[x - 1];
@@ -136,7 +162,7 @@ export class OpenAiService {
     let response: AxiosResponse<CreateChatCompletionResponse, any>;
     try {
       response = await this.openai.createChatCompletion({
-        model: this.config.GPT_MODEL,
+        model: modelToUse,
         messages,
         temperature: this.config.temperature,
       });
