@@ -129,6 +129,7 @@ export class OpenAiService {
         console.error(error.message);
       }
     }
+    return response['data']['choices'][0]['message']['content'];
   }
 
   async ask(rawQuestion: string, records: OpenAiData[], model?: string, numQuestionInput?: number): Promise<OpenAiAnswer> {
