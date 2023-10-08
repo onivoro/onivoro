@@ -1,7 +1,7 @@
 import { Injectable } from '@nestjs/common';
 import { CognitoIdentityServiceProvider } from 'aws-sdk';
 
-import { UsersListType } from 'aws-sdk/clients/cognitoidentityserviceprovider';
+import { AdminSetUserMFAPreferenceRequest, AssociateSoftwareTokenRequest, SetUserMFAPreferenceRequest, UsersListType } from 'aws-sdk/clients/cognitoidentityserviceprovider';
 import { AuthConfig } from '../classes/auth-config.class';
 import { convertObjectToAttributeList } from '../functions/convert-object-to-attribute-list.function';
 
@@ -9,7 +9,24 @@ import { convertObjectToAttributeList } from '../functions/convert-object-to-att
 export class AdminCognitoService {
 
   constructor(public config: AuthConfig,
-    private cognitoIdentityService: CognitoIdentityServiceProvider) {}
+    private cognitoIdentityService: CognitoIdentityServiceProvider) {
+  }
+
+  async shaun(AccessToken: string, Session: string, secretCode: string) {
+
+    const associateResult = await this.cognitoIdentityService.associateSoftwareToken({
+      AccessToken,
+      Session
+    }).promise();
+
+    // is this the same session as passed-in???
+    const session = associateResult.Session;
+
+    // Display the QR code to the user (You can use a QR code library for this)
+    const qrCodeImageUrl = `https://www.example.com/generate-qr-code?session=${session}&secretCode=${secretCode}`;
+    console.log('QR Code URL:', qrCodeImageUrl);
+  }
+
 
   deleteAdminUser(Username: string) {
     const { AWS_COGNITO_USER_POOL_ID } = this.config;
@@ -50,12 +67,12 @@ export class AdminCognitoService {
           UserPoolId: AWS_COGNITO_USER_POOL_ID,
         })
         .promise();
-    } catch (e) {}
+    } catch (e) { }
   }
 
   async adminCreateUser(usernameOverride: string, password: string, attributes: Record<string, string | number | null | undefined>) {
 
-    const {AWS_COGNITO_USER_POOL_ID: UserPoolId} = this.config;
+    const { AWS_COGNITO_USER_POOL_ID: UserPoolId } = this.config;
 
     const params: CognitoIdentityServiceProvider.AdminCreateUserRequest = {
       ForceAliasCreation: false,
@@ -72,12 +89,12 @@ export class AdminCognitoService {
     const { Username } = data.User;
 
     const passwordParams: CognitoIdentityServiceProvider.Types.AdminSetUserPasswordRequest =
-      {
-        Permanent: true,
-        UserPoolId,
-        Username,
-        Password: password,
-      };
+    {
+      Permanent: true,
+      UserPoolId,
+      Username,
+      Password: password,
+    };
 
     await this.cognitoIdentityService
       .adminSetUserPassword(passwordParams)
@@ -88,12 +105,12 @@ export class AdminCognitoService {
 
   async setUserPassword(UserPoolId: string, email: string, Password: string) {
     const passwordParams: CognitoIdentityServiceProvider.Types.AdminSetUserPasswordRequest =
-      {
-        Permanent: true,
-        UserPoolId,
-        Username: email,
-        Password,
-      };
+    {
+      Permanent: true,
+      UserPoolId,
+      Username: email,
+      Password,
+    };
 
     await this.cognitoIdentityService
       .adminSetUserPassword(passwordParams)
@@ -134,10 +151,10 @@ export class AdminCognitoService {
 
   async adminListGroupsForUser(Username: string) {
     const params: CognitoIdentityServiceProvider.Types.AdminListGroupsForUserRequest =
-      {
-        Username,
-        UserPoolId: this.config.AWS_COGNITO_USER_POOL_ID,
-      };
+    {
+      Username,
+      UserPoolId: this.config.AWS_COGNITO_USER_POOL_ID,
+    };
     return (
       await this.cognitoIdentityService.adminListGroupsForUser(params).promise()
     ).Groups;
@@ -149,11 +166,11 @@ export class AdminCognitoService {
     await Promise.all(
       apps.map((GroupName) => {
         const groupParams: CognitoIdentityServiceProvider.Types.AdminAddUserToGroupRequest =
-          {
-            UserPoolId,
-            Username: email,
-            GroupName,
-          };
+        {
+          UserPoolId,
+          Username: email,
+          GroupName,
+        };
 
         return this.cognitoIdentityService
           .adminAddUserToGroup(groupParams)
