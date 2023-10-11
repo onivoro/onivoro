@@ -1,20 +1,10 @@
-import { Injectable, InternalServerErrorException, OnModuleInit, BadRequestException } from '@nestjs/common';
-import {
-  AuthenticationDetails,
-  CognitoUser,
-  CognitoUserPool,
-} from 'amazon-cognito-identity-js';
-import { getPublicKeys } from '../functions/get-public-keys.function';
-import { validateToken } from '../functions/validate-token.function';
-import * as jsonwebtoken from 'jsonwebtoken';
-import { IAuthCredentialsDto, IMapOfKidToPublicKey } from '../interfaces/auth.interface';
-import { AuthConfig } from '../classes/auth-config.class';
+import { Injectable, BadRequestException } from '@nestjs/common';
 import { AuthService } from './auth.service';
 import { AuthTokensDto } from '../dtos/auth-tokens.dto';
 import { AuthCredentialsDto } from '../dtos/auth-credentials.dto';
 
 @Injectable()
-export class MfaAuthService implements OnModuleInit {
+export class MfaAuthService {
   mfaMap = new Map();
   private authConfig: {
     UserPoolId: string;
@@ -22,37 +12,8 @@ export class MfaAuthService implements OnModuleInit {
     region: string;
   };
 
-  private keys: IMapOfKidToPublicKey;
 
-  constructor(private config: AuthConfig, private authService: AuthService) {
-
-    this.authConfig = {
-      UserPoolId: this.config.AWS_COGNITO_USER_POOL_ID,
-      ClientId: this.config.AWS_COGNITO_CLIENT_ID,
-      region: this.config.AWS_REGION,
-    };
-  }
-
-  async onModuleInit() {
-    const { AWS_REGION, AWS_COGNITO_USER_POOL_ID } = this.config;
-    const cognitoIssuer = `https://cognito-idp.${AWS_REGION}.amazonaws.com/${AWS_COGNITO_USER_POOL_ID}`;
-
-    this.keys = await getPublicKeys(cognitoIssuer);
-  }
-
-  get poolData() {
-    return {
-      UserPoolId: this.authConfig.UserPoolId,
-      ClientId: this.authConfig.ClientId,
-    };
-  }
-
-  get userPool() {
-    return new CognitoUserPool({
-      UserPoolId: this.authConfig.UserPoolId,
-      ClientId: this.authConfig.ClientId,
-    });
-  }
+  constructor(private authService: AuthService) {}
 
   async login(authenticateRequest: AuthCredentialsDto) {
     try {
