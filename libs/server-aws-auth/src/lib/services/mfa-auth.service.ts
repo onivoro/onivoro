@@ -6,12 +6,6 @@ import { AuthCredentialsDto } from '../dtos/auth-credentials.dto';
 @Injectable()
 export class MfaAuthService {
   mfaMap = new Map();
-  private authConfig: {
-    UserPoolId: string;
-    ClientId: string;
-    region: string;
-  };
-
 
   constructor(private authService: AuthService) {}
 
