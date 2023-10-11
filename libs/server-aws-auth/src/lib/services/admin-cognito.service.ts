@@ -12,12 +12,12 @@ export class AdminCognitoService {
     private cognitoIdentityService: CognitoIdentityServiceProvider) {
   }
 
-  async getSecretCode(accessToken: string): Promise<any> {
-    return this.cognitoIdentityService.associateSoftwareToken({accessToken}).toPromise();
+  async getSecretCode(AccessToken: string): Promise<any> {
+    return this.cognitoIdentityService.associateSoftwareToken({AccessToken}).promise();
   }
 
-  async vefifyTotpToken(accessToken: string, userCode: string) {
-    return this.cognitoIdentityService.verifySoftwareToken({Accesstoken: accessToken, UserCode: userCode}).toPromise();
+  async vefifyTotpToken(AccessToken: string, UserCode: string) {
+    return this.cognitoIdentityService.verifySoftwareToken({AccessToken, UserCode}).promise();
   }
 
   deleteAdminUser(Username: string) {
