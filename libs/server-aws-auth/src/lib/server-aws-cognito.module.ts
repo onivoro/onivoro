@@ -3,12 +3,14 @@ import { AuthConfig } from './classes/auth-config.class';
 import { moduleFactory } from '@onivoro/server-common';
 import { AdminCognitoService } from './services/admin-cognito.service';
 import { CognitoIdentityServiceProvider } from 'aws-sdk';
+import { MfaAuthService } from './services/mfa-auth.service';
 
 @Module({})
 export class ServerAwsCognitoModule {
   static configure(config: AuthConfig, apiVersion?: string): DynamicModule {
     return moduleFactory({
       providers: [
+        MfaAuthService,
         {
           provide: AdminCognitoService, useFactory: () => new AdminCognitoService(
             config,

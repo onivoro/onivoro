@@ -17,6 +17,7 @@ export * from './lib/dtos/email.dto';
 export * from './lib/dtos/password.dto';
 export * from './lib/dtos/phone-valid.dto';
 export * from './lib/dtos/phone.dto';
+export * from './lib/dtos/verify-totp.dto';
 
 export * from './lib/functions/convert-object-to-attribute-list.function';
 export * from './lib/functions/convert-phone-to-plus-one.function';
@@ -31,6 +32,7 @@ export * from './lib/middleware/auth.middleware';
 
 export * from './lib/services/admin-cognito.service';
 export * from './lib/services/auth.service';
+export * from './lib/services/mfa-auth.service';
 
 export * from './lib/auth.module';
 export * from './lib/server-aws-cognito.module';

@@ -12,21 +12,13 @@ export class AdminCognitoService {
     private cognitoIdentityService: CognitoIdentityServiceProvider) {
   }
 
-  async shaun(AccessToken: string, Session: string, secretCode: string) {
-
-    const associateResult = await this.cognitoIdentityService.associateSoftwareToken({
-      AccessToken,
-      Session
-    }).promise();
-
-    // is this the same session as passed-in???
-    const session = associateResult.Session;
-
-    // Display the QR code to the user (You can use a QR code library for this)
-    const qrCodeImageUrl = `https://www.example.com/generate-qr-code?session=${session}&secretCode=${secretCode}`;
-    console.log('QR Code URL:', qrCodeImageUrl);
+  async getSecretCode(accessToken: string): Promise<any> {
+    return this.cognitoIdentityService.associateSoftwareToken({accessToken}).toPromise();
   }
 
+  async vefifyTotpToken(accessToken: string, userCode: string) {
+    return this.cognitoIdentityService.verifySoftwareToken({Accesstoken: accessToken, UserCode: userCode}).toPromise();
+  }
 
   deleteAdminUser(Username: string) {
     const { AWS_COGNITO_USER_POOL_ID } = this.config;
