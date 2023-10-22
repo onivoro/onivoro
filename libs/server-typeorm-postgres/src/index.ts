@@ -6,6 +6,8 @@ export * from './lib/classes/sql-writer.class';
 export * from './lib/classes/type-orm-paging-repository.class';
 export * from './lib/classes/type-orm-repository.class';
 
+export * from './lib/constants/many-to-one-relation-options.constant';
+
 export * from './lib/decorators/nullable-table-column.decorator';
 export * from './lib/decorators/primary-table-column.decorator';
 export * from './lib/decorators/table-column.decorator';
