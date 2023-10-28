@@ -1,0 +1,13 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`upperFirst GIVEN "XCVB", does what u expect 1`] = `"Xcvb"`;
+
+exports[`upperFirst GIVEN "asdf", does what u expect 1`] = `"Asdf"`;
+
+exports[`upperFirst GIVEN falsey input 0, does what u expect 1`] = `0`;
+
+exports[`upperFirst GIVEN falsey input false, does what u expect 1`] = `false`;
+
+exports[`upperFirst GIVEN falsey input null, does what u expect 1`] = `null`;
+
+exports[`upperFirst GIVEN falsey input undefined, does what u expect 1`] = `undefined`;
