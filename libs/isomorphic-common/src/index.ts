@@ -13,6 +13,7 @@ export * from './lib/functions/to-locale-date-string.function';
 export * from './lib/functions/to-locale-time-string.function';
 export * from './lib/functions/to-unique-array.function';
 export * from './lib/functions/unicode-words.const';
+export * from './lib/functions/upper-first.function';
 export * from './lib/functions/words.function';
 
 export * from './lib/interfaces/entity-provider.interface';
