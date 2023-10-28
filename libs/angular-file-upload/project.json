@@ -9,8 +9,7 @@
       "executor": "@nx/angular:package",
       "outputs": ["{workspaceRoot}/dist/libs/angular-file-upload"],
       "options": {
-        "project": "libs/angular-file-upload/ng-package.json",
-        "updateBuildableProjectDepsInPackageJson": true
+        "project": "libs/angular-file-upload/ng-package.json"
       },
       "configurations": {
         "production": {

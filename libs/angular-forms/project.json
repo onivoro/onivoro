@@ -9,8 +9,7 @@
       "executor": "@nx/angular:package",
       "outputs": ["{workspaceRoot}/dist/libs/angular-forms"],
       "options": {
-        "project": "libs/angular-forms/ng-package.json",
-        "updateBuildableProjectDepsInPackageJson": true
+        "project": "libs/angular-forms/ng-package.json"
       },
       "configurations": {
         "production": {

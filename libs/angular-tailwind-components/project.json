@@ -10,8 +10,7 @@
       "outputs": ["{workspaceRoot}/dist/libs/angular-tailwind-components"],
       "options": {
         "project": "libs/angular-tailwind-components/ng-package.json",
-        "tailwindConfig": "libs/angular-tailwind-components/tailwind.config.js",
-        "updateBuildableProjectDepsInPackageJson": true
+        "tailwindConfig": "libs/angular-tailwind-components/tailwind.config.js"
       },
       "configurations": {
         "production": {
