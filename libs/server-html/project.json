@@ -1,18 +1,19 @@
 {
+  "name": "server-html",
   "$schema": "../../node_modules/nx/schemas/project-schema.json",
   "sourceRoot": "libs/server-html/src",
   "projectType": "library",
   "targets": {
     "lint": {
-      "executor": "@nrwl/linter:eslint",
+      "executor": "@nx/eslint:lint",
       "outputs": ["{options.outputFile}"],
       "options": {
         "lintFilePatterns": ["libs/server-html/**/*.ts"]
       }
     },
     "test": {
-      "executor": "@nrwl/jest:jest",
-      "outputs": ["coverage/libs/server-html"],
+      "executor": "@nx/jest:jest",
+      "outputs": ["{workspaceRoot}/coverage/libs/server-html"],
       "options": {
         "jestConfig": "libs/server-html/jest.config.ts",
         "passWithNoTests": true

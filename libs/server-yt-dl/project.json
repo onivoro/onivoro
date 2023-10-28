@@ -1,18 +1,19 @@
 {
+  "name": "server-yt-dl",
   "$schema": "../../node_modules/nx/schemas/project-schema.json",
   "sourceRoot": "libs/server-yt-dl/src",
   "projectType": "library",
   "targets": {
     "lint": {
-      "executor": "@nrwl/linter:eslint",
+      "executor": "@nx/eslint:lint",
       "outputs": ["{options.outputFile}"],
       "options": {
         "lintFilePatterns": ["libs/server-yt-dl/**/*.ts"]
       }
     },
     "test": {
-      "executor": "@nrwl/jest:jest",
-      "outputs": ["coverage/libs/server-yt-dl"],
+      "executor": "@nx/jest:jest",
+      "outputs": ["{workspaceRoot}/coverage/libs/server-yt-dl"],
       "options": {
         "jestConfig": "libs/server-yt-dl/jest.config.ts",
         "passWithNoTests": true

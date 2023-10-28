@@ -1,15 +1,17 @@
 {
+  "name": "angular-tailwind-components",
   "$schema": "../../node_modules/nx/schemas/project-schema.json",
   "projectType": "library",
   "sourceRoot": "libs/angular-tailwind-components/src",
   "prefix": "onivoro",
   "targets": {
     "build": {
-      "executor": "@nrwl/angular:package",
-      "outputs": ["dist/libs/angular-tailwind-components"],
+      "executor": "@nx/angular:package",
+      "outputs": ["{workspaceRoot}/dist/libs/angular-tailwind-components"],
       "options": {
         "project": "libs/angular-tailwind-components/ng-package.json",
-        "tailwindConfig": "libs/angular-tailwind-components/tailwind.config.js"
+        "tailwindConfig": "libs/angular-tailwind-components/tailwind.config.js",
+        "updateBuildableProjectDepsInPackageJson": true
       },
       "configurations": {
         "production": {
@@ -22,15 +24,15 @@
       "defaultConfiguration": "production"
     },
     "test": {
-      "executor": "@nrwl/jest:jest",
-      "outputs": ["coverage/libs/angular-tailwind-components"],
+      "executor": "@nx/jest:jest",
+      "outputs": ["{workspaceRoot}/coverage/libs/angular-tailwind-components"],
       "options": {
         "jestConfig": "libs/angular-tailwind-components/jest.config.ts",
         "passWithNoTests": true
       }
     },
     "lint": {
-      "executor": "@nrwl/linter:eslint",
+      "executor": "@nx/eslint:lint",
       "options": {
         "lintFilePatterns": [
           "libs/angular-tailwind-components/**/*.ts",

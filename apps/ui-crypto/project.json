@@ -1,4 +1,5 @@
 {
+  "name": "ui-crypto",
   "$schema": "../../node_modules/nx/schemas/project-schema.json",
   "projectType": "application",
   "sourceRoot": "apps/ui-crypto/src",
@@ -73,7 +74,7 @@
       }
     },
     "lint": {
-      "executor": "@nrwl/linter:eslint",
+      "executor": "@nx/eslint:lint",
       "options": {
         "lintFilePatterns": [
           "apps/ui-crypto/**/*.ts",
@@ -82,8 +83,8 @@
       }
     },
     "test": {
-      "executor": "@nrwl/jest:jest",
-      "outputs": ["coverage/apps/ui-crypto"],
+      "executor": "@nx/jest:jest",
+      "outputs": ["{workspaceRoot}/coverage/apps/ui-crypto"],
       "options": {
         "jestConfig": "apps/ui-crypto/jest.config.ts",
         "passWithNoTests": true

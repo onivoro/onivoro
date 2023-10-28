@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { ActivatedRouteSnapshot, CanActivate, RouterStateSnapshot, UrlTree } from '@angular/router';
+import { ActivatedRouteSnapshot, RouterStateSnapshot, UrlTree } from '@angular/router';
 import { map, Observable, of } from 'rxjs';
 import { RouteParams } from '../enums/route-params.enum';
 import { RoomRepository } from '../repositories/room-repository';
@@ -7,7 +7,7 @@ import { RoomRepository } from '../repositories/room-repository';
 @Injectable({
   providedIn: 'root'
 })
-export class UpsertRoomGuard implements CanActivate {
+export class UpsertRoomGuard  {
   constructor(private roomRepository: RoomRepository) { }
 
   canActivate(
