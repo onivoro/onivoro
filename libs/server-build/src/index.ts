@@ -24,6 +24,7 @@ export * from './lib/functions/push-image-to-ecr.function';
 export * from './lib/functions/shell.function';
 export * from './lib/functions/stop-all-tasks.function';
 export * from './lib/functions/strip-new-lines.function';
+export * from './lib/functions/to-cdn-path.function';
 export * from './lib/functions/zip-directory.function';
 
 export * from './lib/types/app-params.interface';
