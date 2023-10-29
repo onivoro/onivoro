@@ -27,9 +27,14 @@ export * from './lib/functions/strip-new-lines.function';
 export * from './lib/functions/to-cdn-path.function';
 export * from './lib/functions/zip-directory.function';
 
+export * from './lib/services/build-embedded.service';
+
 export * from './lib/types/app-params.interface';
 export * from './lib/types/aws-app-params.interface';
 export * from './lib/types/aws-ecs-params.interface';
 export * from './lib/types/aws-lambda-params.interface';
+export * from './lib/types/embedded-app-build-input.interface';
+export * from './lib/types/embedded-app-build-output.interface';
 
 export * from './lib/server-build.module';
+export * from './lib/server-build-with-s3.module';
