@@ -1,0 +1,33 @@
+@import '../common/colors';
+
+a,
+button {
+  &[disabled] {
+    cursor: not-allowed;
+  }
+
+  &[mat-raised-button], &[mat-flat-button] {
+    &[color=primary] {
+      color: $primary-contrast !important;
+    }
+
+    &[color=accent] {
+      color: $accent-contrast !important;
+    }
+
+    &[color=warn] {
+      color: $warn-contrast !important;
+    }
+  }
+
+  .sm {
+    .mat-button-wrapper, .mat-focus-indicator {
+      padding: 0 !important;
+    }
+  }
+}
+
+.mat-mdc-unelevated-button>.mat-icon, .mat-mdc-raised-button>.mat-icon, .mat-mdc-outlined-button>.mat-icon {
+  margin-right: 0 !important;
+  margin-left: 0 !important;
+}

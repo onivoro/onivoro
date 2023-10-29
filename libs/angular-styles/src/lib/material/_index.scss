@@ -1,0 +1,14 @@
+@use 'sass:map';
+@use '@angular/material' as mat;
+@include mat.core();
+
+@import 'themes';
+@import 'mat-button-size';
+@import 'mat-button';
+@import 'mat-card';
+@import 'mat-dialog';
+@import 'mat-form-field';
+@import 'table';
+
+
+@include mat.all-component-themes($theme);

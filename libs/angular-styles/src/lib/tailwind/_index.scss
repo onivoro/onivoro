@@ -1,0 +1,4 @@
+// tailwind reset to prevent wackiness w/ mat-form-field[appearance=outline]
+*, ::before, ::after {
+    border-style: none;
+}

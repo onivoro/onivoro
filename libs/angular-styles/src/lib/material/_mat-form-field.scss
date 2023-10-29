@@ -1,0 +1,21 @@
+@import '../common/colors';
+
+// .mat-form-field {
+//     [readonly] {
+//         color: $fore-disabled-text;
+//     }
+// }
+
+mat-form-field, .mat-form-field {
+    width: 100% !important;
+}
+
+.sm {
+.mat-form-field-wrapper {
+    &, & .mat-form-field-infix {
+        margin-bottom: 0 !important;
+        padding-bottom: 0 !important;
+        border-width: 0 !important;
+    }
+  }
+}
