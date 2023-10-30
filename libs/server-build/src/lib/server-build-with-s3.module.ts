@@ -9,6 +9,7 @@ import { BuildEmbeddedService } from './services/build-embedded.service';
 export class ServerBuildWithS3Module {
   static configure(config: ServerAwsS3Config) {
     return moduleFactory({
+      module: ServerBuildWithS3Module,
       providers: [
         ...providers,
         BuildEmbedded,

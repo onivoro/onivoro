@@ -1,8 +1,6 @@
 import { Command, Option } from 'nest-commander';
 import { BuildEmbeddedService, IEmbeddedAppBuildInput } from '@onivoro/server-build';
 import { AbstractCommand } from './abstract.command';
-import { IEmbeddedAppBuildOutput } from '../types/embedded-app-build-output.interface';
-
 
 @Command({ name: BuildEmbedded.name })
 export class BuildEmbedded extends AbstractCommand<IEmbeddedAppBuildInput> {
