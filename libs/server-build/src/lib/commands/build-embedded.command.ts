@@ -53,7 +53,7 @@ export class BuildEmbedded extends AbstractCommand<IEmbeddedAppBuildInput> {
     @Option({
         flags: '-c, --omitAcl [omitAcl]',
         description: 'Whether to use acl public-read for S3 push',
-        required: true
+        required: false
     })
     parseOmitAcl(val?: string) {
         return val && val?.toString() === 'true';

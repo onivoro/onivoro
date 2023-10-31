@@ -36,19 +36,78 @@ export class BuildEmbeddedService {
 
         let html = fileMappings.reduce((acc, { modified, original }) => acc.replace(original, inline ? modified : ''), indexHtml);
 
+        const bootstrapPath = toCdnPath(bucket, region, app, 'load', 'js');
+
         if (!inline) {
             const body = '</body>';
-            html = html.replace(body, `<script src="${toCdnPath(bucket, region, 'common', app, 'js')}" type="module"></script>${body}`);
+            html = html.replace(body, `<script src="${bootstrapPath}" type="module"></script>${body}`);
             html = html.replace(new RegExp('<script src="" type="module"></script>', 'g'), '');
             html = html.replace(new RegExp('<link rel="stylesheet" href="">', 'g'), '');
 
         }
 
+        const ACL = omitAcl ? undefined : 'public-read';
+
         await Promise.all(fileMappings.map(async ({ contentType, original, key }) =>
-            await this.s3Svc.upload({ Bucket: bucket, ContentType: contentType, Body: await readFile(`${assetRoot}/${original}`, 'utf-8'), Key: key, ACL: omitAcl ? undefined : 'public-read' })
+            await this.s3Svc.upload({
+                Bucket: bucket,
+                ContentType: contentType,
+                Body: await readFile(`${assetRoot}/${original}`, 'utf-8'),
+                Key: key,
+                ACL
+            })
         ));
 
+        await this.s3Svc.upload({ Bucket: bucket, ContentType: 'text/javascript', Body: this.getBootstrapScriptBody(region, bucket, app), Key: bootstrapPath, ACL });
+
         return { app, html, fileMappings };
+    }
+
+    getBootstrapScriptBody(region: string, bucket: string, app: string) {
+        return `
+        const loadConfig = {
+            bucket: '${bucket}',
+            region: '${region}',
+            toLoad: {
+                'script': {
+                    '${app}': ['runtime.js', 'polyfills.js', 'main.js'],
+                },
+                'link': {
+                    '${app}': ['styles.css']
+                }
+            }
+        };
+
+        Object.entries(loadConfig.toLoad).forEach((configs) => {
+            const type = configs[0];
+            const segregatedConfigs = configs[1];
+            Object.entries(segregatedConfigs).forEach((segregatedConfig) => {
+                const folder = segregatedConfig[0];
+                const files = segregatedConfig[1];
+
+                const prefix = \`https://\${loadConfig.bucket}.s3.\${loadConfig.region}.amazonaws.com\`;
+
+                files.forEach(file => {
+                    const element = document.createElement(type);
+                    const path = \`\${prefix}/\${folder}/\${file}\`;
+
+                    if (type === 'link') {
+                        element.setAttribute('href', path);
+                        element.setAttribute('rel', 'stylesheet');
+                        document.head.appendChild(element);
+                    } else if (type === 'script') {
+                        element.setAttribute('src', path);
+                        element.setAttribute('type', 'module');
+                        document.head.appendChild(element);
+                    }
+                });
+            });
+        });
+
+        const l = document.createElement('link');
+        l.setAttribute('href', 'https://fonts.googleapis.com/icon?family=Material+Icons');
+        l.setAttribute('rel', 'stylesheet');
+        document.head.appendChild(l);`;
     }
 
     constructor(private s3Svc: S3Service) { }
