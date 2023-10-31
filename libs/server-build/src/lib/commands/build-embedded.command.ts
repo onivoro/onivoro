@@ -49,4 +49,13 @@ export class BuildEmbedded extends AbstractCommand<IEmbeddedAppBuildInput> {
     parseAssetRoot(val?: string) {
         return val;
     }
+
+    @Option({
+        flags: '-c, --omitAcl [omitAcl]',
+        description: 'Whether to use acl public-read for S3 push',
+        required: true
+    })
+    parseOmitAcl(val?: string) {
+        return val && val?.toString() === 'true';
+    }
 }

@@ -10,7 +10,7 @@ import { buildApp } from '../functions/build-app.function';
 @Injectable()
 export class BuildEmbeddedService {
 
-    async main({ app, bucket, region, assetRoot }: IEmbeddedAppBuildInput): Promise<IEmbeddedAppBuildOutput> {
+    async main({ app, bucket, region, assetRoot, omitAcl }: IEmbeddedAppBuildInput): Promise<IEmbeddedAppBuildOutput> {
 
         buildApp(app, 'production');
 
@@ -44,7 +44,9 @@ export class BuildEmbeddedService {
 
         }
 
-        await Promise.all(fileMappings.map(async ({ contentType, original, key }) => await this.s3Svc.uploadPublic({ Bucket: bucket, ContentType: contentType, Body: await readFile(`${assetRoot}/${original}`, 'utf-8'), Key: key })));
+        await Promise.all(fileMappings.map(async ({ contentType, original, key }) =>
+            await this.s3Svc.upload({ Bucket: bucket, ContentType: contentType, Body: await readFile(`${assetRoot}/${original}`, 'utf-8'), Key: key, ACL: omitAcl ? undefined : 'public-read' })
+        ));
 
         return { app, html, fileMappings };
     }
