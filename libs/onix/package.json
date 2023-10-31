@@ -1,6 +1,6 @@
 {
   "name": "@onivoro/onix",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "executors": "./executors.json",
   "dependencies": {
     "@nx/devkit": "17.0.2"
