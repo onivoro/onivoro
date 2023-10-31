@@ -29,6 +29,7 @@
         "libs/angular-tailwind-components/src/index.ts"
       ],
       "@onivoro/isomorphic-common": ["libs/isomorphic-common/src/index.ts"],
+      "@onivoro/onix": ["libs/onix/src/index.ts"],
       "@onivoro/server-auth": ["libs/server-auth/src/index.ts"],
       "@onivoro/server-aws-auth": ["libs/server-aws-auth/src/index.ts"],
       "@onivoro/server-aws-dynamo": ["libs/server-aws-dynamo/src/index.ts"],
