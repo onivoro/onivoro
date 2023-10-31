@@ -36,7 +36,8 @@ export class BuildEmbeddedService {
 
         let html = fileMappings.reduce((acc, { modified, original }) => acc.replace(original, inline ? modified : ''), indexHtml);
 
-        const bootstrapPath = toCdnPath(bucket, region, app, 'load', 'js');
+        const bootstrapScriptName = 'init';
+        const bootstrapPath = toCdnPath(bucket, region, app, bootstrapScriptName, 'js');
 
         if (!inline) {
             const body = '</body>';
@@ -58,7 +59,7 @@ export class BuildEmbeddedService {
             })
         ));
 
-        await this.s3Svc.upload({ Bucket: bucket, ContentType: 'text/javascript', Body: this.getBootstrapScriptBody(region, bucket, app), Key: bootstrapPath, ACL });
+        await this.s3Svc.upload({ Bucket: bucket, ContentType: 'text/javascript', Body: this.getBootstrapScriptBody(region, bucket, app), Key: `${app}/${bootstrapScriptName}.js`, ACL });
 
         return { app, html, fileMappings };
     }

@@ -1,12 +1,12 @@
 const loadConfig = {
-    bucket: 'envent-staging',
-    region: 'us-east-2',
+    bucket: 'firstpass-apps',
+    region: 'us-east-1',
     toLoad: {
         'script': {
-            'ui-inventory': ['runtime.js', 'polyfills.js', 'main.js'],
+            'ui-answers': ['runtime.js', 'polyfills.js', 'main.js'],
         },
         'link': {
-            'ui-inventory': ['styles.css']
+            'ui-answers': ['styles.css']
         }
     }
 };
