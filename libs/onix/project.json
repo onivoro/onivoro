@@ -12,7 +12,7 @@
         "tsConfig": "libs/onix/tsconfig.lib.json",
         "packageJson": "libs/onix/package.json",
         "main": "libs/onix/src/index.ts",
-        "assets": ["libs/onix/*.md"]
+        "assets": ["libs/onix/executors.json"]
       }
     },
     "publish": {
