@@ -24,6 +24,9 @@
       "@onivoro/angular-material-forms": [
         "libs/angular-material-forms/src/index.ts"
       ],
+      "@onivoro/angular-router-proxy": [
+        "libs/angular-router-proxy/src/index.ts"
+      ],
       "@onivoro/angular-styles": ["libs/angular-styles/src/index.ts"],
       "@onivoro/angular-tailwind-components": [
         "libs/angular-tailwind-components/src/index.ts"
