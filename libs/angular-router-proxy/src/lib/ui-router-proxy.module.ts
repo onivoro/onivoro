@@ -7,6 +7,7 @@ import { RouteService } from './services/route.service';
 import { RouterOutletDirective } from './directives/router-outlet.directive';
 import { ActivatedRouteProxy } from './proxies/activated-route.proxy';
 import { RouterProxy } from './proxies/router.proxy';
+import { BrowserModule } from '@angular/platform-browser';
 
 let routeService: RouteService | null;
 
@@ -22,7 +23,7 @@ const directives = [
 const declarations = [...components, ...directives];
 
 @NgModule({
-  imports: [CommonModule],
+  imports: [BrowserModule, CommonModule],
   declarations,
   providers: [
     {
