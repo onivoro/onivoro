@@ -56,6 +56,7 @@ export class UiRouterProxyModule {
           }
         },
       ],
+      exports: declarations
     };
   }
 }
