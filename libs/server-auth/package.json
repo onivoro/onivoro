@@ -1,4 +1,14 @@
 {
   "name": "@onivoro/server-auth",
-  "version": "0.0.1"
+  "version": "0.0.2",
+  "dependencies": {
+    "@nestjs/common": "10.2.7",
+    "@nestjs/swagger": "7.1.14",
+    "@onivoro/server-common": "^0.0.16",
+    "jsonwebtoken": "~8.5.1",
+    "rxjs": "^7.4.0"
+  },
+  "devDependencies": {
+    "@types/jsonwebtoken": "~8.5.1"
+  }
 }
