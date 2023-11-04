@@ -14,4 +14,15 @@ export class PuppeteerService {
         await page.close();
         return result;
     }
+
+    protected async extractPageBodyAsObject<TBody>(url: string): Promise<TBody> {
+        return JSON.parse(await this.extractPageBody(url)) as TBody;
+    }
+
+    protected async extractPageBody(url: string): Promise<string> {
+        return await this.usePage(async page => {
+            await page.waitForTimeout((Math.floor(Math.random() * 10) + 2) * 1000);
+            return await page.$eval('body', e => e.textContent);
+        }, url);
+    }
 }

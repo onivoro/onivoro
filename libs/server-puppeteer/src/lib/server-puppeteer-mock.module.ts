@@ -14,7 +14,7 @@ export class ServerPuppeteerMockModule {
                         const mockSvc: PuppeteerService = {
                             browser: {} as any,
                             usePage: async (fn: (page: Page) => Promise<string>, url?: string) => 'This is not implemented yet'
-                        };
+                        } as PuppeteerService;
 
                         return mockSvc;
                     }
