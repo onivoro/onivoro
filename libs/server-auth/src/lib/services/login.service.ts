@@ -18,11 +18,11 @@ export class LoginService<TAccessToken> {
   ) { }
 
   async loginWithApiCredentials(credentials: LoginWithApiCredentialsDto): Promise<string> {
-    return await this.login(credentials, async creds => await this.tokenBuilder.byApiCredentials(creds))
+    return await this.login(credentials, async creds => await this.tokenBuilder.byApiCredentials(creds));
   }
 
   async loginWithEmailAndPassword(credentials: LoginWithEmailAndPasswordDto): Promise<string> {
-    return await this.login(credentials, async creds => await this.tokenBuilder.byEmailAndPassword(creds))
+    return await this.login(credentials, async creds => await this.tokenBuilder.byEmailAndPassword(creds));
   }
 
   async login<TCredentials>(creds: TCredentials, resolver: (creds: TCredentials) => Promise<TAccessToken>): Promise<string> {
@@ -44,8 +44,8 @@ export class LoginService<TAccessToken> {
       console.error(error);
       fail();
     }
-
   }
+
   private sign(payload: any) {
     return jwt.sign(payload, this.config.JWT_SECRET, { expiresIn: this.config.expiresIn });
   }

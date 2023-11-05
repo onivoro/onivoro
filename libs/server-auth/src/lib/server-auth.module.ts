@@ -10,7 +10,9 @@ import { TokenBuilder } from './classes/token-builder.class';
 
 @Module({})
 export class ServerAuthModule {
-  static configure<TAccessToken>(config: ServerAuthConfig, tokenBuilder: TokenBuilder<TAccessToken>) {
+  static configure<TAccessToken>(
+    config: ServerAuthConfig,
+    ) {
     return moduleFactory({
       module: ServerAuthModule,
       imports: [
@@ -23,10 +25,7 @@ export class ServerAuthModule {
           provide: ServerAuthConfig,
           useValue: config
         },
-        {
-          provide: TokenBuilder,
-          useValue: tokenBuilder
-        }
+        TokenBuilder,
       ],
       controllers: [
         LoginController,
