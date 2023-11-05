@@ -17,14 +17,11 @@ const imports = [
 ];
 
 const providers = [
-  LoginService,
-  TokenValidationService,
   TokenBuilder,
 ];
 
 @Module({
   providers,
-  controllers,
   imports
 })
 export class ServerAuthModule {
@@ -37,6 +34,8 @@ export class ServerAuthModule {
       imports,
       providers: [
         ...providers,
+        LoginService,
+        TokenValidationService,
         {
           provide: ServerAuthConfig,
           useValue: config
