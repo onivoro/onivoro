@@ -8,27 +8,39 @@ import { TokenValidationService } from './services/token-validation.service';
 import { ServerAuthConfig } from './classes/server-auth-config.class';
 import { TokenBuilder } from './classes/token-builder.class';
 
-@Module({})
+const controllers = [
+  LoginController,
+];
+
+const imports = [
+  ServerCommonModule,
+];
+
+const providers = [
+  LoginService,
+  TokenValidationService,
+  TokenBuilder,
+];
+
+@Module({
+  providers,
+  controllers,
+  imports
+})
 export class ServerAuthModule {
   static configure<TAccessToken>(
     config: ServerAuthConfig,
-    ) {
+  ) {
     return moduleFactory({
       module: ServerAuthModule,
-      imports: [
-        ServerCommonModule,
-      ],
+      controllers,
+      imports,
       providers: [
-        LoginService,
-        TokenValidationService,
+        ...providers,
         {
           provide: ServerAuthConfig,
           useValue: config
         },
-        TokenBuilder,
-      ],
-      controllers: [
-        LoginController,
       ],
     })
   }

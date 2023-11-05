@@ -20,9 +20,9 @@ export * from './lib/dtos/registration-signup.dto';
 export * from './lib/functions/authorize-request.function';
 export * from './lib/functions/create-auth-param-decorator.function';
 
-export * from './lib/guards/admin-auth.guard';
+export * from './lib/guards/admin.guard';
 export * from './lib/guards/auth.guard';
-export * from './lib/guards/sys-admin-auth.guard';
+export * from './lib/guards/sys-admin.guard';
 
 export * from './lib/middleware/auth.middleware';
 
