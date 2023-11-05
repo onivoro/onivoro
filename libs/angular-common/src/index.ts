@@ -1,6 +1,7 @@
 export * from './lib/angular-common.module';
 
 export * from './lib/classes/abstract-paged-entity-service.class';
+export * from './lib/classes/redirect-service.class';
 
 export * from './lib/constants/colors.constant';
 export * from './lib/constants/embedded-app-component-template.constant';
