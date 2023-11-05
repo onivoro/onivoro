@@ -42,7 +42,9 @@
     "production": [
       "default",
       "!{projectRoot}/.eslintrc.json",
-      "!{projectRoot}/src/test-setup.[jt]s"
+      "!{projectRoot}/src/test-setup.[jt]s",
+      "!{projectRoot}/**/?(*.)+(spec|test).[jt]s?(x)?(.snap)",
+      "!{projectRoot}/tsconfig.spec.json"
     ]
   },
   "targetDefaults": {
@@ -61,7 +63,11 @@
       ]
     },
     "test": {
-      "cache": true
+      "cache": true,
+      "inputs": [
+        "default",
+        "^production"
+      ]
     }
   }
 }

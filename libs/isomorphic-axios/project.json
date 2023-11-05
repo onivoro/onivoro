@@ -1,0 +1,38 @@
+{
+  "name": "isomorphic-axios",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "libs/isomorphic-axios/src",
+  "projectType": "library",
+  "targets": {
+    "build": {
+      "executor": "@nx/vite:build",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "outputPath": "dist/libs/isomorphic-axios"
+      }
+    },
+    "publish": {
+      "command": "node tools/scripts/publish.mjs isomorphic-axios {args.ver} {args.tag}",
+      "dependsOn": ["build"]
+    },
+    "test": {
+      "executor": "@nx/vite:test",
+      "outputs": ["{options.reportsDirectory}"],
+      "options": {
+        "passWithNoTests": true,
+        "reportsDirectory": "../../coverage/libs/isomorphic-axios"
+      }
+    },
+    "lint": {
+      "executor": "@nx/eslint:lint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": [
+          "libs/isomorphic-axios/**/*.ts",
+          "libs/isomorphic-axios/package.json"
+        ]
+      }
+    }
+  },
+  "tags": []
+}

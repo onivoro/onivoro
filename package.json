@@ -144,6 +144,8 @@
     "@types/uuid": "~8.3.4",
     "@typescript-eslint/eslint-plugin": "5.62.0",
     "@typescript-eslint/parser": "5.62.0",
+    "@vitest/coverage-c8": "~0.32.0",
+    "@vitest/ui": "~0.32.0",
     "adm-zip": "~0.5.9",
     "autoprefixer": "10.4.13",
     "babel-jest": "29.4.3",
@@ -174,6 +176,9 @@
     "tsconfig-paths": "~4.1.0",
     "typescript": "5.1.6",
     "verdaccio": "^5.0.4",
+    "vite": "~4.3.9",
+    "vite-plugin-dts": "~2.3.0",
+    "vitest": "~0.32.0",
     "yargs-parser": "~21.1.1"
   },
   "engines": {
