@@ -1,6 +1,6 @@
 {
   "name": "@onivoro/server-auth",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "dependencies": {
     "@nestjs/common": "10.2.7",
     "@nestjs/swagger": "7.1.14",
