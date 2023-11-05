@@ -1,6 +1,6 @@
 {
   "name": "@onivoro/server-auth",
-  "version": "0.0.13",
+  "version": "0.0.14",
   "dependencies": {
     "@onivoro/server-common": "^0.0.16",
     "jsonwebtoken": "~8.5.1",
