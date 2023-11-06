@@ -173,11 +173,11 @@ export class AdminCognitoService {
 
 
   async setCognitoPreferredMfa(smsPreferred: boolean, accessTokenRaw: string) {
-    const on = { 
+    const on = {
       "Enabled": true,
       "PreferredMfa": true
     };
-    const off = { 
+    const off = {
       "Enabled": false,
       "PreferredMfa": false
     };
@@ -192,7 +192,12 @@ export class AdminCognitoService {
 
     await this.cognitoIdentityService.setUserMFAPreference({
       AccessToken: accessTokenRaw,
-      SMSMfaSettings: smsSettings, 
+      SMSMfaSettings: smsSettings,
       SoftwareTokenMfaSettings: totpSettings}).promise();
+
+      await this.afterSetCognitoPreferredMfa(smsPreferred, accessTokenRaw);
   }
+
+  // this is only here as a hook that consuming modules can override
+  async afterSetCognitoPreferredMfa(smsPreferred: boolean, accessTokenRaw: string) {}
 }
