@@ -193,11 +193,6 @@ export class AdminCognitoService {
     await this.cognitoIdentityService.setUserMFAPreference({
       AccessToken: accessTokenRaw,
       SMSMfaSettings: smsSettings, 
-      SoftwareTokenMfaSettings: totpSettings}, function(err, result) {
-        if (err) {
-            console.log('err', err);
-        }
-        console.log('call result ' + result)
-    });
+      SoftwareTokenMfaSettings: totpSettings}).promise();
   }
 }
