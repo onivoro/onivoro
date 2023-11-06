@@ -7,8 +7,9 @@ import { AuthGuard } from './guards/auth.guard';
 import { AuthController } from './controllers/auth.controller';
 import { moduleFactory } from '@onivoro/server-common';
 import { ServerAwsCognitoModule } from './server-aws-cognito.module';
+import { MfaAuthService } from './services/mfa-auth.service';
 
-const providers = [AuthService, AuthMiddleware, AuthGuard];
+const providers = [AuthService, AuthMiddleware, AuthGuard, MfaAuthService];
 
 @Module({})
 export class AuthModule {
