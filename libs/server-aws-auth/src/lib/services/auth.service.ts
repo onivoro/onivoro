@@ -93,8 +93,54 @@ export class AuthService implements OnModuleInit {
           }
           resolve({ username: userData.Username });
         },
+        totpRequired: (d) => {
+          if(this.config.mfaEnabled) {
+            if (!validateMfa) {
+              throw new InternalServerErrorException(`${AuthService.name}.${AuthService.prototype.authenticateUser.name} missing mfa callback. If this was intentional, disable mfa via ${AuthConfig.name}.`);
+            } else {
+              validateMfa(userData, newUser);
+            }
+          }
+          resolve({ username: userData.Username });
+        }
       });
     });
+  }
+
+  async setCognitoPreferredMfa(username: string, smsPreferred: boolean) {
+    const on = { 
+      "Enabled": true,
+      "PreferredMfa": true
+    };
+    const off = { 
+      "Enabled": false,
+      "PreferredMfa": false
+    };
+    let smsSettings, totpSettings;
+    if (smsPreferred) {
+      smsSettings = on;
+      totpSettings = off;
+    } else {
+      smsSettings = off;
+      totpSettings = on;
+    }
+    
+    const userData = {
+      Username: username,
+      Pool: this.userPool,
+    };
+    const cognitoUser = new CognitoUser(userData);
+    await new Promise(res => cognitoUser.getSession(res));
+
+    cognitoUser.setUserMfaPreference(
+      smsSettings, 
+      totpSettings, 
+      function (err, result) {
+        if (err) {
+          console.log(err.message || JSON.stringify(err));
+        }
+        console.log("call result " + result);
+      });
   }
 
   async logout(user: Pick<IAuthCredentialsDto, 'name'>) {

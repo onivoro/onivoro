@@ -11,11 +11,11 @@ export class MfaAuthService {
 
   async login(authenticateRequest: AuthCredentialsDto) {
     try {
-        const {result}: any = await this.authService.authenticateUser(
+        const result: any = await this.authService.authenticateUser(
           authenticateRequest
         );
   
-        const response: AuthTokensDto = {
+    const response: AuthTokensDto = {
           token: result?.accessToken?.jwtToken,
           idToken: result?.idToken?.jwtToken
         };
@@ -28,12 +28,14 @@ export class MfaAuthService {
 
   async authenticate(authenticateRequest: AuthCredentialsDto) {
     try {
-        return await this.authService.authenticateUser(
+        const result: any = await this.authService.authenticateUser(
           authenticateRequest,
           (userData, newUser) => {
             this.mfaMap.set(userData.Username, newUser);
           }
         );
+
+        return result; 
       } catch (e) {
         const cachedUser = this.mfaMap.get(authenticateRequest.name);
         if (cachedUser) {

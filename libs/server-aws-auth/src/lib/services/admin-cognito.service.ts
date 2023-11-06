@@ -170,4 +170,34 @@ export class AdminCognitoService {
       })
     );
   }
+
+
+  async setCognitoPreferredMfa(smsPreferred: boolean, accessTokenRaw: string) {
+    const on = { 
+      "Enabled": true,
+      "PreferredMfa": true
+    };
+    const off = { 
+      "Enabled": false,
+      "PreferredMfa": false
+    };
+    let smsSettings, totpSettings;
+    if (smsPreferred) {
+      smsSettings = on;
+      totpSettings = off;
+    } else {
+      smsSettings = off;
+      totpSettings = on;
+    }
+
+    await this.cognitoIdentityService.setUserMFAPreference({
+      AccessToken: accessTokenRaw,
+      SMSMfaSettings: smsSettings, 
+      SoftwareTokenMfaSettings: totpSettings}, function(err, result) {
+        if (err) {
+            console.log('err', err);
+        }
+        console.log('call result ' + result)
+    });
+  }
 }
