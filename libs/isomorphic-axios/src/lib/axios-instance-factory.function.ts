@@ -1,21 +1,27 @@
 
-import axios, { AxiosRequestConfig, AxiosResponse } from 'axios';
+import axios, { AxiosRequestConfig } from 'axios';
+import { defaultAxiosConfig } from './default-axios-config.constant';
+import { THeaderSetterMap } from './header-setting-map.type';
+import { TErrorHandlerMap } from './error-handler-map.type';
+import { TErrorHandler } from './error-handler.type';
 
-interface RetryConfig extends AxiosRequestConfig {
-  retry: number;
-  retryDelay: number;
-}
-
-const globalConfig: RetryConfig = {
-  retry: 3,
-  retryDelay: 1000,
-};
-
-
-export function axiosInstanceFactory(
-  headerSetterMap: Record<string, (req: AxiosRequestConfig<any>) => string> = {},
-  errorHandlerMap: Record<number, (err: any, res?: AxiosResponse<any, any>) => void> = {}
+export function axiosInstanceFactory<TData>(params:
+  {
+    headerSetters: THeaderSetterMap<TData>,
+    errorHandlers: TErrorHandlerMap<TData>,
+    beforeRetryHandlers: TErrorHandlerMap<TData>,
+    axiosConfigOverride?: AxiosRequestConfig,
+  }
 ) {
+
+  const {
+    headerSetters = {},
+    beforeRetryHandlers = {},
+    errorHandlers = {},
+    axiosConfigOverride = defaultAxiosConfig,
+  } = params;
+
+  const globalConfig = { ...defaultAxiosConfig, axiosConfigOverride };
 
   const instance = axios.create(globalConfig);
 
@@ -25,7 +31,7 @@ export function axiosInstanceFactory(
       req.headers = {} as any;
     }
 
-    Object.entries(headerSetterMap || {}).forEach(([header, resolver]) => {
+    Object.entries(headerSetters || {}).forEach(([header, resolver]) => {
       (req.headers as any)[header] = resolver(req);
     });
 
@@ -37,12 +43,38 @@ export function axiosInstanceFactory(
     async (err) => {
       console.warn({ err, msg: 'axiosInstanceFactory error' });
 
-      const errorHandler = (errorHandlerMap || {})[err?.response?.status];
-      if(errorHandler) {
-        return errorHandler(err, err?.response);
+      const status = err?.response.status || 0;
+
+      const { config } = err;
+
+      if (!config || !config.retry) {
+
+        const errorHandler: TErrorHandler<TData> = errorHandlers[status] || errorHandlers[0];
+
+        if (errorHandler as any) {
+          return await errorHandler(err, err?.response);
+        }
+
+        // todo: change this to throw instead of mixing Promise.reject and async/await
+        return Promise.reject(err);
       }
 
-      return err;
+      config.retry -= 1;
+
+      const beforeRetryHandler: TErrorHandler<TData> = beforeRetryHandlers[status] || beforeRetryHandlers[0];
+
+      if (beforeRetryHandler as any) {
+        await beforeRetryHandler(err, err?.response);
+      }
+
+      await new Promise<void>((resolve) => {
+        setTimeout(() => {
+          console.log("axiosEmbeddedInstanceFactory is retrying the request", config.url);
+          resolve();
+        }, config.retryDelay || 1000)
+      })
+
+      return await instance(config);
     }
   );
 
