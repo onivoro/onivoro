@@ -48,4 +48,13 @@ export abstract class AbstractAwsLambdaCommand<TParams extends IAwsAppParams> ex
   parseSource(val?: string) {
     return val;
   }
+
+  @Option({
+    flags: '-l, --lambdaName [lambdaName]',
+    description: 'the actual name of the lambda function',
+    required: false
+  })
+  parseLambdaName(val?: string) {
+    return val;
+  }
 }

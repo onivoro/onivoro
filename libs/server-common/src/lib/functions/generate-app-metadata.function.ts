@@ -1,6 +1,5 @@
-export function generateAppMetadata(project: string) {
+export function generateAppMetadata(project: string, appRoot: string) {
   const [platform, app] = project.split('-')
-  const appRoot = `apps/${platform}/${app}`;
   const assetPath = `${appRoot}/src/assets`;
   const packageJsonPath = `${appRoot}/package.json`;
   const swaggerJsonPath = `api-dox/${project}.json`;

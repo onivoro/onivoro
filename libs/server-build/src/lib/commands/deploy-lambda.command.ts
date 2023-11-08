@@ -2,17 +2,17 @@ import { Command } from 'nest-commander';
 import { buildApp } from '../functions/build-app.function';
 import { deployLambda } from '../functions/deploy-lambda.function';
 import { AbstractAwsLambdaCommand } from './abstract-aws-lambda.command';
-import { IAwsLambdaParams } from '../types/aws-lambda-params.interface';
+import { IAwsLambdaConfigParams } from '../types/aws-lambda-config-params.interface';
 
 @Command({ name: DeployLambda.name })
-export class DeployLambda extends AbstractAwsLambdaCommand<IAwsLambdaParams> {
+export class DeployLambda extends AbstractAwsLambdaCommand<IAwsLambdaConfigParams> {
   constructor() {
     super(DeployLambda.name);
   }
 
   async main(
     _args: string[],
-    params: IAwsLambdaParams
+    params: IAwsLambdaConfigParams
   ): Promise<void> {
     buildApp(params.app, 'production');
     deployLambda(

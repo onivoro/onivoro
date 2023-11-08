@@ -33,12 +33,22 @@ export abstract class AbstractAwsAppCommand<TParams extends IAwsAppParams> exten
   }
 
   @Option({
-    flags: '-b, --branch [branch]',
+    flags: '-t, --target [target]',
     description:
-      'git branch name (will determine if target is staging or prod based on either "main" or "develop"',
+      'nx target as defined in project.json',
     required: true
   })
-  parseBranch(val?: string) {
+  parseTarget(val?: string) {
+    return val;
+  }
+
+  @Option({
+    flags: '-o, --appRoot [appRoot]',
+    description:
+      'nx app root as defined in project.json',
+    required: true
+  })
+  parseAppRoot(val?: string) {
     return val;
   }
 }

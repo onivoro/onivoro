@@ -8,6 +8,7 @@ export async function createApiApp(
   module: { name: string },
   port: number,
   project: string,
+  appRoot: string,
   corsOptions?: CorsOptions,
 ) {
 
@@ -19,7 +20,7 @@ export async function createApiApp(
   app.use(bodyParser.json({ limit: '50mb' }));
   app.use(bodyParser.urlencoded({ limit: '50mb', extended: true }));
 
-  await initOpenapi(app, module.name, project);
+  await initOpenapi(app, module.name, project, appRoot);
 
   await app.listen(port);
   Logger.log(

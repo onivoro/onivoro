@@ -1,8 +1,8 @@
 import { generateAppMetadata } from '@onivoro/server-common';
 import { shell } from './shell.function';
 
-export function buildImage(project: string, repoColonTag: string) {
-  const {app, platform} = generateAppMetadata(project);
+export function buildImage(project: string, repoColonTag: string, appRoot: string) {
+  const {app, platform} = generateAppMetadata(project, appRoot);
   shell(
     [
       'docker',

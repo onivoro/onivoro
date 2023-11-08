@@ -1,14 +1,13 @@
 import { spawnSync } from 'child_process';
-import { IAwsLambdaParams } from '../types/aws-lambda-params.interface';
+import { IAwsLambdaConfigParams } from '../types/aws-lambda-config-params.interface';
 import { buildApp } from './build-app.function';
-import { getLambdaNameByBranch } from './get-lambda-name-by-branch.function';
 import { shell } from './shell.function';
 import { zipDirectory } from './zip-directory.function';
 
 const opts = { encoding: 'utf8' } as any;
 
 export async function deployLambda(
-  params: IAwsLambdaParams,
+  params: IAwsLambdaConfigParams,
   update: boolean,
 ) {
   const {
@@ -18,7 +17,7 @@ export async function deployLambda(
     role: lambdaRole,
     bucket,
     source,
-    branch,
+    lambdaName: artifactName,
     prefix } = params;
   const srcFolderPath = source || ('apps/lambda/' + app.replace('lambda-', ''));
   const dist = `dist/${srcFolderPath}`;
@@ -30,8 +29,6 @@ export async function deployLambda(
   shell(`mkdir -p ${zipFolderPath}`);
 
   await zipDirectory(dist, zip);
-
-  const artifactName = getLambdaNameByBranch(app, branch);
 
   const s3Key = `${artifactName}.zip`;
 
