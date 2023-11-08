@@ -85,8 +85,7 @@ export class BuildEmbeddedService {
             Object.entries(segregatedConfigs).forEach((segregatedConfig) => {
                 const folder = segregatedConfig[0];
                 const files = segregatedConfig[1];
-
-                const prefix = \`https://\${loadConfig.bucket}.s3.\${loadConfig.region}.amazonaws.com\`;
+                const prefix = \`https://s3.\${loadConfig.region}.amazonaws.com/\${loadConfig.bucket}/\`;
 
                 files.forEach(file => {
                     const element = document.createElement(type);
