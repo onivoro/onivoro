@@ -8,6 +8,7 @@ export * from './lib/commands/deploy-lambda.command';
 export * from './lib/commands/openapi-gen.command';
 export * from './lib/commands/reddeploy-lambda.command';
 
+export * from './lib/functions/add-cdn-prefix-to-key.function';
 export * from './lib/functions/build-app.function';
 export * from './lib/functions/build-image.function';
 export * from './lib/functions/copy-package-json-version.function';
@@ -16,7 +17,6 @@ export * from './lib/functions/extract-asset-list.function';
 export * from './lib/functions/gen-metadata.function';
 export * from './lib/functions/get-apps.function';
 export * from './lib/functions/get-projects.function';
-export * from './lib/functions/get-s3-cdn-path.function';
 export * from './lib/functions/log-elapsed-time.function';
 export * from './lib/functions/login-to-ecr-by-profile.function';
 export * from './lib/functions/login-to-ecr.function';
