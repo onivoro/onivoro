@@ -32,6 +32,7 @@
         "libs/angular-tailwind-components/src/index.ts"
       ],
       "@onivoro/browser-canvas": ["libs/browser-canvas/src/index.ts"],
+      "@onivoro/browser-gaming": ["libs/browser-gaming/src/index.ts"],
       "@onivoro/isomorphic-axios": ["libs/isomorphic-axios/src/index.ts"],
       "@onivoro/isomorphic-common": ["libs/isomorphic-common/src/index.ts"],
       "@onivoro/onix": ["libs/onix/src/index.ts"],
