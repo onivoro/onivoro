@@ -18,7 +18,8 @@
     "gen:lib:api": "nx g @nx/nest:library --directory api",
     "gen:lib:generated": "nx g @nx/angular:library --directory generated",
     "gen:lib:iso": "nx g @nx/node:library --directory iso",
-    "gen:lib:ui": "nx g @nx/angular:library --directory ui"
+    "gen:lib:ui": "nx g @nx/angular:library --directory ui",
+    "shed": "npx ts-node shed.ts"
   },
   "private": true,
   "dependencies": {
