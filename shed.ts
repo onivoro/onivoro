@@ -1,5 +1,5 @@
 export class App {
-  constructor(public length = 16) {}
+  constructor(public length = 16) { }
   width = 8;
 
   qty4x6 = (this.length / 2) + 1;
@@ -24,20 +24,52 @@ export class App {
   costNonSideZipPanels = 42.28;
   totalCostNonSideZipPanels = this.qtyNonSideZipPanels * this.costNonSideZipPanels;
 
+  qtyNonSideSiding = ((this.width * 12) / 150) * 12 * 2;
+  costNonSideSiding = 15;
+  totalCostNonSideSiding = this.qtyNonSideSiding * this.costNonSideSiding;
+
+  qtySideSiding = ((this.length * 12) / 150) * 12 * 2;
+  costSideSiding = 15;
+  totalCostSideSiding = this.qtySideSiding * this.costSideSiding;
+
+  qty2x4Ceiling = ((this.length * 12) / 16) + 1;
+  cost2x4Ceiling = 30; // 3 10' boards;
+  totalCost2x4Ceiling = this.qty2x4Ceiling * this.cost2x4Ceiling;
+
+  qtySteelRoof = (this.length / 2);
+  costSteelRoof = 31.98; // (1) 12 ft panel cut in half will cover both sides
+  totalCostSteelRoof = this.qtySteelRoof * this.costSteelRoof;
+
+  qtyRoofZip = (this.length / 4) * 1.5; // ripping one lengthwise
+  costRoofZip = 42.28;
+  totalCostRoofZip = this.qtyRoofZip * this.costRoofZip;
+
   display = {
     totalCost4x6: this.totalCost4x6,
     totalCostFloor2x4: this.totalCostFloor2x4,
     totalCostFloorPlywood: this.totalCostFloorPlywood,
     totalCostSideZipPanels: this.totalCostSideZipPanels,
     totalCostNonSideZipPanels: this.totalCostNonSideZipPanels,
+    totalCostNonSideSiding: this.totalCostNonSideSiding,
+    totalCostSideSiding: this.totalCostSideSiding,
+    totalCost2x4Ceiling: this.totalCost2x4Ceiling,
+    totalCostSteelRoof: this.totalCostSteelRoof,
+    totalCostRoofZip: this.totalCostRoofZip,
   }
 
   total = Object.values(this.display).reduce((acc, curr) => acc + curr, 0);
 
 
-  showTotals () {
-    [...Object.entries(this.display), ['total', this.total]].forEach(([key, value]) => console.warn(`${key}: ${value}`));
+  showTotals() {
+    console.warn(`\n\nTOTALS FOR ${this.length} FT LENGTH`);
+    [
+      ...Object.entries(this.display),
+      ['total', this.total],
+      ['sq ft', this.length * this.width],
+    ]
+      .forEach(([key, value]) => console.warn(`${key}: ${value}`));
   }
 }
 
 new App(8).showTotals();
+new App(16).showTotals();

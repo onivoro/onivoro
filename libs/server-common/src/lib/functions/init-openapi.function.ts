@@ -16,6 +16,7 @@ export async function initOpenapi(app: INestApplication, moduleName: string, pro
   const document = SwaggerModule.createDocument(app, options);
 
   if (process.env.NODE_ENV !== 'production') {
+    console.log(`writing swagger JSON file to ${swaggerJsonPath}`)
     await writeFile(resolve(swaggerJsonPath), JSON.stringify(document, null, 2));
   }
 
