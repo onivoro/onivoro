@@ -3,6 +3,7 @@ import { element } from "./element.function";
 import { TSelfClosingElementRenderer } from "./self-closing-element-renderer.type";
 import { selfClosingElement } from "./self-closing-element.function";
 
+export const anchor: TElementRenderer = element.bind(null, 'a');
 export const body: TElementRenderer = element.bind(null, 'body');
 export const div: TElementRenderer = element.bind(null, 'div');
 export const h1: TElementRenderer = element.bind(null, 'h1');
