@@ -1,40 +1,14 @@
 import {
-  p,
-  td,
-  h1,
-  h2,
-  h3,
-  tr,
-  th,
-  thead,
-  tbody,
-  tab,
-  htm,
-  head,
-  header,
-  main,
-  body,
+  div, img
 } from './tags';
+
+const logoUrl = 'https://blah.blah.com/blah.jpg';
 
 describe('tags', () => {
   it.each([
-    [p],
-    [td],
-    [h1],
-    [h2],
-    [h3],
-    [tr],
-    [th],
-    [thead],
-    [tbody],
-    [tab],
-    [htm],
-    [head],
-    [header],
-    [main],
-    [body],
-  ])('renders and HTML string', (tag) => {
-    expect(tag(['content goes here'], 'css-class-goes-here')).toMatchSnapshot();
-    expect(tag(['content goes here'])).toMatchSnapshot();
+    [div(['content goes here'], 'css-class-goes-here', { 'data-blah': 'blahblah' }, { width: '100%', height: '30px' })],
+    [img(undefined, { height: "64", width: "auto", src: logoUrl })]
+  ])('renders an HTML string', (rendering) => {
+    expect(rendering).toMatchSnapshot();
   });
 });
