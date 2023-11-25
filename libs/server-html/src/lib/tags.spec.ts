@@ -1,5 +1,5 @@
 import {
-  div, img
+  _div as div, _img as img
 } from './tags';
 
 const logoUrl = 'https://blah.blah.com/blah.jpg';

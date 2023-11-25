@@ -1,4 +1,4 @@
-import { tab, tbody, td, th, thead, tr } from './tags';
+import { _tab as tab, _tbody as tbody, _td as td, _th as th, _thead as thead, _tr as tr } from './tags';
 
 export function table(columns: string[], rows: Array<any[]>) {
   return tab([

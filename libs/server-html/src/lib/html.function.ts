@@ -1,4 +1,4 @@
-import { body, h1, h2, head, header, htm, main, style } from './tags';
+import { _body as body, _h1 as h1, _h2 as h2, _head as head, _header as header, _htm as htm, _main as main, _style as style } from './tags';
 
 export function html(
   title: string,
