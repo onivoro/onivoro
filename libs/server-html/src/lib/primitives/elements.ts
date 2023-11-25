@@ -1,10 +1,12 @@
-import { TElementRenderer } from "./element-renderer.type";
+import { TElementRenderer } from "../types/element-renderer.type";
 import { element } from "./element.function";
-import { TSelfClosingElementRenderer } from "./self-closing-element-renderer.type";
+import { TSelfClosingElementRenderer } from "../types/self-closing-element-renderer.type";
 import { selfClosingElement } from "./self-closing-element.function";
+import { buttonStyles } from '../styles/button-styles.constant';
 
-export const anchor: TElementRenderer = element.bind(null, 'a');
+export const anchor: TElementRenderer = (content, attributes) => element('a', content, { ...attributes, style: { ...buttonStyles, ...attributes?.style } });
 export const body: TElementRenderer = element.bind(null, 'body');
+export const button: TElementRenderer = (content, attributes) => element('button', content, { ...attributes, style: { ...buttonStyles, ...attributes?.style } });
 export const div: TElementRenderer = element.bind(null, 'div');
 export const h1: TElementRenderer = element.bind(null, 'h1');
 export const h2: TElementRenderer = element.bind(null, 'h2');
@@ -26,4 +28,6 @@ export const th: TElementRenderer = element.bind(null, 'th');
 export const thead: TElementRenderer = element.bind(null, 'thead');
 export const tr: TElementRenderer = element.bind(null, 'tr');
 
+// todo: make this take a Record<string, Record<string, string>> instead of the terrible raw string formatting used now
+// todo: apply kebab-casing to camelCased keys so that consumers can write { fontWeight: 600 } instead of {'font-weight': 600 } (do this for all style properties of primitives' attributes)
 export const style = element.bind(null, 'style');

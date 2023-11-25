@@ -1,12 +1,12 @@
 import {
   element
 } from './element.function';
-import { TElementRenderer } from './element-renderer.type';
+import { TElementRenderer } from '../types/element-renderer.type';
 
 import {
   selfClosingElement
 } from './self-closing-element.function';
-import { TSelfClosingElementRenderer } from './self-closing-element-renderer.type';
+import { TSelfClosingElementRenderer } from '../types/self-closing-element-renderer.type';
 
 const div: TElementRenderer = element.bind(null, 'div');
 const img: TSelfClosingElementRenderer = selfClosingElement.bind(null, 'img');

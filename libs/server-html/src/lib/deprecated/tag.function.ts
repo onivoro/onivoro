@@ -1,5 +1,5 @@
-import { formatAttributes } from "./format-attributes.function";
-import { inlineStyle } from "./inline-style.function";
+import { formatAttributes } from "../primitives/format-attributes.function";
+import { inlineStyle } from "../primitives/inline-style.function";
 
 export function tag(
     tag: string,

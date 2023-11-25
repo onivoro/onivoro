@@ -1,5 +1,6 @@
-import { TAttributes } from './attributes.type';
-import { div, h1, h2 } from './elements';
+import { TAttributes } from './types/attributes.type';
+import { div, h1, h2 } from './primitives/elements';
+import { fontStyles } from './styles/font-styles.constant';
 
 export function emailBody(
   title: string,
@@ -22,11 +23,7 @@ export function emailBody(
       div(markup),
     ], {
       style: {
-        'font-family': `-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol' !important`,
-        'font-size': `1rem;`,
-        '-webkit-font-smoothing': `antialiased`,
-        '-moz-osx-font-smoothing': `grayscale`,
-        color: 'rgba(0, 0, 0, 0.6) !important',
+        ...fontStyles,
         ...(extraStyles || {})
       }
     }),

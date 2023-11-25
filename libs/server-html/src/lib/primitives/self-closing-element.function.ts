@@ -1,4 +1,4 @@
-import { TAttributes } from "./attributes.type";
+import { TAttributes } from "../types/attributes.type";
 import { element } from "./element.function";
 
 export function selfClosingElement(

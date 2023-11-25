@@ -1,11 +1,11 @@
-import { TAttributes } from "./attributes.type";
+import { TAttributes } from "../types/attributes.type";
 import { formatAttributes } from "./format-attributes.function";
 import { inlineStyle } from "./inline-style.function";
 
 export function element(
     tag: string,
     content: Array<string | number>,
-    attributes: TAttributes
+    attributes?: TAttributes
 ) {
     const { cssClass = '', style = undefined, ...attrs } = attributes || {};
     const classExp = cssClass ? ` class="${cssClass}"` : '';
