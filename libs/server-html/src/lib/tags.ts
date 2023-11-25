@@ -27,6 +27,7 @@ export type THtmlElementRenderer = (
   cssClass?: string
 ) => string;
 export const p: THtmlElementRenderer = tag.bind(null, 'p');
+export const div: THtmlElementRenderer = tag.bind(null, 'div');
 export const pre: THtmlElementRenderer = tag.bind(null, 'pre');
 export const td: THtmlElementRenderer = tag.bind(null, 'td');
 export const h1: THtmlElementRenderer = tag.bind(null, 'h1');

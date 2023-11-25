@@ -1,4 +1,5 @@
 export * from './lib/a.function';
+export * from './lib/email-body.function';
 export * from './lib/html.function';
 export * from './lib/login-button.function';
 export * from './lib/style.function';
