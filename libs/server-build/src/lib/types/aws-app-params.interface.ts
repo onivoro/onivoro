@@ -1,7 +1,6 @@
 import { IAppParams } from './app-params.interface';
+import { IAwsParams } from './aws-params.interface';
 
-export interface IAwsAppParams extends IAppParams {
-  profile: string;
-  region: string;
+export type IAwsAppParams = IAppParams & IAwsParams & {
   target: string;
 }

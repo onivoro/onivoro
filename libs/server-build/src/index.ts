@@ -2,9 +2,12 @@ export * from './lib/commands/abstract-app.command';
 export * from './lib/commands/abstract-aws-app.command';
 export * from './lib/commands/abstract-aws-ecs.command';
 export * from './lib/commands/abstract-aws-lambda.command';
+export * from './lib/commands/abstract-aws.command';
+export * from './lib/commands/abstract.command';
 export * from './lib/commands/delete-lambda.command';
 export * from './lib/commands/deploy-image.command';
 export * from './lib/commands/deploy-lambda.command';
+export * from './lib/commands/kill-tasks.command';
 export * from './lib/commands/openapi-gen.command';
 export * from './lib/commands/reddeploy-lambda.command';
 
@@ -32,7 +35,9 @@ export * from './lib/services/build-embedded.service';
 export * from './lib/types/app-params.interface';
 export * from './lib/types/aws-app-params.interface';
 export * from './lib/types/aws-ecs-params.interface';
+export * from './lib/types/aws-lambda-config-params.interface';
 export * from './lib/types/aws-lambda-params.interface';
+export * from './lib/types/aws-params.interface';
 export * from './lib/types/embedded-app-build-input.interface';
 export * from './lib/types/embedded-app-build-output.interface';
 

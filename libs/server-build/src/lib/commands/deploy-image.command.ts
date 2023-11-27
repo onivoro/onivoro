@@ -1,4 +1,4 @@
-import { Command, Option } from 'nest-commander';
+import { Command } from 'nest-commander';
 import { buildApp } from '../functions/build-app.function';
 import { buildImage } from '../functions/build-image.function';
 import { copyPackageJsonVersion } from '../functions/copy-package-json-version.function';
@@ -6,7 +6,6 @@ import { genMetadata } from '../functions/gen-metadata.function';
 import { logElapsedTime } from '../functions/log-elapsed-time.function';
 import { loginToEcr } from '../functions/login-to-ecr.function';
 import { pushImageToEcr } from '../functions/push-image-to-ecr.function';
-import { stopAllTasks } from '../functions/stop-all-tasks.function';
 import { IAwsEcsParams } from '../types/aws-ecs-params.interface';
 import { AbstractAwsEcsCommand } from './abstract-aws-ecs.command';
 
@@ -39,9 +38,6 @@ export class DeployImage extends AbstractAwsEcsCommand<IAwsEcsParams> {
     loginToEcr(profile, region, ecr);
     pushImageToEcr(repoColonTag);
     const suffix = target === 'production' ? '' : '-staging';
-    const cluster = `${app}${suffix}-cluster`;
-    const service = `${app}${suffix}-service`;
-    stopAllTasks(profile, cluster, service);
     logElapsedTime(executionStart, DeployImage.name);
   }
 }

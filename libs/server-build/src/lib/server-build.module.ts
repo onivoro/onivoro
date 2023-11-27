@@ -6,6 +6,7 @@ import { DeleteLambda } from './commands/delete-lambda.command';
 import { OpenapiGen } from './commands/openapi-gen.command';
 import { OpenapiGenV2 } from './commands/openapi-gen-v2.command';
 import { DeployImageV17 } from './commands/deploy-image-v17.command';
+import { KillTasks } from './commands/kill-tasks.command';
 
 export const providers = [
   DeployLambda,
@@ -15,6 +16,7 @@ export const providers = [
   DeleteLambda,
   OpenapiGen,
   OpenapiGenV2,
+  KillTasks
 ];
 
 @Module({
