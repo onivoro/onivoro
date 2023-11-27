@@ -2,12 +2,12 @@ import { Command } from 'nest-commander';
 import { buildApp } from '../functions/build-app.function';
 import { buildImage } from '../functions/build-image.function';
 import { copyPackageJsonVersion } from '../functions/copy-package-json-version.function';
-import { genMetadata } from '../functions/gen-metadata.function';
 import { logElapsedTime } from '../functions/log-elapsed-time.function';
 import { loginToEcr } from '../functions/login-to-ecr.function';
 import { pushImageToEcr } from '../functions/push-image-to-ecr.function';
 import { IAwsEcsParams } from '../types/aws-ecs-params.interface';
 import { AbstractAwsEcsCommand } from './abstract-aws-ecs.command';
+import { parseDockerImagePath } from '../functions/parse-docker-image-path.function';
 
 type IParams = IAwsEcsParams;
 
@@ -24,7 +24,7 @@ export class DeployImage extends AbstractAwsEcsCommand<IAwsEcsParams> {
     const executionStart = new Date();
     try {
 
-      await copyPackageJsonVersion(app, appRoot);
+      await copyPackageJsonVersion(appRoot);
     } catch (error) {
       console.log('failed to upload package.json version', error);
     }
@@ -32,12 +32,10 @@ export class DeployImage extends AbstractAwsEcsCommand<IAwsEcsParams> {
     if (app.includes('api-')) {
       buildApp(app.replace('api-', 'ui-'), target);
     }
-    const tag = ``;
-    const { repoColonTag } = genMetadata(tag, ecr);
+    const { repo, repoColonTag } = parseDockerImagePath(ecr);
     buildImage(app, repoColonTag, appRoot);
-    loginToEcr(profile, region, ecr);
+    loginToEcr(profile, region, repo);
     pushImageToEcr(repoColonTag);
-    const suffix = target === 'production' ? '' : '-staging';
     logElapsedTime(executionStart, DeployImage.name);
   }
 }

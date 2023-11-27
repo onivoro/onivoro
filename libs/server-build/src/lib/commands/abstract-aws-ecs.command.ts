@@ -16,7 +16,7 @@ export abstract class AbstractAwsEcsCommand<TParams extends IAwsEcsParams> exten
   @Option({
     flags: '-e, --ecr [ecr]',
     description:
-      'url of the Elastic Container Registry (ECR)',
+      'url of the Elastic Container Registry (ECR) including the tag, example "my.repo.url:my-tagname"',
     required: true
   })
   parseEcr(val?: string) {

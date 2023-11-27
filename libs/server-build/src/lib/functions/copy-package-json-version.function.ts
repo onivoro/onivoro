@@ -1,8 +1,8 @@
-import { generateAppMetadata, parsePackageJson } from '@onivoro/server-common';
+import { parsePackageJson } from '@onivoro/server-common';
 import { writeFile } from 'fs/promises';
 
-export async function copyPackageJsonVersion(app: string, appRoot: string) {
-    const { packageJsonPath: targetPackagePath } = generateAppMetadata(app, appRoot);
+export async function copyPackageJsonVersion(appRoot: string) {
+    const targetPackagePath = `${appRoot}/package.json`;
     const pkg = await parsePackageJson();
     const { version } = pkg;
     const targetPkg = await parsePackageJson(targetPackagePath);
