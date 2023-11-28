@@ -23,14 +23,17 @@ export class DeployImage extends AbstractAwsEcsCommand<IAwsEcsParams> {
   ): Promise<void> {
     const executionStart = new Date();
     try {
-
       await copyPackageJsonVersion(appRoot);
     } catch (error) {
       console.log('failed to upload package.json version', error);
     }
     buildApp(app, 'production');
     if (app.includes('api-')) {
-      buildApp(app.replace('api-', 'ui-'), target);
+      try {
+        buildApp(app.replace('api-', 'ui-'), target as any);
+      } catch (e) {
+        console.log(e);
+      }
     }
     const { repo, repoColonTag } = parseDockerImagePath(ecr);
     buildImage(app, repoColonTag, appRoot);
