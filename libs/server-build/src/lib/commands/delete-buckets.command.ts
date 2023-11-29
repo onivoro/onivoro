@@ -13,9 +13,8 @@ export class DeleteBuckets extends AbstractAwsCommand<IAwsParams> {
             .map(line => line.split(' '))
             .map(([date, time, bucket]) => bucket);
         buckets.forEach((bucket) => {
-            console.log({ bucket });
-            // shell(`aws s3 rm --recursive --profile ${profile} --region ${region} s3://${bucket}/`);
-            // shell(`aws s3 rb --profile ${profile} --region ${region} s3://${bucket}/`);
+            shell(`aws s3 rm --recursive --profile ${profile} --region ${region} s3://${bucket}/`);
+            shell(`aws s3 rb --profile ${profile} --region ${region} s3://${bucket}/`);
         });
     }
 
