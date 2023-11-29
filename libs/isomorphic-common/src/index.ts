@@ -12,6 +12,7 @@ export * from './lib/functions/sanitize-filename.function';
 export * from './lib/functions/snake-case.function';
 export * from './lib/functions/subtract-offset.function';
 export * from './lib/functions/to-boolean-string.function';
+export * from './lib/functions/to-calendar-date.function';
 export * from './lib/functions/to-csv-string.function';
 export * from './lib/functions/to-locale-date-string.function';
 export * from './lib/functions/to-locale-time-string.function';
