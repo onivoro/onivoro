@@ -6,6 +6,5 @@ import { DropDownComponent } from './components/drop-down/drop-down.component';
   imports: [CommonModule],
   declarations: [DropDownComponent],
   exports: [DropDownComponent],
-  entryComponents: [DropDownComponent]
 })
 export class AngularTailwindComponentsModule {}
