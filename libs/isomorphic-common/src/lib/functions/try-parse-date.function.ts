@@ -1,16 +1,16 @@
-export function tryParseDate(allegedDate: string | Date | undefined): Date | undefined {
-    if (!allegedDate) {
-        return undefined;
+export function tryParseDate(input: string | Date | undefined | null): Date | undefined {
+    if (!input) {
+        return;
     }
 
-    if(allegedDate instanceof Date) {
-        return allegedDate;
+    if(input instanceof Date) {
+        return input;
     }
 
-    const date = new Date(allegedDate);
+    const date = new Date(input);
 
     if ((date as any) == 'Invalid Date') {
-        return undefined;
+        return;
     }
 
     return date;
