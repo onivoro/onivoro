@@ -9,7 +9,7 @@ export class DeleteBuckets extends AbstractAwsCommand<IAwsParams> {
     async main(args: string[], { like, profile, region }: IParams): Promise<void> {
         const buckets = shell(`aws s3 ls --profile ${profile} --region ${region} | grep '${like}'`).split('\n').map(([date, time, bucket]) => bucket);
         buckets.forEach((bucket) => {
-            console.log(bucket);
+            console.log({bucket});
             // shell(`aws s3 rm --recursive --profile ${profile} --region ${region} s3://${bucket}/`);
             // shell(`aws s3 rb --profile ${profile} --region ${region} s3://${bucket}/`);
         });
