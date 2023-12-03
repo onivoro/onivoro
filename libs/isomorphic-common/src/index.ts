@@ -23,5 +23,6 @@ export * from './lib/functions/unicode-words.const';
 export * from './lib/functions/upper-first.function';
 export * from './lib/functions/words.function';
 
+export * from './lib/interfaces/axios-wrapped-nest-exception.interface';
 export * from './lib/interfaces/entity-provider.interface';
 export * from './lib/interfaces/keys-of.type';
