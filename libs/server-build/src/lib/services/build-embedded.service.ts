@@ -59,6 +59,10 @@ export class BuildEmbeddedService {
             })
         ));
 
+        // need to conditionalize asset path in embeddable apps to reflect deployed path
+        // need to deploy assets to S3 here
+        // shell(``)
+
         await this.s3Svc.upload({ Bucket: bucket, ContentType: 'text/javascript', Body: this.getBootstrapScriptBody(region, bucket, app), Key: `${app}/${bootstrapScriptName}.js`, ACL });
 
         return { app, html, fileMappings };
