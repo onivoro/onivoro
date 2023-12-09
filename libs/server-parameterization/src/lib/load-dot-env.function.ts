@@ -1,4 +1,6 @@
-export function loadDotEnv() {
+import { resolve } from "path";
+
+export function loadDotEnv(envFile = '.env') {
 
   const nodeEnv = process.env.NODE_ENV;
 
@@ -13,6 +15,7 @@ export function loadDotEnv() {
       node_env: nodeEnv,
       purge_dotenv: true,
       silent: true,
+      path: resolve(process.cwd(), envFile)
     });
   }
 }
