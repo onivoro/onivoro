@@ -2,11 +2,11 @@ import { resolve } from "path";
 
 const DEFAULT_ENV_FILE = '.env';
 
-export function loadDotEnv(envFile = DEFAULT_ENV_FILE) {
+export function loadDotEnv(path = DEFAULT_ENV_FILE) {
 
   const nodeEnv = process.env.NODE_ENV;
 
-  if (nodeEnv !== 'production' && envFile !== DEFAULT_ENV_FILE) {
+  if (nodeEnv !== 'production' && path !== DEFAULT_ENV_FILE) {
     const dotenv = require('dotenv');
     dotenv.config();
 
@@ -17,7 +17,7 @@ export function loadDotEnv(envFile = DEFAULT_ENV_FILE) {
       node_env: nodeEnv,
       purge_dotenv: true,
       silent: true,
-      path: resolve(process.cwd(), envFile)
+      path
     });
   }
 }

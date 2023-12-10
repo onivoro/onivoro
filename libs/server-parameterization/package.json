@@ -1,6 +1,6 @@
 {
   "name": "@onivoro/server-parameterization",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "peerDependencies": {
     "dotenv-flow": "^3.2.0",
     "dotenv": "^16.0.2"
