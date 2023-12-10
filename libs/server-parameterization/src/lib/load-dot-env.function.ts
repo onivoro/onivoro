@@ -1,10 +1,12 @@
 import { resolve } from "path";
 
-export function loadDotEnv(envFile = '.env') {
+const DEFAULT_ENV_FILE = '.env';
+
+export function loadDotEnv(envFile = DEFAULT_ENV_FILE) {
 
   const nodeEnv = process.env.NODE_ENV;
 
-  if (nodeEnv !== 'production') {
+  if (nodeEnv !== 'production' && envFile !== DEFAULT_ENV_FILE) {
     const dotenv = require('dotenv');
     dotenv.config();
 
