@@ -23,6 +23,8 @@ export * from './lib/dtos/verify-totp.dto';
 
 export * from './lib/functions/convert-object-to-attribute-list.function';
 export * from './lib/functions/convert-phone-to-plus-one.function';
+export * from './lib/functions/extract-user-attribute-value.function';
+
 
 export * from './lib/guards/auth.guard';
 
