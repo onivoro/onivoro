@@ -9,6 +9,7 @@ export * from './lib/functions/from-boolean-string.function';
 export * from './lib/functions/from-calendar-date.function';
 export * from './lib/functions/from-csv-string.function';
 export * from './lib/functions/parse-bool.function';
+export * from './lib/functions/properties-to-array.function';
 export * from './lib/functions/sanitize-filename.function';
 export * from './lib/functions/snake-case.function';
 export * from './lib/functions/subtract-offset.function';
