@@ -1,6 +1,6 @@
 {
   "name": "@onivoro/angular-common",
-  "version": "16.0.11",
+  "version": "16.0.12",
   "peerDependencies": {},
   "dependencies": {
     "tslib": "^2.3.0"

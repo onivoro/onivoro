@@ -55,6 +55,7 @@ export abstract class AbstractHttpEntityService<TEntity> {
 
         try {
             this.data$$.next(await this._index());
+            this.loading$$.next(false);
         } catch (error: any) {
             console.warn('error loading data', error);
             this.loading$$.next(false);
