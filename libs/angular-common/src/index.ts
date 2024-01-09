@@ -3,6 +3,7 @@ export * from './lib/classes/abstract-entity-service.class';
 export * from './lib/classes/abstract-http-entity-service.class';
 export * from './lib/classes/abstract-paged-entity-service.class';
 export * from './lib/classes/redirect-service.class';
+export * from './lib/classes/event-bridge-service.class';
 
 export * from './lib/constants/colors.constant';
 export * from './lib/constants/embedded-app-component-template.constant';
