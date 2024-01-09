@@ -1,4 +1,5 @@
 export * from './lib/classes/abstract-data-entity-service.class';
+export * from './lib/classes/abstract-entity-service.class';
 export * from './lib/classes/abstract-http-entity-service.class';
 export * from './lib/classes/abstract-paged-entity-service.class';
 export * from './lib/classes/redirect-service.class';
@@ -14,4 +15,5 @@ export * from './lib/functions/set-then-negate.function';
 export * from './lib/functions/stylize.function';
 
 export * from './lib/types/api-credentials.type';
+export * from './lib/types/iconic-route.type';
 export * from './lib/types/keys-of.type';
