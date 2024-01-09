@@ -5,9 +5,11 @@ import { FormatErrorPipe } from './pipes/format-error.pipe';
 import { LabelForPipe } from './pipes/label-for.pipe';
 import { OptionsForPipe } from './pipes/options-for.pipe';
 import { TypeForPipe } from './pipes/type-for.pipe';
+import { ErrorForPipe } from './pipes/error-for.pipe';
 
 const pipes = [
   AttrForPipe,
+  ErrorForPipe,
   FormatErrorPipe,
   LabelForPipe,
   OptionsForPipe,
