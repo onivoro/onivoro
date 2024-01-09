@@ -77,6 +77,9 @@ export const formattedErrors: Record<string, IFormatter> = {
       case formatRegexes.passwordLower.toString():
         msg = 'Must contain a lowercase character';
         break;
+      case formatRegexes.kebabCase.toString():
+        msg = 'Only numbers, lowercase letters, or dashes are permitted';
+        break;
       case pwSpecial:
         msg = `Must contain one of: ${pwSpecialChars}`;
         break;

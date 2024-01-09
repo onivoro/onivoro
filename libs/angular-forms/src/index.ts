@@ -4,7 +4,6 @@ export * from './lib/constants/for-each.constant';
 export * from './lib/constants/format-regexes.constant';
 export * from './lib/constants/formatted-errors.constant';
 export * from './lib/constants/get-error-message.function';
-export * from './lib/constants/regexes.constant';
 export * from './lib/constants/template-rx.constant';
 export * from './lib/constants/template.constant';
 
