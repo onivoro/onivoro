@@ -2,10 +2,15 @@ import { BadRequestException, Injectable } from '@nestjs/common';
 import { S3 } from 'aws-sdk';
 import { ServerAwsS3Config } from '../classes/server-aws-s3-config.class';
 import { IS3UploadResponse } from '../interfaces/s3-upload-response.interface';
+import { ListObjectsV2Request } from 'aws-sdk/clients/s3';
 
 export type TS3Params = {
   Key: string,
   Bucket?: string | null | undefined
+};
+
+export type TS3PrefixParams = Omit<TS3Params, 'Key'> & {
+  Prefix: string;
 };
 
 @Injectable()
@@ -19,7 +24,7 @@ export class S3Service {
 
   async uploadPublic(params: TS3Params & { Body: S3.PutObjectRequest['Body'], ContentType?: S3.PutObjectRequest['ContentType'] }): Promise<IS3UploadResponse> {
     // todo: sanitize filename here before uploading
-    return await this.s3.upload({...this.addDefaultBucket(params), ACL: 'public-read'}).promise();
+    return await this.s3.upload({ ...this.addDefaultBucket(params), ACL: 'public-read' }).promise();
   }
 
   async getPresignedUrl(params: TS3Params & { Expires: number, ResponseContentDisposition: string }) {
@@ -42,8 +47,26 @@ export class S3Service {
     return await this.s3.deleteObject(this.addDefaultBucket(params)).promise();
   }
 
-  async getDownloadUrl(params: TS3Params & {fileName?: string | null | undefined}) {
-    if(!params || !params?.Key) {
+  async deleteByPrefix(params: TS3PrefixParams) {
+    if (!params?.Prefix) {
+      throw new BadRequestException(`${S3Service.name}.${S3Service.prototype.deleteByPrefix.name} requires a valid S3 prefix`)
+    }
+
+    const data = await this.s3.listObjectsV2(this.addDefaultBucket(params)).promise();
+
+    const Objects = data.Contents.map(({ Key }) => ({ Key }));
+
+    if (Objects.length > 0) {
+      await this.s3.deleteObjects(this.addDefaultBucket({ Delete: { Objects } })).promise();
+
+      console.log(`Deleted ${Objects.length} objects in the folder '${params.Prefix}'.`);
+    } else {
+      console.log(`No objects found in the folder '${params.Prefix}'.`);
+    }
+  }
+
+  async getDownloadUrl(params: TS3Params & { fileName?: string | null | undefined }) {
+    if (!params || !params?.Key) {
       throw new BadRequestException(`${S3Service.name}.${S3Service.prototype.getDownloadUrl.name} requires a valid S3 key`)
     }
 
@@ -55,7 +78,7 @@ export class S3Service {
   }
 
   async getAssetUrl(params: TS3Params & { Expires?: number | null | undefined }) {
-    if(!params || !params?.Key) {
+    if (!params || !params?.Key) {
       throw new BadRequestException(`${S3Service.name}.${S3Service.prototype.getAssetUrl.name} requires a valid S3 key`)
     }
 
@@ -66,8 +89,8 @@ export class S3Service {
     })
   }
 
-  private addDefaultBucket(params: TS3Params): S3.PutObjectRequest {
-    return { ...params, Bucket: this.getBucket(params?.Bucket) };
+  private addDefaultBucket<TParams extends { Bucket?: string } & Record<string, any>>(params: TParams): TParams & { Bucket: string } {
+    return { ...params, Bucket: this.getBucket(params?.Bucket) } as TParams & { Bucket: string };
   }
 
   private getBucket(Bucket?: string): string {
