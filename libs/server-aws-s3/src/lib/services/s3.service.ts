@@ -13,6 +13,10 @@ export type TS3PrefixParams = Omit<TS3Params, 'Key'> & {
   Prefix: string;
 };
 
+export type TS3ObjectsParams = Omit<TS3Params, 'Key'> & {
+  Objects: { Key: string }[];
+};
+
 @Injectable()
 export class S3Service {
   constructor(private config: ServerAwsS3Config, private s3: S3) { }
@@ -56,12 +60,19 @@ export class S3Service {
 
     const Objects = data.Contents.map(({ Key }) => ({ Key }));
 
-    if (Objects.length > 0) {
-      await this.s3.deleteObjects(this.addDefaultBucket({ Delete: { Objects } })).promise();
+    await this.deleteObjects(this.addDefaultBucket({ ...params, Objects }));
+  }
 
-      console.log(`Deleted ${Objects.length} objects in the folder '${params.Prefix}'.`);
-    } else {
-      console.log(`No objects found in the folder '${params.Prefix}'.`);
+  async deleteObjects(params: TS3ObjectsParams) {
+    if (!params?.Objects?.length) {
+      throw new BadRequestException(`${S3Service.name}.${S3Service.prototype.deleteByPrefix.name} requires an array of valid S3 keys`)
+    }
+
+    const { Objects } = params;
+
+    if (Objects.length) {
+      const lee = this.addDefaultBucket({ Delete: { Objects } });
+      await this.s3.deleteObjects(lee).promise();
     }
   }
 
