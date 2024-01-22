@@ -3,6 +3,7 @@ export * from './lib/classes/columns-migration-base.class';
 export * from './lib/classes/drop-column-migration-base.class';
 export * from './lib/classes/index-migration-base.class';
 export * from './lib/classes/sql-writer.class';
+export * from './lib/classes/table-migration-base.class';
 export * from './lib/classes/type-orm-paging-repository.class';
 export * from './lib/classes/type-orm-repository.class';
 

@@ -2,13 +2,27 @@ import { TableColumnOptions } from "typeorm";
 
 export class SqlWriter {
 
-    public static addColumn(table, option: TableColumnOptions) {
+    public static addColumn(table: string, option: TableColumnOptions) {
         const notNullExpression = option.isNullable ? '' : ' NOT NULL ';
         const foreignKey = option.foreignKeyConstraintName ? ` REFERENCES ${option.foreignKeyConstraintName} ` : '';
         return `ALTER TABLE "${table}" ADD "${option.name}" ${option.type}${notNullExpression}${SqlWriter.getDefaultValueExpression(option)}${foreignKey}`;
     }
 
-    public static addColumns(table, options: TableColumnOptions[]) {
+    public static createTable(table: string, options: TableColumnOptions[]) {
+        const createTableStatement = `CREATE TABLE "${table};\n"`;
+
+        if(!options?.length) {
+            return createTableStatement;
+        }
+
+        return `${createTableStatement}${SqlWriter.addColumns(table, options)}`;
+    }
+
+    public static dropTable(table: string) {
+        return `DROP "${table}";\n`;
+    }
+
+    public static addColumns(table: string, options: TableColumnOptions[]) {
         return options.map(option => SqlWriter.addColumn(table, option)).join('; \n');
     }
 
