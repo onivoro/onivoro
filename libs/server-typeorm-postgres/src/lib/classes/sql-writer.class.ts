@@ -10,7 +10,7 @@ export class SqlWriter {
     }
 
     public static createTable(table: string, options: TableColumnOptions[]) {
-        const createTableStatement = `CREATE TABLE "${table};\n"`;
+        const createTableStatement = `CREATE TABLE "${table}";\n`;
 
         if(!options?.length) {
             return createTableStatement;
