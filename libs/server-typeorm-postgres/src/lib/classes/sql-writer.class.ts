@@ -16,7 +16,7 @@ export class SqlWriter {
     }
 
     public static dropTable(table: string) {
-        return `DROP "${table}";\n`;
+        return `DROP TABLE "${table}";\n`;
     }
 
     public static addColumns(table: string, options: TableColumnOptions[]) {
