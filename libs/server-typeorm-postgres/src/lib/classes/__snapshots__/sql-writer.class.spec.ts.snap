@@ -1,0 +1,8 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`SqlWriter addColumn worx 1`] = `"ALTER TABLE \\"blah\\" ADD \\"id\\"  PRIMARY character varying NOT NULL "`;
+
+exports[`SqlWriter createTable worx 1`] = `
+"CREATE TABLE \\"blah;
+\\"ALTER TABLE \\"blah\\" ADD \\"id\\"  PRIMARY character varying NOT NULL "
+`;

@@ -5,7 +5,8 @@ export class SqlWriter {
     public static addColumn(table: string, option: TableColumnOptions) {
         const notNullExpression = option.isNullable ? '' : ' NOT NULL ';
         const foreignKey = option.foreignKeyConstraintName ? ` REFERENCES ${option.foreignKeyConstraintName} ` : '';
-        return `ALTER TABLE "${table}" ADD "${option.name}" ${option.type}${notNullExpression}${SqlWriter.getDefaultValueExpression(option)}${foreignKey}`;
+        const primaryKey = option.isPrimary? ` PRIMARY ` : '';
+        return `ALTER TABLE "${table}" ADD "${option.name}" ${primaryKey}${option.type}${notNullExpression}${SqlWriter.getDefaultValueExpression(option)}${foreignKey}`;
     }
 
     public static createTable(table: string, options: TableColumnOptions[]) {
