@@ -11,9 +11,10 @@ describe(SqlWriter.name, () => {
 
     describe(SqlWriter.createTable.name, () => {
         it('worx', () => {
-            expect(SqlWriter.createTable('blah', [{
-                isPrimary: true, name: 'id', type: 'character varying'
-            }])).toMatchSnapshot();
+            expect(SqlWriter.createTable('blah', [
+                { isPrimary: true, name: 'id', type: 'character varying' },
+                { isPrimary: false, name: 'active', type: 'boolean' },
+            ])).toMatchSnapshot();
         });
     });
 });

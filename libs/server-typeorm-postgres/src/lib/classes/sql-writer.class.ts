@@ -5,18 +5,14 @@ export class SqlWriter {
     public static addColumn(table: string, option: TableColumnOptions) {
         const notNullExpression = option.isNullable ? '' : ' NOT NULL ';
         const foreignKey = option.foreignKeyConstraintName ? ` REFERENCES ${option.foreignKeyConstraintName} ` : '';
-        const primaryKey = option.isPrimary? ` PRIMARY ` : '';
+        const primaryKey = option.isPrimary ? ` PRIMARY ` : '';
         return `ALTER TABLE "${table}" ADD "${option.name}" ${primaryKey}${option.type}${notNullExpression}${SqlWriter.getDefaultValueExpression(option)}${foreignKey}`;
     }
 
     public static createTable(table: string, options: TableColumnOptions[]) {
-        const createTableStatement = `CREATE TABLE "${table}";\n`;
+        const cols = options.map(option => SqlWriter.addColumn(table, option).replace(`ALTER TABLE "${table}" ADD `, '')).join(',\n');
 
-        if(!options?.length) {
-            return createTableStatement;
-        }
-
-        return `${createTableStatement}${SqlWriter.addColumns(table, options)}`;
+        return `CREATE TABLE "${table}" (${cols});`;
     }
 
     public static dropTable(table: string) {
