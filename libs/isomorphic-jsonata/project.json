@@ -1,0 +1,41 @@
+{
+  "name": "isomorphic-jsonata",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "libs/isomorphic-jsonata/src",
+  "projectType": "library",
+  "targets": {
+    "lint": {
+      "executor": "@nx/eslint:lint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["libs/isomorphic-jsonata/**/*.ts"]
+      }
+    },
+    "test": {
+      "executor": "@nx/jest:jest",
+      "outputs": ["{workspaceRoot}/coverage/{projectRoot}"],
+      "options": {
+        "jestConfig": "libs/isomorphic-jsonata/jest.config.ts",
+        "passWithNoTests": true
+      },
+      "configurations": {
+        "ci": {
+          "ci": true,
+          "codeCoverage": true
+        }
+      }
+    },
+    "build": {
+      "executor": "@nrwl/js:tsc",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "outputPath": "dist/libs/isomorphic-jsonata",
+        "tsConfig": "libs/isomorphic-jsonata/tsconfig.lib.json",
+        "packageJson": "libs/isomorphic-jsonata/package.json",
+        "main": "libs/isomorphic-jsonata/src/index.ts",
+        "assets": ["libs/isomorphic-jsonata/*.md"]
+      }
+    }
+  },
+  "tags": []
+}

@@ -35,6 +35,7 @@
       "@onivoro/browser-gaming": ["libs/browser-gaming/src/index.ts"],
       "@onivoro/isomorphic-axios": ["libs/isomorphic-axios/src/index.ts"],
       "@onivoro/isomorphic-common": ["libs/isomorphic-common/src/index.ts"],
+      "@onivoro/isomorphic-jsonata": ["libs/isomorphic-jsonata/src/index.ts"],
       "@onivoro/onix": ["libs/onix/src/index.ts"],
       "@onivoro/server-auth": ["libs/server-auth/src/index.ts"],
       "@onivoro/server-aws-auth": ["libs/server-aws-auth/src/index.ts"],
