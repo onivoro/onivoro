@@ -1,10 +1,11 @@
 import jsonata from 'jsonata';
 import { IDoxFn } from '../interfaces/dox-fn.interface';
+import { IDoxFunctions } from '../interfaces/dox-function-config.interface';
 
 export async function executeJsonata<TContext>(
   expression: string | null | undefined,
   context: TContext,
-  functions?: { headerFunctions?: IDoxFn[], auxilaryHeaderFunctions?: IDoxFn[], registerFunctions?: Array<Pick<IDoxFn, 'name'> & { fn: Function }> }
+  functions?: IDoxFunctions
 ) {
 
   if (!expression) {
