@@ -1,12 +1,12 @@
-import { IDoxExpression } from "../interfaces/dox-expression.interface";
-import { IDoxFunctions } from "../interfaces/dox-function-config.interface";
+import { IJsonataExpression } from "../interfaces/jsonata-expression.interface";
+import { IJsonataFunctions } from "../interfaces/jsonata-fn-config.interface";
 import { executeJsonata } from "./execute-jsonata.function";
 
 export async function findAndReplace<TContext>(
     content: string,
-    expressions: IDoxExpression[],
+    expressions: IJsonataExpression[],
     context: TContext,
-    functions?: IDoxFunctions
+    functions?: IJsonataFunctions
 ): Promise<string> {
     for await (const exp of expressions) {
         try {

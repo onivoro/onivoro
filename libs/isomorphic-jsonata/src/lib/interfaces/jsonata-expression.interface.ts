@@ -1,4 +1,4 @@
-export interface IDoxExpression {
+export interface IJsonataExpression {
     expression: string;
     code: string;
 }

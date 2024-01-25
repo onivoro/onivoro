@@ -1,11 +1,11 @@
 import jsonata from 'jsonata';
-import { IDoxFn } from '../interfaces/dox-fn.interface';
-import { IDoxFunctions } from '../interfaces/dox-function-config.interface';
+import { IJsonataFn } from '../interfaces/jsonata-fn.interface';
+import { IJsonataFunctions } from '../interfaces/jsonata-fn-config.interface';
 
 export async function executeJsonata<TContext>(
   expression: string | null | undefined,
   context: TContext,
-  functions?: IDoxFunctions
+  functions?: IJsonataFunctions
 ) {
 
   if (!expression) {
@@ -26,7 +26,7 @@ export async function executeJsonata<TContext>(
       return existing;
     })
 
-  const novelFns: IDoxFn[] = (functions.auxilaryHeaderFunctions || [])
+  const novelFns: IJsonataFn[] = (functions.auxilaryHeaderFunctions || [])
     .filter(({ name }) => !existingFnsWithOverridesApplied.find(existing => existing.name === name));
 
   [

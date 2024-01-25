@@ -1,4 +1,4 @@
-export interface IDoxFn {
+export interface IJsonataFn {
     name: string;
     body: string;
 }
