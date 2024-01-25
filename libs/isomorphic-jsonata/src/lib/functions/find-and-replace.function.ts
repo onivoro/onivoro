@@ -1,6 +1,9 @@
+import { JsonataExpressionService } from "../classes/jsonata-expression.class";
 import { IJsonataExpression } from "../interfaces/jsonata-expression.interface";
 import { IJsonataFunctions } from "../interfaces/jsonata-fn-config.interface";
 import { executeJsonata } from "./execute-jsonata.function";
+
+const jsonataExpressionSvc = new JsonataExpressionService();
 
 export async function findAndReplace<TContext>(
     content: string,
@@ -20,7 +23,7 @@ export async function findAndReplace<TContext>(
 
             if (replacementValue) {
                 content = content.replaceAll(
-                    this.doxExpressionSvc.addBracesToInterpolation(expression),
+                    jsonataExpressionSvc.addBracesToInterpolation(expression),
                     replacementValue
                 );
             }
