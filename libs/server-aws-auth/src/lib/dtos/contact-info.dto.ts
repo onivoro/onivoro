@@ -1,15 +1,15 @@
 import { ApiProperty, ApiPropertyOptional } from '@nestjs/swagger';
 
 export class ContactInfoDto {
-  @ApiProperty()
+  @ApiProperty({ type: 'string' })
   email: string;
 
-  @ApiProperty()
+  @ApiProperty({ type: 'string' })
   phone: string;
 
-  @ApiProperty()
+  @ApiProperty({ type: 'string' })
   orgId: string;
 
-  @ApiPropertyOptional()
+  @ApiPropertyOptional({ type: 'string' })
   isAnon: boolean;
 }

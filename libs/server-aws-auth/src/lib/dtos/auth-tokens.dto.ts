@@ -1,6 +1,6 @@
 import { ApiProperty } from "@nestjs/swagger";
 
 export class AuthTokensDto {
-    @ApiProperty() token: string;
-    @ApiProperty() idToken: string;
+    @ApiProperty({ type: 'string' }) token: string;
+    @ApiProperty({ type: 'string' }) idToken: string;
 }

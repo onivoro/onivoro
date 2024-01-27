@@ -6,15 +6,15 @@ export * from './lib/decorators/api-query-paged-params.decorator';
 export * from './lib/decorators/api-response-paged.decorator';
 export * from './lib/decorators/query-paged-params.decorator';
 
-export * from './lib/dtos/body.dto';
-export * from './lib/dtos/health.dto';
-export * from './lib/dtos/paged-response.dto';
-export * from './lib/dtos/success.dto';
-export * from './lib/dtos/string-array.dto';
-export * from './lib/dtos/url.dto';
-export * from './lib/dtos/user-id.dto';
-export * from './lib/dtos/value.dto';
-export * from './lib/dtos/values.dto';
+// export * from './lib/dtos/body.dto';
+// export * from './lib/dtos/health.dto';
+// export * from './lib/dtos/paged-response.dto';
+// export * from './lib/dtos/success.dto';
+// export * from './lib/dtos/string-array.dto';
+// export * from './lib/dtos/url.dto';
+// export * from './lib/dtos/user-id.dto';
+// export * from './lib/dtos/value.dto';
+// export * from './lib/dtos/values.dto';
 
 export * from './lib/functions/create-api-app.function';
 export * from './lib/functions/decode.function';

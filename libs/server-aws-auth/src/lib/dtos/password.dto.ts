@@ -1,9 +1,9 @@
 import { ApiProperty } from '@nestjs/swagger';
 
 export class PasswordDto {
-  @ApiProperty()
+  @ApiProperty({ type: 'string' })
   password: string;
 
-  @ApiProperty()
+  @ApiProperty({ type: 'string' })
   confirm: string;
 }

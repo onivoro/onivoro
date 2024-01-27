@@ -1,6 +1,6 @@
 import { ApiProperty } from '@nestjs/swagger';
 
 export class CodeDto {
-  @ApiProperty()
+  @ApiProperty({ type: 'string' })
   code: string;
 }
