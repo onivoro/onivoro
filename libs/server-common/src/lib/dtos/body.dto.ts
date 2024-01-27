@@ -1,6 +1,6 @@
 import { ApiProperty } from "@nestjs/swagger";
 
 export class BodyDto {
-    @ApiProperty()
+    @ApiProperty({ type: 'string' })
     body: string;
 }

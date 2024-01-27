@@ -1,6 +1,6 @@
 import { ApiProperty } from "@nestjs/swagger";
 
 export class UrlDto {
-    @ApiProperty()
+    @ApiProperty({ type: 'string' })
     url: string;
 }
