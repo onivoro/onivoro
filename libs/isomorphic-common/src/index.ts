@@ -18,6 +18,7 @@ export * from './lib/functions/to-boolean-string.function';
 export * from './lib/functions/to-calendar-date.function';
 export * from './lib/functions/to-csv-string.function';
 export * from './lib/functions/to-decimal-base.function';
+export * from './lib/functions/to-dollars-and-cents.function';
 export * from './lib/functions/to-locale-date-string.function';
 export * from './lib/functions/to-locale-time-string.function';
 export * from './lib/functions/to-unique-array.function';
