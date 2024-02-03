@@ -1,5 +1,5 @@
 import { writeFile } from "node:fs/promises";
-import { execPromise } from '@onivoro/server-process';
+import { zip } from '@onivoro/server-disk';
 
 export async function writeContentToDocx(
     contentPath: string,
@@ -9,9 +9,7 @@ export async function writeContentToDocx(
 ) {
     await writeFile(contentPath, updatedContent, 'utf-8');
 
-    const newFile = `${inflated}/${outputFileName}`;
+    await zip(outputFileName, inflated);
 
-    await execPromise(`zip -r -X "${outputFileName}" *`, { cwd: inflated });
-
-    return newFile;
+    return `${inflated}/${outputFileName}`;
 }
