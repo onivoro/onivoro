@@ -6,6 +6,8 @@ import { createWorkingDirectory } from "./create-working-directory.function";
 import { extractContentFromDocx } from "./extract-content-from-docx.function";
 import { writeContentToDocx } from "./write-content-to-docx.function";
 import { execPromise } from "@onivoro/server-process";
+import { parse } from "node:path";
+import { getFilePaths } from "./get-file-paths.function";
 
 export type TExpressFile = {
     originalname: string,
@@ -21,11 +23,11 @@ export async function docx(docxFilePath: string, callback: (result: TDocx) => Pr
     const workingDirectory = randomUUID();
 
     try {
-        await mkdir(workingDirectory, { recursive: true });
+        const { contentPath, inflated, outputFilePath } = getFilePaths(docxFilePath, workingDirectory);
 
-        await unzip(docxFilePath, workingDirectory);
+        await mkdir(inflated, { recursive: true });
 
-        const contentPath = `${workingDirectory}/word/document.xml`
+        await unzip(docxFilePath, inflated);
 
         const xml = await readFile(contentPath, 'utf-8');
 
@@ -41,7 +43,7 @@ export async function docx(docxFilePath: string, callback: (result: TDocx) => Pr
         if (externalResult && externalResult.xml) {
             await writeFile(contentPath, externalResult?.xml, 'utf-8');
 
-            await zip(docxFilePath, workingDirectory);
+            await zip(outputFilePath, inflated);
         }
 
         await rmSafe(workingDirectory);
