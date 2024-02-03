@@ -7,5 +7,6 @@ export { readFileRx } from './lib/read-file-rx.function';
 export { readLinesRx } from './lib/read-lines-rx.function';
 export { readObjectRx } from './lib/read-object-rx.function';
 export { streamFileRx } from './lib/stream-file-rx.function';
+export { writeBufferToDisk } from './lib/write-buffer-to-disk.function';
 export { writeFileRx } from './lib/write-file-rx.function';
 export { writeObjectRx } from './lib/write-object-rx.function';
