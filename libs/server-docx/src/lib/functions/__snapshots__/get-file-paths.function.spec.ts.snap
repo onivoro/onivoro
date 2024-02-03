@@ -2,6 +2,7 @@
 
 exports[`getFilePaths creates a set of unique but conventional strings for inflating/deflating docx files on disk 1`] = `
 Object {
+  "contentPath": "asdf/inflated/word/document.xml",
   "inflated": "asdf/inflated",
   "inputFilePath": "asdf/asdf.docx",
   "outputFileName": "asdf-modified.docx",

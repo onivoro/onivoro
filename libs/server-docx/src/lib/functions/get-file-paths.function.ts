@@ -7,5 +7,6 @@ export function getFilePaths(originalname: string) {
     const inputFilePath = `${root}/${name}`;
     const outputFileName = `${root}-modified${ext}`;
     const outputFilePath = `${root}/${outputFileName}`;
-    return { root, inflated, outputFilePath, inputFilePath, outputFileName };
+    const contentPath = `${inflated}/word/document.xml`;
+    return { root, inflated, outputFilePath, inputFilePath, outputFileName, contentPath };
 }
