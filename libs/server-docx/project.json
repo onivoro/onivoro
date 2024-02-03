@@ -1,0 +1,35 @@
+{
+  "name": "server-docx",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "libs/server-docx/src",
+  "projectType": "library",
+  "targets": {
+    "lint": {
+      "executor": "@nx/eslint:lint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["libs/server-docx/**/*.ts"]
+      }
+    },
+    "test": {
+      "executor": "@nx/jest:jest",
+      "outputs": ["{workspaceRoot}/coverage/libs/server-docx"],
+      "options": {
+        "jestConfig": "libs/server-docx/jest.config.ts",
+        "passWithNoTests": true
+      }
+    },
+    "build": {
+      "executor": "@nrwl/js:tsc",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "outputPath": "dist/libs/server-docx",
+        "tsConfig": "libs/server-docx/tsconfig.lib.json",
+        "packageJson": "libs/server-docx/package.json",
+        "main": "libs/server-docx/src/index.ts",
+        "assets": ["libs/server-docx/*.md"]
+      }
+    }
+  },
+  "tags": []
+}

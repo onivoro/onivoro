@@ -1,0 +1,11 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`getFilePaths creates a set of unique but conventional strings for inflating/deflating docx files on disk 1`] = `
+Object {
+  "inflated": "asdf/inflated",
+  "inputFilePath": "asdf/asdf.docx",
+  "outputFileName": "asdf-modified.docx",
+  "outputFilePath": "asdf/asdf-modified.docx",
+  "root": "asdf",
+}
+`;

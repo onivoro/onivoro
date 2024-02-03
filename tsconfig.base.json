@@ -46,6 +46,7 @@
       "@onivoro/server-build": ["libs/server-build/src/index.ts"],
       "@onivoro/server-common": ["libs/server-common/src/index.ts"],
       "@onivoro/server-disk": ["libs/server-disk/src/index.ts"],
+      "@onivoro/server-docx": ["libs/server-docx/src/index.ts"],
       "@onivoro/server-ffmpeg": ["libs/server-ffmpeg/src/index.ts"],
       "@onivoro/server-file": ["libs/server-file/src/index.ts"],
       "@onivoro/server-html": ["libs/server-html/src/index.ts"],
