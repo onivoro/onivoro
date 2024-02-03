@@ -1,12 +1,7 @@
-import { createReadStream } from "node:fs";
-import { mkdir, readFile, rm, rmdir, writeFile } from "node:fs/promises";
+import { mkdir, readFile, rm, rmdir, writeFile, copyFile } from "node:fs/promises";
 import { randomUUID } from "node:crypto";
-import { unzip, writeBufferToDisk, zip } from "@onivoro/server-disk";
-import { createWorkingDirectory } from "./create-working-directory.function";
-import { extractContentFromDocx } from "./extract-content-from-docx.function";
-import { writeContentToDocx } from "./write-content-to-docx.function";
+import { unzip, zip } from "@onivoro/server-disk";
 import { execPromise } from "@onivoro/server-process";
-import { parse } from "node:path";
 import { getFilePaths } from "./get-file-paths.function";
 
 export type TExpressFile = {
@@ -19,37 +14,52 @@ export type TDocx = {
     xml: string;
 };
 
-export async function docx(docxFilePath: string, callback: (result: TDocx) => Promise<TDocx | undefined | void>) {
-    const workingDirectory = randomUUID();
+export async function docx(docxFilePath: string, callback?: (result: TDocx) => Promise<TDocx | undefined | void>) {
+    const discriminator = randomUUID();
+
+    let xml: string;
+    let modifiedOutputFile: string;
+
+    const { contentPath, inflated, outputFileName, outputFilePath } = getFilePaths(docxFilePath, discriminator);
 
     try {
-        const { contentPath, inflated, outputFilePath } = getFilePaths(docxFilePath, workingDirectory);
-
         await mkdir(inflated, { recursive: true });
 
         await unzip(docxFilePath, inflated);
 
-        const xml = await readFile(contentPath, 'utf-8');
+        xml = await readFile(contentPath, 'utf-8');
 
         let externalResult: TDocx | undefined | void;
 
-        try {
-            externalResult = await callback({ xml });
+        if (callback) {
 
-        } catch (error: any) {
-            console.error('docx external callback errored');
+            try {
+                externalResult = await callback({ xml });
+
+            } catch (error: any) {
+                console.error('docx external callback errored');
+            }
+
+            if (externalResult && externalResult.xml) {
+                await writeFile(contentPath, externalResult?.xml, 'utf-8');
+
+                await zip(outputFileName, inflated);
+
+                modifiedOutputFile = `${discriminator}-${outputFileName}`;
+
+                await copyFile(outputFilePath, modifiedOutputFile);
+
+                xml = externalResult.xml;
+            }
         }
 
-        if (externalResult && externalResult.xml) {
-            await writeFile(contentPath, externalResult?.xml, 'utf-8');
-
-            await zip(outputFilePath, inflated);
-        }
-
-        await rmSafe(workingDirectory);
+        await rmSafe(discriminator);
     } catch (error: any) {
-        await rmSafe(workingDirectory);
+        console.error(error);
+        await rmSafe(discriminator);
     }
+
+    return { xml, modifiedOutputFile };
 }
 
 async function rmSafe(dir: string) {

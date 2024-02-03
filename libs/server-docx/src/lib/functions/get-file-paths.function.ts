@@ -11,12 +11,13 @@ export function getFilePaths(originalname: string, cwd?: string) {
 
     return cwd
         ? {
+            originalname,
             root: `${cwd}/${root}`,
             inflated: `${cwd}/${inflated}`,
             outputFilePath: `${cwd}/${outputFilePath}`,
             inputFilePath: `${cwd}/${inputFilePath}`,
-            outputFileName: `${cwd}/${outputFileName}`,
+            outputFileName,
             contentPath: `${cwd}/${contentPath}`
         }
-        : { root, inflated, outputFilePath, inputFilePath, outputFileName, contentPath };
+        : { originalname, root, inflated, outputFilePath, inputFilePath, outputFileName, contentPath };
 }
