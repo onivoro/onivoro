@@ -1,0 +1,35 @@
+{
+  "name": "server-sendgrid",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "libs/server-sendgrid/src",
+  "projectType": "library",
+  "targets": {
+    "lint": {
+      "executor": "@nx/eslint:lint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["libs/server-sendgrid/**/*.ts"]
+      }
+    },
+    "test": {
+      "executor": "@nx/jest:jest",
+      "outputs": ["{workspaceRoot}/coverage/libs/server-sendgrid"],
+      "options": {
+        "jestConfig": "libs/server-sendgrid/jest.config.ts",
+        "passWithNoTests": true
+      }
+    },
+    "build": {
+      "executor": "@nrwl/js:tsc",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "outputPath": "dist/libs/server-sendgrid",
+        "tsConfig": "libs/server-sendgrid/tsconfig.lib.json",
+        "packageJson": "libs/server-sendgrid/package.json",
+        "main": "libs/server-sendgrid/src/index.ts",
+        "assets": ["libs/server-sendgrid/*.md"]
+      }
+    }
+  },
+  "tags": []
+}

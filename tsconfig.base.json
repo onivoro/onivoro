@@ -57,6 +57,7 @@
       ],
       "@onivoro/server-process": ["libs/server-process/src/index.ts"],
       "@onivoro/server-puppeteer": ["libs/server-puppeteer/src/index.ts"],
+      "@onivoro/server-sendgrid": ["libs/server-sendgrid/src/index.ts"],
       "@onivoro/server-stripe": ["libs/server-stripe/src/index.ts"],
       "@onivoro/server-twilio": ["libs/server-twilio/src/index.ts"],
       "@onivoro/server-typeorm-postgres": [

@@ -47,6 +47,7 @@
     "@onivoro/isomorphic-common": "~0.0.1",
     "@onivoro/server-process": "~1.24.0",
     "@onivoro/server-typeorm-postgres": "~0.1.5",
+    "@sendgrid/mail": "^8.1.0",
     "amazon-cognito-auth-js": "~1.3.3",
     "amazon-cognito-identity-js": "~5.2.10",
     "any-text": "~1.2.0",
