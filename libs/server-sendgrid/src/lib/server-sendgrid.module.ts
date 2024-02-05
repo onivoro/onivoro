@@ -9,10 +9,10 @@ let mailSvc: MailService | null = null;
 @Module({})
 export class ServerSendgridModule {
   static configure(config: ServerSendgridConfig) {
-    sgMail
     return moduleFactory({
       module: ServerSendgridModule,
       providers: [
+        { provide: ServerSendgridConfig, useValue: config },
         {
           provide: MailService,
           useFactory: () => {

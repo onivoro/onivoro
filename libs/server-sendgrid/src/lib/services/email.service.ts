@@ -10,7 +10,7 @@ export class EmailService {
     return await this.sgMail
       .send({
         to,
-        from: this.config.Source,
+        from: this.config.FROM,
         subject,
         text,
         html,
