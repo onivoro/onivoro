@@ -19,7 +19,9 @@ export * from './lib/dtos/login-with-email-and-password.dto';
 export * from './lib/dtos/registration-signup.dto';
 
 export * from './lib/functions/authorize-request.function';
+export * from './lib/functions/compare-password.function';
 export * from './lib/functions/create-auth-param-decorator.function';
+export * from './lib/functions/hash-password.function';
 
 export * from './lib/guards/admin.guard';
 export * from './lib/guards/auth.guard';
