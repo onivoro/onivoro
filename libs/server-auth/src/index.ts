@@ -1,4 +1,5 @@
 export * from './lib/classes/abstract-auth-guard.class';
+export * from './lib/classes/abstract-password-reset-service.class';
 export * from './lib/classes/server-auth-config.class';
 export * from './lib/classes/token-builder.class';
 
