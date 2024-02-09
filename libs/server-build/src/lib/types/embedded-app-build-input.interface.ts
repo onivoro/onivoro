@@ -4,4 +4,5 @@ export interface IEmbeddedAppBuildInput {
     region: string,
     assetRoot: string,
     omitAcl?: boolean,
+    target?: string,
 };

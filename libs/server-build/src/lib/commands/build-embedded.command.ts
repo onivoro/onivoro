@@ -1,6 +1,7 @@
 import { Command, Option } from 'nest-commander';
-import { BuildEmbeddedService, IEmbeddedAppBuildInput } from '@onivoro/server-build';
 import { AbstractCommand } from './abstract.command';
+import { IEmbeddedAppBuildInput } from '../types/embedded-app-build-input.interface';
+import { BuildEmbeddedService } from '../services/build-embedded.service';
 
 @Command({ name: BuildEmbedded.name })
 export class BuildEmbedded extends AbstractCommand<IEmbeddedAppBuildInput> {
@@ -20,6 +21,16 @@ export class BuildEmbedded extends AbstractCommand<IEmbeddedAppBuildInput> {
         required: true
     })
     parseApp(val?: string) {
+        return val;
+    }
+
+    @Option({
+        flags: '-t, --target [target]',
+        description: 'Build target as constrained by project.json',
+        defaultValue: 'production',
+        required: false
+    })
+    parseTarget(val?: string) {
         return val;
     }
 

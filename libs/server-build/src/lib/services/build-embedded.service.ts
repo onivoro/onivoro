@@ -10,9 +10,9 @@ import { buildApp } from '../functions/build-app.function';
 @Injectable()
 export class BuildEmbeddedService {
 
-    async main({ app, bucket, region, assetRoot, omitAcl }: IEmbeddedAppBuildInput): Promise<IEmbeddedAppBuildOutput> {
+    async main({ app, bucket, region, assetRoot, omitAcl, target = 'production' }: IEmbeddedAppBuildInput): Promise<IEmbeddedAppBuildOutput> {
 
-        buildApp(app, 'production');
+        buildApp(app, target);
 
         const jsAndCssAssets: string[] = await extractAssetList(assetRoot);
         const indexHtmlPath = `${assetRoot}/index.html`;
