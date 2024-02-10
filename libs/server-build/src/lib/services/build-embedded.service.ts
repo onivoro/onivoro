@@ -6,6 +6,7 @@ import { Injectable } from '@nestjs/common';
 import { IEmbeddedAppBuildInput } from '../types/embedded-app-build-input.interface';
 import { toCdnPath } from '../functions/to-cdn-path.function';
 import { buildApp } from '../functions/build-app.function';
+import { getBootstrapScriptBody } from '../functions/get-bootstrap-script-body.function';
 
 @Injectable()
 export class BuildEmbeddedService {
@@ -59,59 +60,9 @@ export class BuildEmbeddedService {
             })
         ));
 
-        // need to conditionalize asset path in embeddable apps to reflect deployed path
-        // need to deploy assets to S3 here
-        // shell(``)
-
-        await this.s3Svc.upload({ Bucket: bucket, ContentType: 'text/javascript', Body: this.getBootstrapScriptBody(region, bucket, app), Key: `${app}/${bootstrapScriptName}.js`, ACL });
+        await this.s3Svc.upload({ Bucket: bucket, ContentType: 'text/javascript', Body: getBootstrapScriptBody(region, bucket, app), Key: `${app}/${bootstrapScriptName}.js`, ACL });
 
         return { app, html, fileMappings };
-    }
-
-    getBootstrapScriptBody(region: string, bucket: string, app: string) {
-        return `
-        const loadConfig = {
-            bucket: '${bucket}',
-            region: '${region}',
-            toLoad: {
-                'script': {
-                    '${app}': ['runtime.js', 'polyfills.js', 'main.js'],
-                },
-                'link': {
-                    '${app}': ['styles.css']
-                }
-            }
-        };
-
-        Object.entries(loadConfig.toLoad).forEach((configs) => {
-            const type = configs[0];
-            const segregatedConfigs = configs[1];
-            Object.entries(segregatedConfigs).forEach((segregatedConfig) => {
-                const folder = segregatedConfig[0];
-                const files = segregatedConfig[1];
-                const prefix = \`https://s3.\${loadConfig.region}.amazonaws.com/\${loadConfig.bucket}\`;
-
-                files.forEach(file => {
-                    const element = document.createElement(type);
-                    const path = \`\${prefix}/\${folder}/\${file}\`;
-
-                    if (type === 'link') {
-                        element.setAttribute('href', path);
-                        element.setAttribute('rel', 'stylesheet');
-                        document.head.appendChild(element);
-                    } else if (type === 'script') {
-                        element.setAttribute('src', path);
-                        element.setAttribute('type', 'module');
-                        document.head.appendChild(element);
-                    }
-                });
-            });
-        });
-
-        const l = document.createElement('link');
-        l.setAttribute('href', 'https://fonts.googleapis.com/icon?family=Material+Icons');
-        l.setAttribute('rel', 'stylesheet');
-        document.head.appendChild(l);`;
     }
 
     constructor(private s3Svc: S3Service) { }

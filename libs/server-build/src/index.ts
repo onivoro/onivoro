@@ -18,6 +18,7 @@ export * from './lib/functions/copy-package-json-version.function';
 export * from './lib/functions/deploy-lambda.function';
 export * from './lib/functions/extract-asset-list.function';
 export * from './lib/functions/get-apps.function';
+export * from './lib/functions/get-bootstrap-script-body.function';
 export * from './lib/functions/get-projects.function';
 export * from './lib/functions/log-elapsed-time.function';
 export * from './lib/functions/login-to-ecr-by-profile.function';
