@@ -6,8 +6,8 @@ export abstract class AbstractAuthGuard<TAccessToken> implements CanActivate {
   canActivate(
     context: ExecutionContext
   ): boolean | Promise<boolean> | Observable<boolean> {
-    return authorizeRequest<TAccessToken>(context, token => this.evaluateToken(token));
+    return authorizeRequest<TAccessToken>(context, (token, request) => this.evaluateToken(token, request));
   };
 
-  abstract evaluateToken: (token?: TAccessToken) => boolean;
+  abstract evaluateToken: (token?: TAccessToken, request?: any) => boolean;
 }
