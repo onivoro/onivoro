@@ -5,7 +5,7 @@ export function getBootstrapScriptBody(region: string, bucket: string, app: stri
         region: '${region}',
         toLoad: {
             'script': {
-                '${app}': ['runtime.js', 'polyfills.js', 'main.js', 'vendor.js'],
+                '${app}': ['runtime.js', 'polyfills.js', 'main.js'],
             },
             'link': {
                 '${app}': ['styles.css']

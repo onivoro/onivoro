@@ -7,7 +7,7 @@ exports[`getBootstrapScriptBody templates a script file 1`] = `
         region: 'region-goes-here',
         toLoad: {
             'script': {
-                'app-goes-here': ['runtime.js', 'polyfills.js', 'main.js', 'vendor.js'],
+                'app-goes-here': ['runtime.js', 'polyfills.js', 'main.js'],
             },
             'link': {
                 'app-goes-here': ['styles.css']
