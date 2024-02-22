@@ -1,6 +1,6 @@
 export function getBootstrapScriptBody(region: string, bucket: string, app: string) {
     return `
-    const loadConfig = {
+    var loadConfig = {
         bucket: '${bucket}',
         region: '${region}',
         toLoad: {
