@@ -1,6 +1,9 @@
 {
   "name": "@onivoro/angular-common",
   "version": "16.0.19",
+  "repository": {
+    "url": "https://github.com/onivoro/onivoro.git"
+  },
   "peerDependencies": {},
   "dependencies": {
     "tslib": "^2.3.0"
