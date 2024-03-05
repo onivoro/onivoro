@@ -1,11 +1,9 @@
 {
   "name": "@onivoro/angular-material-forms",
   "version": "16.0.1",
-  "peerDependencies": {
-    "@angular/common": "16.2.11",
-    "@angular/core": "16.2.11"
-  },
   "dependencies": {
+    "@angular/common": "16.2.11",
+    "@angular/core": "16.2.11",
     "tslib": "^2.3.0"
   }
 }

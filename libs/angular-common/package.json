@@ -4,7 +4,6 @@
   "repository": {
     "url": "https://github.com/onivoro/onivoro.git"
   },
-  "peerDependencies": {},
   "dependencies": {
     "tslib": "^2.3.0"
   },
