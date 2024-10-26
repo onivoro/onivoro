@@ -1,9 +1,0 @@
-{
-  "name": "@onivoro/angular-forms",
-  "version": "16.0.4",
-  "dependencies": {
-    "@angular/common": "16.2.11",
-    "@angular/core": "16.2.11",
-    "tslib": "^2.3.0"
-  }
-}
