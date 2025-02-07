@@ -1,0 +1,6 @@
+Compiling TypeScript files for project "isomorphic-jsonata"...
+[1m[31m[96mlibs/isomorphic-jsonata/src/lib/classes/jsonata-expression.class.ts[0m:[93m1[0m:[93m10[0m - [91merror[0m[90m TS2305: [0mModule '"@onivoro/isomorphic-common"' has no exported member 'toUniqueArray'.[39m[22m
+[1m[31m[39m[22m
+[1m[31m[7m1[0m import { toUniqueArray } from '@onivoro/isomorphic-common';[39m[22m
+[1m[31m[7m [0m [91m         ~~~~~~~~~~~~~[0m[39m[22m
+[1m[31m[39m[22m

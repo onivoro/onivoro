@@ -1,0 +1,36 @@
+{
+  "workspace": [
+    "libs/browser-canvas",
+    "libs/browser-gaming",
+    "libs/isomorphic-axios",
+    "libs/isomorphic-common",
+    "libs/isomorphic-jsonata",
+    "libs/onix",
+    "libs/server-auth",
+    "libs/server-aws-auth",
+    "libs/server-aws-dynamo",
+    "libs/server-aws-lambda",
+    "libs/server-aws-s3",
+    "libs/server-aws-ses",
+    "libs/server-build",
+    "libs/server-common",
+    "libs/server-disk",
+    "libs/server-docx",
+    "libs/server-ffmpeg",
+    "libs/server-file",
+    "libs/server-html",
+    "libs/server-multer-s3",
+    "libs/server-open-ai",
+    "libs/server-parameterization",
+    "libs/server-process",
+    "libs/server-puppeteer",
+    "libs/server-sendgrid",
+    "libs/server-stripe",
+    "libs/server-twilio",
+    "libs/server-typeorm-postgres",
+    "libs/server-yt-dl"
+  ],
+  "imports": {
+    "chalk": "npm:chalk@5"
+  }
+}

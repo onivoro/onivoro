@@ -1,0 +1,157 @@
+[NX Daemon Server] - 2024-03-06T03:47:56.487Z - Started listening on: /var/folders/37/q4zpmmcd039b_mdfl7jxxyn80000gn/T/6fe59369c7007fb71dce/d.sock
+[NX Daemon Server] - 2024-03-06T03:47:56.489Z - [WATCHER]: Subscribed to changes within: /Users/leenorris/github.com/onivoro/onivoro (native)
+[NX Daemon Server] - 2024-03-06T03:47:56.490Z - Established a connection. Number of open connections: 1
+[NX Daemon Server] - 2024-03-06T03:47:56.491Z - Established a connection. Number of open connections: 2
+[NX Daemon Server] - 2024-03-06T03:47:56.492Z - [REQUEST]: Client Request for Project Graph Received
+[NX Daemon Server] - 2024-03-06T03:47:56.571Z - [REQUEST]: Updated file-hasher based on watched changes, recomputing project graph...
+[NX Daemon Server] - 2024-03-06T03:47:56.571Z - [REQUEST]: 
+[NX Daemon Server] - 2024-03-06T03:47:56.571Z - [REQUEST]: 
+[NX Daemon Server] - 2024-03-06T03:47:56.722Z - [REQUEST]: Responding to the client. project-graph
+[NX Daemon Server] - 2024-03-06T03:47:56.723Z - Time taken for 'total for creating and serializing project graph' 229.54558396339417ms
+[NX Daemon Server] - 2024-03-06T03:47:56.723Z - Closed a connection. Number of open connections: 1
+[NX Daemon Server] - 2024-03-06T03:47:56.723Z - [WATCHER]: Processing file changes in outputs
+[NX Daemon Server] - 2024-03-06T03:47:56.730Z - Done responding to the client project-graph
+[NX Daemon Server] - 2024-03-06T03:47:56.730Z - Handled REQUEST_PROJECT_GRAPH. Handling time: 230. Response time: 8.
+[NX Daemon Server] - 2024-03-06T03:47:56.785Z - [REQUEST]: Responding to the client. handleHashTasks
+[NX Daemon Server] - 2024-03-06T03:47:56.785Z - [WATCHER]: Processing file changes in outputs
+[NX Daemon Server] - 2024-03-06T03:47:56.786Z - Done responding to the client handleHashTasks
+[NX Daemon Server] - 2024-03-06T03:47:56.786Z - Handled HASH_TASKS. Handling time: 31. Response time: 1.
+[NX Daemon Server] - 2024-03-06T03:47:56.921Z - [WATCHER]: Processing file changes in outputs
+[NX Daemon Server] - 2024-03-06T03:47:57.120Z - [WATCHER]: Processing file changes in outputs
+[NX Daemon Server] - 2024-03-06T03:47:57.399Z - [REQUEST]: Responding to the client. recordOutputsHash
+[NX Daemon Server] - 2024-03-06T03:47:57.399Z - Done responding to the client recordOutputsHash
+[NX Daemon Server] - 2024-03-06T03:47:57.399Z - Handled RECORD_OUTPUTS_HASH. Handling time: 0. Response time: 0.
+[NX Daemon Server] - 2024-03-06T03:47:57.403Z - Closed a connection. Number of open connections: 0
+[NX Daemon Server] - 2024-03-06T03:47:57.454Z - [WATCHER]: Processing file changes in outputs
+[NX Daemon Server] - 2024-03-06T04:07:01.112Z - [WATCHER]: libs/isomorphic-jsonata was deleted
+[NX Daemon Server] - 2024-03-06T04:07:01.113Z - [WATCHER]: Processing file changes in outputs
+[NX Daemon Server] - 2024-03-06T04:07:01.225Z - Error detected when recomputing project file map: ENOENT: no such file or directory, open '/Users/leenorris/github.com/onivoro/onivoro/libs/isomorphic-jsonata/project.json'
+[NX Daemon Server] - 2024-03-06T04:07:01.225Z - Time taken for 'hash changed files from watcher' 0.6871249675750732ms
+[NX Daemon Server] - 2024-03-06T04:07:17.309Z - [WATCHER]: Processing file changes in outputs
+[NX Daemon Server] - 2024-03-06T04:07:17.310Z - [WATCHER]: 78 file(s) created or restored, 0 file(s) modified, 0 file(s) deleted
+[NX Daemon Server] - 2024-03-06T04:07:17.471Z - [REQUEST]: Updated file-hasher based on watched changes, recomputing project graph...
+[NX Daemon Server] - 2024-03-06T04:07:17.471Z - [REQUEST]: libs/isomorphic-common/src/lib/functions/add-offset.function.spec.ts,libs/isomorphic-common/package.json,libs/isomorphic-common/src/lib/functions/add-offset.function.ts,libs/isomorphic-common/src/lib/functions/to-string.function.ts,libs/isomorphic-jsonata/package.json,libs/isomorphic-common/src/lib/functions/properties-to-array.function.ts,package.json,libs/isomorphic-common/src/lib/functions/convert-object-to-literal.function.spec.ts,libs/isomorphic-common/tsconfig.lib.json,libs/isomorphic-common/src/lib/functions/__snapshots__/upper-first.function.spec.ts.snap,libs/isomorphic-common/src/lib/functions/subtract-offset.function.spec.ts,libs/isomorphic-common/src/lib/functions/to-locale-date-string.function.ts,libs/isomorphic-jsonata/src/lib/interfaces/jsonata-fn-config.interface.ts,libs/isomorphic-jsonata/tsconfig.spec.json,libs/isomorphic-common/src/lib/functions/unicode-words.const.ts,libs/isomorphic-common/src/lib/functions/to-decimal-base.function.ts,libs/isomorphic-common/src/lib/functions/from-boolean-string.function.ts,libs/isomorphic-jsonata/README.md,libs/isomorphic-common/.eslintrc.json,libs/isomorphic-common/tsconfig.spec.json,libs/isomorphic-jsonata/.eslintrc.json,libs/isomorphic-common/src/lib/functions/convert-object-to-literal.function.ts,libs/isomorphic-common/src/lib/functions/parse-bool.function.ts,libs/isomorphic-common/src/lib/functions/words.function.ts,libs/isomorphic-jsonata/src/lib/interfaces/jsonata-expression.interface.ts,libs/isomorphic-common/src/lib/interfaces/axios-wrapped-nest-exception.interface.ts,libs/isomorphic-common/src/lib/functions/__snapshots__/subtract-offset.function.spec.ts.snap,libs/isomorphic-common/src/lib/functions/to-csv-string.function.ts,libs/isomorphic-common/tsconfig.json,libs/isomorphic-common/src/lib/interfaces/entity-provider.interface.ts,libs/isomorphic-common/src/lib/functions/to-words.function.spec.ts,libs/isomorphic-common/src/lib/interfaces/keys-of.type.ts,libs/isomorphic-common/src/lib/functions/get-tag.function.ts,libs/isomorphic-common/src/lib/functions/upper-first.function.ts,libs/isomorphic-common/src/lib/functions/to-boolean-string.function.ts,libs/isomorphic-common/src/lib/functions/try-parse-date.function.spec.ts,libs/isomorphic-common/src/lib/functions/try-parse-date.function.ts,libs/isomorphic-jsonata/src/lib/classes/jsonata-expression.class.ts,libs/isomorphic-common/src/lib/functions/is-symbol.function.ts,libs/isomorphic-common/src/lib/functions/from-csv-string.function.ts,libs/isomorphic-jsonata/.babelrc,libs/isomorphic-jsonata/src/lib/functions/find-and-replace.function.ts,libs/isomorphic-common/src/lib/functions/to-dollars-and-cents.function.spec.ts,libs/isomorphic-jsonata/tsconfig.json,libs/isomorphic-common/.babelrc,libs/isomorphic-common/src/lib/functions/__snapshots__/to-dollars-and-cents.function.spec.ts.snap,libs/isomorphic-jsonata/tsconfig.lib.json,libs/isomorphic-common/src/lib/functions/snake-case.function.ts,libs/isomorphic-common/src/index.ts,libs/isomorphic-jsonata/project.json,libs/isomorphic-common/jest.config.ts,libs/isomorphic-common/src/lib/constants/millis-per-minute.constant.ts,libs/isomorphic-common/src/lib/functions/to-locale-time-string.function.ts,libs/isomorphic-jsonata/src/lib/functions/execute-jsonata.function.ts,libs/isomorphic-common/src/lib/functions/__snapshots__/from-calendar-date.function.spec.ts.snap,libs/isomorphic-jsonata/jest.config.ts,libs/isomorphic-jsonata/src/lib/interfaces/jsonata-fn.interface.ts,libs/isomorphic-common/README.md,libs/isomorphic-common/src/lib/functions/camel-case.function.ts,libs/isomorphic-common/src/lib/functions/kebab-case.function.ts,libs/isomorphic-common/src/lib/functions/__snapshots__/convert-object-to-literal.function.spec.ts.snap,libs/isomorphic-common/src/lib/functions/__snapshots__/add-offset.function.spec.ts.snap,libs/isomorphic-common/src/lib/functions/to-unique-array.function.spec.ts,libs/isomorphic-common/src/lib/constants/millis-per-day.constant.ts,libs/isomorphic-common/src/lib/functions/from-calendar-date.function.ts,libs/isomorphic-common/src/lib/functions/to-words.function.ts,libs/isomorphic-common/src/lib/functions/sanitize-filename.function.ts,libs/isomorphic-common/src/lib/functions/upper-first.function.spec.ts,libs/isomorphic-common/src/lib/functions/from-calendar-date.function.spec.ts,libs/isomorphic-common/src/lib/functions/subtract-offset.function.ts,libs/isomorphic-common/src/lib/functions/to-dollars-and-cents.function.ts,libs/isomorphic-common/src/lib/functions/__snapshots__/try-parse-date.function.spec.ts.snap,libs/isomorphic-common/src/lib/functions/__snapshots__/to-words.function.spec.ts.snap,libs/isomorphic-common/src/lib/functions/to-calendar-date.function.ts,libs/isomorphic-common/project.json,libs/isomorphic-jsonata/src/index.ts,libs/isomorphic-common/src/lib/constants/millis-per-hour.constant.ts,libs/isomorphic-common/src/lib/functions/to-unique-array.function.ts
+[NX Daemon Server] - 2024-03-06T04:07:17.471Z - [REQUEST]: 
+[NX Daemon Server] - 2024-03-06T04:07:17.539Z - Time taken for 'hash changed files from watcher' 0.016250014305114746ms
+[NX Daemon Server] - 2024-03-06T04:07:17.598Z - [WATCHER]: Processing file changes in outputs
+[NX Daemon Server] - 2024-03-06T07:48:13.272Z - [WATCHER]: Stopping the watcher for /Users/leenorris/github.com/onivoro/onivoro (sources)
+[NX Daemon Server] - 2024-03-06T07:48:13.274Z - [WATCHER]: Stopping the watcher for /Users/leenorris/github.com/onivoro/onivoro (outputs)
+[NX Daemon Server] - 2024-03-06T07:48:13.274Z - Server stopped because: "10800000ms of inactivity"
+[NX Daemon Server] - 2024-10-30T06:21:50.565Z - Started listening on: /var/folders/37/q4zpmmcd039b_mdfl7jxxyn80000gn/T/6fe59369c7007fb71dce/d.sock
+[NX Daemon Server] - 2024-10-30T06:21:50.570Z - [WATCHER]: Subscribed to changes within: /Users/leenorris/github.com/onivoro/onivoro (native)
+[NX Daemon Server] - 2024-10-30T06:21:50.571Z - Established a connection. Number of open connections: 1
+[NX Daemon Server] - 2024-10-30T06:21:50.573Z - Established a connection. Number of open connections: 2
+[NX Daemon Server] - 2024-10-30T06:21:50.574Z - Closed a connection. Number of open connections: 1
+[NX Daemon Server] - 2024-10-30T06:21:50.575Z - [REQUEST]: Client Request for Project Graph Received
+[NX Daemon Server] - 2024-10-30T06:21:50.619Z - [REQUEST]: Updated file-hasher based on watched changes, recomputing project graph...
+[NX Daemon Server] - 2024-10-30T06:21:50.619Z - [REQUEST]: 
+[NX Daemon Server] - 2024-10-30T06:21:50.619Z - [REQUEST]: 
+[NX Daemon Server] - 2024-10-30T06:21:50.784Z - [REQUEST]: Responding to the client. project-graph
+[NX Daemon Server] - 2024-10-30T06:21:50.786Z - Time taken for 'total for creating and serializing project graph' 209.574167ms
+[NX Daemon Server] - 2024-10-30T06:21:50.789Z - Done responding to the client project-graph
+[NX Daemon Server] - 2024-10-30T06:21:50.789Z - Handled REQUEST_PROJECT_GRAPH. Handling time: 209. Response time: 5.
+[NX Daemon Server] - 2024-10-30T06:21:50.793Z - [REQUEST]: Responding to the client. handleRequestFileData
+[NX Daemon Server] - 2024-10-30T06:21:50.793Z - Done responding to the client handleRequestFileData
+[NX Daemon Server] - 2024-10-30T06:21:50.793Z - Handled REQUEST_FILE_DATA. Handling time: 1. Response time: 0.
+[NX Daemon Server] - 2024-10-30T06:21:50.795Z - Closed a connection. Number of open connections: 0
+[NX Daemon Server] - 2024-10-30T06:21:50.855Z - [WATCHER]: Processing file changes in outputs
+[NX Daemon Server] - 2024-10-30T06:25:20.092Z - Started listening on: /var/folders/37/q4zpmmcd039b_mdfl7jxxyn80000gn/T/6fe59369c7007fb71dce/d.sock
+[NX Daemon Server] - 2024-10-30T06:25:20.096Z - [WATCHER]: Subscribed to changes within: /Users/leenorris/github.com/onivoro/onivoro (native)
+[NX Daemon Server] - 2024-10-30T06:25:20.097Z - Established a connection. Number of open connections: 1
+[NX Daemon Server] - 2024-10-30T06:25:20.098Z - Established a connection. Number of open connections: 2
+[NX Daemon Server] - 2024-10-30T06:25:20.100Z - Closed a connection. Number of open connections: 1
+[NX Daemon Server] - 2024-10-30T06:25:20.101Z - [REQUEST]: Client Request for Project Graph Received
+[NX Daemon Server] - 2024-10-30T06:25:20.139Z - [REQUEST]: Updated file-hasher based on watched changes, recomputing project graph...
+[NX Daemon Server] - 2024-10-30T06:25:20.139Z - [REQUEST]: 
+[NX Daemon Server] - 2024-10-30T06:25:20.139Z - [REQUEST]: 
+[NX Daemon Server] - 2024-10-30T06:25:20.192Z - [REQUEST]: Responding to the client. project-graph
+[NX Daemon Server] - 2024-10-30T06:25:20.193Z - Time taken for 'total for creating and serializing project graph' 91.024833ms
+[NX Daemon Server] - 2024-10-30T06:25:20.195Z - Done responding to the client project-graph
+[NX Daemon Server] - 2024-10-30T06:25:20.195Z - Handled REQUEST_PROJECT_GRAPH. Handling time: 92. Response time: 3.
+[NX Daemon Server] - 2024-10-30T06:25:20.199Z - [REQUEST]: Responding to the client. handleRequestFileData
+[NX Daemon Server] - 2024-10-30T06:25:20.199Z - Done responding to the client handleRequestFileData
+[NX Daemon Server] - 2024-10-30T06:25:20.200Z - Handled REQUEST_FILE_DATA. Handling time: 0. Response time: 1.
+[NX Daemon Server] - 2024-10-30T06:25:20.202Z - Closed a connection. Number of open connections: 0
+[NX Daemon Server] - 2024-10-30T06:25:20.263Z - [WATCHER]: Processing file changes in outputs
+[NX Daemon Server] - 2024-10-30T06:25:58.939Z - [WATCHER]: 0 file(s) created or restored, 0 file(s) modified, 587 file(s) deleted
+[NX Daemon Server] - 2024-10-30T06:25:58.940Z - [WATCHER]: Processing file changes in outputs
+[NX Daemon Server] - 2024-10-30T06:25:58.991Z - [WATCHER]: Processing file changes in outputs
+[NX Daemon Server] - 2024-10-30T06:25:58.991Z - [WATCHER]: Stopping the watcher for /Users/leenorris/github.com/onivoro/onivoro (sources)
+[NX Daemon Server] - 2024-10-30T06:26:15.614Z - Started listening on: /var/folders/37/q4zpmmcd039b_mdfl7jxxyn80000gn/T/6fe59369c7007fb71dce/d.sock
+[NX Daemon Server] - 2024-10-30T06:26:15.618Z - [WATCHER]: Subscribed to changes within: /Users/leenorris/github.com/onivoro/onivoro (native)
+[NX Daemon Server] - 2024-10-30T06:26:15.622Z - Established a connection. Number of open connections: 1
+[NX Daemon Server] - 2024-10-30T06:26:15.625Z - Established a connection. Number of open connections: 2
+[NX Daemon Server] - 2024-10-30T06:26:15.626Z - Closed a connection. Number of open connections: 1
+[NX Daemon Server] - 2024-10-30T06:26:15.631Z - [REQUEST]: Client Request for Project Graph Received
+[NX Daemon Server] - 2024-10-30T06:26:15.684Z - [REQUEST]: Updated file-hasher based on watched changes, recomputing project graph...
+[NX Daemon Server] - 2024-10-30T06:26:15.684Z - [REQUEST]: 
+[NX Daemon Server] - 2024-10-30T06:26:15.684Z - [REQUEST]: 
+[NX Daemon Server] - 2024-10-30T06:26:15.733Z - [REQUEST]: Responding to the client. project-graph
+[NX Daemon Server] - 2024-10-30T06:26:15.734Z - Time taken for 'total for creating and serializing project graph' 101.827666ms
+[NX Daemon Server] - 2024-10-30T06:26:15.736Z - Done responding to the client project-graph
+[NX Daemon Server] - 2024-10-30T06:26:15.736Z - Handled REQUEST_PROJECT_GRAPH. Handling time: 102. Response time: 3.
+[NX Daemon Server] - 2024-10-30T06:26:15.740Z - [REQUEST]: Responding to the client. handleRequestFileData
+[NX Daemon Server] - 2024-10-30T06:26:15.740Z - Done responding to the client handleRequestFileData
+[NX Daemon Server] - 2024-10-30T06:26:15.740Z - Handled REQUEST_FILE_DATA. Handling time: 1. Response time: 0.
+[NX Daemon Server] - 2024-10-30T06:26:15.741Z - Closed a connection. Number of open connections: 0
+[NX Daemon Server] - 2024-10-30T06:26:15.795Z - [WATCHER]: Processing file changes in outputs
+[NX Daemon Server] - 2024-10-30T06:33:48.898Z - [WATCHER]: 0 file(s) created or restored, 0 file(s) modified, 815 file(s) deleted
+[NX Daemon Server] - 2024-10-30T06:33:48.900Z - [WATCHER]: Processing file changes in outputs
+[NX Daemon Server] - 2024-10-30T06:33:48.949Z - [WATCHER]: Processing file changes in outputs
+[NX Daemon Server] - 2024-10-30T06:33:48.949Z - [WATCHER]: Stopping the watcher for /Users/leenorris/github.com/onivoro/onivoro (sources)
+[NX Daemon Server] - 2024-10-30T06:34:50.857Z - Started listening on: /var/folders/37/q4zpmmcd039b_mdfl7jxxyn80000gn/T/6fe59369c7007fb71dce/d.sock
+[NX Daemon Server] - 2024-10-30T06:34:50.863Z - [WATCHER]: Subscribed to changes within: /Users/leenorris/github.com/onivoro/onivoro (native)
+[NX Daemon Server] - 2024-10-30T06:34:50.863Z - Established a connection. Number of open connections: 1
+[NX Daemon Server] - 2024-10-30T06:34:50.864Z - Established a connection. Number of open connections: 2
+[NX Daemon Server] - 2024-10-30T06:34:50.865Z - Closed a connection. Number of open connections: 1
+[NX Daemon Server] - 2024-10-30T06:34:50.866Z - [REQUEST]: Client Request for Project Graph Received
+[NX Daemon Server] - 2024-10-30T06:34:50.899Z - [REQUEST]: Updated file-hasher based on watched changes, recomputing project graph...
+[NX Daemon Server] - 2024-10-30T06:34:50.899Z - [REQUEST]: 
+[NX Daemon Server] - 2024-10-30T06:34:50.899Z - [REQUEST]: 
+[NX Daemon Server] - 2024-10-30T06:34:50.956Z - [REQUEST]: Responding to the client. project-graph
+[NX Daemon Server] - 2024-10-30T06:34:50.958Z - Time taken for 'total for creating and serializing project graph' 90.29775ms
+[NX Daemon Server] - 2024-10-30T06:34:50.960Z - Done responding to the client project-graph
+[NX Daemon Server] - 2024-10-30T06:34:50.960Z - Handled REQUEST_PROJECT_GRAPH. Handling time: 90. Response time: 4.
+[NX Daemon Server] - 2024-10-30T06:34:50.964Z - [REQUEST]: Responding to the client. handleRequestFileData
+[NX Daemon Server] - 2024-10-30T06:34:50.964Z - Done responding to the client handleRequestFileData
+[NX Daemon Server] - 2024-10-30T06:34:50.964Z - Handled REQUEST_FILE_DATA. Handling time: 1. Response time: 0.
+[NX Daemon Server] - 2024-10-30T06:34:50.965Z - Closed a connection. Number of open connections: 0
+[NX Daemon Server] - 2024-10-30T06:34:51.033Z - [WATCHER]: Processing file changes in outputs
+[NX Daemon Server] - 2024-10-30T06:34:57.281Z - Established a connection. Number of open connections: 1
+[NX Daemon Server] - 2024-10-30T06:34:57.281Z - Established a connection. Number of open connections: 2
+[NX Daemon Server] - 2024-10-30T06:34:57.281Z - Closed a connection. Number of open connections: 1
+[NX Daemon Server] - 2024-10-30T06:34:57.282Z - [REQUEST]: Client Request for Project Graph Received
+[NX Daemon Server] - 2024-10-30T06:34:57.282Z - [REQUEST]: Responding to the client. project-graph
+[NX Daemon Server] - 2024-10-30T06:34:57.284Z - Time taken for 'total for creating and serializing project graph' 0.0737089999993259ms
+[NX Daemon Server] - 2024-10-30T06:34:57.286Z - Done responding to the client project-graph
+[NX Daemon Server] - 2024-10-30T06:34:57.286Z - Handled REQUEST_PROJECT_GRAPH. Handling time: 0. Response time: 4.
+[NX Daemon Server] - 2024-10-30T06:34:57.289Z - [REQUEST]: Responding to the client. handleRequestFileData
+[NX Daemon Server] - 2024-10-30T06:34:57.290Z - Done responding to the client handleRequestFileData
+[NX Daemon Server] - 2024-10-30T06:34:57.290Z - Handled REQUEST_FILE_DATA. Handling time: 0. Response time: 1.
+[NX Daemon Server] - 2024-10-30T06:34:57.290Z - Closed a connection. Number of open connections: 0
+[NX Daemon Server] - 2024-10-30T06:35:17.050Z - [WATCHER]: Processing file changes in outputs
+[NX Daemon Server] - 2024-10-30T06:35:17.054Z - [WATCHER]: Stopping the watcher for /Users/leenorris/github.com/onivoro/onivoro (sources)
+[NX Daemon Server] - 2024-10-30T06:35:17.054Z - [WATCHER]: Stopping the watcher for /Users/leenorris/github.com/onivoro/onivoro (outputs)
+[NX Daemon Server] - 2024-10-30T06:35:17.054Z - Server stopped because: "Lock file changed"
+[NX Daemon Server] - 2024-10-30T06:44:27.690Z - Started listening on: /var/folders/37/q4zpmmcd039b_mdfl7jxxyn80000gn/T/6fe59369c7007fb71dce/d.sock
+[NX Daemon Server] - 2024-10-30T06:44:27.696Z - [WATCHER]: Subscribed to changes within: /Users/leenorris/github.com/onivoro/onivoro (native)
+[NX Daemon Server] - 2024-10-30T06:44:27.697Z - Established a connection. Number of open connections: 1
+[NX Daemon Server] - 2024-10-30T06:44:27.698Z - Established a connection. Number of open connections: 2
+[NX Daemon Server] - 2024-10-30T06:44:27.699Z - Closed a connection. Number of open connections: 1
+[NX Daemon Server] - 2024-10-30T06:44:27.700Z - [REQUEST]: Client Request for Project Graph Received
+[NX Daemon Server] - 2024-10-30T06:44:27.730Z - [REQUEST]: Updated file-hasher based on watched changes, recomputing project graph...
+[NX Daemon Server] - 2024-10-30T06:44:27.730Z - [REQUEST]: 
+[NX Daemon Server] - 2024-10-30T06:44:27.730Z - [REQUEST]: 
+[NX Daemon Server] - 2024-10-30T06:44:27.781Z - [REQUEST]: Responding to the client. project-graph
+[NX Daemon Server] - 2024-10-30T06:44:27.782Z - Time taken for 'total for creating and serializing project graph' 81.05079200000002ms
+[NX Daemon Server] - 2024-10-30T06:44:27.783Z - Done responding to the client project-graph
+[NX Daemon Server] - 2024-10-30T06:44:27.784Z - Handled REQUEST_PROJECT_GRAPH. Handling time: 81. Response time: 3.
+[NX Daemon Server] - 2024-10-30T06:44:27.787Z - [REQUEST]: Responding to the client. handleRequestFileData
+[NX Daemon Server] - 2024-10-30T06:44:27.787Z - Done responding to the client handleRequestFileData
+[NX Daemon Server] - 2024-10-30T06:44:27.788Z - Handled REQUEST_FILE_DATA. Handling time: 0. Response time: 1.
+[NX Daemon Server] - 2024-10-30T06:44:27.788Z - Closed a connection. Number of open connections: 0
+[NX Daemon Server] - 2024-10-30T06:44:27.854Z - [WATCHER]: Processing file changes in outputs
+[NX Daemon Server] - 2024-10-30T06:47:44.723Z - [WATCHER]: Processing file changes in outputs
+[NX Daemon Server] - 2024-10-30T06:47:44.727Z - [WATCHER]: Stopping the watcher for /Users/leenorris/github.com/onivoro/onivoro (sources)
+[NX Daemon Server] - 2024-10-30T06:47:44.727Z - [WATCHER]: Stopping the watcher for /Users/leenorris/github.com/onivoro/onivoro (outputs)
+[NX Daemon Server] - 2024-10-30T06:47:44.727Z - Server stopped because: "Lock file changed"

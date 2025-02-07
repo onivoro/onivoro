@@ -1,0 +1,21 @@
+{
+  "run": {
+    "command": "nx build isomorphic-jsonata",
+    "startTime": "2024-03-06T03:47:56.786Z",
+    "endTime": "2024-03-06T03:47:57.400Z",
+    "inner": false
+  },
+  "tasks": [
+    {
+      "taskId": "isomorphic-jsonata:build",
+      "target": "build",
+      "projectName": "isomorphic-jsonata",
+      "hash": "11705174961272258317",
+      "startTime": "2024-03-06T03:47:56.791Z",
+      "endTime": "2024-03-06T03:47:57.399Z",
+      "params": "",
+      "cacheStatus": "cache-miss",
+      "status": 1
+    }
+  ]
+}

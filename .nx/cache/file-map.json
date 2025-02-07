@@ -1,0 +1,5336 @@
+{
+  "version": "6.0",
+  "nxVersion": "17.0.2",
+  "deps": {
+    "@angular/animations": "16.2.11",
+    "@angular/cdk": "16.2.10",
+    "@angular/common": "16.2.11",
+    "@angular/compiler": "16.2.11",
+    "@angular/core": "16.2.11",
+    "@angular/fire": "^7.4.0",
+    "@angular/forms": "16.2.11",
+    "@angular/material": "16.2.10",
+    "@angular/platform-browser": "16.2.11",
+    "@angular/platform-browser-dynamic": "16.2.11",
+    "@angular/router": "16.2.11",
+    "@ckeditor/ckeditor5-angular": "~6.0.0",
+    "@ckeditor/ckeditor5-build-classic": "~37.0.1",
+    "@dqbd/tiktoken": "~1.0.7",
+    "@nestjs/axios": "~1.0.0",
+    "@nestjs/common": "10.2.7",
+    "@nestjs/core": "10.2.7",
+    "@nestjs/platform-express": "10.2.7",
+    "@nestjs/serve-static": "~3.0.0",
+    "@nestjs/swagger": "7.1.14",
+    "@nx/angular": "17.0.2",
+    "@onivoro/isomorphic-common": "~0.0.1",
+    "@onivoro/server-process": "~1.24.0",
+    "@onivoro/server-typeorm-postgres": "~0.1.5",
+    "@sendgrid/mail": "^8.1.0",
+    "amazon-cognito-auth-js": "~1.3.3",
+    "amazon-cognito-identity-js": "~5.2.10",
+    "any-text": "~1.2.0",
+    "aws-sdk": "~2.1209.0",
+    "axios": "~0.27.2",
+    "bcryptjs": "~2.4.3",
+    "body-parser": "~1.20.1",
+    "compute-cosine-similarity": "~1.0.0",
+    "core-js": "~3.6.5",
+    "date-fns": "~2.29.3",
+    "date-fns-tz": "~1.3.7",
+    "dotenv": "~16.0.2",
+    "https": "~1.0.0",
+    "jsonata": "^2.0.3",
+    "jsonwebtoken": "~8.5.1",
+    "jwk-to-pem": "~2.0.5",
+    "jwt-decode": "~3.1.2",
+    "lodash": "~4.17.21",
+    "lodash.clonedeep": "~4.5.0",
+    "lodash.get": "~4.4.2",
+    "lodash.kebabcase": "~4.1.1",
+    "lodash.snakecase": "~4.1.1",
+    "lodash.upperfirst": "~4.3.1",
+    "nest-commander": "~3.1.0",
+    "ngx-cookie-service": "~14.0.1",
+    "node-fetch": "~2.6.1",
+    "openai": "~3.2.1",
+    "pdf-parse": "~1.1.1",
+    "pg": "~8.8.0",
+    "puppeteer": "^20.7.4",
+    "puppeteer-extra": "^3.3.6",
+    "puppeteer-extra-plugin-stealth": "^2.11.2",
+    "react-router-dom": "6.11.2",
+    "reflect-metadata": "~0.1.13",
+    "regenerator-runtime": "0.13.7",
+    "rxjs": "^7.4.0",
+    "stripe": "^10.16.0",
+    "tslib": "~2.3.0",
+    "twilio": "^3.82.2",
+    "typeorm": "~0.3.10",
+    "typeorm-naming-strategies": "~4.1.0",
+    "uuid": "~8.3.2",
+    "yesql": "~5.0.0",
+    "ytdl-core": "^4.11.4",
+    "zone.js": "0.13.3",
+    "@angular-devkit/build-angular": "16.2.8",
+    "@angular-devkit/core": "16.2.8",
+    "@angular-devkit/schematics": "16.2.8",
+    "@angular-eslint/eslint-plugin": "16.0.3",
+    "@angular-eslint/eslint-plugin-template": "16.0.3",
+    "@angular-eslint/template-parser": "16.0.3",
+    "@angular/cli": "~16.2.0",
+    "@angular/compiler-cli": "16.2.11",
+    "@angular/language-service": "16.2.11",
+    "@nestjs/schematics": "10.0.2",
+    "@nestjs/testing": "10.2.7",
+    "@nrwl/js": "17.0.2",
+    "@nx/cypress": "17.0.2",
+    "@nx/eslint": "17.0.2",
+    "@nx/eslint-plugin": "17.0.2",
+    "@nx/jest": "17.0.2",
+    "@nx/js": "17.0.2",
+    "@nx/nest": "17.0.2",
+    "@nx/node": "17.0.2",
+    "@nx/plugin": "^17.0.2",
+    "@nx/react": "17.0.2",
+    "@nx/vite": "^17.0.2",
+    "@nx/web": "^17.0.2",
+    "@nx/workspace": "17.0.2",
+    "@onivoro/server-build": "~1.0.7",
+    "@schematics/angular": "16.2.8",
+    "@swc-node/register": "~1.6.7",
+    "@swc/core": "~1.3.85",
+    "@testing-library/react": "14.0.0",
+    "@types/adm-zip": "~0.5.0",
+    "@types/axios": "~0.14.0",
+    "@types/bcryptjs": "~2.4.2",
+    "@types/dotenv-flow": "~3.2.0",
+    "@types/inquirer": "~8.2.3",
+    "@types/jest": "29.4.4",
+    "@types/jsonwebtoken": "~8.5.9",
+    "@types/jwk-to-pem": "~2.0.1",
+    "@types/lodash.clonedeep": "~4.5.7",
+    "@types/lodash.get": "~4.4.7",
+    "@types/lodash.kebabcase": "~4.1.7",
+    "@types/lodash.snakecase": "~4.1.7",
+    "@types/lodash.upperfirst": "~4.3.7",
+    "@types/multer": "~1.4.7",
+    "@types/multer-s3": "~2.7.12",
+    "@types/node": "18.14.2",
+    "@types/pdf-parse": "~1.1.1",
+    "@types/react": "18.2.24",
+    "@types/react-dom": "18.2.9",
+    "@types/react-router-dom": "5.3.3",
+    "@types/uuid": "~8.3.4",
+    "@typescript-eslint/eslint-plugin": "5.62.0",
+    "@typescript-eslint/parser": "5.62.0",
+    "@vitest/coverage-c8": "~0.32.0",
+    "@vitest/ui": "~0.32.0",
+    "adm-zip": "~0.5.9",
+    "autoprefixer": "10.4.13",
+    "babel-jest": "29.4.3",
+    "cypress": "^13.0.0",
+    "dotenv-flow": "~3.2.0",
+    "eslint": "8.46.0",
+    "eslint-config-prettier": "9.0.0",
+    "eslint-plugin-cypress": "2.15.1",
+    "eslint-plugin-import": "2.27.5",
+    "eslint-plugin-jsx-a11y": "6.7.1",
+    "eslint-plugin-react": "7.32.2",
+    "eslint-plugin-react-hooks": "4.6.0",
+    "jest": "29.4.3",
+    "jest-environment-jsdom": "29.4.3",
+    "jest-environment-node": "^29.4.1",
+    "jest-preset-angular": "13.1.2",
+    "jsonc-eslint-parser": "^2.1.0",
+    "ng-packagr": "16.2.3",
+    "nx": "17.0.2",
+    "postcss": "8.4.21",
+    "postcss-import": "~14.1.0",
+    "postcss-preset-env": "~7.5.0",
+    "postcss-url": "~10.1.3",
+    "prettier": "~2.6.2",
+    "tailwindcss": "3.2.7",
+    "ts-jest": "29.1.1",
+    "ts-node": "10.9.1",
+    "tsconfig-paths": "~4.1.0",
+    "typescript": "5.1.6",
+    "verdaccio": "^5.0.4",
+    "vite": "~4.3.9",
+    "vite-plugin-dts": "~2.3.0",
+    "vitest": "~0.32.0",
+    "yargs-parser": "~21.1.1"
+  },
+  "pathMappings": {
+    "@onivoro/angular-common": [
+      "libs/angular-common/src/index.ts"
+    ],
+    "@onivoro/angular-file-upload": [
+      "libs/angular-file-upload/src/index.ts"
+    ],
+    "@onivoro/angular-forms": [
+      "libs/angular-forms/src/index.ts"
+    ],
+    "@onivoro/angular-material-forms": [
+      "libs/angular-material-forms/src/index.ts"
+    ],
+    "@onivoro/angular-router-proxy": [
+      "libs/angular-router-proxy/src/index.ts"
+    ],
+    "@onivoro/angular-styles": [
+      "libs/angular-styles/src/index.ts"
+    ],
+    "@onivoro/angular-tailwind-components": [
+      "libs/angular-tailwind-components/src/index.ts"
+    ],
+    "@onivoro/browser-canvas": [
+      "libs/browser-canvas/src/index.ts"
+    ],
+    "@onivoro/browser-gaming": [
+      "libs/browser-gaming/src/index.ts"
+    ],
+    "@onivoro/isomorphic-axios": [
+      "libs/isomorphic-axios/src/index.ts"
+    ],
+    "@onivoro/isomorphic-common": [
+      "libs/isomorphic-common/src/index.ts"
+    ],
+    "@onivoro/isomorphic-jsonata": [
+      "libs/isomorphic-jsonata/src/index.ts"
+    ],
+    "@onivoro/onix": [
+      "libs/onix/src/index.ts"
+    ],
+    "@onivoro/server-auth": [
+      "libs/server-auth/src/index.ts"
+    ],
+    "@onivoro/server-aws-auth": [
+      "libs/server-aws-auth/src/index.ts"
+    ],
+    "@onivoro/server-aws-dynamo": [
+      "libs/server-aws-dynamo/src/index.ts"
+    ],
+    "@onivoro/server-aws-lambda": [
+      "libs/server-aws-lambda/src/index.ts"
+    ],
+    "@onivoro/server-aws-s3": [
+      "libs/server-aws-s3/src/index.ts"
+    ],
+    "@onivoro/server-aws-ses": [
+      "libs/server-aws-ses/src/index.ts"
+    ],
+    "@onivoro/server-build": [
+      "libs/server-build/src/index.ts"
+    ],
+    "@onivoro/server-common": [
+      "libs/server-common/src/index.ts"
+    ],
+    "@onivoro/server-disk": [
+      "libs/server-disk/src/index.ts"
+    ],
+    "@onivoro/server-docx": [
+      "libs/server-docx/src/index.ts"
+    ],
+    "@onivoro/server-ffmpeg": [
+      "libs/server-ffmpeg/src/index.ts"
+    ],
+    "@onivoro/server-file": [
+      "libs/server-file/src/index.ts"
+    ],
+    "@onivoro/server-html": [
+      "libs/server-html/src/index.ts"
+    ],
+    "@onivoro/server-multer-s3": [
+      "libs/server-multer-s3/src/index.ts"
+    ],
+    "@onivoro/server-open-ai": [
+      "libs/server-open-ai/src/index.ts"
+    ],
+    "@onivoro/server-parameterization": [
+      "libs/server-parameterization/src/index.ts"
+    ],
+    "@onivoro/server-process": [
+      "libs/server-process/src/index.ts"
+    ],
+    "@onivoro/server-puppeteer": [
+      "libs/server-puppeteer/src/index.ts"
+    ],
+    "@onivoro/server-sendgrid": [
+      "libs/server-sendgrid/src/index.ts"
+    ],
+    "@onivoro/server-stripe": [
+      "libs/server-stripe/src/index.ts"
+    ],
+    "@onivoro/server-twilio": [
+      "libs/server-twilio/src/index.ts"
+    ],
+    "@onivoro/server-typeorm-postgres": [
+      "libs/server-typeorm-postgres/src/index.ts"
+    ],
+    "@onivoro/server-yt-dl": [
+      "libs/server-yt-dl/src/index.ts"
+    ]
+  },
+  "nxJsonPlugins": [],
+  "fileMap": {
+    "nonProjectFiles": [],
+    "projectFileMap": {
+      "server-ffmpeg": [
+        {
+          "file": "libs/server-ffmpeg/.babelrc",
+          "hash": "14637968239574891430"
+        },
+        {
+          "file": "libs/server-ffmpeg/.eslintrc.json",
+          "hash": "13800677001662881425"
+        },
+        {
+          "file": "libs/server-ffmpeg/README.md",
+          "hash": "7437689154954236098"
+        },
+        {
+          "file": "libs/server-ffmpeg/jest.config.ts",
+          "hash": "5598728314759252325"
+        },
+        {
+          "file": "libs/server-ffmpeg/package.json",
+          "hash": "367063181944850204"
+        },
+        {
+          "file": "libs/server-ffmpeg/project.json",
+          "hash": "4964887389098392183"
+        },
+        {
+          "file": "libs/server-ffmpeg/src/index.ts",
+          "hash": "6927554590465486720"
+        },
+        {
+          "file": "libs/server-ffmpeg/src/lib/functions/bible.function.ts",
+          "hash": "7492171415725446131"
+        },
+        {
+          "file": "libs/server-ffmpeg/src/lib/functions/concat-files.function.ts",
+          "hash": "14520647180823096742",
+          "deps": [
+            "server-build"
+          ]
+        },
+        {
+          "file": "libs/server-ffmpeg/src/lib/functions/convert.function.ts",
+          "hash": "3627769164545508096",
+          "deps": [
+            "server-build"
+          ]
+        },
+        {
+          "file": "libs/server-ffmpeg/src/lib/functions/overlay-with-loop.function.ts",
+          "hash": "6994130411662246662",
+          "deps": [
+            "server-build"
+          ]
+        },
+        {
+          "file": "libs/server-ffmpeg/src/lib/functions/overlay.function.ts",
+          "hash": "1375480220294100047",
+          "deps": [
+            "server-build"
+          ]
+        },
+        {
+          "file": "libs/server-ffmpeg/src/lib/functions/speed.function.ts",
+          "hash": "14714883279299836234",
+          "deps": [
+            "server-build"
+          ]
+        },
+        {
+          "file": "libs/server-ffmpeg/src/lib/functions/to-channels.function.ts",
+          "hash": "8925527495983766821"
+        },
+        {
+          "file": "libs/server-ffmpeg/src/lib/functions/to-input.function.ts",
+          "hash": "5221566183048272699"
+        },
+        {
+          "file": "libs/server-ffmpeg/src/lib/functions/trim-start.function.ts",
+          "hash": "1076193217292924029",
+          "deps": [
+            "server-build"
+          ]
+        },
+        {
+          "file": "libs/server-ffmpeg/tsconfig.json",
+          "hash": "12834038490315927699"
+        },
+        {
+          "file": "libs/server-ffmpeg/tsconfig.lib.json",
+          "hash": "8188472110264778699"
+        },
+        {
+          "file": "libs/server-ffmpeg/tsconfig.spec.json",
+          "hash": "6514620907549802163"
+        }
+      ],
+      "server-aws-auth": [
+        {
+          "file": "libs/server-aws-auth/.babelrc",
+          "hash": "4734508471883268701"
+        },
+        {
+          "file": "libs/server-aws-auth/.eslintrc.json",
+          "hash": "13800677001662881425"
+        },
+        {
+          "file": "libs/server-aws-auth/README.md",
+          "hash": "3797106541481652006"
+        },
+        {
+          "file": "libs/server-aws-auth/jest.config.ts",
+          "hash": "4688322655769913366"
+        },
+        {
+          "file": "libs/server-aws-auth/package.json",
+          "hash": "9665543927796584907"
+        },
+        {
+          "file": "libs/server-aws-auth/project.json",
+          "hash": "10924602309493298113"
+        },
+        {
+          "file": "libs/server-aws-auth/src/index.ts",
+          "hash": "3808826737243756933"
+        },
+        {
+          "file": "libs/server-aws-auth/src/lib/auth.module.ts",
+          "hash": "10351507468052383214",
+          "deps": [
+            "npm:@nestjs/common",
+            "server-common"
+          ]
+        },
+        {
+          "file": "libs/server-aws-auth/src/lib/classes/auth-config.class.ts",
+          "hash": "10843734614316701870",
+          "deps": [
+            "npm:@nestjs/common"
+          ]
+        },
+        {
+          "file": "libs/server-aws-auth/src/lib/constants/access-token-key.constant.ts",
+          "hash": "13860536858326689656"
+        },
+        {
+          "file": "libs/server-aws-auth/src/lib/constants/identity-token-key.constant.ts",
+          "hash": "16958508436568618109"
+        },
+        {
+          "file": "libs/server-aws-auth/src/lib/controllers/auth.controller.ts",
+          "hash": "4132427024130584348",
+          "deps": [
+            "npm:@nestjs/common",
+            "npm:@nestjs/swagger"
+          ]
+        },
+        {
+          "file": "libs/server-aws-auth/src/lib/decorators/access-token-raw.decorator.ts",
+          "hash": "7073046821677479069",
+          "deps": [
+            "npm:@nestjs/common"
+          ]
+        },
+        {
+          "file": "libs/server-aws-auth/src/lib/decorators/access-token.decorator.ts",
+          "hash": "2690164327767067792",
+          "deps": [
+            "npm:@nestjs/common"
+          ]
+        },
+        {
+          "file": "libs/server-aws-auth/src/lib/decorators/identity-token.decorator.ts",
+          "hash": "6289229673049275541",
+          "deps": [
+            "npm:@nestjs/common",
+            "npm:jsonwebtoken"
+          ]
+        },
+        {
+          "file": "libs/server-aws-auth/src/lib/decorators/user-id.decorator.ts",
+          "hash": "8964028541568926925",
+          "deps": [
+            "npm:@nestjs/common"
+          ]
+        },
+        {
+          "file": "libs/server-aws-auth/src/lib/dtos/access-token.dto.ts",
+          "hash": "6523049750725035980",
+          "deps": [
+            "npm:@nestjs/swagger"
+          ]
+        },
+        {
+          "file": "libs/server-aws-auth/src/lib/dtos/auth-credentials.dto.ts",
+          "hash": "8294811226298010219",
+          "deps": [
+            "npm:@nestjs/swagger"
+          ]
+        },
+        {
+          "file": "libs/server-aws-auth/src/lib/dtos/auth-mfa.dto.ts",
+          "hash": "3176026403159288418",
+          "deps": [
+            "npm:@nestjs/swagger"
+          ]
+        },
+        {
+          "file": "libs/server-aws-auth/src/lib/dtos/auth-tokens.dto.ts",
+          "hash": "15536158890854331143",
+          "deps": [
+            "npm:@nestjs/swagger"
+          ]
+        },
+        {
+          "file": "libs/server-aws-auth/src/lib/dtos/code.dto.ts",
+          "hash": "11067322364858609774",
+          "deps": [
+            "npm:@nestjs/swagger"
+          ]
+        },
+        {
+          "file": "libs/server-aws-auth/src/lib/dtos/contact-info.dto.ts",
+          "hash": "1269706259938057863",
+          "deps": [
+            "npm:@nestjs/swagger"
+          ]
+        },
+        {
+          "file": "libs/server-aws-auth/src/lib/dtos/email.dto.ts",
+          "hash": "10154275429864023567",
+          "deps": [
+            "npm:@nestjs/swagger"
+          ]
+        },
+        {
+          "file": "libs/server-aws-auth/src/lib/dtos/password.dto.ts",
+          "hash": "10859775033888851166",
+          "deps": [
+            "npm:@nestjs/swagger"
+          ]
+        },
+        {
+          "file": "libs/server-aws-auth/src/lib/dtos/phone-valid.dto.ts",
+          "hash": "3793351146209025121",
+          "deps": [
+            "npm:@nestjs/swagger"
+          ]
+        },
+        {
+          "file": "libs/server-aws-auth/src/lib/dtos/phone.dto.ts",
+          "hash": "8303977045709374166",
+          "deps": [
+            "npm:@nestjs/swagger"
+          ]
+        },
+        {
+          "file": "libs/server-aws-auth/src/lib/dtos/set-preferred-mfa.dto.ts",
+          "hash": "14782261607118273828",
+          "deps": [
+            "npm:@nestjs/swagger"
+          ]
+        },
+        {
+          "file": "libs/server-aws-auth/src/lib/dtos/verify-totp.dto.ts",
+          "hash": "15122469132647093635",
+          "deps": [
+            "npm:@nestjs/swagger"
+          ]
+        },
+        {
+          "file": "libs/server-aws-auth/src/lib/functions/__snapshots__/convert-object-to-attribute-list.function.spec.ts.snap",
+          "hash": "12411824619635094115"
+        },
+        {
+          "file": "libs/server-aws-auth/src/lib/functions/__snapshots__/convert-phone-to-plus-one.function.spec.ts.snap",
+          "hash": "12678470763880324745"
+        },
+        {
+          "file": "libs/server-aws-auth/src/lib/functions/convert-object-to-attribute-list.function.spec.ts",
+          "hash": "2295724203608878301"
+        },
+        {
+          "file": "libs/server-aws-auth/src/lib/functions/convert-object-to-attribute-list.function.ts",
+          "hash": "8417147693458541323"
+        },
+        {
+          "file": "libs/server-aws-auth/src/lib/functions/convert-phone-to-plus-one.function.spec.ts",
+          "hash": "3703552250327121542"
+        },
+        {
+          "file": "libs/server-aws-auth/src/lib/functions/convert-phone-to-plus-one.function.ts",
+          "hash": "6665974142930721436"
+        },
+        {
+          "file": "libs/server-aws-auth/src/lib/functions/extract-user-attribute-value.function.ts",
+          "hash": "15373939240597736950",
+          "deps": [
+            "npm:aws-sdk"
+          ]
+        },
+        {
+          "file": "libs/server-aws-auth/src/lib/functions/get-public-keys.function.ts",
+          "hash": "12231032816277793430",
+          "deps": [
+            "npm:axios",
+            "npm:jwk-to-pem"
+          ]
+        },
+        {
+          "file": "libs/server-aws-auth/src/lib/functions/validate-token.function.ts",
+          "hash": "10993239273434506154",
+          "deps": [
+            "npm:util",
+            "npm:jsonwebtoken"
+          ]
+        },
+        {
+          "file": "libs/server-aws-auth/src/lib/guards/auth.guard.ts",
+          "hash": "7080257183041453953",
+          "deps": [
+            "npm:@nestjs/common",
+            "npm:rxjs"
+          ]
+        },
+        {
+          "file": "libs/server-aws-auth/src/lib/interfaces/access-token.interface.ts",
+          "hash": "13986406104326486790"
+        },
+        {
+          "file": "libs/server-aws-auth/src/lib/interfaces/attribute.interface.ts",
+          "hash": "18155696173041679762"
+        },
+        {
+          "file": "libs/server-aws-auth/src/lib/interfaces/auth.interface.ts",
+          "hash": "6096361872151800980"
+        },
+        {
+          "file": "libs/server-aws-auth/src/lib/interfaces/identity-token.interface.ts",
+          "hash": "17306421491553992880"
+        },
+        {
+          "file": "libs/server-aws-auth/src/lib/middleware/auth.middleware.ts",
+          "hash": "6757163647880007257",
+          "deps": [
+            "npm:@nestjs/common",
+            "npm:express"
+          ]
+        },
+        {
+          "file": "libs/server-aws-auth/src/lib/server-aws-cognito.module.ts",
+          "hash": "17144181034566154499",
+          "deps": [
+            "npm:@nestjs/common",
+            "server-common",
+            "npm:aws-sdk"
+          ]
+        },
+        {
+          "file": "libs/server-aws-auth/src/lib/services/admin-cognito.service.ts",
+          "hash": "6133804411225600865",
+          "deps": [
+            "npm:@nestjs/common",
+            "npm:aws-sdk"
+          ]
+        },
+        {
+          "file": "libs/server-aws-auth/src/lib/services/auth.service.ts",
+          "hash": "1002751923369434859",
+          "deps": [
+            "npm:@nestjs/common",
+            "npm:amazon-cognito-identity-js",
+            "npm:jsonwebtoken"
+          ]
+        },
+        {
+          "file": "libs/server-aws-auth/src/lib/services/mfa-auth.service.ts",
+          "hash": "16434806190090675149",
+          "deps": [
+            "npm:@nestjs/common"
+          ]
+        },
+        {
+          "file": "libs/server-aws-auth/tsconfig.json",
+          "hash": "12834038490315927699"
+        },
+        {
+          "file": "libs/server-aws-auth/tsconfig.lib.json",
+          "hash": "8044021312735567114"
+        },
+        {
+          "file": "libs/server-aws-auth/tsconfig.spec.json",
+          "hash": "2406015174838385060"
+        }
+      ],
+      "ui-crypto": [
+        {
+          "file": "apps/ui-crypto/.eslintrc.json",
+          "hash": "5701862138755718289"
+        },
+        {
+          "file": "apps/ui-crypto/jest.config.ts",
+          "hash": "12719138375628377345"
+        },
+        {
+          "file": "apps/ui-crypto/project.json",
+          "hash": "10193647281720118468"
+        },
+        {
+          "file": "apps/ui-crypto/src/app/app.component.ts",
+          "hash": "12653920731244622791",
+          "deps": [
+            "npm:@angular/core"
+          ]
+        },
+        {
+          "file": "apps/ui-crypto/src/app/app.module.ts",
+          "hash": "6048695465899121516",
+          "deps": [
+            "npm:@angular/core",
+            "npm:@angular/platform-browser",
+            "npm:@angular/router"
+          ]
+        },
+        {
+          "file": "apps/ui-crypto/src/app/pages/home/home-page.component.html",
+          "hash": "16809082355792277419"
+        },
+        {
+          "file": "apps/ui-crypto/src/app/pages/home/home-page.component.scss",
+          "hash": "7928914246585399933"
+        },
+        {
+          "file": "apps/ui-crypto/src/app/pages/home/home-page.component.ts",
+          "hash": "4642059197410076154",
+          "deps": [
+            "npm:@angular/core"
+          ]
+        },
+        {
+          "file": "apps/ui-crypto/src/assets/.gitkeep",
+          "hash": "3244421341483603138"
+        },
+        {
+          "file": "apps/ui-crypto/src/environments/environment.prod.ts",
+          "hash": "10220522844224226756"
+        },
+        {
+          "file": "apps/ui-crypto/src/environments/environment.ts",
+          "hash": "15801694716951284069"
+        },
+        {
+          "file": "apps/ui-crypto/src/favicon.ico",
+          "hash": "9303420814833116677"
+        },
+        {
+          "file": "apps/ui-crypto/src/index.html",
+          "hash": "2163166442870049469"
+        },
+        {
+          "file": "apps/ui-crypto/src/main.ts",
+          "hash": "14896519517424602606",
+          "deps": [
+            "npm:@angular/core",
+            "npm:@angular/platform-browser-dynamic"
+          ]
+        },
+        {
+          "file": "apps/ui-crypto/src/polyfills.ts",
+          "hash": "13952578668946952738",
+          "deps": [
+            "npm:zone.js"
+          ]
+        },
+        {
+          "file": "apps/ui-crypto/src/styles.scss",
+          "hash": "17788899824995975898"
+        },
+        {
+          "file": "apps/ui-crypto/src/test-setup.ts",
+          "hash": "17711435995618823417",
+          "deps": [
+            "npm:jest-preset-angular"
+          ]
+        },
+        {
+          "file": "apps/ui-crypto/tailwind.config.js",
+          "hash": "14806495100403223898",
+          "deps": [
+            "npm:@nx/angular",
+            "npm:path"
+          ]
+        },
+        {
+          "file": "apps/ui-crypto/tsconfig.app.json",
+          "hash": "843825367431694819"
+        },
+        {
+          "file": "apps/ui-crypto/tsconfig.editor.json",
+          "hash": "6367495026318685054"
+        },
+        {
+          "file": "apps/ui-crypto/tsconfig.json",
+          "hash": "17981161305287108769"
+        },
+        {
+          "file": "apps/ui-crypto/tsconfig.spec.json",
+          "hash": "6658172359945877284"
+        }
+      ],
+      "ui-onivoro": [
+        {
+          "file": "apps/ui-onivoro/.eslintrc.json",
+          "hash": "13969749690780816326"
+        },
+        {
+          "file": "apps/ui-onivoro/firebase.json",
+          "hash": "10464744658892918194"
+        },
+        {
+          "file": "apps/ui-onivoro/firestore.indexes.json",
+          "hash": "2048261650710551311"
+        },
+        {
+          "file": "apps/ui-onivoro/firestore.rules",
+          "hash": "13634325974479010419"
+        },
+        {
+          "file": "apps/ui-onivoro/jest.config.ts",
+          "hash": "688416585247719947"
+        },
+        {
+          "file": "apps/ui-onivoro/package.json",
+          "hash": "4135269843464411573"
+        },
+        {
+          "file": "apps/ui-onivoro/project.json",
+          "hash": "11038343974742394203"
+        },
+        {
+          "file": "apps/ui-onivoro/src/app/app-routing.module.ts",
+          "hash": "13619666423201844359",
+          "deps": [
+            "npm:@angular/core",
+            "npm:@angular/router"
+          ]
+        },
+        {
+          "file": "apps/ui-onivoro/src/app/app.component.html",
+          "hash": "2960245913380147553"
+        },
+        {
+          "file": "apps/ui-onivoro/src/app/app.component.scss",
+          "hash": "3244421341483603138"
+        },
+        {
+          "file": "apps/ui-onivoro/src/app/app.component.ts",
+          "hash": "14852073801351535326",
+          "deps": [
+            "npm:@angular/core"
+          ]
+        },
+        {
+          "file": "apps/ui-onivoro/src/app/app.module.ts",
+          "hash": "4490193574621822447",
+          "deps": [
+            "npm:@angular/core",
+            "npm:@angular/platform-browser",
+            "npm:@angular/fire",
+            "npm:@angular/material",
+            "npm:@angular/cdk",
+            "npm:@angular/forms"
+          ]
+        },
+        {
+          "file": "apps/ui-onivoro/src/app/components/home/home.component.html",
+          "hash": "12246478008211486036"
+        },
+        {
+          "file": "apps/ui-onivoro/src/app/components/home/home.component.scss",
+          "hash": "5026478217405913259"
+        },
+        {
+          "file": "apps/ui-onivoro/src/app/components/home/home.component.ts",
+          "hash": "8203134800443991290",
+          "deps": [
+            "npm:@angular/core",
+            "npm:@angular/material"
+          ]
+        },
+        {
+          "file": "apps/ui-onivoro/src/app/components/layout/layout.component.html",
+          "hash": "1005028882661241406"
+        },
+        {
+          "file": "apps/ui-onivoro/src/app/components/layout/layout.component.scss",
+          "hash": "8819628123695069529"
+        },
+        {
+          "file": "apps/ui-onivoro/src/app/components/layout/layout.component.ts",
+          "hash": "7776108540870618539",
+          "deps": [
+            "npm:@angular/core",
+            "npm:@angular/fire",
+            "npm:rxjs"
+          ]
+        },
+        {
+          "file": "apps/ui-onivoro/src/app/components/nav/nav.component.html",
+          "hash": "15645285075789453968"
+        },
+        {
+          "file": "apps/ui-onivoro/src/app/components/nav/nav.component.scss",
+          "hash": "14798987541612026183"
+        },
+        {
+          "file": "apps/ui-onivoro/src/app/components/nav/nav.component.ts",
+          "hash": "242033542293544312",
+          "deps": [
+            "npm:@angular/core",
+            "npm:@angular/cdk",
+            "npm:rxjs"
+          ]
+        },
+        {
+          "file": "apps/ui-onivoro/src/app/components/player-form/player-form.component.html",
+          "hash": "17188202591629053181"
+        },
+        {
+          "file": "apps/ui-onivoro/src/app/components/player-form/player-form.component.scss",
+          "hash": "3244421341483603138"
+        },
+        {
+          "file": "apps/ui-onivoro/src/app/components/player-form/player-form.component.ts",
+          "hash": "12037449708528890553",
+          "deps": [
+            "npm:@angular/core",
+            "npm:@angular/forms",
+            "npm:@angular/material"
+          ]
+        },
+        {
+          "file": "apps/ui-onivoro/src/app/components/room/room.component.html",
+          "hash": "3571492955389724229"
+        },
+        {
+          "file": "apps/ui-onivoro/src/app/components/room/room.component.scss",
+          "hash": "10506058723906952231"
+        },
+        {
+          "file": "apps/ui-onivoro/src/app/components/room/room.component.ts",
+          "hash": "10145011910162516908",
+          "deps": [
+            "npm:@angular/core",
+            "npm:@angular/material",
+            "npm:@angular/router",
+            "npm:rxjs"
+          ]
+        },
+        {
+          "file": "apps/ui-onivoro/src/app/enums/collections.enum.ts",
+          "hash": "10920224938524116514"
+        },
+        {
+          "file": "apps/ui-onivoro/src/app/enums/route-params.enum.ts",
+          "hash": "17526747278220744166"
+        },
+        {
+          "file": "apps/ui-onivoro/src/app/guards/upsert-player.guard.ts",
+          "hash": "2535599507824425104",
+          "deps": [
+            "npm:@angular/core",
+            "npm:@angular/router",
+            "npm:rxjs"
+          ]
+        },
+        {
+          "file": "apps/ui-onivoro/src/app/guards/upsert-room.guard.ts",
+          "hash": "9995079447787184901",
+          "deps": [
+            "npm:@angular/core",
+            "npm:@angular/router",
+            "npm:rxjs"
+          ]
+        },
+        {
+          "file": "apps/ui-onivoro/src/app/repositories/abstract-repository.ts",
+          "hash": "12361916998722457094",
+          "deps": [
+            "npm:@angular/fire",
+            "npm:rxjs"
+          ]
+        },
+        {
+          "file": "apps/ui-onivoro/src/app/repositories/player-repository.ts",
+          "hash": "13083702585214571799",
+          "deps": [
+            "npm:@angular/core",
+            "npm:@angular/fire"
+          ]
+        },
+        {
+          "file": "apps/ui-onivoro/src/app/repositories/room-repository.ts",
+          "hash": "15093238742013200684",
+          "deps": [
+            "npm:@angular/core",
+            "npm:@angular/fire"
+          ]
+        },
+        {
+          "file": "apps/ui-onivoro/src/app/types/identifiable.interface.ts",
+          "hash": "16272425792507906717"
+        },
+        {
+          "file": "apps/ui-onivoro/src/app/types/player.interface.ts",
+          "hash": "7193164459927785507"
+        },
+        {
+          "file": "apps/ui-onivoro/src/app/types/room.interface.ts",
+          "hash": "15245652872258669393"
+        },
+        {
+          "file": "apps/ui-onivoro/src/assets/.gitkeep",
+          "hash": "3244421341483603138"
+        },
+        {
+          "file": "apps/ui-onivoro/src/assets/bear.svg",
+          "hash": "3676660565608740797"
+        },
+        {
+          "file": "apps/ui-onivoro/src/environments/configs/firebase.config.ts",
+          "hash": "12607180364253133502"
+        },
+        {
+          "file": "apps/ui-onivoro/src/environments/environment.prod.ts",
+          "hash": "9870862588044852706"
+        },
+        {
+          "file": "apps/ui-onivoro/src/environments/environment.ts",
+          "hash": "14716182880251856199"
+        },
+        {
+          "file": "apps/ui-onivoro/src/favicon.ico",
+          "hash": "9303420814833116677"
+        },
+        {
+          "file": "apps/ui-onivoro/src/index.html",
+          "hash": "17218596556301276979"
+        },
+        {
+          "file": "apps/ui-onivoro/src/main.ts",
+          "hash": "3259059517603285449",
+          "deps": [
+            "npm:@angular/platform-browser-dynamic"
+          ]
+        },
+        {
+          "file": "apps/ui-onivoro/src/polyfills.ts",
+          "hash": "13952578668946952738",
+          "deps": [
+            "npm:zone.js"
+          ]
+        },
+        {
+          "file": "apps/ui-onivoro/src/styles/_variables.scss",
+          "hash": "15223765259849238816"
+        },
+        {
+          "file": "apps/ui-onivoro/src/styles/material.scss",
+          "hash": "16837175826309667526"
+        },
+        {
+          "file": "apps/ui-onivoro/src/styles.scss",
+          "hash": "4208011545367528993"
+        },
+        {
+          "file": "apps/ui-onivoro/src/test-setup.ts",
+          "hash": "17711435995618823417",
+          "deps": [
+            "npm:jest-preset-angular"
+          ]
+        },
+        {
+          "file": "apps/ui-onivoro/tsconfig.app.json",
+          "hash": "843825367431694819"
+        },
+        {
+          "file": "apps/ui-onivoro/tsconfig.editor.json",
+          "hash": "6367495026318685054"
+        },
+        {
+          "file": "apps/ui-onivoro/tsconfig.json",
+          "hash": "598041372275441135"
+        },
+        {
+          "file": "apps/ui-onivoro/tsconfig.spec.json",
+          "hash": "17469962897606361865"
+        }
+      ],
+      "server-multer-s3": [
+        {
+          "file": "libs/server-multer-s3/.babelrc",
+          "hash": "14637968239574891430"
+        },
+        {
+          "file": "libs/server-multer-s3/.eslintrc.json",
+          "hash": "13800677001662881425"
+        },
+        {
+          "file": "libs/server-multer-s3/README.md",
+          "hash": "1933866858209561881"
+        },
+        {
+          "file": "libs/server-multer-s3/jest.config.ts",
+          "hash": "6559045528574530630"
+        },
+        {
+          "file": "libs/server-multer-s3/package.json",
+          "hash": "6086886026172509028"
+        },
+        {
+          "file": "libs/server-multer-s3/project.json",
+          "hash": "9111068236995227276"
+        },
+        {
+          "file": "libs/server-multer-s3/src/index.ts",
+          "hash": "16748948655478895106"
+        },
+        {
+          "file": "libs/server-multer-s3/src/lib/s3-files-interceptor.decorator.ts",
+          "hash": "314184220105692655"
+        },
+        {
+          "file": "libs/server-multer-s3/tsconfig.json",
+          "hash": "12834038490315927699"
+        },
+        {
+          "file": "libs/server-multer-s3/tsconfig.lib.json",
+          "hash": "8188472110264778699"
+        },
+        {
+          "file": "libs/server-multer-s3/tsconfig.spec.json",
+          "hash": "6514620907549802163"
+        }
+      ],
+      "server-aws-dynamo": [
+        {
+          "file": "libs/server-aws-dynamo/.babelrc",
+          "hash": "4734508471883268701"
+        },
+        {
+          "file": "libs/server-aws-dynamo/.eslintrc.json",
+          "hash": "13800677001662881425"
+        },
+        {
+          "file": "libs/server-aws-dynamo/README.md",
+          "hash": "15782319364008305467"
+        },
+        {
+          "file": "libs/server-aws-dynamo/jest.config.ts",
+          "hash": "9693023480168819594"
+        },
+        {
+          "file": "libs/server-aws-dynamo/package.json",
+          "hash": "3824490639472208681"
+        },
+        {
+          "file": "libs/server-aws-dynamo/project.json",
+          "hash": "1657928258649775142"
+        },
+        {
+          "file": "libs/server-aws-dynamo/src/index.ts",
+          "hash": "2744045107659096763"
+        },
+        {
+          "file": "libs/server-aws-dynamo/src/lib/classes/abstract-dynamo.class.ts",
+          "hash": "6491387736091196059",
+          "deps": [
+            "npm:aws-sdk",
+            "npm:@nestjs/common"
+          ]
+        },
+        {
+          "file": "libs/server-aws-dynamo/src/lib/classes/server-aws-dynamo-config.class.ts",
+          "hash": "8226269700914085787"
+        },
+        {
+          "file": "libs/server-aws-dynamo/src/lib/dynamo.module.ts",
+          "hash": "4872257691275715369",
+          "deps": [
+            "npm:@nestjs/common",
+            "server-common",
+            "npm:aws-sdk"
+          ]
+        },
+        {
+          "file": "libs/server-aws-dynamo/src/lib/functions/build-filter-expression.function.spec.ts",
+          "hash": "6176125025207577982"
+        },
+        {
+          "file": "libs/server-aws-dynamo/src/lib/functions/build-filter-expression.function.ts",
+          "hash": "17061305684216729268"
+        },
+        {
+          "file": "libs/server-aws-dynamo/src/lib/interfaces/entity.interface.ts",
+          "hash": "5881851048836727678",
+          "deps": [
+            "npm:aws-sdk"
+          ]
+        },
+        {
+          "file": "libs/server-aws-dynamo/src/lib/interfaces/find-many-options.interface.ts",
+          "hash": "9080154792526391510"
+        },
+        {
+          "file": "libs/server-aws-dynamo/src/lib/interfaces/find-one-options.interface.ts",
+          "hash": "17974124147088700233"
+        },
+        {
+          "file": "libs/server-aws-dynamo/src/lib/interfaces/key-expression.type.ts",
+          "hash": "14980811210089322971"
+        },
+        {
+          "file": "libs/server-aws-dynamo/src/lib/interfaces/put-item-callback.type.ts",
+          "hash": "14770517053995003743",
+          "deps": [
+            "npm:aws-sdk"
+          ]
+        },
+        {
+          "file": "libs/server-aws-dynamo/tsconfig.json",
+          "hash": "12834038490315927699"
+        },
+        {
+          "file": "libs/server-aws-dynamo/tsconfig.lib.json",
+          "hash": "8044021312735567114"
+        },
+        {
+          "file": "libs/server-aws-dynamo/tsconfig.spec.json",
+          "hash": "2406015174838385060"
+        }
+      ],
+      "server-build": [
+        {
+          "file": "libs/server-build/.babelrc",
+          "hash": "14637968239574891430"
+        },
+        {
+          "file": "libs/server-build/.eslintrc.json",
+          "hash": "13800677001662881425"
+        },
+        {
+          "file": "libs/server-build/README.md",
+          "hash": "249878790828293670"
+        },
+        {
+          "file": "libs/server-build/jest.config.ts",
+          "hash": "15213351924685685661"
+        },
+        {
+          "file": "libs/server-build/package.json",
+          "hash": "12218496804198478913",
+          "deps": [
+            "npm:@types/adm-zip"
+          ]
+        },
+        {
+          "file": "libs/server-build/project.json",
+          "hash": "4913644859781420658"
+        },
+        {
+          "file": "libs/server-build/src/index.ts",
+          "hash": "4569505477130872808"
+        },
+        {
+          "file": "libs/server-build/src/lib/commands/abstract-app.command.ts",
+          "hash": "6889990783636046145",
+          "deps": [
+            "npm:nest-commander"
+          ]
+        },
+        {
+          "file": "libs/server-build/src/lib/commands/abstract-aws-app.command.ts",
+          "hash": "10439625405172565817",
+          "deps": [
+            "npm:nest-commander"
+          ]
+        },
+        {
+          "file": "libs/server-build/src/lib/commands/abstract-aws-ecs.command.ts",
+          "hash": "8449201477320111443",
+          "deps": [
+            "npm:nest-commander"
+          ]
+        },
+        {
+          "file": "libs/server-build/src/lib/commands/abstract-aws-lambda.command.ts",
+          "hash": "7145259068401633666",
+          "deps": [
+            "npm:nest-commander"
+          ]
+        },
+        {
+          "file": "libs/server-build/src/lib/commands/abstract-aws.command.ts",
+          "hash": "4214331928931431829",
+          "deps": [
+            "npm:nest-commander"
+          ]
+        },
+        {
+          "file": "libs/server-build/src/lib/commands/abstract.command.ts",
+          "hash": "6355761703131227105",
+          "deps": [
+            "npm:nest-commander"
+          ]
+        },
+        {
+          "file": "libs/server-build/src/lib/commands/build-embedded.command.ts",
+          "hash": "14135923893305748010",
+          "deps": [
+            "npm:nest-commander"
+          ]
+        },
+        {
+          "file": "libs/server-build/src/lib/commands/delete-buckets.command.ts",
+          "hash": "4658171520253229342",
+          "deps": [
+            "npm:nest-commander"
+          ]
+        },
+        {
+          "file": "libs/server-build/src/lib/commands/delete-lambda.command.ts",
+          "hash": "2523881875349058124",
+          "deps": [
+            "npm:nest-commander"
+          ]
+        },
+        {
+          "file": "libs/server-build/src/lib/commands/deploy-image.command.ts",
+          "hash": "413345585936245837",
+          "deps": [
+            "npm:nest-commander"
+          ]
+        },
+        {
+          "file": "libs/server-build/src/lib/commands/deploy-lambda.command.ts",
+          "hash": "5335835754868865902",
+          "deps": [
+            "npm:nest-commander"
+          ]
+        },
+        {
+          "file": "libs/server-build/src/lib/commands/kill-tasks.command.ts",
+          "hash": "2243799424243730740",
+          "deps": [
+            "npm:nest-commander"
+          ]
+        },
+        {
+          "file": "libs/server-build/src/lib/commands/openapi-gen-v2.command.ts",
+          "hash": "5053210313311353667",
+          "deps": [
+            "npm:nest-commander",
+            "npm:fs/promises",
+            "npm:path"
+          ]
+        },
+        {
+          "file": "libs/server-build/src/lib/commands/openapi-gen.command.ts",
+          "hash": "16444758508184737816",
+          "deps": [
+            "npm:nest-commander",
+            "npm:fs/promises",
+            "npm:path"
+          ]
+        },
+        {
+          "file": "libs/server-build/src/lib/commands/reddeploy-lambda.command.ts",
+          "hash": "6576411055385992046",
+          "deps": [
+            "npm:nest-commander"
+          ]
+        },
+        {
+          "file": "libs/server-build/src/lib/functions/__snapshots__/get-bootstrap-script-body.function.spec.ts.snap",
+          "hash": "9111304751528846285"
+        },
+        {
+          "file": "libs/server-build/src/lib/functions/__snapshots__/parse-docker-image-path.function.spec.ts.snap",
+          "hash": "13440830694954900764"
+        },
+        {
+          "file": "libs/server-build/src/lib/functions/add-cdn-prefix-to-key.function.ts",
+          "hash": "12097422198875580788"
+        },
+        {
+          "file": "libs/server-build/src/lib/functions/build-app.function.ts",
+          "hash": "640078069036374038"
+        },
+        {
+          "file": "libs/server-build/src/lib/functions/build-image.function.ts",
+          "hash": "9093513702241021449",
+          "deps": [
+            "server-common"
+          ]
+        },
+        {
+          "file": "libs/server-build/src/lib/functions/copy-package-json-version.function.ts",
+          "hash": "3090742488201238726",
+          "deps": [
+            "server-common",
+            "npm:fs/promises"
+          ]
+        },
+        {
+          "file": "libs/server-build/src/lib/functions/deploy-lambda.function.ts",
+          "hash": "11382491298079985336",
+          "deps": [
+            "npm:child_process"
+          ]
+        },
+        {
+          "file": "libs/server-build/src/lib/functions/extract-asset-list.function.ts",
+          "hash": "13438767735613969665",
+          "deps": [
+            "npm:fs/promises",
+            "npm:path"
+          ]
+        },
+        {
+          "file": "libs/server-build/src/lib/functions/get-apps.function.ts",
+          "hash": "6875741261061140066"
+        },
+        {
+          "file": "libs/server-build/src/lib/functions/get-bootstrap-script-body.function.spec.ts",
+          "hash": "11408936736918250310"
+        },
+        {
+          "file": "libs/server-build/src/lib/functions/get-bootstrap-script-body.function.ts",
+          "hash": "16936716116110079865"
+        },
+        {
+          "file": "libs/server-build/src/lib/functions/get-projects.function.ts",
+          "hash": "3420266384962882117",
+          "deps": [
+            "npm:fs",
+            "npm:path"
+          ]
+        },
+        {
+          "file": "libs/server-build/src/lib/functions/log-elapsed-time.function.ts",
+          "hash": "1200295254157489660"
+        },
+        {
+          "file": "libs/server-build/src/lib/functions/login-to-ecr-by-profile.function.ts",
+          "hash": "11396183220290140692"
+        },
+        {
+          "file": "libs/server-build/src/lib/functions/login-to-ecr.function.ts",
+          "hash": "12738567872913724795"
+        },
+        {
+          "file": "libs/server-build/src/lib/functions/parse-docker-image-path.function.spec.ts",
+          "hash": "11467431008831577197"
+        },
+        {
+          "file": "libs/server-build/src/lib/functions/parse-docker-image-path.function.ts",
+          "hash": "869743221236272198"
+        },
+        {
+          "file": "libs/server-build/src/lib/functions/push-image-to-ecr.function.ts",
+          "hash": "13277564022656138546"
+        },
+        {
+          "file": "libs/server-build/src/lib/functions/shell.function.ts",
+          "hash": "13799414425444563697",
+          "deps": [
+            "npm:child_process"
+          ]
+        },
+        {
+          "file": "libs/server-build/src/lib/functions/stop-all-tasks.function.ts",
+          "hash": "14067614767670845334"
+        },
+        {
+          "file": "libs/server-build/src/lib/functions/strip-new-lines.function.ts",
+          "hash": "15791260540744425177"
+        },
+        {
+          "file": "libs/server-build/src/lib/functions/to-cdn-path.function.ts",
+          "hash": "10713230611404976730"
+        },
+        {
+          "file": "libs/server-build/src/lib/functions/zip-directory.function.ts",
+          "hash": "17571893745837928753",
+          "deps": [
+            "npm:adm-zip"
+          ]
+        },
+        {
+          "file": "libs/server-build/src/lib/server-build-with-s3.module.ts",
+          "hash": "4848759521334729885",
+          "deps": [
+            "npm:@nestjs/common",
+            "server-aws-s3",
+            "server-common"
+          ]
+        },
+        {
+          "file": "libs/server-build/src/lib/server-build.module.ts",
+          "hash": "2889280459574240975",
+          "deps": [
+            "npm:@nestjs/common"
+          ]
+        },
+        {
+          "file": "libs/server-build/src/lib/services/build-embedded.service.ts",
+          "hash": "5342978334143548967",
+          "deps": [
+            "npm:fs/promises",
+            "server-aws-s3",
+            "npm:@nestjs/common"
+          ]
+        },
+        {
+          "file": "libs/server-build/src/lib/types/app-params.interface.ts",
+          "hash": "4664064554668446823"
+        },
+        {
+          "file": "libs/server-build/src/lib/types/aws-app-params.interface.ts",
+          "hash": "16673015856124972355"
+        },
+        {
+          "file": "libs/server-build/src/lib/types/aws-ecs-params.interface.ts",
+          "hash": "20046783274481969"
+        },
+        {
+          "file": "libs/server-build/src/lib/types/aws-lambda-config-params.interface.ts",
+          "hash": "4297654725298896827"
+        },
+        {
+          "file": "libs/server-build/src/lib/types/aws-lambda-params.interface.ts",
+          "hash": "2750363332278825202"
+        },
+        {
+          "file": "libs/server-build/src/lib/types/aws-params.interface.ts",
+          "hash": "5450432833306113234"
+        },
+        {
+          "file": "libs/server-build/src/lib/types/embedded-app-build-input.interface.ts",
+          "hash": "8494318659405771826"
+        },
+        {
+          "file": "libs/server-build/src/lib/types/embedded-app-build-output.interface.ts",
+          "hash": "3343295147569625301"
+        },
+        {
+          "file": "libs/server-build/tsconfig.json",
+          "hash": "12834038490315927699"
+        },
+        {
+          "file": "libs/server-build/tsconfig.lib.json",
+          "hash": "8188472110264778699"
+        },
+        {
+          "file": "libs/server-build/tsconfig.spec.json",
+          "hash": "6514620907549802163"
+        }
+      ],
+      "api-onivoro": [
+        {
+          "file": "apps/api-onivoro/.eslintrc.json",
+          "hash": "13800677001662881425"
+        },
+        {
+          "file": "apps/api-onivoro/jest.config.ts",
+          "hash": "878197439867105498"
+        },
+        {
+          "file": "apps/api-onivoro/project.json",
+          "hash": "6550149082148303849"
+        },
+        {
+          "file": "apps/api-onivoro/src/app/.gitkeep",
+          "hash": "3244421341483603138"
+        },
+        {
+          "file": "apps/api-onivoro/src/app/app.controller.ts",
+          "hash": "5316570097319853829",
+          "deps": [
+            "npm:@nestjs/common"
+          ]
+        },
+        {
+          "file": "apps/api-onivoro/src/app/app.module.ts",
+          "hash": "8456614250898333607",
+          "deps": [
+            "npm:@nestjs/common",
+            "server-common"
+          ]
+        },
+        {
+          "file": "apps/api-onivoro/src/app/app.service.ts",
+          "hash": "5643051280849318041",
+          "deps": [
+            "npm:@nestjs/common"
+          ]
+        },
+        {
+          "file": "apps/api-onivoro/src/app/html.controller.ts",
+          "hash": "11920787780222791504",
+          "deps": [
+            "npm:@nestjs/common",
+            "server-html"
+          ]
+        },
+        {
+          "file": "apps/api-onivoro/src/assets/.gitkeep",
+          "hash": "3244421341483603138"
+        },
+        {
+          "file": "apps/api-onivoro/src/environments/environment.prod.ts",
+          "hash": "10220522844224226756"
+        },
+        {
+          "file": "apps/api-onivoro/src/environments/environment.ts",
+          "hash": "1135292433917692033"
+        },
+        {
+          "file": "apps/api-onivoro/src/main.ts",
+          "hash": "6602860456048672862",
+          "deps": [
+            "server-common"
+          ]
+        },
+        {
+          "file": "apps/api-onivoro/tsconfig.app.json",
+          "hash": "14563161343052823546"
+        },
+        {
+          "file": "apps/api-onivoro/tsconfig.json",
+          "hash": "9214820933160915425"
+        },
+        {
+          "file": "apps/api-onivoro/tsconfig.spec.json",
+          "hash": "10595040461224341030"
+        }
+      ],
+      "@onivoro/onivoro": [
+        {
+          "file": ".editorconfig",
+          "hash": "5443105041930014821"
+        },
+        {
+          "file": ".eslintignore",
+          "hash": "7663861978715868291"
+        },
+        {
+          "file": ".eslintrc.json",
+          "hash": "746227632153557778"
+        },
+        {
+          "file": ".gitignore",
+          "hash": "17678319809706910788"
+        },
+        {
+          "file": ".prettierignore",
+          "hash": "5366125615757242730"
+        },
+        {
+          "file": ".prettierrc",
+          "hash": "16267754514737964994"
+        },
+        {
+          "file": ".verdaccio/config.yml",
+          "hash": "14993594506392938393"
+        },
+        {
+          "file": ".vscode/extensions.json",
+          "hash": "4637156562308165301"
+        },
+        {
+          "file": ".vscode/launch.json",
+          "hash": "9975458833804093050"
+        },
+        {
+          "file": ".vscode/settings.json",
+          "hash": "15920384692891615690"
+        },
+        {
+          "file": "README.md",
+          "hash": "14833152850471915247"
+        },
+        {
+          "file": "api-dox/api-onivoro.json",
+          "hash": "4469164153454676082"
+        },
+        {
+          "file": "apps/.gitkeep",
+          "hash": "3244421341483603138"
+        },
+        {
+          "file": "cdn-scripts/icons.js",
+          "hash": "9910995100953855317"
+        },
+        {
+          "file": "deno.json",
+          "hash": "9947070438700532069"
+        },
+        {
+          "file": "jest.config.ts",
+          "hash": "12333515226966617182",
+          "deps": [
+            "npm:@nx/jest"
+          ]
+        },
+        {
+          "file": "jest.preset.js",
+          "hash": "9084884494335109525",
+          "deps": [
+            "npm:@nx/jest"
+          ]
+        },
+        {
+          "file": "libs/.gitkeep",
+          "hash": "3244421341483603138"
+        },
+        {
+          "file": "migrations.json",
+          "hash": "8175230911707275811"
+        },
+        {
+          "file": "nx.json",
+          "hash": "2299050355482915243"
+        },
+        {
+          "file": "package-lock.json",
+          "hash": "4543871307685344182"
+        },
+        {
+          "file": "package.json",
+          "hash": "13884073511120885197",
+          "deps": [
+            "npm:@angular/animations",
+            "npm:@angular/cdk",
+            "npm:@angular/common",
+            "npm:@angular/compiler",
+            "npm:@angular/core",
+            "npm:@angular/fire",
+            "npm:@angular/forms",
+            "npm:@angular/material",
+            "npm:@angular/platform-browser",
+            "npm:@angular/platform-browser-dynamic",
+            "npm:@angular/router",
+            "npm:@ckeditor/ckeditor5-angular",
+            "npm:@ckeditor/ckeditor5-build-classic",
+            "npm:@dqbd/tiktoken",
+            "npm:@nestjs/axios",
+            "npm:@nestjs/common",
+            "npm:@nestjs/core",
+            "npm:@nestjs/platform-express",
+            "npm:@nestjs/serve-static",
+            "npm:@nestjs/swagger",
+            "npm:@nx/angular",
+            "isomorphic-common",
+            "server-process",
+            "server-typeorm-postgres",
+            "npm:@sendgrid/mail",
+            "npm:amazon-cognito-auth-js",
+            "npm:amazon-cognito-identity-js",
+            "npm:any-text",
+            "npm:aws-sdk",
+            "npm:axios",
+            "npm:bcryptjs",
+            "npm:body-parser",
+            "npm:compute-cosine-similarity",
+            "npm:core-js",
+            "npm:date-fns",
+            "npm:date-fns-tz",
+            "npm:dotenv",
+            "npm:https",
+            "npm:jsonata",
+            "npm:jsonwebtoken",
+            "npm:jwk-to-pem",
+            "npm:jwt-decode",
+            "npm:lodash",
+            "npm:lodash.clonedeep",
+            "npm:lodash.get",
+            "npm:lodash.kebabcase",
+            "npm:lodash.snakecase",
+            "npm:lodash.upperfirst",
+            "npm:nest-commander",
+            "npm:ngx-cookie-service",
+            "npm:node-fetch",
+            "npm:openai",
+            "npm:pdf-parse",
+            "npm:pg",
+            "npm:puppeteer",
+            "npm:puppeteer-extra",
+            "npm:puppeteer-extra-plugin-stealth",
+            "npm:react-router-dom",
+            "npm:reflect-metadata",
+            "npm:regenerator-runtime",
+            "npm:rxjs",
+            "npm:stripe",
+            "npm:tslib",
+            "npm:twilio",
+            "npm:typeorm",
+            "npm:typeorm-naming-strategies",
+            "npm:uuid",
+            "npm:yesql",
+            "npm:ytdl-core",
+            "npm:zone.js",
+            "npm:@angular-devkit/build-angular",
+            "npm:@angular-devkit/core",
+            "npm:@angular-devkit/schematics",
+            "npm:@angular-eslint/eslint-plugin",
+            "npm:@angular-eslint/eslint-plugin-template",
+            "npm:@angular-eslint/template-parser",
+            "npm:@angular/cli",
+            "npm:@angular/compiler-cli",
+            "npm:@angular/language-service",
+            "npm:@nestjs/schematics",
+            "npm:@nestjs/testing",
+            "npm:@nrwl/js",
+            "npm:@nx/cypress",
+            "npm:@nx/eslint",
+            "npm:@nx/eslint-plugin",
+            "npm:@nx/jest",
+            "npm:@nx/js",
+            "npm:@nx/nest",
+            "npm:@nx/node",
+            "npm:@nx/plugin",
+            "npm:@nx/react",
+            "npm:@nx/vite",
+            "npm:@nx/web",
+            "npm:@nx/workspace",
+            "server-build",
+            "npm:@schematics/angular",
+            "npm:@swc-node/register",
+            "npm:@swc/core",
+            "npm:@testing-library/react",
+            "npm:@types/adm-zip",
+            "npm:@types/axios",
+            "npm:@types/bcryptjs",
+            "npm:@types/dotenv-flow",
+            "npm:@types/inquirer",
+            "npm:@types/jest",
+            "npm:@types/jsonwebtoken",
+            "npm:@types/jwk-to-pem",
+            "npm:@types/lodash.clonedeep",
+            "npm:@types/lodash.get",
+            "npm:@types/lodash.kebabcase",
+            "npm:@types/lodash.snakecase",
+            "npm:@types/lodash.upperfirst",
+            "npm:@types/multer",
+            "npm:@types/multer-s3",
+            "npm:@types/node",
+            "npm:@types/pdf-parse",
+            "npm:@types/react",
+            "npm:@types/react-dom",
+            "npm:@types/react-router-dom",
+            "npm:@types/uuid",
+            "npm:@typescript-eslint/eslint-plugin",
+            "npm:@typescript-eslint/parser",
+            "npm:@vitest/coverage-c8",
+            "npm:@vitest/ui",
+            "npm:adm-zip",
+            "npm:autoprefixer",
+            "npm:babel-jest",
+            "npm:cypress",
+            "npm:dotenv-flow",
+            "npm:eslint",
+            "npm:eslint-config-prettier",
+            "npm:eslint-plugin-cypress",
+            "npm:eslint-plugin-import",
+            "npm:eslint-plugin-jsx-a11y",
+            "npm:eslint-plugin-react",
+            "npm:eslint-plugin-react-hooks",
+            "npm:jest",
+            "npm:jest-environment-jsdom",
+            "npm:jest-environment-node",
+            "npm:jest-preset-angular",
+            "npm:jsonc-eslint-parser",
+            "npm:ng-packagr",
+            "npm:nx",
+            "npm:postcss",
+            "npm:postcss-import",
+            "npm:postcss-preset-env",
+            "npm:postcss-url",
+            "npm:prettier",
+            "npm:tailwindcss",
+            "npm:ts-jest",
+            "npm:ts-node",
+            "npm:tsconfig-paths",
+            "npm:typescript",
+            "npm:verdaccio",
+            "npm:vite",
+            "npm:vite-plugin-dts",
+            "npm:vitest",
+            "npm:yargs-parser"
+          ]
+        },
+        {
+          "file": "project.json",
+          "hash": "10816568029838285341"
+        },
+        {
+          "file": "shed.ts",
+          "hash": "9534714780032763308"
+        },
+        {
+          "file": "shell/cors.json",
+          "hash": "4283169910445820090"
+        },
+        {
+          "file": "shell/mb.sh",
+          "hash": "12613953974806965084"
+        },
+        {
+          "file": "test/test.docx",
+          "hash": "12934433127272066548"
+        },
+        {
+          "file": "tools/scripts/publish.mjs",
+          "hash": "8455829797866792111",
+          "deps": [
+            "npm:child_process",
+            "npm:fs",
+            "npm:@nx/devkit"
+          ]
+        },
+        {
+          "file": "tools/tsconfig.tools.json",
+          "hash": "16088922570277978783"
+        },
+        {
+          "file": "tsconfig.base.json",
+          "hash": "20299873733574510"
+        }
+      ],
+      "server-file": [
+        {
+          "file": "libs/server-file/.babelrc",
+          "hash": "14637968239574891430"
+        },
+        {
+          "file": "libs/server-file/.eslintrc.json",
+          "hash": "13800677001662881425"
+        },
+        {
+          "file": "libs/server-file/README.md",
+          "hash": "8660006754170160433"
+        },
+        {
+          "file": "libs/server-file/jest.config.ts",
+          "hash": "13411043994943311514"
+        },
+        {
+          "file": "libs/server-file/package.json",
+          "hash": "18437635961836879186"
+        },
+        {
+          "file": "libs/server-file/project.json",
+          "hash": "16238516912564756424"
+        },
+        {
+          "file": "libs/server-file/src/index.ts",
+          "hash": "6127495707764873904"
+        },
+        {
+          "file": "libs/server-file/src/lib/create-s3-client.function.ts",
+          "hash": "10444287217751961076",
+          "deps": [
+            "npm:@aws-sdk/client-s3"
+          ]
+        },
+        {
+          "file": "libs/server-file/src/lib/create-s3-uploader.function.ts",
+          "hash": "6261406178602670583",
+          "deps": [
+            "npm:@aws-sdk/client-s3",
+            "npm:@nestjs/platform-express",
+            "npm:path",
+            "npm:multer-s3-v3"
+          ]
+        },
+        {
+          "file": "libs/server-file/src/lib/file.controller.ts",
+          "hash": "15564947650701014641",
+          "deps": [
+            "npm:@nestjs/common",
+            "npm:@nestjs/platform-express"
+          ]
+        },
+        {
+          "file": "libs/server-file/src/lib/file.service.ts",
+          "hash": "13628505194351152569",
+          "deps": [
+            "npm:@nestjs/common"
+          ]
+        },
+        {
+          "file": "libs/server-file/src/lib/mime-type-validator.function.ts",
+          "hash": "10505978771005294726",
+          "deps": [
+            "npm:path"
+          ]
+        },
+        {
+          "file": "libs/server-file/src/lib/multer-options.interface.ts",
+          "hash": "4561596921565217153",
+          "deps": [
+            "npm:@aws-sdk/client-s3",
+            "npm:multer"
+          ]
+        },
+        {
+          "file": "libs/server-file/src/lib/rich-text-validator.function.ts",
+          "hash": "3364092341606044121"
+        },
+        {
+          "file": "libs/server-file/src/lib/server-file.module.ts",
+          "hash": "9091289694352631520",
+          "deps": [
+            "npm:@aws-sdk/client-s3",
+            "npm:@nestjs/common"
+          ]
+        },
+        {
+          "file": "libs/server-file/tsconfig.json",
+          "hash": "12834038490315927699"
+        },
+        {
+          "file": "libs/server-file/tsconfig.lib.json",
+          "hash": "8188472110264778699"
+        },
+        {
+          "file": "libs/server-file/tsconfig.spec.json",
+          "hash": "6514620907549802163"
+        }
+      ],
+      "server-typeorm-postgres": [
+        {
+          "file": "libs/server-typeorm-postgres/.babelrc",
+          "hash": "14637968239574891430"
+        },
+        {
+          "file": "libs/server-typeorm-postgres/.eslintrc.json",
+          "hash": "13800677001662881425"
+        },
+        {
+          "file": "libs/server-typeorm-postgres/README.md",
+          "hash": "4851316046965042647"
+        },
+        {
+          "file": "libs/server-typeorm-postgres/jest.config.ts",
+          "hash": "2350964381267380472"
+        },
+        {
+          "file": "libs/server-typeorm-postgres/package.json",
+          "hash": "8986976910347000070",
+          "deps": [
+            "npm:typeorm-naming-strategies"
+          ]
+        },
+        {
+          "file": "libs/server-typeorm-postgres/project.json",
+          "hash": "7494024117673880187"
+        },
+        {
+          "file": "libs/server-typeorm-postgres/src/index.ts",
+          "hash": "4806440963775123678"
+        },
+        {
+          "file": "libs/server-typeorm-postgres/src/lib/classes/__snapshots__/sql-writer.class.spec.ts.snap",
+          "hash": "2776302699208397590"
+        },
+        {
+          "file": "libs/server-typeorm-postgres/src/lib/classes/column-migration-base.class.ts",
+          "hash": "11468512322705637080",
+          "deps": [
+            "npm:typeorm"
+          ]
+        },
+        {
+          "file": "libs/server-typeorm-postgres/src/lib/classes/columns-migration-base.class.ts",
+          "hash": "131197413260467332",
+          "deps": [
+            "npm:typeorm"
+          ]
+        },
+        {
+          "file": "libs/server-typeorm-postgres/src/lib/classes/drop-column-migration-base.class.ts",
+          "hash": "6123230168003686491",
+          "deps": [
+            "npm:typeorm"
+          ]
+        },
+        {
+          "file": "libs/server-typeorm-postgres/src/lib/classes/drop-table-migration-base.class.ts",
+          "hash": "17840116176463711369",
+          "deps": [
+            "npm:typeorm"
+          ]
+        },
+        {
+          "file": "libs/server-typeorm-postgres/src/lib/classes/index-migration-base.class.ts",
+          "hash": "12618392531721432997",
+          "deps": [
+            "npm:typeorm"
+          ]
+        },
+        {
+          "file": "libs/server-typeorm-postgres/src/lib/classes/sql-writer.class.spec.ts",
+          "hash": "18025086726907578079"
+        },
+        {
+          "file": "libs/server-typeorm-postgres/src/lib/classes/sql-writer.class.ts",
+          "hash": "6414482930977321501",
+          "deps": [
+            "npm:typeorm"
+          ]
+        },
+        {
+          "file": "libs/server-typeorm-postgres/src/lib/classes/table-migration-base.class.ts",
+          "hash": "8085730674723115912",
+          "deps": [
+            "npm:typeorm"
+          ]
+        },
+        {
+          "file": "libs/server-typeorm-postgres/src/lib/classes/type-orm-paging-repository.class.ts",
+          "hash": "13138660740559239304",
+          "deps": [
+            "npm:typeorm"
+          ]
+        },
+        {
+          "file": "libs/server-typeorm-postgres/src/lib/classes/type-orm-repository.class.ts",
+          "hash": "11941056853391758123",
+          "deps": [
+            "npm:typeorm"
+          ]
+        },
+        {
+          "file": "libs/server-typeorm-postgres/src/lib/constants/many-to-one-relation-options.constant.ts",
+          "hash": "11631941017645810901",
+          "deps": [
+            "npm:typeorm"
+          ]
+        },
+        {
+          "file": "libs/server-typeorm-postgres/src/lib/decorators/nullable-table-column.decorator.ts",
+          "hash": "11925636065840045455",
+          "deps": [
+            "npm:@nestjs/common",
+            "npm:typeorm",
+            "npm:@nestjs/swagger"
+          ]
+        },
+        {
+          "file": "libs/server-typeorm-postgres/src/lib/decorators/primary-table-column.decorator.ts",
+          "hash": "7861726217043584513",
+          "deps": [
+            "npm:@nestjs/common",
+            "npm:typeorm",
+            "npm:@nestjs/swagger"
+          ]
+        },
+        {
+          "file": "libs/server-typeorm-postgres/src/lib/decorators/table-column.decorator.ts",
+          "hash": "5881702170929775425",
+          "deps": [
+            "npm:@nestjs/common",
+            "npm:typeorm",
+            "npm:@nestjs/swagger"
+          ]
+        },
+        {
+          "file": "libs/server-typeorm-postgres/src/lib/decorators/table.decorator.ts",
+          "hash": "14199216439392910509",
+          "deps": [
+            "npm:@nestjs/common",
+            "npm:typeorm",
+            "isomorphic-common"
+          ]
+        },
+        {
+          "file": "libs/server-typeorm-postgres/src/lib/functions/data-source-config-factory.function.ts",
+          "hash": "9179684940233691199",
+          "deps": [
+            "npm:typeorm-naming-strategies",
+            "npm:typeorm"
+          ]
+        },
+        {
+          "file": "libs/server-typeorm-postgres/src/lib/functions/data-source-factory.function.ts",
+          "hash": "13015548812126284517",
+          "deps": [
+            "npm:typeorm"
+          ]
+        },
+        {
+          "file": "libs/server-typeorm-postgres/src/lib/functions/generate-date-query.function.ts",
+          "hash": "16443359237710532205",
+          "deps": [
+            "npm:typeorm"
+          ]
+        },
+        {
+          "file": "libs/server-typeorm-postgres/src/lib/functions/get-api-type-from-column.function.ts",
+          "hash": "9389763415704448813",
+          "deps": [
+            "npm:typeorm"
+          ]
+        },
+        {
+          "file": "libs/server-typeorm-postgres/src/lib/functions/get-paging-key.function.ts",
+          "hash": "540686683991039602"
+        },
+        {
+          "file": "libs/server-typeorm-postgres/src/lib/functions/get-skip.function.ts",
+          "hash": "12042710537595630387"
+        },
+        {
+          "file": "libs/server-typeorm-postgres/src/lib/functions/remove-falsey-keys.function.ts",
+          "hash": "2193820008099164711"
+        },
+        {
+          "file": "libs/server-typeorm-postgres/src/lib/server-typeorm-postgres.module.ts",
+          "hash": "8783528940407466081",
+          "deps": [
+            "npm:@nestjs/common",
+            "npm:typeorm"
+          ]
+        },
+        {
+          "file": "libs/server-typeorm-postgres/src/lib/types/data-source-options.interface.ts",
+          "hash": "16235024324032317108"
+        },
+        {
+          "file": "libs/server-typeorm-postgres/src/lib/types/entity-provider.interface.ts",
+          "hash": "10970269889590997912"
+        },
+        {
+          "file": "libs/server-typeorm-postgres/src/lib/types/page-params.interface.ts",
+          "hash": "9605446155677519117"
+        },
+        {
+          "file": "libs/server-typeorm-postgres/src/lib/types/paged-data.interface.ts",
+          "hash": "12584422952751556874"
+        },
+        {
+          "file": "libs/server-typeorm-postgres/tsconfig.json",
+          "hash": "12834038490315927699"
+        },
+        {
+          "file": "libs/server-typeorm-postgres/tsconfig.lib.json",
+          "hash": "8188472110264778699"
+        },
+        {
+          "file": "libs/server-typeorm-postgres/tsconfig.spec.json",
+          "hash": "6514620907549802163"
+        }
+      ],
+      "server-common": [
+        {
+          "file": "libs/server-common/.babelrc",
+          "hash": "14637968239574891430"
+        },
+        {
+          "file": "libs/server-common/.eslintrc.json",
+          "hash": "13800677001662881425"
+        },
+        {
+          "file": "libs/server-common/README.md",
+          "hash": "10529757359813007421"
+        },
+        {
+          "file": "libs/server-common/jest.config.ts",
+          "hash": "10277431126000526345"
+        },
+        {
+          "file": "libs/server-common/package.json",
+          "hash": "1220682298650290153"
+        },
+        {
+          "file": "libs/server-common/project.json",
+          "hash": "10270934758850238585"
+        },
+        {
+          "file": "libs/server-common/src/index.ts",
+          "hash": "3219877823202998792"
+        },
+        {
+          "file": "libs/server-common/src/lib/constants/version-provider-token.constant.ts",
+          "hash": "3326787943741260435"
+        },
+        {
+          "file": "libs/server-common/src/lib/controllers/health.controller.ts",
+          "hash": "9278784186736904876",
+          "deps": [
+            "npm:@nestjs/common",
+            "npm:@nestjs/swagger"
+          ]
+        },
+        {
+          "file": "libs/server-common/src/lib/decorators/api-query-paged-params.decorator.ts",
+          "hash": "15866463006578814988",
+          "deps": [
+            "npm:@nestjs/common",
+            "npm:@nestjs/swagger"
+          ]
+        },
+        {
+          "file": "libs/server-common/src/lib/decorators/api-response-paged.decorator.ts",
+          "hash": "5200680114887957456",
+          "deps": [
+            "npm:@nestjs/common",
+            "npm:@nestjs/swagger"
+          ]
+        },
+        {
+          "file": "libs/server-common/src/lib/decorators/query-paged-params.decorator.ts",
+          "hash": "7975089023958950696",
+          "deps": [
+            "npm:@nestjs/common"
+          ]
+        },
+        {
+          "file": "libs/server-common/src/lib/dtos/body.dto.ts",
+          "hash": "7773401757699674938",
+          "deps": [
+            "npm:@nestjs/swagger"
+          ]
+        },
+        {
+          "file": "libs/server-common/src/lib/dtos/health.dto.ts",
+          "hash": "3368703670584314141",
+          "deps": [
+            "npm:@nestjs/swagger"
+          ]
+        },
+        {
+          "file": "libs/server-common/src/lib/dtos/paged-response.dto.ts",
+          "hash": "3385136063468475708",
+          "deps": [
+            "npm:@nestjs/swagger"
+          ]
+        },
+        {
+          "file": "libs/server-common/src/lib/dtos/string-array.dto.ts",
+          "hash": "10397236606086808273",
+          "deps": [
+            "npm:@nestjs/swagger"
+          ]
+        },
+        {
+          "file": "libs/server-common/src/lib/dtos/success.dto.ts",
+          "hash": "5678266273523692040",
+          "deps": [
+            "npm:@nestjs/swagger"
+          ]
+        },
+        {
+          "file": "libs/server-common/src/lib/dtos/url.dto.ts",
+          "hash": "3746809548340829791",
+          "deps": [
+            "npm:@nestjs/swagger"
+          ]
+        },
+        {
+          "file": "libs/server-common/src/lib/dtos/user-id.dto.ts",
+          "hash": "4259706329673653705",
+          "deps": [
+            "npm:@nestjs/swagger"
+          ]
+        },
+        {
+          "file": "libs/server-common/src/lib/dtos/value.dto.ts",
+          "hash": "6488712297904192221",
+          "deps": [
+            "npm:@nestjs/swagger"
+          ]
+        },
+        {
+          "file": "libs/server-common/src/lib/dtos/values.dto.ts",
+          "hash": "4194674076996194235",
+          "deps": [
+            "npm:@nestjs/swagger"
+          ]
+        },
+        {
+          "file": "libs/server-common/src/lib/functions/create-api-app.function.ts",
+          "hash": "4333221379971149933",
+          "deps": [
+            "npm:@nestjs/common",
+            "npm:@nestjs/core",
+            "npm:body-parser"
+          ]
+        },
+        {
+          "file": "libs/server-common/src/lib/functions/decode.function.ts",
+          "hash": "12116676855769479477"
+        },
+        {
+          "file": "libs/server-common/src/lib/functions/generate-app-metadata.function.ts",
+          "hash": "6406953273373095386"
+        },
+        {
+          "file": "libs/server-common/src/lib/functions/get-memory-stats.function.ts",
+          "hash": "16661512963626256952",
+          "deps": [
+            "npm:node:os"
+          ]
+        },
+        {
+          "file": "libs/server-common/src/lib/functions/get-package-version.function.ts",
+          "hash": "12339239763008240935"
+        },
+        {
+          "file": "libs/server-common/src/lib/functions/get-random-string.function.ts",
+          "hash": "12382631715056601437",
+          "deps": [
+            "npm:node:crypto"
+          ]
+        },
+        {
+          "file": "libs/server-common/src/lib/functions/init-openapi.function.ts",
+          "hash": "10081811320805702681",
+          "deps": [
+            "npm:@nestjs/swagger",
+            "npm:path",
+            "npm:fs/promises",
+            "npm:@nestjs/common"
+          ]
+        },
+        {
+          "file": "libs/server-common/src/lib/functions/module-factory.function.ts",
+          "hash": "11055739978152870520"
+        },
+        {
+          "file": "libs/server-common/src/lib/functions/parse-body.function.ts",
+          "hash": "2099242692794412260"
+        },
+        {
+          "file": "libs/server-common/src/lib/functions/parse-package-json.function.ts",
+          "hash": "13276218907003944829",
+          "deps": [
+            "npm:fs/promises"
+          ]
+        },
+        {
+          "file": "libs/server-common/src/lib/functions/read-file-as-json.function.ts",
+          "hash": "14051405964991643611",
+          "deps": [
+            "npm:@nestjs/common",
+            "npm:fs/promises"
+          ]
+        },
+        {
+          "file": "libs/server-common/src/lib/functions/save-file-as-json.function.ts",
+          "hash": "13501795643337934142",
+          "deps": [
+            "npm:fs/promises"
+          ]
+        },
+        {
+          "file": "libs/server-common/src/lib/functions/sleep.function.ts",
+          "hash": "15752531380279684019"
+        },
+        {
+          "file": "libs/server-common/src/lib/providers/version.provider.ts",
+          "hash": "13904942628461455255"
+        },
+        {
+          "file": "libs/server-common/src/lib/server-common.module.ts",
+          "hash": "2951024657674943329",
+          "deps": [
+            "npm:@nestjs/common"
+          ]
+        },
+        {
+          "file": "libs/server-common/tsconfig.json",
+          "hash": "12834038490315927699"
+        },
+        {
+          "file": "libs/server-common/tsconfig.lib.json",
+          "hash": "8188472110264778699"
+        },
+        {
+          "file": "libs/server-common/tsconfig.spec.json",
+          "hash": "6514620907549802163"
+        }
+      ],
+      "server-yt-dl": [
+        {
+          "file": "libs/server-yt-dl/.babelrc",
+          "hash": "4734508471883268701"
+        },
+        {
+          "file": "libs/server-yt-dl/.eslintrc.json",
+          "hash": "13800677001662881425"
+        },
+        {
+          "file": "libs/server-yt-dl/README.md",
+          "hash": "1342106949252631691"
+        },
+        {
+          "file": "libs/server-yt-dl/jest.config.ts",
+          "hash": "7232934388194097319"
+        },
+        {
+          "file": "libs/server-yt-dl/package.json",
+          "hash": "1817126524935299200"
+        },
+        {
+          "file": "libs/server-yt-dl/project.json",
+          "hash": "10534712991797246663"
+        },
+        {
+          "file": "libs/server-yt-dl/src/index.ts",
+          "hash": "6803407544375964137"
+        },
+        {
+          "file": "libs/server-yt-dl/src/lib/server-yt-dl.module.ts",
+          "hash": "5965209574713648097",
+          "deps": [
+            "npm:@nestjs/common",
+            "server-common"
+          ]
+        },
+        {
+          "file": "libs/server-yt-dl/src/lib/services/download.service.ts",
+          "hash": "7275950493334801126",
+          "deps": [
+            "npm:@nestjs/common",
+            "npm:stream",
+            "npm:ytdl-core"
+          ]
+        },
+        {
+          "file": "libs/server-yt-dl/tsconfig.json",
+          "hash": "12834038490315927699"
+        },
+        {
+          "file": "libs/server-yt-dl/tsconfig.lib.json",
+          "hash": "8044021312735567114"
+        },
+        {
+          "file": "libs/server-yt-dl/tsconfig.spec.json",
+          "hash": "2406015174838385060"
+        }
+      ],
+      "onix": [
+        {
+          "file": "libs/onix/.eslintrc.json",
+          "hash": "16403475465958696311"
+        },
+        {
+          "file": "libs/onix/README.md",
+          "hash": "6000147116389664693"
+        },
+        {
+          "file": "libs/onix/executors.json",
+          "hash": "10041510325666137363"
+        },
+        {
+          "file": "libs/onix/jest.config.ts",
+          "hash": "17231720551974328561"
+        },
+        {
+          "file": "libs/onix/package.json",
+          "hash": "3457616698973066528",
+          "deps": [
+            "npm:@nx/devkit"
+          ]
+        },
+        {
+          "file": "libs/onix/project.json",
+          "hash": "4403875252505369587"
+        },
+        {
+          "file": "libs/onix/src/executors/deploy-image/executor.ts",
+          "hash": "614481103018668626"
+        },
+        {
+          "file": "libs/onix/src/executors/deploy-image/schema.d.ts",
+          "hash": "3920275991813839519"
+        },
+        {
+          "file": "libs/onix/src/executors/deploy-image/schema.json",
+          "hash": "8962649223539920541"
+        },
+        {
+          "file": "libs/onix/src/executors/echo/executor.spec.ts",
+          "hash": "11747944873101137589"
+        },
+        {
+          "file": "libs/onix/src/executors/echo/executor.ts",
+          "hash": "1636604081805893211"
+        },
+        {
+          "file": "libs/onix/src/executors/echo/schema.d.ts",
+          "hash": "3920275991813839519"
+        },
+        {
+          "file": "libs/onix/src/executors/echo/schema.json",
+          "hash": "1496431356176224372"
+        },
+        {
+          "file": "libs/onix/src/index.ts",
+          "hash": "10901134512021123639"
+        },
+        {
+          "file": "libs/onix/src/lib/onix.spec.ts",
+          "hash": "13690005013952265192"
+        },
+        {
+          "file": "libs/onix/src/lib/onix.ts",
+          "hash": "12593003221117336826"
+        },
+        {
+          "file": "libs/onix/tsconfig.json",
+          "hash": "2840670722752396445"
+        },
+        {
+          "file": "libs/onix/tsconfig.lib.json",
+          "hash": "8188472110264778699"
+        },
+        {
+          "file": "libs/onix/tsconfig.spec.json",
+          "hash": "11550347367511341917"
+        }
+      ],
+      "isomorphic-common": [
+        {
+          "file": "libs/isomorphic-common/.babelrc",
+          "hash": "14637968239574891430"
+        },
+        {
+          "file": "libs/isomorphic-common/.eslintrc.json",
+          "hash": "13800677001662881425"
+        },
+        {
+          "file": "libs/isomorphic-common/README.md",
+          "hash": "18350849035197301035"
+        },
+        {
+          "file": "libs/isomorphic-common/jest.config.ts",
+          "hash": "7202240163133290257"
+        },
+        {
+          "file": "libs/isomorphic-common/package.json",
+          "hash": "6402878648415955691",
+          "deps": [
+            "npm:date-fns-tz"
+          ]
+        },
+        {
+          "file": "libs/isomorphic-common/project.json",
+          "hash": "5172883669312034125"
+        },
+        {
+          "file": "libs/isomorphic-common/src/index.ts",
+          "hash": "15798837662658968036"
+        },
+        {
+          "file": "libs/isomorphic-common/src/lib/constants/millis-per-day.constant.ts",
+          "hash": "17997637093363355641"
+        },
+        {
+          "file": "libs/isomorphic-common/src/lib/constants/millis-per-hour.constant.ts",
+          "hash": "16851159579766045051"
+        },
+        {
+          "file": "libs/isomorphic-common/src/lib/constants/millis-per-minute.constant.ts",
+          "hash": "10520734342584319247"
+        },
+        {
+          "file": "libs/isomorphic-common/src/lib/functions/__snapshots__/add-offset.function.spec.ts.snap",
+          "hash": "17974399702508776257"
+        },
+        {
+          "file": "libs/isomorphic-common/src/lib/functions/__snapshots__/convert-object-to-literal.function.spec.ts.snap",
+          "hash": "16116992308401054721"
+        },
+        {
+          "file": "libs/isomorphic-common/src/lib/functions/__snapshots__/from-calendar-date.function.spec.ts.snap",
+          "hash": "8647683437229614810"
+        },
+        {
+          "file": "libs/isomorphic-common/src/lib/functions/__snapshots__/subtract-offset.function.spec.ts.snap",
+          "hash": "13261638248617281440"
+        },
+        {
+          "file": "libs/isomorphic-common/src/lib/functions/__snapshots__/to-dollars-and-cents.function.spec.ts.snap",
+          "hash": "12371897211749476287"
+        },
+        {
+          "file": "libs/isomorphic-common/src/lib/functions/__snapshots__/to-words.function.spec.ts.snap",
+          "hash": "980802305520226992"
+        },
+        {
+          "file": "libs/isomorphic-common/src/lib/functions/__snapshots__/try-parse-date.function.spec.ts.snap",
+          "hash": "13520135037432965405"
+        },
+        {
+          "file": "libs/isomorphic-common/src/lib/functions/__snapshots__/upper-first.function.spec.ts.snap",
+          "hash": "4830224965315470100"
+        },
+        {
+          "file": "libs/isomorphic-common/src/lib/functions/add-offset.function.spec.ts",
+          "hash": "17925895151273689323"
+        },
+        {
+          "file": "libs/isomorphic-common/src/lib/functions/add-offset.function.ts",
+          "hash": "6033419422829191985"
+        },
+        {
+          "file": "libs/isomorphic-common/src/lib/functions/camel-case.function.ts",
+          "hash": "17071544338105402590"
+        },
+        {
+          "file": "libs/isomorphic-common/src/lib/functions/convert-object-to-literal.function.spec.ts",
+          "hash": "16288273384763181010"
+        },
+        {
+          "file": "libs/isomorphic-common/src/lib/functions/convert-object-to-literal.function.ts",
+          "hash": "901839880612361575"
+        },
+        {
+          "file": "libs/isomorphic-common/src/lib/functions/from-boolean-string.function.ts",
+          "hash": "533629430111720723"
+        },
+        {
+          "file": "libs/isomorphic-common/src/lib/functions/from-calendar-date.function.spec.ts",
+          "hash": "15086337691623136461"
+        },
+        {
+          "file": "libs/isomorphic-common/src/lib/functions/from-calendar-date.function.ts",
+          "hash": "16359565881190472519"
+        },
+        {
+          "file": "libs/isomorphic-common/src/lib/functions/from-csv-string.function.ts",
+          "hash": "6610688827533246276"
+        },
+        {
+          "file": "libs/isomorphic-common/src/lib/functions/get-tag.function.ts",
+          "hash": "6362425861950069577"
+        },
+        {
+          "file": "libs/isomorphic-common/src/lib/functions/is-symbol.function.ts",
+          "hash": "1664118879069276382"
+        },
+        {
+          "file": "libs/isomorphic-common/src/lib/functions/kebab-case.function.ts",
+          "hash": "2290505439361354000"
+        },
+        {
+          "file": "libs/isomorphic-common/src/lib/functions/parse-bool.function.ts",
+          "hash": "1598305549182741292"
+        },
+        {
+          "file": "libs/isomorphic-common/src/lib/functions/properties-to-array.function.ts",
+          "hash": "15630752714750199186"
+        },
+        {
+          "file": "libs/isomorphic-common/src/lib/functions/sanitize-filename.function.ts",
+          "hash": "4581591835059399394"
+        },
+        {
+          "file": "libs/isomorphic-common/src/lib/functions/snake-case.function.ts",
+          "hash": "4173001484524119406"
+        },
+        {
+          "file": "libs/isomorphic-common/src/lib/functions/subtract-offset.function.spec.ts",
+          "hash": "6531623637045602441"
+        },
+        {
+          "file": "libs/isomorphic-common/src/lib/functions/subtract-offset.function.ts",
+          "hash": "17417082695896401022"
+        },
+        {
+          "file": "libs/isomorphic-common/src/lib/functions/to-boolean-string.function.ts",
+          "hash": "156800402228485348"
+        },
+        {
+          "file": "libs/isomorphic-common/src/lib/functions/to-calendar-date.function.ts",
+          "hash": "12863838400298016568"
+        },
+        {
+          "file": "libs/isomorphic-common/src/lib/functions/to-csv-string.function.ts",
+          "hash": "7135776872661377846"
+        },
+        {
+          "file": "libs/isomorphic-common/src/lib/functions/to-decimal-base.function.ts",
+          "hash": "16112083576708016272"
+        },
+        {
+          "file": "libs/isomorphic-common/src/lib/functions/to-dollars-and-cents.function.spec.ts",
+          "hash": "7005197038806220699"
+        },
+        {
+          "file": "libs/isomorphic-common/src/lib/functions/to-dollars-and-cents.function.ts",
+          "hash": "2393195606117521891"
+        },
+        {
+          "file": "libs/isomorphic-common/src/lib/functions/to-locale-date-string.function.ts",
+          "hash": "11882494509343106547",
+          "deps": [
+            "npm:date-fns-tz"
+          ]
+        },
+        {
+          "file": "libs/isomorphic-common/src/lib/functions/to-locale-time-string.function.ts",
+          "hash": "5796225446625338547",
+          "deps": [
+            "npm:date-fns-tz"
+          ]
+        },
+        {
+          "file": "libs/isomorphic-common/src/lib/functions/to-string.function.ts",
+          "hash": "2477496122225509486"
+        },
+        {
+          "file": "libs/isomorphic-common/src/lib/functions/to-unique-array.function.spec.ts",
+          "hash": "1185739686380985926"
+        },
+        {
+          "file": "libs/isomorphic-common/src/lib/functions/to-unique-array.function.ts",
+          "hash": "2456860529449736066"
+        },
+        {
+          "file": "libs/isomorphic-common/src/lib/functions/to-words.function.spec.ts",
+          "hash": "539107954412835737"
+        },
+        {
+          "file": "libs/isomorphic-common/src/lib/functions/to-words.function.ts",
+          "hash": "4757139353489661312"
+        },
+        {
+          "file": "libs/isomorphic-common/src/lib/functions/try-parse-date.function.spec.ts",
+          "hash": "17805268748504010176"
+        },
+        {
+          "file": "libs/isomorphic-common/src/lib/functions/try-parse-date.function.ts",
+          "hash": "2996549576297047406"
+        },
+        {
+          "file": "libs/isomorphic-common/src/lib/functions/unicode-words.const.ts",
+          "hash": "11342022616646069073"
+        },
+        {
+          "file": "libs/isomorphic-common/src/lib/functions/upper-first.function.spec.ts",
+          "hash": "5164657665500573585"
+        },
+        {
+          "file": "libs/isomorphic-common/src/lib/functions/upper-first.function.ts",
+          "hash": "16643093745715072027"
+        },
+        {
+          "file": "libs/isomorphic-common/src/lib/functions/words.function.ts",
+          "hash": "14218721714658879136"
+        },
+        {
+          "file": "libs/isomorphic-common/src/lib/interfaces/axios-wrapped-nest-exception.interface.ts",
+          "hash": "17523220539434074008"
+        },
+        {
+          "file": "libs/isomorphic-common/src/lib/interfaces/entity-provider.interface.ts",
+          "hash": "10970269889590997912"
+        },
+        {
+          "file": "libs/isomorphic-common/src/lib/interfaces/keys-of.type.ts",
+          "hash": "14728437714368666172"
+        },
+        {
+          "file": "libs/isomorphic-common/tsconfig.json",
+          "hash": "12834038490315927699"
+        },
+        {
+          "file": "libs/isomorphic-common/tsconfig.lib.json",
+          "hash": "8188472110264778699"
+        },
+        {
+          "file": "libs/isomorphic-common/tsconfig.spec.json",
+          "hash": "6514620907549802163"
+        }
+      ],
+      "server-puppeteer": [
+        {
+          "file": "libs/server-puppeteer/.babelrc",
+          "hash": "4734508471883268701"
+        },
+        {
+          "file": "libs/server-puppeteer/.eslintrc.json",
+          "hash": "13800677001662881425"
+        },
+        {
+          "file": "libs/server-puppeteer/README.md",
+          "hash": "16665517287883499839"
+        },
+        {
+          "file": "libs/server-puppeteer/jest.config.ts",
+          "hash": "14019892118257727942"
+        },
+        {
+          "file": "libs/server-puppeteer/package.json",
+          "hash": "17649186025529334599"
+        },
+        {
+          "file": "libs/server-puppeteer/project.json",
+          "hash": "8412919740043703431"
+        },
+        {
+          "file": "libs/server-puppeteer/src/index.ts",
+          "hash": "8500458645969805083"
+        },
+        {
+          "file": "libs/server-puppeteer/src/lib/classes/server-puppeteer-config.class.ts",
+          "hash": "5592651376499121317",
+          "deps": [
+            "npm:puppeteer"
+          ]
+        },
+        {
+          "file": "libs/server-puppeteer/src/lib/server-puppeteer-mock.module.ts",
+          "hash": "848877382139444673",
+          "deps": [
+            "npm:@nestjs/common",
+            "server-common",
+            "npm:puppeteer"
+          ]
+        },
+        {
+          "file": "libs/server-puppeteer/src/lib/server-puppeteer.module.ts",
+          "hash": "12643370540403963515",
+          "deps": [
+            "npm:@nestjs/common",
+            "server-common",
+            "npm:puppeteer",
+            "npm:puppeteer-extra",
+            "npm:puppeteer-extra-plugin-stealth"
+          ]
+        },
+        {
+          "file": "libs/server-puppeteer/src/lib/services/puppeteer.service.ts",
+          "hash": "10692972723902367376",
+          "deps": [
+            "npm:@nestjs/common",
+            "npm:puppeteer"
+          ]
+        },
+        {
+          "file": "libs/server-puppeteer/tsconfig.json",
+          "hash": "12834038490315927699"
+        },
+        {
+          "file": "libs/server-puppeteer/tsconfig.lib.json",
+          "hash": "8044021312735567114"
+        },
+        {
+          "file": "libs/server-puppeteer/tsconfig.spec.json",
+          "hash": "2406015174838385060"
+        }
+      ],
+      "server-aws-lambda": [
+        {
+          "file": "libs/server-aws-lambda/.babelrc",
+          "hash": "4734508471883268701"
+        },
+        {
+          "file": "libs/server-aws-lambda/.eslintrc.json",
+          "hash": "13800677001662881425"
+        },
+        {
+          "file": "libs/server-aws-lambda/README.md",
+          "hash": "8850953003836256113"
+        },
+        {
+          "file": "libs/server-aws-lambda/jest.config.ts",
+          "hash": "18396458630697470240"
+        },
+        {
+          "file": "libs/server-aws-lambda/package.json",
+          "hash": "8725962971097244819"
+        },
+        {
+          "file": "libs/server-aws-lambda/project.json",
+          "hash": "12736699812417452392"
+        },
+        {
+          "file": "libs/server-aws-lambda/src/index.ts",
+          "hash": "10865560726443146969"
+        },
+        {
+          "file": "libs/server-aws-lambda/src/lib/classes/server-aws-lambda-config.class.ts",
+          "hash": "6656267647838498384"
+        },
+        {
+          "file": "libs/server-aws-lambda/src/lib/interfaces/callback.interface.ts",
+          "hash": "1161066336453495030"
+        },
+        {
+          "file": "libs/server-aws-lambda/src/lib/interfaces/event-with-body.interface.ts",
+          "hash": "7703229813095822840"
+        },
+        {
+          "file": "libs/server-aws-lambda/src/lib/interfaces/event-with-path-params.interface.ts",
+          "hash": "3406898906612145806"
+        },
+        {
+          "file": "libs/server-aws-lambda/src/lib/interfaces/event-with-query-params.interface.ts",
+          "hash": "8214325427579854578"
+        },
+        {
+          "file": "libs/server-aws-lambda/src/lib/interfaces/event.interface.ts",
+          "hash": "17722596371269832693"
+        },
+        {
+          "file": "libs/server-aws-lambda/src/lib/interfaces/pre-token-generation-event.interface.ts",
+          "hash": "16706564292107737385"
+        },
+        {
+          "file": "libs/server-aws-lambda/src/lib/server-aws-lambda.module.ts",
+          "hash": "16607644167281369177",
+          "deps": [
+            "npm:@nestjs/common",
+            "server-common",
+            "npm:aws-sdk"
+          ]
+        },
+        {
+          "file": "libs/server-aws-lambda/src/lib/services/lambda.service.ts",
+          "hash": "4985970935806527782",
+          "deps": [
+            "npm:@nestjs/common",
+            "npm:aws-sdk"
+          ]
+        },
+        {
+          "file": "libs/server-aws-lambda/tsconfig.json",
+          "hash": "12834038490315927699"
+        },
+        {
+          "file": "libs/server-aws-lambda/tsconfig.lib.json",
+          "hash": "8044021312735567114"
+        },
+        {
+          "file": "libs/server-aws-lambda/tsconfig.spec.json",
+          "hash": "2406015174838385060"
+        }
+      ],
+      "server-sendgrid": [
+        {
+          "file": "libs/server-sendgrid/.babelrc",
+          "hash": "4734508471883268701"
+        },
+        {
+          "file": "libs/server-sendgrid/.eslintrc.json",
+          "hash": "13800677001662881425"
+        },
+        {
+          "file": "libs/server-sendgrid/README.md",
+          "hash": "3933499683106486814"
+        },
+        {
+          "file": "libs/server-sendgrid/jest.config.ts",
+          "hash": "12241297816050943554"
+        },
+        {
+          "file": "libs/server-sendgrid/package.json",
+          "hash": "14678977230861232487",
+          "deps": [
+            "npm:@sendgrid/mail"
+          ]
+        },
+        {
+          "file": "libs/server-sendgrid/project.json",
+          "hash": "986742562349132500"
+        },
+        {
+          "file": "libs/server-sendgrid/src/index.ts",
+          "hash": "8498553771528116985"
+        },
+        {
+          "file": "libs/server-sendgrid/src/lib/classes/server-sendgrid-config.class.ts",
+          "hash": "7427526452138811878"
+        },
+        {
+          "file": "libs/server-sendgrid/src/lib/server-sendgrid.module.ts",
+          "hash": "4838929069961211045",
+          "deps": [
+            "npm:@nestjs/common",
+            "server-common",
+            "npm:@sendgrid/mail"
+          ]
+        },
+        {
+          "file": "libs/server-sendgrid/src/lib/services/email.service.ts",
+          "hash": "15840401227894338184",
+          "deps": [
+            "npm:@nestjs/common",
+            "npm:@sendgrid/mail"
+          ]
+        },
+        {
+          "file": "libs/server-sendgrid/tsconfig.json",
+          "hash": "12834038490315927699"
+        },
+        {
+          "file": "libs/server-sendgrid/tsconfig.lib.json",
+          "hash": "8044021312735567114"
+        },
+        {
+          "file": "libs/server-sendgrid/tsconfig.spec.json",
+          "hash": "2406015174838385060"
+        }
+      ],
+      "server-parameterization": [
+        {
+          "file": "libs/server-parameterization/.babelrc",
+          "hash": "14637968239574891430"
+        },
+        {
+          "file": "libs/server-parameterization/.eslintrc.json",
+          "hash": "13800677001662881425"
+        },
+        {
+          "file": "libs/server-parameterization/README.md",
+          "hash": "2429967154041118345"
+        },
+        {
+          "file": "libs/server-parameterization/jest.config.ts",
+          "hash": "8761654423595492643"
+        },
+        {
+          "file": "libs/server-parameterization/package.json",
+          "hash": "732835247753320711",
+          "deps": [
+            "npm:dotenv-flow",
+            "npm:dotenv"
+          ]
+        },
+        {
+          "file": "libs/server-parameterization/project.json",
+          "hash": "653194855205424422"
+        },
+        {
+          "file": "libs/server-parameterization/src/index.ts",
+          "hash": "12253152727981079434"
+        },
+        {
+          "file": "libs/server-parameterization/src/lib/load-dot-env.function.ts",
+          "hash": "12063551041825016930",
+          "deps": [
+            "npm:path",
+            [
+              "npm:dotenv",
+              "dynamic"
+            ],
+            [
+              "npm:dotenv-flow",
+              "dynamic"
+            ]
+          ]
+        },
+        {
+          "file": "libs/server-parameterization/tsconfig.json",
+          "hash": "12834038490315927699"
+        },
+        {
+          "file": "libs/server-parameterization/tsconfig.lib.json",
+          "hash": "8188472110264778699"
+        },
+        {
+          "file": "libs/server-parameterization/tsconfig.spec.json",
+          "hash": "6514620907549802163"
+        }
+      ],
+      "server-auth": [
+        {
+          "file": "libs/server-auth/.babelrc",
+          "hash": "4734508471883268701"
+        },
+        {
+          "file": "libs/server-auth/.eslintrc.json",
+          "hash": "13800677001662881425"
+        },
+        {
+          "file": "libs/server-auth/README.md",
+          "hash": "5531959732416625721"
+        },
+        {
+          "file": "libs/server-auth/jest.config.ts",
+          "hash": "14533157383973576316"
+        },
+        {
+          "file": "libs/server-auth/package.json",
+          "hash": "13094047575862381171",
+          "deps": [
+            "npm:@nestjs/common",
+            "npm:@nestjs/swagger",
+            "server-common",
+            "npm:bcryptjs",
+            "npm:jsonwebtoken",
+            "npm:rxjs"
+          ]
+        },
+        {
+          "file": "libs/server-auth/project.json",
+          "hash": "17973917866528962352"
+        },
+        {
+          "file": "libs/server-auth/src/index.ts",
+          "hash": "12440839764120251111"
+        },
+        {
+          "file": "libs/server-auth/src/lib/classes/abstract-auth-guard.class.ts",
+          "hash": "16153078549556768751",
+          "deps": [
+            "npm:@nestjs/common",
+            "npm:rxjs"
+          ]
+        },
+        {
+          "file": "libs/server-auth/src/lib/classes/abstract-password-reset-service.class.ts",
+          "hash": "4415638333374823479",
+          "deps": [
+            "npm:@nestjs/common",
+            "npm:bcryptjs"
+          ]
+        },
+        {
+          "file": "libs/server-auth/src/lib/classes/server-auth-config.class.ts",
+          "hash": "11810644550182687685"
+        },
+        {
+          "file": "libs/server-auth/src/lib/classes/token-builder.class.ts",
+          "hash": "15093980096041939959",
+          "deps": [
+            "npm:@nestjs/common"
+          ]
+        },
+        {
+          "file": "libs/server-auth/src/lib/constants/access-token-key.constant.ts",
+          "hash": "5115326232456198663"
+        },
+        {
+          "file": "libs/server-auth/src/lib/controllers/login.controller.ts",
+          "hash": "11598932145638486756",
+          "deps": [
+            "npm:@nestjs/common",
+            "npm:@nestjs/swagger",
+            "server-common"
+          ]
+        },
+        {
+          "file": "libs/server-auth/src/lib/decorators/is-admin.decorator.ts",
+          "hash": "1225832828240893240"
+        },
+        {
+          "file": "libs/server-auth/src/lib/decorators/is-sys-admin.decorator.ts",
+          "hash": "10331248016420198564"
+        },
+        {
+          "file": "libs/server-auth/src/lib/decorators/org-id.decorator.ts",
+          "hash": "7151140758526705153"
+        },
+        {
+          "file": "libs/server-auth/src/lib/decorators/user-id.decorator.ts",
+          "hash": "12350326030312074255"
+        },
+        {
+          "file": "libs/server-auth/src/lib/dtos/auth-tokens.dto.ts",
+          "hash": "15536158890854331143",
+          "deps": [
+            "npm:@nestjs/swagger"
+          ]
+        },
+        {
+          "file": "libs/server-auth/src/lib/dtos/email.dto.ts",
+          "hash": "18425824297161673965"
+        },
+        {
+          "file": "libs/server-auth/src/lib/dtos/login-with-api-credentials.dto.ts",
+          "hash": "13038036379900416915",
+          "deps": [
+            "npm:@nestjs/swagger"
+          ]
+        },
+        {
+          "file": "libs/server-auth/src/lib/dtos/login-with-email-and-password.dto.ts",
+          "hash": "7170087879364843806",
+          "deps": [
+            "npm:@nestjs/swagger"
+          ]
+        },
+        {
+          "file": "libs/server-auth/src/lib/dtos/registration-signup.dto.ts",
+          "hash": "10657238596483504390",
+          "deps": [
+            "npm:@nestjs/swagger"
+          ]
+        },
+        {
+          "file": "libs/server-auth/src/lib/functions/authorize-request.function.ts",
+          "hash": "3414932074134674221",
+          "deps": [
+            "npm:@nestjs/common"
+          ]
+        },
+        {
+          "file": "libs/server-auth/src/lib/functions/compare-password.function.ts",
+          "hash": "17530961862367493185",
+          "deps": [
+            "npm:bcryptjs"
+          ]
+        },
+        {
+          "file": "libs/server-auth/src/lib/functions/create-auth-param-decorator.function.ts",
+          "hash": "3250750164214078084",
+          "deps": [
+            "npm:@nestjs/common"
+          ]
+        },
+        {
+          "file": "libs/server-auth/src/lib/functions/hash-password.function.ts",
+          "hash": "6053839714068503652",
+          "deps": [
+            "npm:bcryptjs"
+          ]
+        },
+        {
+          "file": "libs/server-auth/src/lib/guards/admin.guard.ts",
+          "hash": "5339227053005513718",
+          "deps": [
+            "npm:@nestjs/common"
+          ]
+        },
+        {
+          "file": "libs/server-auth/src/lib/guards/auth.guard.ts",
+          "hash": "3031523898241024033",
+          "deps": [
+            "npm:@nestjs/common"
+          ]
+        },
+        {
+          "file": "libs/server-auth/src/lib/guards/sys-admin.guard.ts",
+          "hash": "7301966831575505294",
+          "deps": [
+            "npm:@nestjs/common"
+          ]
+        },
+        {
+          "file": "libs/server-auth/src/lib/middleware/auth.middleware.ts",
+          "hash": "5034065864585463735",
+          "deps": [
+            "npm:@nestjs/common",
+            "npm:express"
+          ]
+        },
+        {
+          "file": "libs/server-auth/src/lib/server-auth.module.ts",
+          "hash": "8109254212876601869",
+          "deps": [
+            "npm:@nestjs/common",
+            "server-common"
+          ]
+        },
+        {
+          "file": "libs/server-auth/src/lib/services/login.service.ts",
+          "hash": "4810057324232097693",
+          "deps": [
+            "npm:@nestjs/common",
+            "npm:jsonwebtoken"
+          ]
+        },
+        {
+          "file": "libs/server-auth/src/lib/services/token-validation.service.ts",
+          "hash": "15090370264976769809",
+          "deps": [
+            "npm:jsonwebtoken",
+            "npm:@nestjs/common"
+          ]
+        },
+        {
+          "file": "libs/server-auth/tsconfig.json",
+          "hash": "12834038490315927699"
+        },
+        {
+          "file": "libs/server-auth/tsconfig.lib.json",
+          "hash": "8044021312735567114"
+        },
+        {
+          "file": "libs/server-auth/tsconfig.spec.json",
+          "hash": "2406015174838385060"
+        }
+      ],
+      "server-twilio": [
+        {
+          "file": "libs/server-twilio/.babelrc",
+          "hash": "4734508471883268701"
+        },
+        {
+          "file": "libs/server-twilio/.eslintrc.json",
+          "hash": "13800677001662881425"
+        },
+        {
+          "file": "libs/server-twilio/README.md",
+          "hash": "14542080839579918959"
+        },
+        {
+          "file": "libs/server-twilio/jest.config.ts",
+          "hash": "15792872422745397209"
+        },
+        {
+          "file": "libs/server-twilio/package.json",
+          "hash": "8018633432318389161"
+        },
+        {
+          "file": "libs/server-twilio/project.json",
+          "hash": "13777994418346016183"
+        },
+        {
+          "file": "libs/server-twilio/src/index.ts",
+          "hash": "15889906167698399337"
+        },
+        {
+          "file": "libs/server-twilio/src/lib/api-twilio.module.ts",
+          "hash": "18426845011385861620",
+          "deps": [
+            "npm:@nestjs/common",
+            "server-common",
+            "npm:twilio"
+          ]
+        },
+        {
+          "file": "libs/server-twilio/src/lib/classes/server-twilio-config.class.ts",
+          "hash": "7064426554634446471"
+        },
+        {
+          "file": "libs/server-twilio/src/lib/services/twilio.service.ts",
+          "hash": "5936701575063336810",
+          "deps": [
+            "npm:@nestjs/common",
+            "npm:twilio"
+          ]
+        },
+        {
+          "file": "libs/server-twilio/tsconfig.json",
+          "hash": "12834038490315927699"
+        },
+        {
+          "file": "libs/server-twilio/tsconfig.lib.json",
+          "hash": "8044021312735567114"
+        },
+        {
+          "file": "libs/server-twilio/tsconfig.spec.json",
+          "hash": "2406015174838385060"
+        }
+      ],
+      "server-process": [
+        {
+          "file": "libs/server-process/.babelrc",
+          "hash": "14637968239574891430"
+        },
+        {
+          "file": "libs/server-process/.eslintrc.json",
+          "hash": "13800677001662881425"
+        },
+        {
+          "file": "libs/server-process/README.md",
+          "hash": "3733002104071793972"
+        },
+        {
+          "file": "libs/server-process/jest.config.ts",
+          "hash": "2635959794307864789"
+        },
+        {
+          "file": "libs/server-process/package.json",
+          "hash": "6978194121804580235"
+        },
+        {
+          "file": "libs/server-process/project.json",
+          "hash": "6474310595562785830"
+        },
+        {
+          "file": "libs/server-process/src/index.ts",
+          "hash": "15404861705468517333"
+        },
+        {
+          "file": "libs/server-process/src/lib/docker.ts",
+          "hash": "15045536852903060975",
+          "deps": [
+            "npm:child_process",
+            "npm:fs"
+          ]
+        },
+        {
+          "file": "libs/server-process/src/lib/exec-promise.spec.ts",
+          "hash": "8652314457041515849",
+          "deps": [
+            "npm:path"
+          ]
+        },
+        {
+          "file": "libs/server-process/src/lib/exec-promise.ts",
+          "hash": "14336564979140307270",
+          "deps": [
+            "npm:child_process",
+            "npm:fs"
+          ]
+        },
+        {
+          "file": "libs/server-process/src/lib/exec-rx-as-json.ts",
+          "hash": "15625647943847845751",
+          "deps": [
+            "npm:child_process",
+            "npm:rxjs"
+          ]
+        },
+        {
+          "file": "libs/server-process/src/lib/exec-rx-as-lines.ts",
+          "hash": "7820191476025225438",
+          "deps": [
+            "npm:child_process",
+            "npm:rxjs"
+          ]
+        },
+        {
+          "file": "libs/server-process/src/lib/exec-rx.spec.ts",
+          "hash": "15387596359286065633",
+          "deps": [
+            "npm:rxjs"
+          ]
+        },
+        {
+          "file": "libs/server-process/src/lib/exec-rx.ts",
+          "hash": "13715970177502164813",
+          "deps": [
+            "npm:child_process",
+            "npm:fs",
+            "npm:rxjs"
+          ]
+        },
+        {
+          "file": "libs/server-process/src/lib/exit.ts",
+          "hash": "6275742127543645787"
+        },
+        {
+          "file": "libs/server-process/src/lib/listen.ts",
+          "hash": "5077262643296651250",
+          "deps": [
+            "npm:rxjs"
+          ]
+        },
+        {
+          "file": "libs/server-process/src/lib/psql.ts",
+          "hash": "6619484959225261090"
+        },
+        {
+          "file": "libs/server-process/src/lib/spawn-promise.spec.ts",
+          "hash": "14516965410679735310",
+          "deps": [
+            "npm:path"
+          ]
+        },
+        {
+          "file": "libs/server-process/src/lib/spawn-promise.ts",
+          "hash": "3575807648096041231",
+          "deps": [
+            "npm:child_process"
+          ]
+        },
+        {
+          "file": "libs/server-process/tsconfig.json",
+          "hash": "12834038490315927699"
+        },
+        {
+          "file": "libs/server-process/tsconfig.lib.json",
+          "hash": "8188472110264778699"
+        },
+        {
+          "file": "libs/server-process/tsconfig.spec.json",
+          "hash": "6514620907549802163"
+        }
+      ],
+      "server-docx": [
+        {
+          "file": "libs/server-docx/.babelrc",
+          "hash": "4734508471883268701"
+        },
+        {
+          "file": "libs/server-docx/.eslintrc.json",
+          "hash": "13800677001662881425"
+        },
+        {
+          "file": "libs/server-docx/README.md",
+          "hash": "13952862208189671287"
+        },
+        {
+          "file": "libs/server-docx/jest.config.ts",
+          "hash": "2187267068260913577"
+        },
+        {
+          "file": "libs/server-docx/package.json",
+          "hash": "17979069489071139689"
+        },
+        {
+          "file": "libs/server-docx/project.json",
+          "hash": "16290839056132255980"
+        },
+        {
+          "file": "libs/server-docx/src/index.ts",
+          "hash": "455429134461988174"
+        },
+        {
+          "file": "libs/server-docx/src/lib/functions/__snapshots__/extract-content-from-docx.function.spec.ts.snap",
+          "hash": "15523105059667717722"
+        },
+        {
+          "file": "libs/server-docx/src/lib/functions/__snapshots__/get-file-paths.function.spec.ts.snap",
+          "hash": "16160758858204008171"
+        },
+        {
+          "file": "libs/server-docx/src/lib/functions/create-working-directory.function.spec.ts",
+          "hash": "4935814681150453476",
+          "deps": [
+            "npm:node:fs",
+            "server-process"
+          ]
+        },
+        {
+          "file": "libs/server-docx/src/lib/functions/create-working-directory.function.ts",
+          "hash": "5971406139930075090",
+          "deps": [
+            "server-process"
+          ]
+        },
+        {
+          "file": "libs/server-docx/src/lib/functions/docx.function.spec.ts",
+          "hash": "9972019843457792836",
+          "deps": [
+            "server-process"
+          ]
+        },
+        {
+          "file": "libs/server-docx/src/lib/functions/docx.function.ts",
+          "hash": "9817193045694785799",
+          "deps": [
+            "npm:node:fs/promises",
+            "npm:node:crypto",
+            "server-disk",
+            "server-process"
+          ]
+        },
+        {
+          "file": "libs/server-docx/src/lib/functions/extract-content-from-docx.function.spec.ts",
+          "hash": "16030073172758258959",
+          "deps": [
+            "server-process"
+          ]
+        },
+        {
+          "file": "libs/server-docx/src/lib/functions/extract-content-from-docx.function.ts",
+          "hash": "14571831507053952775",
+          "deps": [
+            "npm:node:fs/promises",
+            "server-disk"
+          ]
+        },
+        {
+          "file": "libs/server-docx/src/lib/functions/get-file-paths.function.spec.ts",
+          "hash": "1821610816912094972"
+        },
+        {
+          "file": "libs/server-docx/src/lib/functions/get-file-paths.function.ts",
+          "hash": "12530413649304142045",
+          "deps": [
+            "npm:node:path"
+          ]
+        },
+        {
+          "file": "libs/server-docx/src/lib/functions/write-content-to-docx.function.spec.ts",
+          "hash": "17883386429056523199",
+          "deps": [
+            "server-process"
+          ]
+        },
+        {
+          "file": "libs/server-docx/src/lib/functions/write-content-to-docx.function.ts",
+          "hash": "11850068752593587217",
+          "deps": [
+            "npm:node:fs/promises",
+            "server-disk"
+          ]
+        },
+        {
+          "file": "libs/server-docx/tsconfig.json",
+          "hash": "12834038490315927699"
+        },
+        {
+          "file": "libs/server-docx/tsconfig.lib.json",
+          "hash": "13956759191154378676"
+        },
+        {
+          "file": "libs/server-docx/tsconfig.spec.json",
+          "hash": "3122961996941006950"
+        }
+      ],
+      "server-aws-s3": [
+        {
+          "file": "libs/server-aws-s3/.babelrc",
+          "hash": "4734508471883268701"
+        },
+        {
+          "file": "libs/server-aws-s3/.eslintrc.json",
+          "hash": "13800677001662881425"
+        },
+        {
+          "file": "libs/server-aws-s3/README.md",
+          "hash": "9139011461687184861"
+        },
+        {
+          "file": "libs/server-aws-s3/jest.config.ts",
+          "hash": "17503165202630493855"
+        },
+        {
+          "file": "libs/server-aws-s3/package.json",
+          "hash": "15070849994560265827"
+        },
+        {
+          "file": "libs/server-aws-s3/project.json",
+          "hash": "10728335665346808647"
+        },
+        {
+          "file": "libs/server-aws-s3/src/index.ts",
+          "hash": "11848925766548401111"
+        },
+        {
+          "file": "libs/server-aws-s3/src/lib/classes/server-aws-s3-config.class.ts",
+          "hash": "402336720015029941"
+        },
+        {
+          "file": "libs/server-aws-s3/src/lib/constants/filename-sanitization-map.constant.ts",
+          "hash": "4935235413904220831"
+        },
+        {
+          "file": "libs/server-aws-s3/src/lib/functions/extract-s3-key-from-url.function.ts",
+          "hash": "12641638557636566785"
+        },
+        {
+          "file": "libs/server-aws-s3/src/lib/functions/extract-s3-name-from-key.function.ts",
+          "hash": "7751070945454070692"
+        },
+        {
+          "file": "libs/server-aws-s3/src/lib/functions/extract-s3-name-from-url.function.ts",
+          "hash": "13173936325477808957"
+        },
+        {
+          "file": "libs/server-aws-s3/src/lib/functions/sanitize-filename.function.ts",
+          "hash": "4581591835059399394"
+        },
+        {
+          "file": "libs/server-aws-s3/src/lib/interfaces/s3-upload-response.interface.ts",
+          "hash": "990875839055086301"
+        },
+        {
+          "file": "libs/server-aws-s3/src/lib/server-aws-s3.module.ts",
+          "hash": "12073139248341486986",
+          "deps": [
+            "npm:@nestjs/common",
+            "npm:aws-sdk",
+            "server-common"
+          ]
+        },
+        {
+          "file": "libs/server-aws-s3/src/lib/services/s3.service.ts",
+          "hash": "11058925932120451802",
+          "deps": [
+            "npm:@nestjs/common",
+            "npm:aws-sdk"
+          ]
+        },
+        {
+          "file": "libs/server-aws-s3/tsconfig.json",
+          "hash": "12834038490315927699"
+        },
+        {
+          "file": "libs/server-aws-s3/tsconfig.lib.json",
+          "hash": "8044021312735567114"
+        },
+        {
+          "file": "libs/server-aws-s3/tsconfig.spec.json",
+          "hash": "2406015174838385060"
+        }
+      ],
+      "browser-canvas": [
+        {
+          "file": "libs/browser-canvas/.eslintrc.json",
+          "hash": "10905178498824427073"
+        },
+        {
+          "file": "libs/browser-canvas/README.md",
+          "hash": "18343449555693246013"
+        },
+        {
+          "file": "libs/browser-canvas/package.json",
+          "hash": "17040962793279989754"
+        },
+        {
+          "file": "libs/browser-canvas/project.json",
+          "hash": "12258228411158318767"
+        },
+        {
+          "file": "libs/browser-canvas/src/index.ts",
+          "hash": "13916998753496276070"
+        },
+        {
+          "file": "libs/browser-canvas/src/lib/replace-image-color.function.ts",
+          "hash": "5401112660733710653"
+        },
+        {
+          "file": "libs/browser-canvas/src/lib/replace-white-with-clear.function.ts",
+          "hash": "2909706230240202482"
+        },
+        {
+          "file": "libs/browser-canvas/tsconfig.json",
+          "hash": "5840880287502376438"
+        },
+        {
+          "file": "libs/browser-canvas/tsconfig.lib.json",
+          "hash": "3632393694954060084"
+        },
+        {
+          "file": "libs/browser-canvas/tsconfig.spec.json",
+          "hash": "5677392422502041953"
+        },
+        {
+          "file": "libs/browser-canvas/vite.config.ts",
+          "hash": "4724483431659276902",
+          "deps": [
+            "npm:vite",
+            "npm:vite-plugin-dts",
+            "npm:path",
+            "npm:@nx/vite"
+          ]
+        }
+      ],
+      "server-html": [
+        {
+          "file": "libs/server-html/.babelrc",
+          "hash": "4734508471883268701"
+        },
+        {
+          "file": "libs/server-html/.eslintrc.json",
+          "hash": "13800677001662881425"
+        },
+        {
+          "file": "libs/server-html/README.md",
+          "hash": "13189515214361141393"
+        },
+        {
+          "file": "libs/server-html/jest.config.ts",
+          "hash": "8910285139911667748"
+        },
+        {
+          "file": "libs/server-html/package.json",
+          "hash": "2021719549232735994"
+        },
+        {
+          "file": "libs/server-html/project.json",
+          "hash": "7544405249202122121"
+        },
+        {
+          "file": "libs/server-html/src/index.ts",
+          "hash": "13287067056263137184"
+        },
+        {
+          "file": "libs/server-html/src/lib/__snapshots__/elements.spec.ts.snap",
+          "hash": "5298868060308002202"
+        },
+        {
+          "file": "libs/server-html/src/lib/__snapshots__/tags.spec.ts.snap",
+          "hash": "7518529168199337161"
+        },
+        {
+          "file": "libs/server-html/src/lib/deprecated/a.function.ts",
+          "hash": "12095787566814586234"
+        },
+        {
+          "file": "libs/server-html/src/lib/deprecated/html-element-renderer.type.ts",
+          "hash": "12833087178207422647"
+        },
+        {
+          "file": "libs/server-html/src/lib/deprecated/html.function.ts",
+          "hash": "4266243257007247767"
+        },
+        {
+          "file": "libs/server-html/src/lib/deprecated/login-button.function.ts",
+          "hash": "9246098745612291097"
+        },
+        {
+          "file": "libs/server-html/src/lib/deprecated/self-closing-html-element-renderer.type.ts",
+          "hash": "17794070542424421352"
+        },
+        {
+          "file": "libs/server-html/src/lib/deprecated/self-closing-tag.function.ts",
+          "hash": "7011091182979408535"
+        },
+        {
+          "file": "libs/server-html/src/lib/deprecated/tag.function.ts",
+          "hash": "4046046053434546199"
+        },
+        {
+          "file": "libs/server-html/src/lib/deprecated/tags.spec.ts",
+          "hash": "7579050370624796140"
+        },
+        {
+          "file": "libs/server-html/src/lib/deprecated/tags.ts",
+          "hash": "1069293145966532881"
+        },
+        {
+          "file": "libs/server-html/src/lib/email-body.function.ts",
+          "hash": "6997983624077709198"
+        },
+        {
+          "file": "libs/server-html/src/lib/primitives/element.function.ts",
+          "hash": "9278984108835584019"
+        },
+        {
+          "file": "libs/server-html/src/lib/primitives/elements.spec.ts",
+          "hash": "10921841452384490393"
+        },
+        {
+          "file": "libs/server-html/src/lib/primitives/elements.ts",
+          "hash": "15616450872806774823"
+        },
+        {
+          "file": "libs/server-html/src/lib/primitives/format-attributes.function.ts",
+          "hash": "9991112131170050801"
+        },
+        {
+          "file": "libs/server-html/src/lib/primitives/inline-style.function.ts",
+          "hash": "18362699759635342384"
+        },
+        {
+          "file": "libs/server-html/src/lib/primitives/self-closing-element.function.ts",
+          "hash": "2837665512033024512"
+        },
+        {
+          "file": "libs/server-html/src/lib/styles/button-styles.constant.ts",
+          "hash": "15150015643643661458"
+        },
+        {
+          "file": "libs/server-html/src/lib/styles/font-styles.constant.ts",
+          "hash": "4659468097646203974"
+        },
+        {
+          "file": "libs/server-html/src/lib/table.function.ts",
+          "hash": "15575115508433530990"
+        },
+        {
+          "file": "libs/server-html/src/lib/types/attributes.type.ts",
+          "hash": "7441359330285050587"
+        },
+        {
+          "file": "libs/server-html/src/lib/types/element-renderer.type.ts",
+          "hash": "11595050073543887933"
+        },
+        {
+          "file": "libs/server-html/src/lib/types/self-closing-element-renderer.type.ts",
+          "hash": "896745636395017892"
+        },
+        {
+          "file": "libs/server-html/tsconfig.json",
+          "hash": "12834038490315927699"
+        },
+        {
+          "file": "libs/server-html/tsconfig.lib.json",
+          "hash": "8044021312735567114"
+        },
+        {
+          "file": "libs/server-html/tsconfig.spec.json",
+          "hash": "2406015174838385060"
+        }
+      ],
+      "server-aws-ses": [
+        {
+          "file": "libs/server-aws-ses/.babelrc",
+          "hash": "4734508471883268701"
+        },
+        {
+          "file": "libs/server-aws-ses/.eslintrc.json",
+          "hash": "13800677001662881425"
+        },
+        {
+          "file": "libs/server-aws-ses/README.md",
+          "hash": "9721102181950507860"
+        },
+        {
+          "file": "libs/server-aws-ses/jest.config.ts",
+          "hash": "8962583554761442603"
+        },
+        {
+          "file": "libs/server-aws-ses/package.json",
+          "hash": "8133818286279448988"
+        },
+        {
+          "file": "libs/server-aws-ses/project.json",
+          "hash": "12246648810664272446"
+        },
+        {
+          "file": "libs/server-aws-ses/src/index.ts",
+          "hash": "16892830342772316682"
+        },
+        {
+          "file": "libs/server-aws-ses/src/lib/classes/server-aws-ses-config.class.ts",
+          "hash": "4922953835758869137"
+        },
+        {
+          "file": "libs/server-aws-ses/src/lib/server-aws-ses.module.ts",
+          "hash": "12139798207011805798",
+          "deps": [
+            "npm:@nestjs/common",
+            "server-common",
+            "npm:aws-sdk"
+          ]
+        },
+        {
+          "file": "libs/server-aws-ses/src/lib/services/email.service.ts",
+          "hash": "16027789842365502086",
+          "deps": [
+            "npm:@nestjs/common",
+            "npm:aws-sdk"
+          ]
+        },
+        {
+          "file": "libs/server-aws-ses/tsconfig.json",
+          "hash": "12834038490315927699"
+        },
+        {
+          "file": "libs/server-aws-ses/tsconfig.lib.json",
+          "hash": "8044021312735567114"
+        },
+        {
+          "file": "libs/server-aws-ses/tsconfig.spec.json",
+          "hash": "2406015174838385060"
+        }
+      ],
+      "isomorphic-jsonata": [
+        {
+          "file": "libs/isomorphic-jsonata/.babelrc",
+          "hash": "14637968239574891430"
+        },
+        {
+          "file": "libs/isomorphic-jsonata/.eslintrc.json",
+          "hash": "13800677001662881425"
+        },
+        {
+          "file": "libs/isomorphic-jsonata/README.md",
+          "hash": "8903031834607653076"
+        },
+        {
+          "file": "libs/isomorphic-jsonata/jest.config.ts",
+          "hash": "8308405959657485758"
+        },
+        {
+          "file": "libs/isomorphic-jsonata/package.json",
+          "hash": "12834712010179879657"
+        },
+        {
+          "file": "libs/isomorphic-jsonata/project.json",
+          "hash": "977548697599795980"
+        },
+        {
+          "file": "libs/isomorphic-jsonata/src/index.ts",
+          "hash": "13606152769257788705"
+        },
+        {
+          "file": "libs/isomorphic-jsonata/src/lib/classes/jsonata-expression.class.ts",
+          "hash": "16352719382773495311",
+          "deps": [
+            "isomorphic-common"
+          ]
+        },
+        {
+          "file": "libs/isomorphic-jsonata/src/lib/functions/execute-jsonata.function.ts",
+          "hash": "3920354078480926094",
+          "deps": [
+            "npm:jsonata"
+          ]
+        },
+        {
+          "file": "libs/isomorphic-jsonata/src/lib/functions/find-and-replace.function.ts",
+          "hash": "2165787389724919930"
+        },
+        {
+          "file": "libs/isomorphic-jsonata/src/lib/interfaces/jsonata-expression.interface.ts",
+          "hash": "7578532791546321994"
+        },
+        {
+          "file": "libs/isomorphic-jsonata/src/lib/interfaces/jsonata-fn-config.interface.ts",
+          "hash": "6749896700972315114"
+        },
+        {
+          "file": "libs/isomorphic-jsonata/src/lib/interfaces/jsonata-fn.interface.ts",
+          "hash": "3048058870844376596"
+        },
+        {
+          "file": "libs/isomorphic-jsonata/tsconfig.json",
+          "hash": "12834038490315927699"
+        },
+        {
+          "file": "libs/isomorphic-jsonata/tsconfig.lib.json",
+          "hash": "11680307339296963792"
+        },
+        {
+          "file": "libs/isomorphic-jsonata/tsconfig.spec.json",
+          "hash": "6514620907549802163"
+        }
+      ],
+      "isomorphic-axios": [
+        {
+          "file": "libs/isomorphic-axios/.eslintrc.json",
+          "hash": "10905178498824427073"
+        },
+        {
+          "file": "libs/isomorphic-axios/README.md",
+          "hash": "16633115777249918756"
+        },
+        {
+          "file": "libs/isomorphic-axios/package.json",
+          "hash": "12079028502055256530"
+        },
+        {
+          "file": "libs/isomorphic-axios/project.json",
+          "hash": "11484160416000554773"
+        },
+        {
+          "file": "libs/isomorphic-axios/src/index.ts",
+          "hash": "17362772149838411972"
+        },
+        {
+          "file": "libs/isomorphic-axios/src/lib/axios-instance-factory.function.ts",
+          "hash": "4842519285924504483",
+          "deps": [
+            "npm:axios"
+          ]
+        },
+        {
+          "file": "libs/isomorphic-axios/src/lib/default-axios-config.constant.ts",
+          "hash": "4838112864759085920"
+        },
+        {
+          "file": "libs/isomorphic-axios/src/lib/error-handler-map.type.ts",
+          "hash": "11537587951295201604"
+        },
+        {
+          "file": "libs/isomorphic-axios/src/lib/error-handler.type.ts",
+          "hash": "10488700218830183392",
+          "deps": [
+            "npm:axios"
+          ]
+        },
+        {
+          "file": "libs/isomorphic-axios/src/lib/header-setting-map.type.ts",
+          "hash": "16401095327388219589"
+        },
+        {
+          "file": "libs/isomorphic-axios/src/lib/retry-axios-call.function.ts",
+          "hash": "11730665280369528560",
+          "deps": [
+            "npm:axios"
+          ]
+        },
+        {
+          "file": "libs/isomorphic-axios/src/lib/retry-config.interface.ts",
+          "hash": "6184709082092221123",
+          "deps": [
+            "npm:axios"
+          ]
+        },
+        {
+          "file": "libs/isomorphic-axios/tsconfig.json",
+          "hash": "5840880287502376438"
+        },
+        {
+          "file": "libs/isomorphic-axios/tsconfig.lib.json",
+          "hash": "3632393694954060084"
+        },
+        {
+          "file": "libs/isomorphic-axios/tsconfig.spec.json",
+          "hash": "5677392422502041953"
+        },
+        {
+          "file": "libs/isomorphic-axios/vite.config.ts",
+          "hash": "9508265849152312558",
+          "deps": [
+            "npm:vite",
+            "npm:vite-plugin-dts",
+            "npm:path",
+            "npm:@nx/vite"
+          ]
+        }
+      ],
+      "server-disk": [
+        {
+          "file": "libs/server-disk/.babelrc",
+          "hash": "14637968239574891430"
+        },
+        {
+          "file": "libs/server-disk/.eslintrc.json",
+          "hash": "13800677001662881425"
+        },
+        {
+          "file": "libs/server-disk/README.md",
+          "hash": "2670772685298871198"
+        },
+        {
+          "file": "libs/server-disk/jest.config.ts",
+          "hash": "18347823521840358326"
+        },
+        {
+          "file": "libs/server-disk/package.json",
+          "hash": "3273483471300349186"
+        },
+        {
+          "file": "libs/server-disk/project.json",
+          "hash": "7142266057993584186"
+        },
+        {
+          "file": "libs/server-disk/src/index.ts",
+          "hash": "1901813605322333168"
+        },
+        {
+          "file": "libs/server-disk/src/lib/csv/map-csv-to-object.function.ts",
+          "hash": "1541202072165664403"
+        },
+        {
+          "file": "libs/server-disk/src/lib/csv/remove-comma.function.ts",
+          "hash": "17061345086992784608"
+        },
+        {
+          "file": "libs/server-disk/src/lib/csv/replace-pipe-with-comma.function.ts",
+          "hash": "11680956288978106497"
+        },
+        {
+          "file": "libs/server-disk/src/lib/log-error.function.ts",
+          "hash": "6342920392622763280"
+        },
+        {
+          "file": "libs/server-disk/src/lib/read-file-rx.function.spec.ts",
+          "hash": "2944790810243893463"
+        },
+        {
+          "file": "libs/server-disk/src/lib/read-file-rx.function.ts",
+          "hash": "2796351431552072207",
+          "deps": [
+            "npm:fs",
+            "npm:rxjs"
+          ]
+        },
+        {
+          "file": "libs/server-disk/src/lib/read-lines-rx.function.ts",
+          "hash": "15250788876061889364",
+          "deps": [
+            "npm:rxjs"
+          ]
+        },
+        {
+          "file": "libs/server-disk/src/lib/read-object-rx.function.ts",
+          "hash": "14944142912735006852",
+          "deps": [
+            "npm:rxjs"
+          ]
+        },
+        {
+          "file": "libs/server-disk/src/lib/stream-file-rx.function.ts",
+          "hash": "10090987511922356088",
+          "deps": [
+            "npm:fs",
+            "npm:readline",
+            "npm:rxjs"
+          ]
+        },
+        {
+          "file": "libs/server-disk/src/lib/unzip.function.ts",
+          "hash": "8514287424975261127",
+          "deps": [
+            "server-process"
+          ]
+        },
+        {
+          "file": "libs/server-disk/src/lib/write-buffer-to-disk.function.spec.ts",
+          "hash": "14470879162581592943",
+          "deps": [
+            "npm:node:fs/promises",
+            "npm:node:fs"
+          ]
+        },
+        {
+          "file": "libs/server-disk/src/lib/write-buffer-to-disk.function.ts",
+          "hash": "17202968675401507778",
+          "deps": [
+            "npm:node:fs",
+            "npm:node:fs/promises"
+          ]
+        },
+        {
+          "file": "libs/server-disk/src/lib/write-file-rx.function.ts",
+          "hash": "14386055120666559682",
+          "deps": [
+            "npm:fs",
+            "npm:rxjs"
+          ]
+        },
+        {
+          "file": "libs/server-disk/src/lib/write-object-rx.function.ts",
+          "hash": "12660252890416301128"
+        },
+        {
+          "file": "libs/server-disk/src/lib/zip.function.ts",
+          "hash": "8514543841616061481",
+          "deps": [
+            "server-process"
+          ]
+        },
+        {
+          "file": "libs/server-disk/tsconfig.json",
+          "hash": "12834038490315927699"
+        },
+        {
+          "file": "libs/server-disk/tsconfig.lib.json",
+          "hash": "8188472110264778699"
+        },
+        {
+          "file": "libs/server-disk/tsconfig.spec.json",
+          "hash": "6514620907549802163"
+        }
+      ],
+      "server-open-ai": [
+        {
+          "file": "libs/server-open-ai/.babelrc",
+          "hash": "4734508471883268701"
+        },
+        {
+          "file": "libs/server-open-ai/.eslintrc.json",
+          "hash": "13800677001662881425"
+        },
+        {
+          "file": "libs/server-open-ai/README.md",
+          "hash": "2300884360349999210"
+        },
+        {
+          "file": "libs/server-open-ai/jest.config.ts",
+          "hash": "15104383452316875075"
+        },
+        {
+          "file": "libs/server-open-ai/package.json",
+          "hash": "1856491887706712877"
+        },
+        {
+          "file": "libs/server-open-ai/project.json",
+          "hash": "15555319435727665075"
+        },
+        {
+          "file": "libs/server-open-ai/src/index.ts",
+          "hash": "16696898696001995464"
+        },
+        {
+          "file": "libs/server-open-ai/src/lib/assets/instant-pot-manual.pdf",
+          "hash": "14774503269333797824"
+        },
+        {
+          "file": "libs/server-open-ai/src/lib/assets/so.txt",
+          "hash": "15996268295210444744"
+        },
+        {
+          "file": "libs/server-open-ai/src/lib/assets/swan-shower-base-install-guide.pdf",
+          "hash": "1929630134256259405"
+        },
+        {
+          "file": "libs/server-open-ai/src/lib/assets/test.txt",
+          "hash": "17537190427813988532"
+        },
+        {
+          "file": "libs/server-open-ai/src/lib/classes/open-ai-answer.class.ts",
+          "hash": "6763098357975454058"
+        },
+        {
+          "file": "libs/server-open-ai/src/lib/classes/open-ai-data.class.ts",
+          "hash": "13433283131859177556"
+        },
+        {
+          "file": "libs/server-open-ai/src/lib/classes/server-open-ai-config.class.ts",
+          "hash": "12093671976379929734"
+        },
+        {
+          "file": "libs/server-open-ai/src/lib/functions/__snapshots__/extract-text.function.spec.ts.snap",
+          "hash": "2409817809051012794"
+        },
+        {
+          "file": "libs/server-open-ai/src/lib/functions/extract-text.function.spec.ts",
+          "hash": "16460233654106997540",
+          "deps": [
+            "npm:node:path"
+          ]
+        },
+        {
+          "file": "libs/server-open-ai/src/lib/functions/extract-text.function.ts",
+          "hash": "11709369105424355662",
+          "deps": [
+            "npm:node:fs/promises",
+            "npm:node:path",
+            "npm:pdf-parse",
+            "npm:any-text"
+          ]
+        },
+        {
+          "file": "libs/server-open-ai/src/lib/server-open-ai.module.ts",
+          "hash": "13257256724330187211",
+          "deps": [
+            "npm:@nestjs/common",
+            "server-common",
+            "npm:openai"
+          ]
+        },
+        {
+          "file": "libs/server-open-ai/src/lib/services/__snapshots__/open-ai.service.spec.ts.snap",
+          "hash": "3396741121280148576"
+        },
+        {
+          "file": "libs/server-open-ai/src/lib/services/open-ai.service.spec.ts",
+          "hash": "1034242524853237244",
+          "deps": [
+            "npm:node:path",
+            "npm:openai",
+            "server-parameterization"
+          ]
+        },
+        {
+          "file": "libs/server-open-ai/src/lib/services/open-ai.service.ts",
+          "hash": "7350340725598160093",
+          "deps": [
+            "npm:@nestjs/common",
+            "npm:multer",
+            "npm:uuid",
+            "npm:openai",
+            "npm:@dqbd/tiktoken",
+            "npm:node:fs",
+            "npm:compute-cosine-similarity",
+            "server-process",
+            "npm:axios"
+          ]
+        },
+        {
+          "file": "libs/server-open-ai/tsconfig.json",
+          "hash": "12834038490315927699"
+        },
+        {
+          "file": "libs/server-open-ai/tsconfig.lib.json",
+          "hash": "13956759191154378676"
+        },
+        {
+          "file": "libs/server-open-ai/tsconfig.spec.json",
+          "hash": "3122961996941006950"
+        }
+      ],
+      "server-stripe": [
+        {
+          "file": "libs/server-stripe/.babelrc",
+          "hash": "4734508471883268701"
+        },
+        {
+          "file": "libs/server-stripe/.eslintrc.json",
+          "hash": "13800677001662881425"
+        },
+        {
+          "file": "libs/server-stripe/README.md",
+          "hash": "11183540029398384616"
+        },
+        {
+          "file": "libs/server-stripe/jest.config.ts",
+          "hash": "12081614119120368367"
+        },
+        {
+          "file": "libs/server-stripe/package.json",
+          "hash": "8799061554276852596"
+        },
+        {
+          "file": "libs/server-stripe/project.json",
+          "hash": "13461842876855095580"
+        },
+        {
+          "file": "libs/server-stripe/src/index.ts",
+          "hash": "13943322018445334721"
+        },
+        {
+          "file": "libs/server-stripe/src/lib/classes/server-stripe-config.class.ts",
+          "hash": "9958080122639778288",
+          "deps": [
+            "npm:stripe"
+          ]
+        },
+        {
+          "file": "libs/server-stripe/src/lib/interfaces/checkout-params.interface.ts",
+          "hash": "10119886424544486388",
+          "deps": [
+            "npm:stripe"
+          ]
+        },
+        {
+          "file": "libs/server-stripe/src/lib/server-stripe.module.ts",
+          "hash": "10553028951213526781",
+          "deps": [
+            "npm:@nestjs/common",
+            "server-common",
+            "npm:stripe"
+          ]
+        },
+        {
+          "file": "libs/server-stripe/src/lib/services/stripe.service.ts",
+          "hash": "16192536194005305431",
+          "deps": [
+            "npm:@nestjs/common",
+            "npm:stripe"
+          ]
+        },
+        {
+          "file": "libs/server-stripe/tsconfig.json",
+          "hash": "12834038490315927699"
+        },
+        {
+          "file": "libs/server-stripe/tsconfig.lib.json",
+          "hash": "8044021312735567114"
+        },
+        {
+          "file": "libs/server-stripe/tsconfig.spec.json",
+          "hash": "2406015174838385060"
+        }
+      ],
+      "browser-gaming": [
+        {
+          "file": "libs/browser-gaming/.eslintrc.json",
+          "hash": "10905178498824427073"
+        },
+        {
+          "file": "libs/browser-gaming/README.md",
+          "hash": "3466324765334138859"
+        },
+        {
+          "file": "libs/browser-gaming/index.html",
+          "hash": "6607975398458050303"
+        },
+        {
+          "file": "libs/browser-gaming/package.json",
+          "hash": "17116204062021975627"
+        },
+        {
+          "file": "libs/browser-gaming/project.json",
+          "hash": "6599245732240368887"
+        },
+        {
+          "file": "libs/browser-gaming/src/assets/backgrounds/racing-background/PNG/Layers/layer-1.png",
+          "hash": "15963062666509824771"
+        },
+        {
+          "file": "libs/browser-gaming/src/assets/backgrounds/racing-background/PNG/Layers/layer-2.png",
+          "hash": "17451853586880605323"
+        },
+        {
+          "file": "libs/browser-gaming/src/assets/backgrounds/racing-background/PNG/Layers/layer-3.png",
+          "hash": "10878016115007392776"
+        },
+        {
+          "file": "libs/browser-gaming/src/assets/backgrounds/racing-background/PNG/Layers/layer-4.png",
+          "hash": "14143423904554483160"
+        },
+        {
+          "file": "libs/browser-gaming/src/assets/backgrounds/racing-background/PNG/racing_road_game-background.png",
+          "hash": "7592619319189362497"
+        },
+        {
+          "file": "libs/browser-gaming/src/assets/backgrounds/racing-background/racing road game background.ai",
+          "hash": "16359589876664777180"
+        },
+        {
+          "file": "libs/browser-gaming/src/assets/backgrounds/racing-background/racing road game background.eps",
+          "hash": "8373035648417280739"
+        },
+        {
+          "file": "libs/browser-gaming/src/assets/backgrounds/racing-background/racing road game background.psd",
+          "hash": "10580822655423988276"
+        },
+        {
+          "file": "libs/browser-gaming/src/assets/backgrounds/racing-background/readme.txt",
+          "hash": "6929831300498949145"
+        },
+        {
+          "file": "libs/browser-gaming/src/assets/characters/dad/j/j_000.png",
+          "hash": "615653952744462131"
+        },
+        {
+          "file": "libs/browser-gaming/src/assets/characters/dad/j/j_001.png",
+          "hash": "13082790993160146653"
+        },
+        {
+          "file": "libs/browser-gaming/src/assets/characters/dad/j/j_002.png",
+          "hash": "17088497338136123226"
+        },
+        {
+          "file": "libs/browser-gaming/src/assets/characters/dad/j/j_003.png",
+          "hash": "1814476706330608522"
+        },
+        {
+          "file": "libs/browser-gaming/src/assets/characters/dad/j/j_004.png",
+          "hash": "10201103687292374191"
+        },
+        {
+          "file": "libs/browser-gaming/src/assets/characters/dad/j/j_005.png",
+          "hash": "17796852008022519617"
+        },
+        {
+          "file": "libs/browser-gaming/src/assets/characters/dad/j/j_006.png",
+          "hash": "14545923781368722399"
+        },
+        {
+          "file": "libs/browser-gaming/src/assets/characters/dad/j/j_007.png",
+          "hash": "10430004595784933113"
+        },
+        {
+          "file": "libs/browser-gaming/src/assets/characters/dad/j/j_008.png",
+          "hash": "2925394348362870111"
+        },
+        {
+          "file": "libs/browser-gaming/src/assets/characters/dad/j/j_009.png",
+          "hash": "9083943937628027470"
+        },
+        {
+          "file": "libs/browser-gaming/src/assets/characters/dad/j/j_010.png",
+          "hash": "16559637673314445287"
+        },
+        {
+          "file": "libs/browser-gaming/src/assets/characters/dad/j/j_011.png",
+          "hash": "6691811343922487303"
+        },
+        {
+          "file": "libs/browser-gaming/src/assets/characters/dad/j/j_012.png",
+          "hash": "7098773710574206318"
+        },
+        {
+          "file": "libs/browser-gaming/src/assets/characters/dad/j/j_013.png",
+          "hash": "1434130337634165884"
+        },
+        {
+          "file": "libs/browser-gaming/src/assets/characters/dad/j/j_014.png",
+          "hash": "1501152794597181800"
+        },
+        {
+          "file": "libs/browser-gaming/src/assets/characters/dad/j/j_015.png",
+          "hash": "15086358605703267768"
+        },
+        {
+          "file": "libs/browser-gaming/src/assets/characters/dad/j/j_016.png",
+          "hash": "7874778479374868046"
+        },
+        {
+          "file": "libs/browser-gaming/src/assets/characters/dad/j/j_017.png",
+          "hash": "8421783107259010973"
+        },
+        {
+          "file": "libs/browser-gaming/src/assets/characters/dad/j/j_018.png",
+          "hash": "5915523311646320933"
+        },
+        {
+          "file": "libs/browser-gaming/src/assets/characters/dad/j/j_019.png",
+          "hash": "15846030593550402572"
+        },
+        {
+          "file": "libs/browser-gaming/src/assets/characters/dad/j/j_020.png",
+          "hash": "14909885303916436493"
+        },
+        {
+          "file": "libs/browser-gaming/src/assets/characters/dad/j/j_021.png",
+          "hash": "6066246012278807359"
+        },
+        {
+          "file": "libs/browser-gaming/src/assets/characters/dad/j/j_022.png",
+          "hash": "14532361420724743242"
+        },
+        {
+          "file": "libs/browser-gaming/src/assets/characters/dad/j/j_023.png",
+          "hash": "11229432195815804384"
+        },
+        {
+          "file": "libs/browser-gaming/src/assets/characters/dad/j/j_024.png",
+          "hash": "6188072665464632513"
+        },
+        {
+          "file": "libs/browser-gaming/src/assets/characters/dad/j/visit_bevouliin_dot_com.txt",
+          "hash": "297347279792078340"
+        },
+        {
+          "file": "libs/browser-gaming/src/assets/characters/dad/ko/ko_000.png",
+          "hash": "3828883552955784572"
+        },
+        {
+          "file": "libs/browser-gaming/src/assets/characters/dad/ko/ko_001.png",
+          "hash": "12584853524632457101"
+        },
+        {
+          "file": "libs/browser-gaming/src/assets/characters/dad/ko/ko_002.png",
+          "hash": "8456148258152914840"
+        },
+        {
+          "file": "libs/browser-gaming/src/assets/characters/dad/ko/ko_003.png",
+          "hash": "3476862720452662082"
+        },
+        {
+          "file": "libs/browser-gaming/src/assets/characters/dad/ko/ko_004.png",
+          "hash": "2778870367241797399"
+        },
+        {
+          "file": "libs/browser-gaming/src/assets/characters/dad/ko/ko_005.png",
+          "hash": "3187023906731857583"
+        },
+        {
+          "file": "libs/browser-gaming/src/assets/characters/dad/ko/ko_006.png",
+          "hash": "9876334320087461559"
+        },
+        {
+          "file": "libs/browser-gaming/src/assets/characters/dad/ko/ko_007.png",
+          "hash": "9516783905244435323"
+        },
+        {
+          "file": "libs/browser-gaming/src/assets/characters/dad/ko/ko_008.png",
+          "hash": "3036676800647312662"
+        },
+        {
+          "file": "libs/browser-gaming/src/assets/characters/dad/ko/ko_009.png",
+          "hash": "15440080659397832208"
+        },
+        {
+          "file": "libs/browser-gaming/src/assets/characters/dad/ko/ko_010.png",
+          "hash": "16203377820139783028"
+        },
+        {
+          "file": "libs/browser-gaming/src/assets/characters/dad/ko/ko_011.png",
+          "hash": "8518702054254602025"
+        },
+        {
+          "file": "libs/browser-gaming/src/assets/characters/dad/ko/ko_012.png",
+          "hash": "74489492143804049"
+        },
+        {
+          "file": "libs/browser-gaming/src/assets/characters/dad/ko/ko_013.png",
+          "hash": "2757307832204105377"
+        },
+        {
+          "file": "libs/browser-gaming/src/assets/characters/dad/ko/ko_014.png",
+          "hash": "8856908449794770278"
+        },
+        {
+          "file": "libs/browser-gaming/src/assets/characters/dad/ko/ko_015.png",
+          "hash": "8462965364912426487"
+        },
+        {
+          "file": "libs/browser-gaming/src/assets/characters/dad/ko/ko_016.png",
+          "hash": "283895400446000224"
+        },
+        {
+          "file": "libs/browser-gaming/src/assets/characters/dad/ko/ko_017.png",
+          "hash": "10617940584603464252"
+        },
+        {
+          "file": "libs/browser-gaming/src/assets/characters/dad/ko/ko_018.png",
+          "hash": "15285995936245962088"
+        },
+        {
+          "file": "libs/browser-gaming/src/assets/characters/dad/ko/ko_019.png",
+          "hash": "13634041657083698698"
+        },
+        {
+          "file": "libs/browser-gaming/src/assets/characters/dad/ko/ko_020.png",
+          "hash": "13312418125878887862"
+        },
+        {
+          "file": "libs/browser-gaming/src/assets/characters/dad/ko/ko_021.png",
+          "hash": "12368366891476689792"
+        },
+        {
+          "file": "libs/browser-gaming/src/assets/characters/dad/ko/ko_022.png",
+          "hash": "6042739806913549477"
+        },
+        {
+          "file": "libs/browser-gaming/src/assets/characters/dad/ko/ko_023.png",
+          "hash": "9220821896659373440"
+        },
+        {
+          "file": "libs/browser-gaming/src/assets/characters/dad/ko/ko_024.png",
+          "hash": "14622192530469470162"
+        },
+        {
+          "file": "libs/browser-gaming/src/assets/characters/dad/ko/ko_025.png",
+          "hash": "5934897591690837492"
+        },
+        {
+          "file": "libs/browser-gaming/src/assets/characters/dad/ko/ko_026.png",
+          "hash": "14650106963213201158"
+        },
+        {
+          "file": "libs/browser-gaming/src/assets/characters/dad/ko/ko_027.png",
+          "hash": "18433367330291882565"
+        },
+        {
+          "file": "libs/browser-gaming/src/assets/characters/dad/ko/ko_028.png",
+          "hash": "4145141283982719246"
+        },
+        {
+          "file": "libs/browser-gaming/src/assets/characters/dad/ko/ko_029.png",
+          "hash": "7035726046029261978"
+        },
+        {
+          "file": "libs/browser-gaming/src/assets/characters/dad/ko/ko_030.png",
+          "hash": "4176141307500095154"
+        },
+        {
+          "file": "libs/browser-gaming/src/assets/characters/dad/ko/ko_031.png",
+          "hash": "5424414807308196811"
+        },
+        {
+          "file": "libs/browser-gaming/src/assets/characters/dad/ko/ko_032.png",
+          "hash": "2767523864754624662"
+        },
+        {
+          "file": "libs/browser-gaming/src/assets/characters/dad/ko/ko_033.png",
+          "hash": "2767523864754624662"
+        },
+        {
+          "file": "libs/browser-gaming/src/assets/characters/dad/ko/ko_034.png",
+          "hash": "2767523864754624662"
+        },
+        {
+          "file": "libs/browser-gaming/src/assets/characters/dad/ko/ko_035.png",
+          "hash": "2767523864754624662"
+        },
+        {
+          "file": "libs/browser-gaming/src/assets/characters/dad/ko/ko_036.png",
+          "hash": "2767523864754624662"
+        },
+        {
+          "file": "libs/browser-gaming/src/assets/characters/dad/ko/ko_037.png",
+          "hash": "2767523864754624662"
+        },
+        {
+          "file": "libs/browser-gaming/src/assets/characters/dad/ko/ko_038.png",
+          "hash": "2767523864754624662"
+        },
+        {
+          "file": "libs/browser-gaming/src/assets/characters/dad/ko/ko_039.png",
+          "hash": "2767523864754624662"
+        },
+        {
+          "file": "libs/browser-gaming/src/assets/characters/dad/ko/ko_040.png",
+          "hash": "2767523864754624662"
+        },
+        {
+          "file": "libs/browser-gaming/src/assets/characters/dad/ko/ko_041.png",
+          "hash": "2767523864754624662"
+        },
+        {
+          "file": "libs/browser-gaming/src/assets/characters/dad/ko/ko_042.png",
+          "hash": "2767523864754624662"
+        },
+        {
+          "file": "libs/browser-gaming/src/assets/characters/dad/ko/visit_bevouliin_dot_com.txt",
+          "hash": "297347279792078340"
+        },
+        {
+          "file": "libs/browser-gaming/src/assets/characters/dad/rj/rj_000.png",
+          "hash": "3839967477624656027"
+        },
+        {
+          "file": "libs/browser-gaming/src/assets/characters/dad/rj/rj_001.png",
+          "hash": "14211831083375965855"
+        },
+        {
+          "file": "libs/browser-gaming/src/assets/characters/dad/rj/rj_002.png",
+          "hash": "5243199407583703686"
+        },
+        {
+          "file": "libs/browser-gaming/src/assets/characters/dad/rj/rj_003.png",
+          "hash": "14853479425084321104"
+        },
+        {
+          "file": "libs/browser-gaming/src/assets/characters/dad/rj/rj_004.png",
+          "hash": "7074101199780259400"
+        },
+        {
+          "file": "libs/browser-gaming/src/assets/characters/dad/rj/rj_005.png",
+          "hash": "16669718944097802064"
+        },
+        {
+          "file": "libs/browser-gaming/src/assets/characters/dad/rj/rj_006.png",
+          "hash": "7886624216596533499"
+        },
+        {
+          "file": "libs/browser-gaming/src/assets/characters/dad/rj/rj_007.png",
+          "hash": "10480923100301032333"
+        },
+        {
+          "file": "libs/browser-gaming/src/assets/characters/dad/rj/rj_008.png",
+          "hash": "14142068548397424170"
+        },
+        {
+          "file": "libs/browser-gaming/src/assets/characters/dad/rj/rj_009.png",
+          "hash": "6207358520518262273"
+        },
+        {
+          "file": "libs/browser-gaming/src/assets/characters/dad/rj/rj_010.png",
+          "hash": "16692803228020466693"
+        },
+        {
+          "file": "libs/browser-gaming/src/assets/characters/dad/rj/rj_011.png",
+          "hash": "7810989627458575119"
+        },
+        {
+          "file": "libs/browser-gaming/src/assets/characters/dad/rj/rj_012.png",
+          "hash": "1249657047221736559"
+        },
+        {
+          "file": "libs/browser-gaming/src/assets/characters/dad/rj/rj_013.png",
+          "hash": "4881350088931109403"
+        },
+        {
+          "file": "libs/browser-gaming/src/assets/characters/dad/rj/rj_014.png",
+          "hash": "12449915990636062737"
+        },
+        {
+          "file": "libs/browser-gaming/src/assets/characters/dad/rj/rj_015.png",
+          "hash": "125441636373504316"
+        },
+        {
+          "file": "libs/browser-gaming/src/assets/characters/dad/rj/rj_016.png",
+          "hash": "7120305404090065758"
+        },
+        {
+          "file": "libs/browser-gaming/src/assets/characters/dad/rj/rj_017.png",
+          "hash": "476593315639502449"
+        },
+        {
+          "file": "libs/browser-gaming/src/assets/characters/dad/rj/rj_018.png",
+          "hash": "11954387215421178384"
+        },
+        {
+          "file": "libs/browser-gaming/src/assets/characters/dad/rj/rj_019.png",
+          "hash": "11279079959639572806"
+        },
+        {
+          "file": "libs/browser-gaming/src/assets/characters/dad/rj/rj_020.png",
+          "hash": "12914008498920430780"
+        },
+        {
+          "file": "libs/browser-gaming/src/assets/characters/dad/rj/rj_021.png",
+          "hash": "11305693506827747947"
+        },
+        {
+          "file": "libs/browser-gaming/src/assets/characters/dad/rj/rj_022.png",
+          "hash": "139090729135694785"
+        },
+        {
+          "file": "libs/browser-gaming/src/assets/characters/dad/rj/rj_023.png",
+          "hash": "3417430576051843333"
+        },
+        {
+          "file": "libs/browser-gaming/src/assets/characters/dad/rj/rj_024.png",
+          "hash": "9045731011846032778"
+        },
+        {
+          "file": "libs/browser-gaming/src/assets/characters/dad/rj/rj_025.png",
+          "hash": "15407989371999466458"
+        },
+        {
+          "file": "libs/browser-gaming/src/assets/characters/dad/rj/rj_026.png",
+          "hash": "1318110613034053114"
+        },
+        {
+          "file": "libs/browser-gaming/src/assets/characters/dad/rj/rj_027.png",
+          "hash": "12030621525713539307"
+        },
+        {
+          "file": "libs/browser-gaming/src/assets/characters/dad/rj/rj_028.png",
+          "hash": "2605535219854281351"
+        },
+        {
+          "file": "libs/browser-gaming/src/assets/characters/dad/rj/rj_029.png",
+          "hash": "15593823161435001778"
+        },
+        {
+          "file": "libs/browser-gaming/src/assets/characters/dad/rj/rj_030.png",
+          "hash": "16457897595312206513"
+        },
+        {
+          "file": "libs/browser-gaming/src/assets/characters/dad/rj/rj_031.png",
+          "hash": "14494369308029992538"
+        },
+        {
+          "file": "libs/browser-gaming/src/assets/characters/dad/rj/rj_032.png",
+          "hash": "2103878796346867510"
+        },
+        {
+          "file": "libs/browser-gaming/src/assets/characters/dad/rj/rj_033.png",
+          "hash": "13494105823631778965"
+        },
+        {
+          "file": "libs/browser-gaming/src/assets/characters/dad/rj/rj_034.png",
+          "hash": "5073010524462643468"
+        },
+        {
+          "file": "libs/browser-gaming/src/assets/characters/dad/rj/rj_035.png",
+          "hash": "5073010524462643468"
+        },
+        {
+          "file": "libs/browser-gaming/src/assets/characters/dad/rj/rj_036.png",
+          "hash": "5073010524462643468"
+        },
+        {
+          "file": "libs/browser-gaming/src/assets/characters/dad/rj/visit_bevouliin_dot_com.txt",
+          "hash": "297347279792078340"
+        },
+        {
+          "file": "libs/browser-gaming/src/assets/characters/dad/run/run_000.png",
+          "hash": "3792035027935018703"
+        },
+        {
+          "file": "libs/browser-gaming/src/assets/characters/dad/run/run_001.png",
+          "hash": "1939765574079590632"
+        },
+        {
+          "file": "libs/browser-gaming/src/assets/characters/dad/run/run_002.png",
+          "hash": "15065012247579237504"
+        },
+        {
+          "file": "libs/browser-gaming/src/assets/characters/dad/run/run_003.png",
+          "hash": "10267834323240181068"
+        },
+        {
+          "file": "libs/browser-gaming/src/assets/characters/dad/run/run_004.png",
+          "hash": "6435403626375547950"
+        },
+        {
+          "file": "libs/browser-gaming/src/assets/characters/dad/run/run_005.png",
+          "hash": "15979466131813831868"
+        },
+        {
+          "file": "libs/browser-gaming/src/assets/characters/dad/run/run_006.png",
+          "hash": "3993068208342623852"
+        },
+        {
+          "file": "libs/browser-gaming/src/assets/characters/dad/run/run_007.png",
+          "hash": "201534975797155931"
+        },
+        {
+          "file": "libs/browser-gaming/src/assets/characters/dad/run/run_008.png",
+          "hash": "13783751958586557268"
+        },
+        {
+          "file": "libs/browser-gaming/src/assets/characters/dad/run/run_009.png",
+          "hash": "1351745067739744359"
+        },
+        {
+          "file": "libs/browser-gaming/src/assets/characters/dad/run/run_010.png",
+          "hash": "16040617125061395392"
+        },
+        {
+          "file": "libs/browser-gaming/src/assets/characters/dad/run/run_011.png",
+          "hash": "16373643680508436784"
+        },
+        {
+          "file": "libs/browser-gaming/src/assets/characters/dad/run/run_012.png",
+          "hash": "37850320809059595"
+        },
+        {
+          "file": "libs/browser-gaming/src/assets/characters/dad/run/run_013.png",
+          "hash": "1279845339450834991"
+        },
+        {
+          "file": "libs/browser-gaming/src/assets/characters/dad/run/run_014.png",
+          "hash": "1017242131653248040"
+        },
+        {
+          "file": "libs/browser-gaming/src/assets/characters/dad/run/run_015.png",
+          "hash": "6048323506610308499"
+        },
+        {
+          "file": "libs/browser-gaming/src/assets/characters/dad/run/run_016.png",
+          "hash": "8724398125804314176"
+        },
+        {
+          "file": "libs/browser-gaming/src/assets/characters/dad/run/run_017.png",
+          "hash": "12047868437359549834"
+        },
+        {
+          "file": "libs/browser-gaming/src/assets/characters/dad/run/run_018.png",
+          "hash": "5885973156930862108"
+        },
+        {
+          "file": "libs/browser-gaming/src/assets/characters/dad/run/run_019.png",
+          "hash": "6812566863414951451"
+        },
+        {
+          "file": "libs/browser-gaming/src/assets/characters/dad/run/run_020.png",
+          "hash": "4673563651451930652"
+        },
+        {
+          "file": "libs/browser-gaming/src/assets/characters/dad/run/run_021.png",
+          "hash": "6951325520584989169"
+        },
+        {
+          "file": "libs/browser-gaming/src/assets/characters/dad/run/run_022.png",
+          "hash": "17683151760196131513"
+        },
+        {
+          "file": "libs/browser-gaming/src/assets/characters/dad/run/run_023.png",
+          "hash": "5206760754919761225"
+        },
+        {
+          "file": "libs/browser-gaming/src/assets/characters/dad/run/run_024.png",
+          "hash": "5937612962754642442"
+        },
+        {
+          "file": "libs/browser-gaming/src/assets/characters/dad/run/run_025.png",
+          "hash": "8899137597474159171"
+        },
+        {
+          "file": "libs/browser-gaming/src/assets/characters/dad/run/run_026.png",
+          "hash": "16097151349903069770"
+        },
+        {
+          "file": "libs/browser-gaming/src/assets/characters/dad/run/run_027.png",
+          "hash": "10897971472474348816"
+        },
+        {
+          "file": "libs/browser-gaming/src/assets/characters/dad/run/run_028.png",
+          "hash": "549570694043907191"
+        },
+        {
+          "file": "libs/browser-gaming/src/assets/characters/dad/run/run_029.png",
+          "hash": "3703008504650129451"
+        },
+        {
+          "file": "libs/browser-gaming/src/assets/characters/dad/run/run_030.png",
+          "hash": "9186126397724448199"
+        },
+        {
+          "file": "libs/browser-gaming/src/assets/characters/dad/run/run_031.png",
+          "hash": "7526838164021322489"
+        },
+        {
+          "file": "libs/browser-gaming/src/assets/characters/dad/run/run_032.png",
+          "hash": "9763168075355708818"
+        },
+        {
+          "file": "libs/browser-gaming/src/assets/characters/dad/run/run_033.png",
+          "hash": "6358231929664567825"
+        },
+        {
+          "file": "libs/browser-gaming/src/assets/characters/dad/run/run_034.png",
+          "hash": "14854972552038024966"
+        },
+        {
+          "file": "libs/browser-gaming/src/assets/characters/dad/run/run_035.png",
+          "hash": "10840846376616501657"
+        },
+        {
+          "file": "libs/browser-gaming/src/assets/characters/dad/run/run_036.png",
+          "hash": "17278607459671441638"
+        },
+        {
+          "file": "libs/browser-gaming/src/assets/characters/dad/run/run_037.png",
+          "hash": "5895770376399537374"
+        },
+        {
+          "file": "libs/browser-gaming/src/assets/characters/dad/run/run_038.png",
+          "hash": "2242899697090026284"
+        },
+        {
+          "file": "libs/browser-gaming/src/assets/characters/dad/run/run_039.png",
+          "hash": "10894918239535836102"
+        },
+        {
+          "file": "libs/browser-gaming/src/assets/characters/dad/run/run_040.png",
+          "hash": "4415721053268319910"
+        },
+        {
+          "file": "libs/browser-gaming/src/assets/characters/dad/run/run_041.png",
+          "hash": "3840339426535880227"
+        },
+        {
+          "file": "libs/browser-gaming/src/assets/characters/dad/run/run_042.png",
+          "hash": "87416122780858464"
+        },
+        {
+          "file": "libs/browser-gaming/src/assets/characters/dad/run/visit_bevouliin_dot_com.txt",
+          "hash": "297347279792078340"
+        },
+        {
+          "file": "libs/browser-gaming/src/assets/enemies/Flappy-Box-Bird-Sprites/skeleton-animation_00.png",
+          "hash": "6989864780876598274"
+        },
+        {
+          "file": "libs/browser-gaming/src/assets/enemies/Flappy-Box-Bird-Sprites/skeleton-animation_01.png",
+          "hash": "5732106277247374294"
+        },
+        {
+          "file": "libs/browser-gaming/src/assets/enemies/Flappy-Box-Bird-Sprites/skeleton-animation_02.png",
+          "hash": "15008061544284122096"
+        },
+        {
+          "file": "libs/browser-gaming/src/assets/enemies/Flappy-Box-Bird-Sprites/skeleton-animation_03.png",
+          "hash": "11625139009035488962"
+        },
+        {
+          "file": "libs/browser-gaming/src/assets/enemies/Flappy-Box-Bird-Sprites/skeleton-animation_04.png",
+          "hash": "778341639121202426"
+        },
+        {
+          "file": "libs/browser-gaming/src/assets/enemies/Flappy-Box-Bird-Sprites/skeleton-animation_05.png",
+          "hash": "12310620433987326916"
+        },
+        {
+          "file": "libs/browser-gaming/src/assets/enemies/Flappy-Box-Bird-Sprites/skeleton-animation_06.png",
+          "hash": "778341639121202426"
+        },
+        {
+          "file": "libs/browser-gaming/src/assets/enemies/Flappy-Box-Bird-Sprites/skeleton-animation_07.png",
+          "hash": "11625139009035488962"
+        },
+        {
+          "file": "libs/browser-gaming/src/assets/enemies/Flappy-Box-Bird-Sprites/skeleton-animation_08.png",
+          "hash": "15008061544284122096"
+        },
+        {
+          "file": "libs/browser-gaming/src/assets/enemies/Flappy-Box-Bird-Sprites/skeleton-animation_09.png",
+          "hash": "5732106277247374294"
+        },
+        {
+          "file": "libs/browser-gaming/src/assets/enemies/Flappy-Box-Bird-Sprites/skeleton-animation_10.png",
+          "hash": "6989864780876598274"
+        },
+        {
+          "file": "libs/browser-gaming/src/assets/enemies/Free2dgameAsset_CarsSprites/Bus PNG/bus01.png",
+          "hash": "14381634170537586302"
+        },
+        {
+          "file": "libs/browser-gaming/src/assets/enemies/Free2dgameAsset_CarsSprites/Bus PNG/bus02.png",
+          "hash": "10543762577004580741"
+        },
+        {
+          "file": "libs/browser-gaming/src/assets/enemies/Free2dgameAsset_CarsSprites/Bus PNG/bus03.png",
+          "hash": "17628441417858380864"
+        },
+        {
+          "file": "libs/browser-gaming/src/assets/enemies/Free2dgameAsset_CarsSprites/Bus PNG/bus04.png",
+          "hash": "6187975463928358882"
+        },
+        {
+          "file": "libs/browser-gaming/src/assets/enemies/Free2dgameAsset_CarsSprites/Car PNG/car00.png",
+          "hash": "4650214636571327370"
+        },
+        {
+          "file": "libs/browser-gaming/src/assets/enemies/Free2dgameAsset_CarsSprites/Car PNG/car01.png",
+          "hash": "4650214636571327370"
+        },
+        {
+          "file": "libs/browser-gaming/src/assets/enemies/Free2dgameAsset_CarsSprites/Car PNG/car02.png",
+          "hash": "6299203079418599725"
+        },
+        {
+          "file": "libs/browser-gaming/src/assets/enemies/Free2dgameAsset_CarsSprites/Car PNG/car03.png",
+          "hash": "6793169728555141308"
+        },
+        {
+          "file": "libs/browser-gaming/src/assets/enemies/Free2dgameAsset_CarsSprites/Car PNG/car04.png",
+          "hash": "2640022711055404483"
+        },
+        {
+          "file": "libs/browser-gaming/src/assets/enemies/Free2dgameAsset_CarsSprites/visit_bevouliin_dot_com.txt",
+          "hash": "297347279792078340"
+        },
+        {
+          "file": "libs/browser-gaming/src/index.ts",
+          "hash": "10520147155126443070"
+        },
+        {
+          "file": "libs/browser-gaming/src/lib/asset-paths.constant.ts",
+          "hash": "14577168825587519958"
+        },
+        {
+          "file": "libs/browser-gaming/src/lib/events.constant.ts",
+          "hash": "809755059017747102"
+        },
+        {
+          "file": "libs/browser-gaming/src/lib/get-current-frame-index.function.ts",
+          "hash": "9950394355432742741"
+        },
+        {
+          "file": "libs/browser-gaming/src/lib/get-image-path.function.ts",
+          "hash": "15917084842029470138"
+        },
+        {
+          "file": "libs/browser-gaming/src/lib/input-handler.class.ts",
+          "hash": "11165296706316293282"
+        },
+        {
+          "file": "libs/browser-gaming/src/lib/keys.constant.ts",
+          "hash": "6198099329914875686"
+        },
+        {
+          "file": "libs/browser-gaming/src/lib/layer.class.ts",
+          "hash": "2375025252443886001"
+        },
+        {
+          "file": "libs/browser-gaming/src/lib/on.function.ts",
+          "hash": "14650002597393530013"
+        },
+        {
+          "file": "libs/browser-gaming/src/lib/player.class.ts",
+          "hash": "5999278774298953122"
+        },
+        {
+          "file": "libs/browser-gaming/tsconfig.json",
+          "hash": "5840880287502376438"
+        },
+        {
+          "file": "libs/browser-gaming/tsconfig.lib.json",
+          "hash": "3632393694954060084"
+        },
+        {
+          "file": "libs/browser-gaming/tsconfig.spec.json",
+          "hash": "1967669092853929813"
+        },
+        {
+          "file": "libs/browser-gaming/vite.config.ts",
+          "hash": "1575124059924599474",
+          "deps": [
+            "npm:vite",
+            "npm:vite-plugin-dts",
+            "npm:path",
+            "npm:@nx/vite"
+          ]
+        }
+      ]
+    }
+  }
+}
